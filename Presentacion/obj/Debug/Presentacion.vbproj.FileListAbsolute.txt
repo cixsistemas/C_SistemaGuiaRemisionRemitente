@@ -466,3 +466,9 @@ F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Re
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Guia de Remision-Remitente.exe
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Guia de Remision-Remitente.xml
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Guia de Remision-Remitente.pdb
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision1\Los Angeles\Presentacion\bin\Debug\Guia de Remision-Remitente.exe.config
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision1\Los Angeles\Presentacion\obj\Debug\Interop.MSXML2.dll
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision1\Los Angeles\Presentacion\obj\Debug\Presentacion.vbproj.ResolveComReference.cache
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision1\Los Angeles\Presentacion\obj\Debug\Guia de Remision-Remitente.exe
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision1\Los Angeles\Presentacion\obj\Debug\Guia de Remision-Remitente.xml
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision1\Los Angeles\Presentacion\obj\Debug\Guia de Remision-Remitente.pdb
