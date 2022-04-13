@@ -116,9 +116,6 @@ Public Class frmListarRemitentes
     End Sub
 
     Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
-        'lista(txtbusca.Text)
-        ' DataGridView1.RowFilter =
-
         SQL = "Remitente like '%" + txtbusca.Text.Trim + "%'"
         Dv.RowFilter = SQL
         dgvlista.DataSource = Dv
