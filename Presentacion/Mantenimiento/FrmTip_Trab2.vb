@@ -35,7 +35,7 @@ Public Class FrmTip_Trab2
         End If
     End Sub
 
-    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -53,7 +53,7 @@ Public Class FrmTip_Trab2
     End Sub
 
 
-    Private Sub FrmTip_Trab22_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTip_Trab22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
     End Sub
@@ -89,15 +89,15 @@ Public Class FrmTip_Trab2
         ' Me.btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         'indice = e.RowIndex
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea guardar Tipo de Trabajador?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -142,7 +142,7 @@ Public Class FrmTip_Trab2
         lista(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Tipo de Trabajador", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub

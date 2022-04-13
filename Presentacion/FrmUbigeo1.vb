@@ -94,14 +94,14 @@ Public Class FrmUbigeo1
     End Sub
 
 
-    Private Sub FrmUbigeo1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmUbigeo1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
 
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(4, Nothing)
         rbdistrito.Checked = True
         '  Me.cbobusca.SelectedIndex = 0
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
         ' Dim indice As Integer = rbdepartamento.Checked = True
         If rbdepartamento.Checked = True Then
@@ -115,17 +115,17 @@ Public Class FrmUbigeo1
             'Me.txtbusca.Focus()
         End If
     End Sub
-    Private Sub rbdepartamento_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbdepartamento.CheckedChanged
+    Private Sub rbdepartamento_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbdepartamento.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbprovincia_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbprovincia.CheckedChanged
+    Private Sub rbprovincia_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbprovincia.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbdistrito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbdistrito.CheckedChanged
+    Private Sub rbdistrito_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbdistrito.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
@@ -157,11 +157,11 @@ Public Class FrmUbigeo1
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_CellContentClick(sender As System.Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
 
     End Sub
 
-    Private Sub btnNuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
         Dim f As New FrmUbigeo2
         f.Nivel = "N"
         ' f.txtcodigo.Text = 0
@@ -172,7 +172,7 @@ Public Class FrmUbigeo1
     End Sub
 
 
-    Private Sub BtnModificar_Click(sender As System.Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
         Dim f As New FrmUbigeo2
         If (indice = -1) Then
             MessageBox.Show("Seleccione Ubigeo", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -192,7 +192,7 @@ Public Class FrmUbigeo1
        lista(4, Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As System.EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Ubigeo", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -236,7 +236,7 @@ Public Class FrmUbigeo1
         indice = -1
         lista(4, Nothing)
     End Sub
-    Private Sub btnImprimir_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Dim f As New FRMIMPRIMIR
         f.Nivel = "FORMULARIO_LISTA_UBIGEOS"
         f.Tabla_Imprimir = tabla_ubigeo
@@ -244,7 +244,7 @@ Public Class FrmUbigeo1
         f.Titulo_Informe = "REPORTE DE UBIGEOS"
         f.ShowDialog()
     End Sub
-    Private Sub BtnCerrar_Click(sender As System.Object, e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub BtnCerrar_Click(sender As Object, e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 

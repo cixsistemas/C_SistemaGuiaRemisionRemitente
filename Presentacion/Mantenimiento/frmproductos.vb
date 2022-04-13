@@ -89,7 +89,7 @@ Public Class frmproductos
         End If
     End Sub
 
-    Private Sub frmlproductoSs_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmlproductoSs_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(7, Nothing)
         rbProducto.Checked = True
@@ -125,7 +125,7 @@ Public Class frmproductos
         indice = e.RowIndex
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
 
         'Dim f As New _FrmCuentaFin2
         formulario.Nivel = "N"
@@ -150,11 +150,11 @@ Public Class frmproductos
 
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         UpdateRegistro()
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione producto", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -200,7 +200,7 @@ Public Class frmproductos
         lista(7, Nothing)
     End Sub
 
-    Private Sub btnImprimir_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Try
             Dim f As New frmImprimiR
             f.Nivel = "FORMULARIO_LISTA_PRODUCTOS"
@@ -213,7 +213,7 @@ Public Class frmproductos
 
     End Sub
 
-    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
     'Private Sub txtbusca_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtbusca.KeyDown
@@ -227,42 +227,42 @@ Public Class frmproductos
     'Private Sub txtbusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
     '    Me.txtbusca.BackColor = Color.Moccasin
     'End Sub
-    Private Sub RbTodos_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
     End Sub
 
 
 
-    Private Sub rbProducto_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbProducto.CheckedChanged
+    Private Sub rbProducto_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbProducto.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
-    Private Sub RbNom_Com_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RbNom_Com.CheckedChanged
+    Private Sub RbNom_Com_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbNom_Com.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
-    Private Sub rbcolor_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbcolor.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub rbcat_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbcat.CheckedChanged
+    Private Sub rbcolor_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbcolor.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub Rblogo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Rblogo.CheckedChanged
+    Private Sub rbcat_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbcat.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Rbenvase.CheckedChanged
+    Private Sub Rblogo_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rblogo.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rbenvase.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
 
         If rbProducto.Checked = True Then

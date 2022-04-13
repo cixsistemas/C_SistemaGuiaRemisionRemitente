@@ -53,7 +53,7 @@ Public Class frmListarComisionistas
         indice = e.RowIndex
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 
@@ -69,13 +69,13 @@ Public Class frmListarComisionistas
         End If
     End Sub
 
-    Private Sub frmListarComisionistas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmListarComisionistas_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         txtbusca.Focus()
         indice = -1
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
         ' Aplicar_Filtro()
     End Sub
@@ -93,7 +93,7 @@ Public Class frmListarComisionistas
         End If
     End Sub
 
-    Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
 
     End Sub
 
@@ -103,7 +103,7 @@ Public Class frmListarComisionistas
         End If
     End Sub
 
-    Private Sub btnNuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
         Dim f As New FrmComisionista2
         f.Nivel = "N"
         f.id_comisionista = 0

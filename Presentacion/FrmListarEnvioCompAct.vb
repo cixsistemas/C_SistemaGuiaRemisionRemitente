@@ -89,11 +89,11 @@ Public Class FrmListarEnvioCompAct
         End If
     End Sub
 
-    Private Sub FrmListarEnvioCompAct_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarEnvioCompAct_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Envio_Comp("", "", "", "")
     End Sub
-    Private Sub btn_Acep_Click(sender As System.Object, e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(sender As Object, e As System.EventArgs) Handles btn_Acep.Click
 
         'Close()
 
@@ -121,7 +121,7 @@ Public Class FrmListarEnvioCompAct
     Private Sub dgvlista_CellLeave1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellLeave
         indice = e.RowIndex
     End Sub
-    Private Sub DgvLista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub DgvLista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
 
     End Sub
 
@@ -143,21 +143,21 @@ Public Class FrmListarEnvioCompAct
             e.CellStyle.BackColor = Color.LightYellow
         End If
     End Sub
-    Private Sub CboRemitente_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
+    Private Sub CboRemitente_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
         TxtRemitente.Enabled = CboRemitente.Checked : TxtRemitente.Text = "" : TxtRemitente.Focus()
     End Sub
-    Private Sub CboTipoCom_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
+    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
         TxtTipo_Comp.Enabled = CboTipoCom.Checked : TxtTipo_Comp.Text = "" : TxtTipo_Comp.Focus()
     End Sub
 
-    Private Sub CboNumero_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboNumero.CheckedChanged
+    Private Sub CboNumero_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboNumero.CheckedChanged
         TxtNumero.Enabled = CboNumero.Checked : TxtNumero.Text = "" : TxtNumero.Focus()
     End Sub
-    Private Sub CboComis_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboComis.CheckedChanged
+    Private Sub CboComis_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboComis.CheckedChanged
         TxtComisionista.Enabled = CboComis.Checked : TxtComisionista.Text = "" : TxtComisionista.Focus()
     End Sub
 
-    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
         listar_Envio_Comp(IIf(TxtRemitente.Text.Trim <> "", TxtRemitente.Text.Trim, ""), _
                           IIf(TxtComisionista.Text.Trim <> "", TxtComisionista.Text.Trim, ""), _
                             IIf(TxtTipo_Comp.Text.Trim <> "", TxtTipo_Comp.Text.Trim, ""), _

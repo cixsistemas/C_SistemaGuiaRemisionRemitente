@@ -24,9 +24,9 @@ Partial Class FrmListarChofer
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmListarChofer))
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Highlighter1 = New DevComponents.DotNetBar.Validator.Highlighter()
         Me.txtbusca = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.btnNuevo = New DevComponents.DotNetBar.ButtonX()
@@ -34,14 +34,14 @@ Partial Class FrmListarChofer
         Me.mesajeerror = New DevComponents.DotNetBar.LabelX()
         Me.dgvlista = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.gbob = New System.Windows.Forms.GroupBox()
+        Me.LBF4 = New DevComponents.DotNetBar.LabelX()
+        Me.LBF3 = New DevComponents.DotNetBar.LabelX()
+        Me.LBF2 = New DevComponents.DotNetBar.LabelX()
         Me.RbTodos = New System.Windows.Forms.RadioButton()
         Me.rbbrevete = New System.Windows.Forms.RadioButton()
         Me.rbNombre = New System.Windows.Forms.RadioButton()
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.StyleManager1 = New DevComponents.DotNetBar.StyleManager(Me.components)
-        Me.LBF2 = New DevComponents.DotNetBar.LabelX()
-        Me.LBF3 = New DevComponents.DotNetBar.LabelX()
-        Me.LBF4 = New DevComponents.DotNetBar.LabelX()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbob.SuspendLayout()
         Me.SuspendLayout()
@@ -52,19 +52,18 @@ Partial Class FrmListarChofer
         '
         'txtbusca
         '
-        Me.txtbusca.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.txtbusca.Border.Class = "TextBoxBorder"
         Me.txtbusca.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtbusca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtbusca.DisabledBackColor = System.Drawing.Color.White
         Me.txtbusca.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbusca.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.txtbusca, True)
         Me.txtbusca.Location = New System.Drawing.Point(80, 46)
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(526, 23)
+        Me.txtbusca.Size = New System.Drawing.Size(526, 27)
         Me.txtbusca.TabIndex = 1
         '
         'btnNuevo
@@ -114,35 +113,35 @@ Partial Class FrmListarChofer
         'dgvlista
         '
         Me.dgvlista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvlista.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvlista.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvlista.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvlista.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlista.EnableHeadersVisualStyles = False
         Me.dgvlista.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dgvlista.Location = New System.Drawing.Point(12, 108)
         Me.dgvlista.Name = "dgvlista"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvlista.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvlista.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvlista.Size = New System.Drawing.Size(626, 241)
         Me.dgvlista.TabIndex = 2
         '
@@ -167,6 +166,54 @@ Partial Class FrmListarChofer
         Me.gbob.TabStop = False
         Me.gbob.Text = "Seleccione opciones de busqueda:"
         '
+        'LBF4
+        '
+        Me.LBF4.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
+        '
+        '
+        '
+        Me.LBF4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LBF4.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBF4.ForeColor = System.Drawing.Color.Black
+        Me.LBF4.Location = New System.Drawing.Point(396, 20)
+        Me.LBF4.Name = "LBF4"
+        Me.LBF4.Size = New System.Drawing.Size(33, 23)
+        Me.LBF4.TabIndex = 221
+        Me.LBF4.Text = " [F4]"
+        Me.LBF4.TextAlignment = System.Drawing.StringAlignment.Center
+        '
+        'LBF3
+        '
+        Me.LBF3.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
+        '
+        '
+        '
+        Me.LBF3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LBF3.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBF3.ForeColor = System.Drawing.Color.Black
+        Me.LBF3.Location = New System.Drawing.Point(280, 19)
+        Me.LBF3.Name = "LBF3"
+        Me.LBF3.Size = New System.Drawing.Size(33, 23)
+        Me.LBF3.TabIndex = 220
+        Me.LBF3.Text = " [F3]"
+        Me.LBF3.TextAlignment = System.Drawing.StringAlignment.Center
+        '
+        'LBF2
+        '
+        Me.LBF2.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
+        '
+        '
+        '
+        Me.LBF2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LBF2.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBF2.ForeColor = System.Drawing.Color.Black
+        Me.LBF2.Location = New System.Drawing.Point(164, 19)
+        Me.LBF2.Name = "LBF2"
+        Me.LBF2.Size = New System.Drawing.Size(33, 23)
+        Me.LBF2.TabIndex = 219
+        Me.LBF2.Text = " [F2]"
+        Me.LBF2.TextAlignment = System.Drawing.StringAlignment.Center
+        '
         'RbTodos
         '
         Me.RbTodos.AutoSize = True
@@ -176,7 +223,7 @@ Partial Class FrmListarChofer
         Me.RbTodos.ForeColor = System.Drawing.Color.Black
         Me.RbTodos.Location = New System.Drawing.Point(327, 20)
         Me.RbTodos.Name = "RbTodos"
-        Me.RbTodos.Size = New System.Drawing.Size(63, 21)
+        Me.RbTodos.Size = New System.Drawing.Size(76, 27)
         Me.RbTodos.TabIndex = 6
         Me.RbTodos.TabStop = True
         Me.RbTodos.Tag = "Todos"
@@ -193,7 +240,7 @@ Partial Class FrmListarChofer
         Me.rbbrevete.ForeColor = System.Drawing.Color.Black
         Me.rbbrevete.Location = New System.Drawing.Point(212, 20)
         Me.rbbrevete.Name = "rbbrevete"
-        Me.rbbrevete.Size = New System.Drawing.Size(71, 21)
+        Me.rbbrevete.Size = New System.Drawing.Size(91, 27)
         Me.rbbrevete.TabIndex = 5
         Me.rbbrevete.TabStop = True
         Me.rbbrevete.Tag = "Brevete"
@@ -213,7 +260,7 @@ Partial Class FrmListarChofer
         Me.rbNombre.ForeColor = System.Drawing.Color.Black
         Me.rbNombre.Location = New System.Drawing.Point(15, 20)
         Me.rbNombre.Name = "rbNombre"
-        Me.rbNombre.Size = New System.Drawing.Size(154, 21)
+        Me.rbNombre.Size = New System.Drawing.Size(197, 27)
         Me.rbNombre.TabIndex = 2
         Me.rbNombre.TabStop = True
         Me.rbNombre.Tag = "Nombre"
@@ -241,57 +288,9 @@ Partial Class FrmListarChofer
         Me.StyleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007VistaGlass
         Me.StyleManager1.MetroColorParameters = New DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(177, Byte), Integer)))
         '
-        'LBF2
-        '
-        Me.LBF2.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
-        '
-        '
-        '
-        Me.LBF2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LBF2.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBF2.ForeColor = System.Drawing.Color.Black
-        Me.LBF2.Location = New System.Drawing.Point(164, 19)
-        Me.LBF2.Name = "LBF2"
-        Me.LBF2.Size = New System.Drawing.Size(33, 23)
-        Me.LBF2.TabIndex = 219
-        Me.LBF2.Text = " [F2]"
-        Me.LBF2.TextAlignment = System.Drawing.StringAlignment.Center
-        '
-        'LBF3
-        '
-        Me.LBF3.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
-        '
-        '
-        '
-        Me.LBF3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LBF3.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBF3.ForeColor = System.Drawing.Color.Black
-        Me.LBF3.Location = New System.Drawing.Point(280, 19)
-        Me.LBF3.Name = "LBF3"
-        Me.LBF3.Size = New System.Drawing.Size(33, 23)
-        Me.LBF3.TabIndex = 220
-        Me.LBF3.Text = " [F3]"
-        Me.LBF3.TextAlignment = System.Drawing.StringAlignment.Center
-        '
-        'LBF4
-        '
-        Me.LBF4.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
-        '
-        '
-        '
-        Me.LBF4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LBF4.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBF4.ForeColor = System.Drawing.Color.Black
-        Me.LBF4.Location = New System.Drawing.Point(396, 20)
-        Me.LBF4.Name = "LBF4"
-        Me.LBF4.Size = New System.Drawing.Size(33, 23)
-        Me.LBF4.TabIndex = 221
-        Me.LBF4.Text = " [F4]"
-        Me.LBF4.TextAlignment = System.Drawing.StringAlignment.Center
-        '
         'FrmListarChofer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(650, 442)
         Me.Controls.Add(Me.gbob)
@@ -301,6 +300,7 @@ Partial Class FrmListarChofer
         Me.Controls.Add(Me.dgvlista)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Highlighter1.SetHighlightOnFocus(Me, True)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True

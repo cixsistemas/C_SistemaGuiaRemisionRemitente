@@ -54,7 +54,7 @@ Public Class FrmListarCliente
         indice = e.RowIndex
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 
@@ -139,12 +139,12 @@ Public Class FrmListarCliente
         End If
     End Sub
 
-    Private Sub FrmListarCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarCliente_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea Guardar Cliente?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -211,7 +211,7 @@ Public Class FrmListarCliente
         lista(Nothing)
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
         ' Aplicar_Filtro()
     End Sub
@@ -229,7 +229,7 @@ Public Class FrmListarCliente
         End If
     End Sub
 
-    Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
 
     End Sub
 

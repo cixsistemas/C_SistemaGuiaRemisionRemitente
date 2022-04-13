@@ -21,15 +21,15 @@
         End If
     End Sub
 
-    Private Sub FrmIng_Comp2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmIng_Comp2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         ' saltar_Flechas()
     End Sub
 
-    Private Sub FrmIng_Comp2_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmIng_Comp2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
 
-    Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(sender As Object, e As System.EventArgs) Handles btnAgregar.Click
 
         Dim ok As Boolean
 
@@ -139,7 +139,7 @@
         '   ' dgvlista.Refresh()
         indice = -1
     End Sub
-    Private Sub btnEditar_Click(sender As System.Object, e As System.EventArgs) Handles btnEditar.Click
+    Private Sub btnEditar_Click(sender As Object, e As System.EventArgs) Handles btnEditar.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -161,7 +161,7 @@
 
         Opc = "Editar"
     End Sub
-    Private Sub btnQuitar_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitar.Click
+    Private Sub btnQuitar_Click(sender As Object, e As System.EventArgs) Handles btnQuitar.Click
         Try
             dgvlista.Rows.Remove(dgvlista.CurrentRow)
         Catch ex As Exception
@@ -180,7 +180,7 @@
         indice = e.RowIndex
     End Sub
 
-    Private Sub btnremitente_Click(sender As System.Object, e As System.EventArgs) Handles btnremitente.Click
+    Private Sub btnremitente_Click(sender As Object, e As System.EventArgs) Handles btnremitente.Click
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -197,7 +197,7 @@
         BtnOperacion.Focus()
     End Sub
 
-    Private Sub BtnOperacion_Click(sender As System.Object, e As System.EventArgs) Handles BtnOperacion.Click
+    Private Sub BtnOperacion_Click(sender As Object, e As System.EventArgs) Handles BtnOperacion.Click
         Try
             Dim f As New FrmListar_Operacion_Ent
             ' Dim f As New FrmProveedor_1
@@ -218,7 +218,7 @@
        
         BtnTipoComp.Focus()
     End Sub
-    Private Sub BtnTipoComp_Click(sender As System.Object, e As System.EventArgs) Handles BtnTipoComp.Click
+    Private Sub BtnTipoComp_Click(sender As Object, e As System.EventArgs) Handles BtnTipoComp.Click
         Try
             Dim f As New FrmListar_Tipo_Comp
             ' Dim f As New FrmProveedor_1
@@ -267,7 +267,7 @@
         End If
     End Sub
 
-    Private Sub btnaceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = dgvlista.Rows.Count > 0
@@ -368,7 +368,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtSerie_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtSerie.KeyPress
+    Private Sub TxtSerie_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles TxtSerie.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
@@ -389,7 +389,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtNumero_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TxtNumero.KeyPress
+    Private Sub TxtNumero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNumero.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
@@ -406,7 +406,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtNumero2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles TxtNumero2.KeyPress
+    Private Sub TxtNumero2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNumero2.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
@@ -415,11 +415,11 @@
         TxtNumero2.BackColor = Color.White
     End Sub
 
-    Private Sub Fecha_Ingreso_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Fecha_Ingreso.KeyPress
+    Private Sub Fecha_Ingreso_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Fecha_Ingreso.KeyPress
         saltar_ENTER(e)
     End Sub
 
-    Private Sub CbEstado_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub CbEstado_KeyPress(sender As Object, e As KeyPressEventArgs)
         saltar_ENTER(e)
     End Sub
 
@@ -434,19 +434,19 @@
     Private Sub txtDescrip_Leave(sender As Object, e As System.EventArgs) Handles txtDescrip.Leave
         txtDescrip.BackColor = Color.White
     End Sub
-    Private Sub txtDescrip_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtDescrip.KeyPress
+    Private Sub txtDescrip_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescrip.KeyPress
         saltar_ENTER(e)
     End Sub
 #End Region
 
   
-    Private Sub btncancelar_Click(sender As System.Object, e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(sender As Object, e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
    
-    Private Sub btneliminar_Click(sender As System.Object, e As System.EventArgs) Handles btneliminar.Click
+    Private Sub btneliminar_Click(sender As Object, e As System.EventArgs) Handles btneliminar.Click
 
         Try
             If check_fila_grilla(dgvlista) = False Then
@@ -544,7 +544,7 @@
     End Sub
 
 
-    Private Sub dgvlista_CellContentClick(sender As System.Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
 
     End Sub
 

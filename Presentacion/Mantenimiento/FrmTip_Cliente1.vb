@@ -13,7 +13,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub nombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
+    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
         valida()
     End Sub
 
@@ -25,19 +25,19 @@
         saltar_Flechas(e)
     End Sub
     'ingreso nuevo
-    Private Sub descripcion_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles descripcion.TextChanged
+    Private Sub descripcion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.TextChanged
         valida()
     End Sub
     Private Sub descripcion_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.VisibleChanged
         valida()
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Aceptar = True
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -49,14 +49,14 @@
         End If
     End Sub
 
-    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nombre.KeyPress
+    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nombre.KeyPress
         'If e.KeyChar = ChrW(Keys.Enter) Then
         '    e.Handled = True
         '    SendKeys.Send("{TAB}")
         'End If
         saltar_ENTER(e)
     End Sub
-    Private Sub descripcion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles descripcion.KeyPress
+    Private Sub descripcion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles descripcion.KeyPress
         saltar_ENTER(e)
     End Sub
     Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter
@@ -71,7 +71,7 @@
     Private Sub descripcion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.Leave
         descripcion.BackColor = Color.White
     End Sub
-    Private Sub FrmTip_Cliente1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTip_Cliente1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

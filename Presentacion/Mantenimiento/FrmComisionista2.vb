@@ -28,18 +28,18 @@
         End If
     End Sub
 
-    Private Sub FrmComisionista2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmComisionista2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         saltar_ENTER(e)
     End Sub
 
-    Private Sub FrmComisionista2_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmComisionista2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
-    Private Sub btnZona_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnZona.Click
+    Private Sub btnZona_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnZona.Click
         Try
             Dim f As New FrmListarZona
             ' Dim f As New FrmProveedor_1
@@ -70,7 +70,7 @@
 
        
     End Sub
-    Private Sub btnTipo_Dcto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTipo_Dcto.Click
+    Private Sub btnTipo_Dcto_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTipo_Dcto.Click
         Try
             Dim f As New FrmListarTipo_Dcto
             ' Dim f As New FrmProveedor_1
@@ -154,14 +154,14 @@
         saltar_Flechas(e)
     End Sub
    
-    Private Sub nro_doc_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nro_doc.KeyPress
+    Private Sub nro_doc_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nro_doc.KeyPress
         SoloNumeros(e, False, sender.Text)
     End Sub
 
 
 #End Region
 
-    Private Sub btnaceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = nombre.Text <> ""

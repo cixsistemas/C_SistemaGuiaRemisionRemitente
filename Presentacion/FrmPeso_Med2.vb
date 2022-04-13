@@ -62,7 +62,7 @@ Public Class FrmPeso_Med2
     End Sub
 
 
-    Private Sub FrmPeso_Med22_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmPeso_Med22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         txtbusca.Focus()
@@ -97,7 +97,7 @@ Public Class FrmPeso_Med2
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea guardar Constancia de Verificacion de Pesos y Medidas?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -171,7 +171,7 @@ Public Class FrmPeso_Med2
 
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Constancia de Verificacion de Pesos y Medidas", "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -285,7 +285,7 @@ Public Class FrmPeso_Med2
         lista(Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Constancia de Verificacion de Pesos y Medidas", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -329,12 +329,12 @@ Public Class FrmPeso_Med2
         lista(Nothing)
     End Sub
 
-    Private Sub btncerrar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btncerrar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
 
-    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Dim FORMULARIO2 As New FrmOpcImpPes_Med1
         FORMULARIO2.ShowDialog()
 
@@ -377,11 +377,11 @@ Public Class FrmPeso_Med2
         End If
     End Sub
 
-    Private Sub txtbusca_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtbusca.KeyPress
+    Private Sub txtbusca_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtbusca.KeyPress
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
         'SoloNumeros(e, False, sender.Text)
     End Sub

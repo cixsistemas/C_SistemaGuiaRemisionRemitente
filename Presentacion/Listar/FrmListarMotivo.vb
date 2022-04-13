@@ -63,7 +63,7 @@ Public Class FrmListarMotivo
         End If
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 
@@ -80,11 +80,11 @@ Public Class FrmListarMotivo
         End If
     End Sub
 
-    Private Sub FrmListarMotivo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarMotivo_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
     End Sub
 

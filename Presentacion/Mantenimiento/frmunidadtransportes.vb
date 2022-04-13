@@ -90,7 +90,7 @@ Public Class frmunidadtransportes
     End Sub
 
 
-    Private Sub frmunidadtransportess_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmunidadtransportess_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(6, Nothing)
         rbplac_Rem.Checked = True
@@ -132,7 +132,7 @@ Public Class frmunidadtransportes
             e.CellStyle.BackColor = Color.LightYellow
         End If
     End Sub
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         'Me.formulario.lista_emptransporte(3)
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
@@ -213,7 +213,7 @@ Public Class frmunidadtransportes
         lista(6, Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione unidad de transporte", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -337,7 +337,7 @@ Public Class frmunidadtransportes
         lista(6, Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione unidad de transporte", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -397,7 +397,7 @@ Public Class frmunidadtransportes
         lista(6, Nothing)
     End Sub
 
-    Private Sub btnImprimir_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_UNIDAD_TRANSPORTES"
         f.Tabla_Imprimir = tabla_unidadtransportes
@@ -405,7 +405,7 @@ Public Class frmunidadtransportes
         f.ShowDialog()
     End Sub
 
-    Private Sub btnCerrar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
     'Private Sub txtbusca_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtbusca.KeyPress
@@ -419,7 +419,7 @@ Public Class frmunidadtransportes
         saltar_Flechas(e)
     End Sub
 
-    Private Sub txtbusca_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
 
         If rbEmpresa.Checked = True Then
@@ -437,32 +437,32 @@ Public Class frmunidadtransportes
 
         End If
     End Sub
-    Private Sub RbTodos_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
     End Sub
 
-    Private Sub rbEmpresa_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbEmpresa.CheckedChanged
+    Private Sub rbEmpresa_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbEmpresa.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbmar_rem_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbmar_rem.CheckedChanged
+    Private Sub rbmar_rem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbmar_rem.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbplac_Rem_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbplac_Rem.CheckedChanged
+    Private Sub rbplac_Rem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbplac_Rem.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbMar_Semi_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RbMar_Semi.CheckedChanged
+    Private Sub RbMar_Semi_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbMar_Semi.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RbPlac_Sem.CheckedChanged
+    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbPlac_Sem.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub

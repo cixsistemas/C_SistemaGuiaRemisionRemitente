@@ -25,12 +25,12 @@ Public Class frmguia
         Hide()
     End Sub
 
-    Private Sub frmguia_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmguia_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'lista(7)
     End Sub
 
-    Private Sub BtnMotivo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnMotivo.Click
+    Private Sub BtnMotivo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnMotivo.Click
         Try
             Dim f As New FrmListarMotivo
             f.ShowDialog()
@@ -53,7 +53,7 @@ Public Class frmguia
             TxtIGV.Enabled = True
         End If
     End Sub
-    Private Sub btnremitente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnremitente.Click
+    Private Sub btnremitente_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnremitente.Click
 
         Try
             Dim f As New frmListarRemitentes
@@ -76,7 +76,7 @@ Public Class frmguia
         End Try
         fecha_emision_guia.Focus()
     End Sub
-    Private Sub btnChofer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChofer.Click
+    Private Sub btnChofer_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnChofer.Click
         Try
             Dim f As New FrmListarChofer
             f.ShowDialog()
@@ -95,7 +95,7 @@ Public Class frmguia
         Nro_constancia_deposito.Focus()
     End Sub
 
-    Private Sub btnProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProducto.Click
+    Private Sub btnProducto_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnProducto.Click
         Try
             Dim f As New FrmListarProducto
             f.ShowDialog()
@@ -118,7 +118,7 @@ Public Class frmguia
         cantidad_sacos.Focus()
     End Sub
 
-    Private Sub btnptopartida_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnptopartida.Click
+    Private Sub btnptopartida_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnptopartida.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -141,7 +141,7 @@ Public Class frmguia
         direccion_pto_llegadaa.Focus()
     End Sub
 
-    Private Sub btnptollegada_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnptollegada.Click
+    Private Sub btnptollegada_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnptollegada.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -164,7 +164,7 @@ Public Class frmguia
         btnDestinatario.Focus()
     End Sub
 
-    Private Sub btnDestinatario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDestinatario.Click
+    Private Sub btnDestinatario_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDestinatario.Click
         Try
             Dim f As New frmListardestinatarios
             f.ShowDialog()
@@ -189,7 +189,7 @@ Public Class frmguia
         btnTransporte.Focus()
     End Sub
 
-    Private Sub btnTransporte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTransporte.Click
+    Private Sub btnTransporte_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTransporte.Click
         Try
             Dim f As New FrmListarUnidTransp
             f.ShowDialog()
@@ -224,7 +224,7 @@ Public Class frmguia
         btnChofer.Focus()
     End Sub
 
-    Private Sub btnAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
 
         If operacion = "" Then
             MessageBox.Show("Seleccione nuevo ó editar.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -319,7 +319,7 @@ Public Class frmguia
         TxtIGV.Text = "0"
     End Sub
 
-    Private Sub btnnuevo_examen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnnuevo_examen.Click
+    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnnuevo_examen.Click
         operacion = "N"
         indice = -1
         activar2(True)
@@ -327,7 +327,7 @@ Public Class frmguia
         btnProducto.Focus()
     End Sub
 
-    Private Sub btneditar_hpm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneditar_hpm.Click
+    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btneditar_hpm.Click
 
         If indice = -1 Then
             MessageBox.Show("Seleccione producto para editarlo", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -357,7 +357,7 @@ Public Class frmguia
 
     End Sub
 
-    Private Sub btnquitar_hpm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnquitar_hpm.Click
+    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnquitar_hpm.Click
         If check_fila_grilla(Detalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -389,7 +389,7 @@ Public Class frmguia
         btnAgregar.Enabled = activa
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
 
         Dim ok As Boolean
 
@@ -494,12 +494,12 @@ Public Class frmguia
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub dgvmotivo_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvmotivo.CellContentClick
+    Private Sub dgvmotivo_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvmotivo.CellContentClick
         seleciona_solo_una_fila_grilla(sender)
     End Sub
 
@@ -585,44 +585,44 @@ Public Class frmguia
     Private Sub Nro_licencia_conductor_Enter1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_licencia_conductor.Enter
         Nro_licencia_conductor.BackColor = Color.Moccasin
     End Sub
-    Private Sub serie_guia_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles serie_guia.KeyPress
+    Private Sub serie_guia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles serie_guia.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub nro_guia_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nro_guia.KeyPress
+    Private Sub nro_guia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nro_guia.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub fecha_emision_guia_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles fecha_emision_guia.KeyPress
+    Private Sub fecha_emision_guia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles fecha_emision_guia.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub fecha_inicio_traslado_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles fecha_inicio_traslado.KeyPress
+    Private Sub fecha_inicio_traslado_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles fecha_inicio_traslado.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub direccion_pto_partida_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles direccion_pto_partida.KeyPress
+    Private Sub direccion_pto_partida_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles direccion_pto_partida.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub direccion_pto_llegada_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub direccion_pto_llegada_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
         saltar_ENTER(e)
     End Sub
-    Private Sub Nro_constancia_deposito_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Nro_constancia_deposito.KeyPress
+    Private Sub Nro_constancia_deposito_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Nro_constancia_deposito.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub Monto_deposito_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Monto_deposito.KeyPress
+    Private Sub Monto_deposito_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Monto_deposito.KeyPress
         SoloNumeros(e, True, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub Nro_constancia_deposito2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Nro_constancia_deposito2.KeyPress
+    Private Sub Nro_constancia_deposito2_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Nro_constancia_deposito2.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub Monto_deposito2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Monto_deposito2.KeyPress
+    Private Sub Monto_deposito2_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Monto_deposito2.KeyPress
         SoloNumeros(e, True, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub dgvmotivo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles dgvmotivo.KeyPress
+    Private Sub dgvmotivo_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dgvmotivo.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub cantidad_sacos_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cantidad_sacos.KeyPress
+    Private Sub cantidad_sacos_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles cantidad_sacos.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
@@ -641,7 +641,7 @@ Public Class frmguia
 
     End Sub
 
-    Private Sub direccion_pto_llegadaa_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles direccion_pto_llegadaa.KeyPress
+    Private Sub direccion_pto_llegadaa_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles direccion_pto_llegadaa.KeyPress
         saltar_ENTER(e)
         e.KeyChar = UCase(e.KeyChar)
     End Sub
@@ -654,7 +654,7 @@ Public Class frmguia
         TxtPrec_Venta.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub TxtPrec_Venta_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtPrec_Venta.KeyPress
+    Private Sub TxtPrec_Venta_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles TxtPrec_Venta.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -666,7 +666,7 @@ Public Class frmguia
         TxtIGV.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub TxtIGV_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtIGV.KeyPress
+    Private Sub TxtIGV_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles TxtIGV.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -675,7 +675,7 @@ Public Class frmguia
     End Sub
 
    
-    Private Sub TxtIGV_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtIGV.TextChanged
+    Private Sub TxtIGV_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtIGV.TextChanged
 
     End Sub
 End Class

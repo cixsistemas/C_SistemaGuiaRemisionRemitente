@@ -22,7 +22,7 @@
         End If
     End Sub
 
-    Private Sub FrmTipo_Dcto_2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmTipo_Dcto_2_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Me.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -42,7 +42,7 @@
     '    saltar_ENTER(e)
     'End Sub
 
-    Private Sub TxtNombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtNombre.TextChanged
+    Private Sub TxtNombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtNombre.TextChanged
         valida()
     End Sub
 
@@ -67,7 +67,7 @@
 
     'End Sub
 
-    Private Sub TxtDescrip_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtDescrip.TextChanged
+    Private Sub TxtDescrip_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDescrip.TextChanged
         valida()
     End Sub
 
@@ -75,7 +75,7 @@
         valida()
     End Sub
 
-    Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
+    Private Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
         Dim ok As Boolean
 
         ok = TxtCodigo.Text <> ""
@@ -97,7 +97,7 @@
     End Sub
 
 
-    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -124,14 +124,14 @@
     Private Sub TxtSiglas_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtSiglas.Leave
         TxtSiglas.BackColor = Color.White
     End Sub
-    Private Sub TxtCodigo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtCodigo.TextChanged
+    Private Sub TxtCodigo_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.TextChanged
         valida()
     End Sub
 
     Private Sub TxtCodigo_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.VisibleChanged
         valida()
     End Sub
-    Private Sub FrmTipo_Dcto_2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTipo_Dcto_2_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

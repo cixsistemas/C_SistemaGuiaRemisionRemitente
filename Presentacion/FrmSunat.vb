@@ -9,7 +9,7 @@ Public Class FrmSunat
     Dim xRazSocY As Long, xEstY As Long, xConY As Long, xDirY As Long
 
 
-    Private Sub btnConsultar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
+    Private Sub btnConsultar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
         If Trim(txtRuc.Text) = "" Then
             MsgBox("Ingrese número del RUC")
             txtRuc.Focus()
@@ -246,7 +246,7 @@ Public Class FrmSunat
         xWml = Nothing
     End Sub
 
-    Private Sub btnlimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlimpiar.Click
+    Private Sub btnlimpiar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnlimpiar.Click
         Limpiar()
         txtRuc.Text = ""
         txtRuc.Focus()
@@ -260,7 +260,7 @@ Public Class FrmSunat
     End Sub
 
 
-    Private Sub txtRuc_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRuc.KeyPress
+    Private Sub txtRuc_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtRuc.KeyPress
         SoloNumeros(e, False, sender.Text)
        saltar_ENTER(e)
     End Sub

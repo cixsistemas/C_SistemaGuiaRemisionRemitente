@@ -71,7 +71,7 @@ Public Class frmproducto
 
     End Sub
 
-    Private Sub frmproducto_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmproducto_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
 
@@ -80,25 +80,25 @@ Public Class frmproducto
         'lista_envasado(10)
     End Sub
 
-    Private Sub prod_nom_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles prod_nom.TextChanged
+    Private Sub prod_nom_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles prod_nom.TextChanged
         valida()
     End Sub
     Private Sub prod_nom_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles prod_nom.VisibleChanged
         valida()
     End Sub
-    Private Sub prod_peso_uni_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles prod_peso_uni.TextChanged
+    Private Sub prod_peso_uni_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles prod_peso_uni.TextChanged
         valida()
     End Sub
     Private Sub prod_peso_uni_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles prod_peso_uni.VisibleChanged
         valida()
     End Sub
-    Private Sub prod_color_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles prod_color.TextChanged
+    Private Sub prod_color_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles prod_color.TextChanged
         valida()
     End Sub
     Private Sub prod_color_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles prod_color.VisibleChanged
         valida()
     End Sub
-    Private Sub cbocategoria_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbocategoria.SelectedIndexChanged
+    Private Sub cbocategoria_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbocategoria.SelectedIndexChanged
         valida()
     End Sub
 
@@ -106,11 +106,11 @@ Public Class frmproducto
         valida()
     End Sub
 
-    Private Sub cbologotipo_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub cbologotipo_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
         valida()
     End Sub
 
-    Private Sub cboenvasado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboenvasado.SelectedIndexChanged
+    Private Sub cboenvasado_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboenvasado.SelectedIndexChanged
         valida()
     End Sub
 
@@ -118,7 +118,7 @@ Public Class frmproducto
         valida()
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = id_logo <> -1
@@ -170,7 +170,7 @@ Public Class frmproducto
         'Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -181,20 +181,20 @@ Public Class frmproducto
             Close()
         End If
     End Sub
-    Private Sub prod_nom_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles prod_nom.KeyPress
+    Private Sub prod_nom_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles prod_nom.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub prod_peso_uni_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles prod_peso_uni.KeyPress
+    Private Sub prod_peso_uni_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles prod_peso_uni.KeyPress
         SoloNumeros(e, True, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub cbocategoria_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cbocategoria.KeyPress
+    Private Sub cbocategoria_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles cbocategoria.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub cboenvasado_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cboenvasado.KeyPress
+    Private Sub cboenvasado_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles cboenvasado.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub prod_color_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles prod_color.KeyPress
+    Private Sub prod_color_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles prod_color.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -227,14 +227,14 @@ Public Class frmproducto
 
     End Sub
 
-    Private Sub Nombre_Com_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Nombre_Com.KeyPress
+    Private Sub Nombre_Com_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Nombre_Com.KeyPress
         saltar_ENTER(e)
     End Sub
 
     Private Sub Nombre_Com_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nombre_Com.Leave
         Nombre_Com.BackColor = Color.White
     End Sub
-    Private Sub btnlogotipo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogotipo.Click
+    Private Sub btnlogotipo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnlogotipo.Click
         Try
             Dim f As New FrmListarLogo
             f.ShowDialog()
@@ -258,7 +258,7 @@ Public Class frmproducto
         '  Descripcion.Focus()
     End Sub
 
-    Private Sub Nombre_Com_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Nombre_Com.TextChanged
+    Private Sub Nombre_Com_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nombre_Com.TextChanged
 
     End Sub
 End Class

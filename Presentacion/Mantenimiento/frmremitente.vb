@@ -23,7 +23,7 @@ Public Class frmremitente
         saltar_Flechas(e)
     End Sub
 
-    Private Sub nombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
+    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
         valida()
     End Sub
 
@@ -35,7 +35,7 @@ Public Class frmremitente
         saltar_Flechas(e)
     End Sub
 
-    Private Sub ruc_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ruc.TextChanged
+    Private Sub ruc_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ruc.TextChanged
         valida()
     End Sub
 
@@ -47,7 +47,7 @@ Public Class frmremitente
         saltar_Flechas(e)
     End Sub
     'ingreso nuevo
-    Private Sub direccion_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles direccion.TextChanged
+    Private Sub direccion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion.TextChanged
         valida()
     End Sub
     Private Sub direccion_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion.VisibleChanged
@@ -57,14 +57,14 @@ Public Class frmremitente
     Private Sub descripcion_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles descripcion.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub descripcion_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles descripcion.TextChanged
+    Private Sub descripcion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.TextChanged
         valida()
     End Sub
     Private Sub descripcion_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.VisibleChanged
         valida()
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
         ok = id_ubigeo <> -1
         If (ok = False) Then
@@ -77,7 +77,7 @@ Public Class frmremitente
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -89,7 +89,7 @@ Public Class frmremitente
         End If
     End Sub
 
-    Private Sub btnptollegada_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnptollegada.Click
+    Private Sub btnptollegada_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnptollegada.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -111,17 +111,17 @@ Public Class frmremitente
         End Try
         descripcion.Focus()
     End Sub
-    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nombre.KeyPress
+    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nombre.KeyPress
        saltar_ENTER(e)
     End Sub
-    Private Sub ruc_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ruc.KeyPress
+    Private Sub ruc_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles ruc.KeyPress
         SoloNumeros(e, False, sender.Text)
        saltar_ENTER(e)
     End Sub
-    Private Sub direccion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles direccion.KeyPress
+    Private Sub direccion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles direccion.KeyPress
        saltar_ENTER(e)
     End Sub
-    Private Sub descripcion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles descripcion.KeyPress
+    Private Sub descripcion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles descripcion.KeyPress
        saltar_ENTER(e)
     End Sub
     Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter
@@ -157,7 +157,7 @@ Public Class frmremitente
         saltar_Flechas(e)
     End Sub
 
-    Private Sub txtCuenta_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCuenta.KeyPress
+    Private Sub txtCuenta_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtCuenta.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -165,7 +165,7 @@ Public Class frmremitente
         txtCuenta.BackColor = Color.White
     End Sub
 
-    Private Sub txtCuenta_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCuenta.TextChanged
+    Private Sub txtCuenta_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCuenta.TextChanged
 
     End Sub
 End Class

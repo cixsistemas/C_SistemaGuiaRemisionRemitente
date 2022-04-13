@@ -187,10 +187,11 @@ Public Class FMenuGuia
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.DarkSeaGreen
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 454)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 448)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(921, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(921, 28)
         Me.StatusStrip1.TabIndex = 35
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -198,19 +199,19 @@ Public Class FMenuGuia
         '
         Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(0, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(0, 23)
         '
         'ToolStripStatusLabel2
         '
         Me.ToolStripStatusLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(123, 17)
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(155, 23)
         Me.ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
         '
         'ToolStripStatusLabel3
         '
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(259, 17)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(338, 23)
         Me.ToolStripStatusLabel3.Text = "                        ><))))°> ... o0O ... <°))))><"
         '
         'Timer1
@@ -222,10 +223,11 @@ Public Class FMenuGuia
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Symbol", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ToolStripSeparator2, Me.MantenimienttoToolStripMenuItem, Me.ToolStripSeparator1, Me.ReportesToolStripMenuItem, Me.ToolStripSeparator3, Me.UtilidadToolStripMenuItem, Me.ToolStripSeparator6, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(921, 27)
+        Me.MenuStrip1.Size = New System.Drawing.Size(921, 31)
         Me.MenuStrip1.TabIndex = 60
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -234,92 +236,92 @@ Public Class FMenuGuia
         Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagoDeDetraccionToolStripMenuItem, Me.ToolStripSeparator10, Me.MenuPrincipalToolStripMenuItem, Me.PesoMedidaToolStripMenuItem, Me.NotaDeEnvioToolStripMenuItem, Me.ToolStripSeparator15, Me.FacturaToolStripMenuItem, Me.EnvioDeComprobantesDePagoToolStripMenuItem, Me.DevoluciónDeComprobantesDePagoToolStripMenuItem, Me.ToolStripSeparator7, Me.SalirToolStripMenuItem})
         Me.SistemaToolStripMenuItem.Image = CType(resources.GetObject("SistemaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SistemaToolStripMenuItem.Name = "SistemaToolStripMenuItem"
-        Me.SistemaToolStripMenuItem.Size = New System.Drawing.Size(118, 23)
+        Me.SistemaToolStripMenuItem.Size = New System.Drawing.Size(148, 27)
         Me.SistemaToolStripMenuItem.Text = "&Transacciones"
         '
         'PagoDeDetraccionToolStripMenuItem
         '
         Me.PagoDeDetraccionToolStripMenuItem.Image = CType(resources.GetObject("PagoDeDetraccionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PagoDeDetraccionToolStripMenuItem.Name = "PagoDeDetraccionToolStripMenuItem"
-        Me.PagoDeDetraccionToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.PagoDeDetraccionToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.PagoDeDetraccionToolStripMenuItem.Text = "&Pago de Detracción"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-        Me.ToolStripSeparator10.Size = New System.Drawing.Size(300, 6)
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(378, 6)
         '
         'MenuPrincipalToolStripMenuItem
         '
         Me.MenuPrincipalToolStripMenuItem.Image = CType(resources.GetObject("MenuPrincipalToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MenuPrincipalToolStripMenuItem.Name = "MenuPrincipalToolStripMenuItem"
-        Me.MenuPrincipalToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.MenuPrincipalToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.MenuPrincipalToolStripMenuItem.Text = "&Guia de Remisión-Remitente"
         '
         'PesoMedidaToolStripMenuItem
         '
         Me.PesoMedidaToolStripMenuItem.Image = CType(resources.GetObject("PesoMedidaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PesoMedidaToolStripMenuItem.Name = "PesoMedidaToolStripMenuItem"
-        Me.PesoMedidaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.PesoMedidaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.PesoMedidaToolStripMenuItem.Text = "&Pesos y Medidas"
         '
         'NotaDeEnvioToolStripMenuItem
         '
         Me.NotaDeEnvioToolStripMenuItem.Image = CType(resources.GetObject("NotaDeEnvioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NotaDeEnvioToolStripMenuItem.Name = "NotaDeEnvioToolStripMenuItem"
-        Me.NotaDeEnvioToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.NotaDeEnvioToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.NotaDeEnvioToolStripMenuItem.Text = "&Nota de envio"
         '
         'ToolStripSeparator15
         '
         Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
-        Me.ToolStripSeparator15.Size = New System.Drawing.Size(300, 6)
+        Me.ToolStripSeparator15.Size = New System.Drawing.Size(378, 6)
         '
         'FacturaToolStripMenuItem
         '
         Me.FacturaToolStripMenuItem.Image = CType(resources.GetObject("FacturaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FacturaToolStripMenuItem.Name = "FacturaToolStripMenuItem"
-        Me.FacturaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.FacturaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.FacturaToolStripMenuItem.Text = "&Ingreso de Comprobantes de Pago"
         '
         'EnvioDeComprobantesDePagoToolStripMenuItem
         '
         Me.EnvioDeComprobantesDePagoToolStripMenuItem.Image = CType(resources.GetObject("EnvioDeComprobantesDePagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EnvioDeComprobantesDePagoToolStripMenuItem.Name = "EnvioDeComprobantesDePagoToolStripMenuItem"
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.EnvioDeComprobantesDePagoToolStripMenuItem.Text = "&Envio de Comprobantes de Pago"
         '
         'DevoluciónDeComprobantesDePagoToolStripMenuItem
         '
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Image = CType(resources.GetObject("DevoluciónDeComprobantesDePagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Name = "DevoluciónDeComprobantesDePagoToolStripMenuItem"
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Text = "&Devolución de Comprobantes de Pago"
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(300, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(378, 6)
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.SalirToolStripMenuItem.Text = "&Salir"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 23)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 27)
         '
         'MantenimienttoToolStripMenuItem
         '
         Me.MantenimienttoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductoToolStripMenuItem, Me.ToolStripSeparator4, Me.UnidadDeTransporteToolStripMenuItem, Me.ToolStripSeparator8, Me.DestinatarioToolStripMenuItem, Me.RemitenteToolStripMenuItem, Me.ToolStripSeparator9, Me.TrabajadorToolStripMenuItem, Me.ToolStripSeparator5, Me.ClienteToolStripMenuItem, Me.ToolStripSeparator14, Me.ComisionistaToolStripMenuItem, Me.ToolStripSeparator13, Me.ZonaToolStripMenuItem, Me.UbigeoToolStripMenuItem, Me.TipoDeOperacionToolStripMenuItem, Me.ToolStripSeparator12, Me.TablasSunatToolStripMenuItem})
         Me.MantenimienttoToolStripMenuItem.Image = CType(resources.GetObject("MantenimienttoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MantenimienttoToolStripMenuItem.Name = "MantenimienttoToolStripMenuItem"
-        Me.MantenimienttoToolStripMenuItem.Size = New System.Drawing.Size(123, 23)
+        Me.MantenimienttoToolStripMenuItem.Size = New System.Drawing.Size(159, 27)
         Me.MantenimienttoToolStripMenuItem.Text = "&Mantenimiento"
         '
         'ProductoToolStripMenuItem
@@ -327,333 +329,333 @@ Public Class FMenuGuia
         Me.ProductoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductoToolStripMenuItem1, Me.EnvaseToolStripMenuItem1, Me.EnvaseToolStripMenuItem2, Me.CategoriaToolStripMenuItem1})
         Me.ProductoToolStripMenuItem.Image = CType(resources.GetObject("ProductoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
-        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.ProductoToolStripMenuItem.Text = "&Producto"
         '
         'ProductoToolStripMenuItem1
         '
         Me.ProductoToolStripMenuItem1.Name = "ProductoToolStripMenuItem1"
-        Me.ProductoToolStripMenuItem1.Size = New System.Drawing.Size(133, 22)
+        Me.ProductoToolStripMenuItem1.Size = New System.Drawing.Size(160, 28)
         Me.ProductoToolStripMenuItem1.Text = "&Producto"
         '
         'EnvaseToolStripMenuItem1
         '
         Me.EnvaseToolStripMenuItem1.Name = "EnvaseToolStripMenuItem1"
-        Me.EnvaseToolStripMenuItem1.Size = New System.Drawing.Size(133, 22)
+        Me.EnvaseToolStripMenuItem1.Size = New System.Drawing.Size(160, 28)
         Me.EnvaseToolStripMenuItem1.Text = "&Logotipo"
         '
         'EnvaseToolStripMenuItem2
         '
         Me.EnvaseToolStripMenuItem2.Name = "EnvaseToolStripMenuItem2"
-        Me.EnvaseToolStripMenuItem2.Size = New System.Drawing.Size(133, 22)
+        Me.EnvaseToolStripMenuItem2.Size = New System.Drawing.Size(160, 28)
         Me.EnvaseToolStripMenuItem2.Text = "&Envase"
         '
         'CategoriaToolStripMenuItem1
         '
         Me.CategoriaToolStripMenuItem1.Name = "CategoriaToolStripMenuItem1"
-        Me.CategoriaToolStripMenuItem1.Size = New System.Drawing.Size(133, 22)
+        Me.CategoriaToolStripMenuItem1.Size = New System.Drawing.Size(160, 28)
         Me.CategoriaToolStripMenuItem1.Text = "&Categoria"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(224, 6)
         '
         'UnidadDeTransporteToolStripMenuItem
         '
         Me.UnidadDeTransporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransportistaToolStripMenuItem1, Me.UnidadDeTransporteToolStripMenuItem1, Me.ChoferToolStripMenuItem1})
         Me.UnidadDeTransporteToolStripMenuItem.Image = CType(resources.GetObject("UnidadDeTransporteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UnidadDeTransporteToolStripMenuItem.Name = "UnidadDeTransporteToolStripMenuItem"
-        Me.UnidadDeTransporteToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.UnidadDeTransporteToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.UnidadDeTransporteToolStripMenuItem.Text = "Transporte"
         '
         'TransportistaToolStripMenuItem1
         '
         Me.TransportistaToolStripMenuItem1.Name = "TransportistaToolStripMenuItem1"
-        Me.TransportistaToolStripMenuItem1.Size = New System.Drawing.Size(205, 22)
+        Me.TransportistaToolStripMenuItem1.Size = New System.Drawing.Size(252, 28)
         Me.TransportistaToolStripMenuItem1.Text = "&Transportista"
         '
         'UnidadDeTransporteToolStripMenuItem1
         '
         Me.UnidadDeTransporteToolStripMenuItem1.Name = "UnidadDeTransporteToolStripMenuItem1"
-        Me.UnidadDeTransporteToolStripMenuItem1.Size = New System.Drawing.Size(205, 22)
+        Me.UnidadDeTransporteToolStripMenuItem1.Size = New System.Drawing.Size(252, 28)
         Me.UnidadDeTransporteToolStripMenuItem1.Text = "&Unidad de Transporte"
         '
         'ChoferToolStripMenuItem1
         '
         Me.ChoferToolStripMenuItem1.Name = "ChoferToolStripMenuItem1"
-        Me.ChoferToolStripMenuItem1.Size = New System.Drawing.Size(205, 22)
+        Me.ChoferToolStripMenuItem1.Size = New System.Drawing.Size(252, 28)
         Me.ChoferToolStripMenuItem1.Text = "&Chofer"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(224, 6)
         '
         'DestinatarioToolStripMenuItem
         '
         Me.DestinatarioToolStripMenuItem.Image = CType(resources.GetObject("DestinatarioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DestinatarioToolStripMenuItem.Name = "DestinatarioToolStripMenuItem"
-        Me.DestinatarioToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.DestinatarioToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.DestinatarioToolStripMenuItem.Text = "&Destinatario"
         '
         'RemitenteToolStripMenuItem
         '
         Me.RemitenteToolStripMenuItem.Image = CType(resources.GetObject("RemitenteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RemitenteToolStripMenuItem.Name = "RemitenteToolStripMenuItem"
-        Me.RemitenteToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.RemitenteToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.RemitenteToolStripMenuItem.Text = "&Remitente"
         '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(224, 6)
         '
         'TrabajadorToolStripMenuItem
         '
         Me.TrabajadorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrabajadorToolStripMenuItem1, Me.TipoDeTrabajadorToolStripMenuItem1})
         Me.TrabajadorToolStripMenuItem.Image = CType(resources.GetObject("TrabajadorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TrabajadorToolStripMenuItem.Name = "TrabajadorToolStripMenuItem"
-        Me.TrabajadorToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.TrabajadorToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.TrabajadorToolStripMenuItem.Text = "&Trabajador"
         '
         'TrabajadorToolStripMenuItem1
         '
         Me.TrabajadorToolStripMenuItem1.Name = "TrabajadorToolStripMenuItem1"
-        Me.TrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(190, 22)
+        Me.TrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(230, 28)
         Me.TrabajadorToolStripMenuItem1.Text = "&Trabajador"
         '
         'TipoDeTrabajadorToolStripMenuItem1
         '
         Me.TipoDeTrabajadorToolStripMenuItem1.Name = "TipoDeTrabajadorToolStripMenuItem1"
-        Me.TipoDeTrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(190, 22)
+        Me.TipoDeTrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(230, 28)
         Me.TipoDeTrabajadorToolStripMenuItem1.Text = "&Tipo de Trabajador"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(224, 6)
         '
         'ClienteToolStripMenuItem
         '
         Me.ClienteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem1, Me.TipoDeClienteToolStripMenuItem1})
         Me.ClienteToolStripMenuItem.Image = CType(resources.GetObject("ClienteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
-        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.ClienteToolStripMenuItem.Text = "&Cliente"
         '
         'ClienteToolStripMenuItem1
         '
         Me.ClienteToolStripMenuItem1.Name = "ClienteToolStripMenuItem1"
-        Me.ClienteToolStripMenuItem1.Size = New System.Drawing.Size(164, 22)
+        Me.ClienteToolStripMenuItem1.Size = New System.Drawing.Size(201, 28)
         Me.ClienteToolStripMenuItem1.Text = "&Cliente"
         '
         'TipoDeClienteToolStripMenuItem1
         '
         Me.TipoDeClienteToolStripMenuItem1.Name = "TipoDeClienteToolStripMenuItem1"
-        Me.TipoDeClienteToolStripMenuItem1.Size = New System.Drawing.Size(164, 22)
+        Me.TipoDeClienteToolStripMenuItem1.Size = New System.Drawing.Size(201, 28)
         Me.TipoDeClienteToolStripMenuItem1.Text = "&Tipo de Cliente"
         '
         'ToolStripSeparator14
         '
         Me.ToolStripSeparator14.Name = "ToolStripSeparator14"
-        Me.ToolStripSeparator14.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator14.Size = New System.Drawing.Size(224, 6)
         '
         'ComisionistaToolStripMenuItem
         '
         Me.ComisionistaToolStripMenuItem.Image = CType(resources.GetObject("ComisionistaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ComisionistaToolStripMenuItem.Name = "ComisionistaToolStripMenuItem"
-        Me.ComisionistaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ComisionistaToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.ComisionistaToolStripMenuItem.Text = "&Comisionista"
         '
         'ToolStripSeparator13
         '
         Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
-        Me.ToolStripSeparator13.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator13.Size = New System.Drawing.Size(224, 6)
         '
         'ZonaToolStripMenuItem
         '
         Me.ZonaToolStripMenuItem.Image = CType(resources.GetObject("ZonaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ZonaToolStripMenuItem.Name = "ZonaToolStripMenuItem"
-        Me.ZonaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ZonaToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.ZonaToolStripMenuItem.Text = "&Zona"
         '
         'UbigeoToolStripMenuItem
         '
         Me.UbigeoToolStripMenuItem.Image = CType(resources.GetObject("UbigeoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UbigeoToolStripMenuItem.Name = "UbigeoToolStripMenuItem"
-        Me.UbigeoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.UbigeoToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.UbigeoToolStripMenuItem.Text = "&Ubigeo"
         '
         'TipoDeOperacionToolStripMenuItem
         '
         Me.TipoDeOperacionToolStripMenuItem.Image = CType(resources.GetObject("TipoDeOperacionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TipoDeOperacionToolStripMenuItem.Name = "TipoDeOperacionToolStripMenuItem"
-        Me.TipoDeOperacionToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.TipoDeOperacionToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.TipoDeOperacionToolStripMenuItem.Text = "&Tipo de Operacion"
         '
         'ToolStripSeparator12
         '
         Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
-        Me.ToolStripSeparator12.Size = New System.Drawing.Size(183, 6)
+        Me.ToolStripSeparator12.Size = New System.Drawing.Size(224, 6)
         '
         'TablasSunatToolStripMenuItem
         '
         Me.TablasSunatToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem, Me.TipoDeComprobanteDePagoToolStripMenuItem1, Me.OperacionToolStripMenuItem})
         Me.TablasSunatToolStripMenuItem.Image = CType(resources.GetObject("TablasSunatToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TablasSunatToolStripMenuItem.Name = "TablasSunatToolStripMenuItem"
-        Me.TablasSunatToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.TablasSunatToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
         Me.TablasSunatToolStripMenuItem.Text = "&Tablas Sunat"
         '
         'TipoDeDctoDeIdentidadTabla2ToolStripMenuItem
         '
         Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Name = "TipoDeDctoDeIdentidadTabla2ToolStripMenuItem"
-        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Size = New System.Drawing.Size(321, 22)
+        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
         Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Text = "&Tipo de Dcto. de Identidad (Tabla 2)"
         '
         'TipoDeComprobanteDePagoToolStripMenuItem1
         '
         Me.TipoDeComprobanteDePagoToolStripMenuItem1.Name = "TipoDeComprobanteDePagoToolStripMenuItem1"
-        Me.TipoDeComprobanteDePagoToolStripMenuItem1.Size = New System.Drawing.Size(321, 22)
+        Me.TipoDeComprobanteDePagoToolStripMenuItem1.Size = New System.Drawing.Size(401, 28)
         Me.TipoDeComprobanteDePagoToolStripMenuItem1.Text = "&Tipo de Comprobante de Pago (Tabla 10)"
         '
         'OperacionToolStripMenuItem
         '
         Me.OperacionToolStripMenuItem.Name = "OperacionToolStripMenuItem"
-        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(321, 22)
+        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
         Me.OperacionToolStripMenuItem.Text = "&Operacion (Tabla 12)"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 23)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 27)
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturaVentaToolStripMenuItem, Me.FleteTransportistaToolStripMenuItem, Me.ControlGuiasFacturasToolStripMenuItem, Me.ToolStripSeparator16, Me.IngresoDeComprobantesDePagoToolStripMenuItem, Me.EnvioDeComprobantesDePagoToolStripMenuItem1, Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1, Me.ControlDeComprobantesDePagoToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Image = CType(resources.GetObject("ReportesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(89, 23)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(109, 27)
         Me.ReportesToolStripMenuItem.Text = "&Reportes"
         '
         'FacturaVentaToolStripMenuItem
         '
         Me.FacturaVentaToolStripMenuItem.Name = "FacturaVentaToolStripMenuItem"
-        Me.FacturaVentaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.FacturaVentaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.FacturaVentaToolStripMenuItem.Text = "&Envios x Remitente"
         '
         'FleteTransportistaToolStripMenuItem
         '
         Me.FleteTransportistaToolStripMenuItem.Name = "FleteTransportistaToolStripMenuItem"
-        Me.FleteTransportistaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.FleteTransportistaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.FleteTransportistaToolStripMenuItem.Text = "&Flete-Transportista"
         '
         'ControlGuiasFacturasToolStripMenuItem
         '
         Me.ControlGuiasFacturasToolStripMenuItem.Name = "ControlGuiasFacturasToolStripMenuItem"
-        Me.ControlGuiasFacturasToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.ControlGuiasFacturasToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.ControlGuiasFacturasToolStripMenuItem.Text = "&Facturas Enviadas "
         '
         'ToolStripSeparator16
         '
         Me.ToolStripSeparator16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripSeparator16.Name = "ToolStripSeparator16"
-        Me.ToolStripSeparator16.Size = New System.Drawing.Size(300, 6)
+        Me.ToolStripSeparator16.Size = New System.Drawing.Size(378, 6)
         '
         'IngresoDeComprobantesDePagoToolStripMenuItem
         '
         Me.IngresoDeComprobantesDePagoToolStripMenuItem.Name = "IngresoDeComprobantesDePagoToolStripMenuItem"
-        Me.IngresoDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.IngresoDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.IngresoDeComprobantesDePagoToolStripMenuItem.Text = "&Ingreso de Comprobantes de Pago"
         '
         'EnvioDeComprobantesDePagoToolStripMenuItem1
         '
         Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Name = "EnvioDeComprobantesDePagoToolStripMenuItem1"
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(303, 22)
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(381, 28)
         Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Text = "&Envio de Comprobantes de Pago"
         '
         'DevoluciónDeComprobantesDePagoToolStripMenuItem1
         '
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Name = "DevoluciónDeComprobantesDePagoToolStripMenuItem1"
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(303, 22)
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(381, 28)
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Text = "&Devolución de Comprobantes de Pago"
         '
         'ControlDeComprobantesDePagoToolStripMenuItem
         '
         Me.ControlDeComprobantesDePagoToolStripMenuItem.ForeColor = System.Drawing.Color.Blue
         Me.ControlDeComprobantesDePagoToolStripMenuItem.Name = "ControlDeComprobantesDePagoToolStripMenuItem"
-        Me.ControlDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
+        Me.ControlDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
         Me.ControlDeComprobantesDePagoToolStripMenuItem.Text = "&Control de Comprobantes de Pago"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 23)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
         '
         'UtilidadToolStripMenuItem
         '
         Me.UtilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculadoraToolStripMenuItem, Me.DNIRENIECToolStripMenuItem, Me.SunatToolStripMenuItem})
         Me.UtilidadToolStripMenuItem.Image = CType(resources.GetObject("UtilidadToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UtilidadToolStripMenuItem.Name = "UtilidadToolStripMenuItem"
-        Me.UtilidadToolStripMenuItem.Size = New System.Drawing.Size(91, 23)
+        Me.UtilidadToolStripMenuItem.Size = New System.Drawing.Size(114, 27)
         Me.UtilidadToolStripMenuItem.Text = "&Utilitarios"
         '
         'CalculadoraToolStripMenuItem
         '
         Me.CalculadoraToolStripMenuItem.Image = CType(resources.GetObject("CalculadoraToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CalculadoraToolStripMenuItem.Name = "CalculadoraToolStripMenuItem"
-        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(180, 28)
         Me.CalculadoraToolStripMenuItem.Text = "&Calculadora"
         '
         'DNIRENIECToolStripMenuItem
         '
         Me.DNIRENIECToolStripMenuItem.Image = CType(resources.GetObject("DNIRENIECToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DNIRENIECToolStripMenuItem.Name = "DNIRENIECToolStripMenuItem"
-        Me.DNIRENIECToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.DNIRENIECToolStripMenuItem.Size = New System.Drawing.Size(180, 28)
         Me.DNIRENIECToolStripMenuItem.Text = "DNI-RENIEC"
         '
         'SunatToolStripMenuItem
         '
         Me.SunatToolStripMenuItem.Image = CType(resources.GetObject("SunatToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SunatToolStripMenuItem.Name = "SunatToolStripMenuItem"
-        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(180, 28)
         Me.SunatToolStripMenuItem.Text = "&Sunat"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 23)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 27)
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContenidoDelSistemaToolStripMenuItem, Me.ToolStripSeparator11, Me.AcercaDeToolStripMenuItem})
         Me.AyudaToolStripMenuItem.Image = CType(resources.GetObject("AyudaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(72, 23)
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(90, 27)
         Me.AyudaToolStripMenuItem.Text = "&Ayuda"
         '
         'ContenidoDelSistemaToolStripMenuItem
         '
         Me.ContenidoDelSistemaToolStripMenuItem.Image = CType(resources.GetObject("ContenidoDelSistemaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContenidoDelSistemaToolStripMenuItem.Name = "ContenidoDelSistemaToolStripMenuItem"
-        Me.ContenidoDelSistemaToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.ContenidoDelSistemaToolStripMenuItem.Size = New System.Drawing.Size(258, 28)
         Me.ContenidoDelSistemaToolStripMenuItem.Text = "&Contenido del Sistema"
         '
         'ToolStripSeparator11
         '
         Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
-        Me.ToolStripSeparator11.Size = New System.Drawing.Size(204, 6)
+        Me.ToolStripSeparator11.Size = New System.Drawing.Size(255, 6)
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(258, 28)
         Me.AcercaDeToolStripMenuItem.Text = "&Acerca de"
         '
         'FMenuGuia
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(7, 16)
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -665,7 +667,7 @@ Public Class FMenuGuia
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "FMenuGuia"
-        Me.Text = "SISTEMA DE EMISION"
+        Me.Text = "SISTEMA DE IMPRESION DE DOCUMENTOS"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
@@ -682,14 +684,14 @@ Public Class FMenuGuia
     'Dim cBita As New cBitacora
 
 
-    Private Sub FMenuBib_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FMenuBib_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         '    Me.Text = "SISTEMA DE GUIA DE REMISON-REMITENTE << CONTADOR -- " + cLec.Mostrar_Lector_Usuario(Usuario) + " >>"
 
         'Me.StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "dd/MM/yyyy")
         StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "LONG DATE")
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         ToolStripStatusLabel2.Text = "    Hora: " & TimeString
 
 
@@ -703,7 +705,7 @@ Public Class FMenuGuia
 
 
 
-    Private Sub BtnSesion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BtnSesion_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         'If MessageBox.Show("Esta seguro que desea cerrar sesión", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
         '  FechaIng = Format(Now, "dd/MM/yyyy hh:mm:ss")
         '  cBita.Registrar_Salida_Bitacora(FechaIng)
@@ -721,49 +723,49 @@ Public Class FMenuGuia
         'End If
     End Sub
 
-    Private Sub MenuPrincipalToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuPrincipalToolStripMenuItem.Click
+    Private Sub MenuPrincipalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuPrincipalToolStripMenuItem.Click
         Dim mRegPro As New frmguias
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub PesoMedidaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PesoMedidaToolStripMenuItem.Click
+    Private Sub PesoMedidaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PesoMedidaToolStripMenuItem.Click
         Dim FMantpeso_med As New FrmPeso_Med2
         FMantpeso_med.MdiParent = Me
         FMantpeso_med.Show()
     End Sub
 
-    Private Sub NotaDeEnvioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NotaDeEnvioToolStripMenuItem.Click
+    Private Sub NotaDeEnvioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotaDeEnvioToolStripMenuItem.Click
         Dim Fnot_paj As New FrmNota_ArroZ2
         Fnot_paj.MdiParent = Me
         Fnot_paj.Show()
     End Sub
 
-    Private Sub CategoriaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub CategoriaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub LogotipoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub LogotipoToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub ProductoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProductoToolStripMenuItem.Click
+    Private Sub ProductoToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ProductoToolStripMenuItem.Click
 
     End Sub
-    Private Sub EnvaseToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub EnvaseToolStripMenuItem_Click_1(ByVal sender As Object, ByVal e As System.EventArgs)
 
     End Sub
-    Private Sub TransportistaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub TransportistaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim mRegPro As New frmlemptransportes
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub UnidadDeTransporteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnidadDeTransporteToolStripMenuItem.Click
+    Private Sub UnidadDeTransporteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles UnidadDeTransporteToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub ChoferToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub ChoferToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim FMantchofer As New FrmChofer2
         FMantchofer.MdiParent = Me
         FMantchofer.Show()
@@ -781,30 +783,30 @@ Public Class FMenuGuia
     '    Fcuenta.Show()
     'End Sub
 
-    Private Sub DestinatarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestinatarioToolStripMenuItem.Click
+    Private Sub DestinatarioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DestinatarioToolStripMenuItem.Click
         Dim mRegPro As New frmmdestinario1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub RemitenteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemitenteToolStripMenuItem.Click
+    Private Sub RemitenteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles RemitenteToolStripMenuItem.Click
         Dim mRegPro As New frmlremitenteS
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub SunatToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SunatToolStripMenuItem.Click
+    Private Sub SunatToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SunatToolStripMenuItem.Click
         Dim FSunat As New FrmSunat
         FSunat.MdiParent = Me
         FSunat.Show()
     End Sub
 
-    Private Sub PagoDeDetraccionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PagoDeDetraccionToolStripMenuItem.Click
+    Private Sub PagoDeDetraccionToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PagoDeDetraccionToolStripMenuItem.Click
         Dim FPago As New FrmPago_Detra2
         FPago.MdiParent = Me
         FPago.Show()
     End Sub
-    Private Sub CalculadoraToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CalculadoraToolStripMenuItem.Click
+    Private Sub CalculadoraToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CalculadoraToolStripMenuItem.Click
         ''Dim FCalc As New FrmCalc
         ''FCalc.MdiParent = Me
         ''FCalc.Show()
@@ -815,204 +817,204 @@ Public Class FMenuGuia
         Process.Start(Application.StartupPath + "\\CCalc.exe")
     End Sub
 
-    Private Sub FacturaVentaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FacturaVentaToolStripMenuItem.Click
+    Private Sub FacturaVentaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FacturaVentaToolStripMenuItem.Click
         Dim FRep As New FrmRepEnvioxEmp
         FRep.MdiParent = Me
         FRep.Show()
     End Sub
 
-    Private Sub FleteTransportistaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FleteTransportistaToolStripMenuItem.Click
+    Private Sub FleteTransportistaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FleteTransportistaToolStripMenuItem.Click
         Dim FRep As New FrmRep_Fle_Trans
         FRep.MdiParent = Me
         FRep.Show()
     End Sub
 
-    Private Sub ControlGuiasFacturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ControlGuiasFacturasToolStripMenuItem.Click
+    Private Sub ControlGuiasFacturasToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ControlGuiasFacturasToolStripMenuItem.Click
         Dim FRep As New FrmRepCont_Gui_FT
         FRep.MdiParent = Me
         FRep.Show()
     End Sub
 
-    Private Sub TipoDeTrabajadorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub TipoDeTrabajadorToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim mRegPro As New FrmTip_Trab2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TrabajadorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrabajadorToolStripMenuItem.Click
+    Private Sub TrabajadorToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles TrabajadorToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub TipoDeClienteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub TipoDeClienteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim mRegPro As New FrmTip_Cliente2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ZonaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ZonaToolStripMenuItem.Click
+    Private Sub ZonaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ZonaToolStripMenuItem.Click
         Dim mRegPro As New FrmZona2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ClienteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClienteToolStripMenuItem.Click
+    Private Sub ClienteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ClienteToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub DNIRENIECToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles DNIRENIECToolStripMenuItem.Click
+    Private Sub DNIRENIECToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles DNIRENIECToolStripMenuItem.Click
         System.Diagnostics.Process.Start("https://cel.reniec.gob.pe/valreg/valreg.do?accion=ini")
     End Sub
 
 
-    Private Sub AcercaDeToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AcercaDeToolStripMenuItem.Click
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles AcercaDeToolStripMenuItem.Click
         Dim mRegPro As New Acercarde
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub FacturaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles FacturaToolStripMenuItem.Click
+    Private Sub FacturaToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles FacturaToolStripMenuItem.Click
         Dim mRegPro As New FrmIng_Comp1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub UbigeoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles UbigeoToolStripMenuItem.Click
+    Private Sub UbigeoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles UbigeoToolStripMenuItem.Click
         Dim mRegPro As New FrmUbigeo1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeComprobanteDePagoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TipoDeComprobanteDePagoToolStripMenuItem1.Click
+    Private Sub TipoDeComprobanteDePagoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TipoDeComprobanteDePagoToolStripMenuItem1.Click
         Dim mRegPro As New FrmTipo_Comp_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeDctoDeIdentidadTabla2ToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Click
+    Private Sub TipoDeDctoDeIdentidadTabla2ToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Click
         Dim mRegPro As New FrmTipo_Dcto_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TrabajadorToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TrabajadorToolStripMenuItem1.Click
+    Private Sub TrabajadorToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TrabajadorToolStripMenuItem1.Click
         Dim mRegPro As New FrmTrabajador2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeTrabajadorToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TipoDeTrabajadorToolStripMenuItem1.Click
+    Private Sub TipoDeTrabajadorToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TipoDeTrabajadorToolStripMenuItem1.Click
         Dim mRegPro As New FrmTip_Trab2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ClienteToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles ClienteToolStripMenuItem1.Click
+    Private Sub ClienteToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles ClienteToolStripMenuItem1.Click
         Dim mRegPro As New FrmCliente2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeClienteToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TipoDeClienteToolStripMenuItem1.Click
+    Private Sub TipoDeClienteToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TipoDeClienteToolStripMenuItem1.Click
         Dim mRegPro As New FrmTip_Cliente2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeOperacionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TipoDeOperacionToolStripMenuItem.Click
+    Private Sub TipoDeOperacionToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles TipoDeOperacionToolStripMenuItem.Click
         Dim mRegPro As New FrmTipo_oPE_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub UnidadDeTransporteToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles UnidadDeTransporteToolStripMenuItem1.Click
+    Private Sub UnidadDeTransporteToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles UnidadDeTransporteToolStripMenuItem1.Click
         Dim mRegPro As New frmunidadtransportes
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TransportistaToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TransportistaToolStripMenuItem1.Click
+    Private Sub TransportistaToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TransportistaToolStripMenuItem1.Click
         Dim mRegPro As New frmlemptransportes
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ChoferToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles ChoferToolStripMenuItem1.Click
+    Private Sub ChoferToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles ChoferToolStripMenuItem1.Click
         Dim mRegPro As New FrmChofer2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub OperacionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OperacionToolStripMenuItem.Click
+    Private Sub OperacionToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles OperacionToolStripMenuItem.Click
         Dim mRegPro As New FrmOperacion_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ProductoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles ProductoToolStripMenuItem1.Click
+    Private Sub ProductoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles ProductoToolStripMenuItem1.Click
         Dim mRegPro As New frmproductos
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub EnvaseToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EnvaseToolStripMenuItem1.Click
+    Private Sub EnvaseToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles EnvaseToolStripMenuItem1.Click
         Dim mRegLogo As New FrmLoGo2
         mRegLogo.MdiParent = Me
         mRegLogo.Show()
     End Sub
 
-    Private Sub EnvaseToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles EnvaseToolStripMenuItem2.Click
+    Private Sub EnvaseToolStripMenuItem2_Click(sender As Object, e As System.EventArgs) Handles EnvaseToolStripMenuItem2.Click
         Dim mRegEnvas As New FrmEnvase2
         mRegEnvas.MdiParent = Me
         mRegEnvas.Show()
     End Sub
 
-    Private Sub CategoriaToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles CategoriaToolStripMenuItem1.Click
+    Private Sub CategoriaToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles CategoriaToolStripMenuItem1.Click
         Dim mRegCat As New FrmCategoria2
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub ComisionistaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ComisionistaToolStripMenuItem.Click
+    Private Sub ComisionistaToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles ComisionistaToolStripMenuItem.Click
         Dim mRegCat As New FrmComisionista1
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub SalirToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SalirToolStripMenuItem.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
 
-    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmEnv_Comp1
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmDev_Comp1
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub IngresoDeComprobantesDePagoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles IngresoDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub IngresoDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles IngresoDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmRep_Ing_Comp
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem1.Click
+    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem1.Click
         Dim mRegCat As New FrmRep_Envio_Comp
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem1.Click
+    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem1.Click
         Dim mRegCat As New FrmRep_Dev_Comp
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub ControlDeComprobantesDePagoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ControlDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub ControlDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles ControlDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmRep_Con_Comp_Pago
         mRegCat.MdiParent = Me
         mRegCat.Show()

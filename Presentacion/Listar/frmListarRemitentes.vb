@@ -2,7 +2,7 @@ Public Class frmListarRemitentes
     Dim tabla_remitente As DataTable = Nothing
     Private formulario As New frmremitente
     Dim Dv As New DataView
-    Dim SQL As String 'Cadena para el Filtrado
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
 
     Public Sub lista(ByVal criterio As String)
         LBF2.ForeColor = Color.Red
@@ -77,7 +77,7 @@ Public Class frmListarRemitentes
     End Sub
 
 
-    Private Sub frmListarRemitente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmListarRemitente_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'lista(1)
         lista(Nothing)
@@ -88,7 +88,7 @@ Public Class frmListarRemitentes
         indice = e.RowIndex
     End Sub
 
-    Private Sub DgvLista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub DgvLista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
 
     End Sub
 
@@ -99,7 +99,7 @@ Public Class frmListarRemitentes
     Private Sub DgvLista_CellLeave(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellLeave
         indice = e.RowIndex
     End Sub
-    Private Sub btn_Acep_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtbusca.Focus()
@@ -111,13 +111,13 @@ Public Class frmListarRemitentes
 
 
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         Insertar()
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
-        SQL = "Remitente like '%" + txtbusca.Text.Trim + "%'"
-        Dv.RowFilter = SQL
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+        CadenaBuscar = "Remitente like '%" + txtbusca.Text.Trim + "%'"
+        Dv.RowFilter = CadenaBuscar
         dgvlista.DataSource = Dv
         dgvlista.Update()
     End Sub
@@ -193,30 +193,5 @@ Public Class frmListarRemitentes
         lista(Nothing)
     End Sub
 #End Region
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' DataGridView1.RowFilter =
-
-        SQL = "Remitente like '%" + txtbusca.Text.Trim + "%'"
-        Dv.RowFilter = SQL
-        dgvlista.DataSource = Dv
-        dgvlista.Update()
-
-
-
-
-        'Dim filt
-        'filt = String.Format("nombre Like '{0}%'", txtbusca.Text)
-
-        'InvgeneralBindingSource.Filter = filt
-
-        ''dgvlista.row = String.Format("nombrecolumna Like '%{0}%'", txtbusca.Text)
-
-        'Dim dt As DataTable = DirectCast(dgvlista.DataSource, DataTable)
-
-        'dgvlista.DataSource = dt.AsEnumerable() _
-        '    .Where(Function(r) r.Field(Of String)(ComboBox1.Text) = TextBox1.Text) _
-        '    .CopyToDataTable()
-    End Sub
 
 End Class

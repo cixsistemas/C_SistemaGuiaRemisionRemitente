@@ -15,7 +15,7 @@
         End If
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
         ok = Id_guia <> -1
         If (ok = False) Then
@@ -27,12 +27,12 @@
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub btnGuia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuia.Click
+    Private Sub btnGuia_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuia.Click
         Try
             Dim f As New FrmListarGuiaS
             f.ShowDialog()
@@ -115,7 +115,7 @@
         Pes_Transp.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub Pes_Transp_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Pes_Transp.KeyPress
+    Private Sub Pes_Transp_KeyPress1(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Pes_Transp.KeyPress
         ' SoloNumeros(e, True, sender.Text)
     End Sub
 
@@ -133,7 +133,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub observacion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles observacion.KeyPress
+    Private Sub observacion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles observacion.KeyPress
        saltar_ENTER(e)
         'btnaceptar.Focus()
     End Sub
@@ -146,7 +146,7 @@
         observacion.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub FrmPeso_Med_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmPeso_Med_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

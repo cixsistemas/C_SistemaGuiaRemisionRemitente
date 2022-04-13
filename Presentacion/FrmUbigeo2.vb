@@ -19,11 +19,11 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub FrmUbigeo2_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmUbigeo2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         saltar_ENTER(e)
     End Sub
 
-    Private Sub FrmUbigeo2_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmUbigeo2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'Aceptar = False
         'Hide()
@@ -39,7 +39,7 @@
         '  saltar_Flechas(e)
     End Sub
 
-    Private Sub txtdistrito_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtdistrito.KeyPress
+    Private Sub txtdistrito_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdistrito.KeyPress
         '  saltar_ENTER(e)
     End Sub
 
@@ -55,7 +55,7 @@
         ' saltar_Flechas(e)
     End Sub
 
-    Private Sub txtprovincia_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtprovincia.KeyPress
+    Private Sub txtprovincia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtprovincia.KeyPress
         ' saltar_ENTER(e)
     End Sub
 
@@ -72,7 +72,7 @@
         ' saltar_Flechas(e)
     End Sub
 
-    Private Sub txtdepartamento_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtdepartamento.KeyPress
+    Private Sub txtdepartamento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdepartamento.KeyPress
         '  saltar_ENTER(e)
     End Sub
 
@@ -87,7 +87,7 @@
         ' saltar_Flechas(e)
     End Sub
 
-    Private Sub txtcodigo_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtcodigo.KeyPress
+    Private Sub txtcodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigo.KeyPress
         ' SoloNumeros(e, False, sender.Text)
     End Sub
 
@@ -95,7 +95,7 @@
         txtcodigo.BackColor = Color.White
     End Sub
 
-    Private Sub btnaceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = TxtCodigo.Text <> ""
@@ -164,26 +164,26 @@
         End If
     End Sub
 
-    Private Sub cancelar_Click(sender As System.Object, e As System.EventArgs) Handles cancelar.Click
+    Private Sub cancelar_Click(sender As Object, e As System.EventArgs) Handles cancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
  
    
-    Private Sub txtcodigo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtcodigo.TextChanged
+    Private Sub txtcodigo_TextChanged(sender As Object, e As System.EventArgs) Handles txtcodigo.TextChanged
         ' valida()
     End Sub
 
-    Private Sub txtdistrito_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtdistrito.TextChanged
+    Private Sub txtdistrito_TextChanged(sender As Object, e As System.EventArgs) Handles txtdistrito.TextChanged
         ' valida()
     End Sub
 
-    Private Sub txtprovincia_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtprovincia.TextChanged
+    Private Sub txtprovincia_TextChanged(sender As Object, e As System.EventArgs) Handles txtprovincia.TextChanged
         ' valida()
     End Sub
 
-    Private Sub txtdepartamento_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtdepartamento.TextChanged
+    Private Sub txtdepartamento_TextChanged(sender As Object, e As System.EventArgs) Handles txtdepartamento.TextChanged
         '  valida()
     End Sub
 End Class
