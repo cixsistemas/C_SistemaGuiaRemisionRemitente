@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepVentas_Rem" targetNamespace="http://tempuri.org/RepVentas_Rem.xsd" xmlns:mstns="http://tempuri.org/RepVentas_Rem.xsd" xmlns="http://tempuri.org/RepVentas_Rem.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Guia_RemisionConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Guia_RemisionConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.My.MySettings.GlobalReference.Default.Guia_RemisionConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RepVentas_Rem" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RepVentas_Rem" msprop:Generator_UserDSName="RepVentas_Rem">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RepVentasxRem" msprop:Generator_TableClassName="RepVentasxRemDataTable" msprop:Generator_TableVarName="tableRepVentasxRem" msprop:Generator_TablePropName="RepVentasxRem" msprop:Generator_RowDeletingName="RepVentasxRemRowDeleting" msprop:Generator_RowChangingName="RepVentasxRemRowChanging" msprop:Generator_RowEvHandlerName="RepVentasxRemRowChangeEventHandler" msprop:Generator_RowDeletedName="RepVentasxRemRowDeleted" msprop:Generator_UserTableName="RepVentasxRem" msprop:Generator_RowChangedName="RepVentasxRemRowChanged" msprop:Generator_RowEvArgName="RepVentasxRemRowChangeEvent" msprop:Generator_RowClassName="RepVentasxRemRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_x0020_Guia" msprop:Generator_ColumnVarNameInTable="columnID_Guia" msprop:Generator_ColumnPropNameInRow="ID_Guia" msprop:Generator_ColumnPropNameInTable="ID_GuiaColumn" msprop:Generator_UserColumnName="ID Guia" type="xs:int" />
+              <xs:element name="Emisión" msprop:Generator_ColumnVarNameInTable="columnEmisión" msprop:Generator_ColumnPropNameInRow="Emisión" msprop:Generator_ColumnPropNameInTable="EmisiónColumn" msprop:Generator_UserColumnName="Emisión" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remitente" msprop:Generator_ColumnVarNameInTable="columnRemitente" msprop:Generator_ColumnPropNameInRow="Remitente" msprop:Generator_ColumnPropNameInTable="RemitenteColumn" msprop:Generator_UserColumnName="Remitente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:double" minOccurs="0" />
+              <xs:element name="Sacos_x0020_Total" msprop:Generator_ColumnVarNameInTable="columnSacos_Total" msprop:Generator_ColumnPropNameInRow="Sacos_Total" msprop:Generator_ColumnPropNameInTable="Sacos_TotalColumn" msprop:Generator_UserColumnName="Sacos Total" type="xs:int" minOccurs="0" />
+              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Montoo" msprop:Generator_ColumnVarNameInTable="columnMontoo" msprop:Generator_ColumnPropNameInRow="Montoo" msprop:Generator_ColumnPropNameInTable="MontooColumn" msprop:Generator_UserColumnName="Montoo" type="xs:double" minOccurs="0" />
+              <xs:element name="Monto_x0020_Total" msprop:Generator_ColumnVarNameInTable="columnMonto_Total" msprop:Generator_ColumnPropNameInRow="Monto_Total" msprop:Generator_ColumnPropNameInTable="Monto_TotalColumn" msprop:Generator_UserColumnName="Monto Total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

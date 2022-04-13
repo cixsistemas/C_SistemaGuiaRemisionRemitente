@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Rep_Cont_Guia_FT" targetNamespace="http://tempuri.org/Rep_Cont_Guia_FT.xsd" xmlns:mstns="http://tempuri.org/Rep_Cont_Guia_FT.xsd" xmlns="http://tempuri.org/Rep_Cont_Guia_FT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Guia_RemisionConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Guia_RemisionConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.My.MySettings.GlobalReference.Default.Guia_RemisionConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Rep_Cont_Guia_FT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Rep_Cont_Guia_FT" msprop:Generator_UserDSName="Rep_Cont_Guia_FT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Nota_Envio_Arroz" msprop:Generator_TableClassName="Nota_Envio_ArrozDataTable" msprop:Generator_TableVarName="tableNota_Envio_Arroz" msprop:Generator_TablePropName="Nota_Envio_Arroz" msprop:Generator_RowDeletingName="Nota_Envio_ArrozRowDeleting" msprop:Generator_RowChangingName="Nota_Envio_ArrozRowChanging" msprop:Generator_RowEvHandlerName="Nota_Envio_ArrozRowChangeEventHandler" msprop:Generator_RowDeletedName="Nota_Envio_ArrozRowDeleted" msprop:Generator_UserTableName="Nota_Envio_Arroz" msprop:Generator_RowChangedName="Nota_Envio_ArrozRowChanged" msprop:Generator_RowEvArgName="Nota_Envio_ArrozRowChangeEvent" msprop:Generator_RowClassName="Nota_Envio_ArrozRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_x0020_Nota_x0020_Arroz" msprop:Generator_ColumnVarNameInTable="columnId_Nota_Arroz" msprop:Generator_ColumnPropNameInRow="Id_Nota_Arroz" msprop:Generator_ColumnPropNameInTable="Id_Nota_ArrozColumn" msprop:Generator_UserColumnName="Id Nota Arroz" type="xs:int" />
+              <xs:element name="Id_x0020_Guia" msprop:Generator_ColumnVarNameInTable="columnId_Guia" msprop:Generator_ColumnPropNameInRow="Id_Guia" msprop:Generator_ColumnPropNameInTable="Id_GuiaColumn" msprop:Generator_UserColumnName="Id Guia" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_x0020_Pago_x0020_Detrac" msdata:Caption="Id Pago Detrac_" msprop:Generator_ColumnVarNameInTable="columnId_Pago_Detrac" msprop:Generator_ColumnPropNameInRow="Id_Pago_Detrac" msprop:Generator_ColumnPropNameInTable="Id_Pago_DetracColumn" msprop:Generator_UserColumnName="Id Pago Detrac" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Nro._x0020_Serie" msdata:Caption="Nro_ Serie" msprop:Generator_ColumnVarNameInTable="_columnNro__Serie" msprop:Generator_ColumnPropNameInRow="_Nro__Serie" msprop:Generator_ColumnPropNameInTable="_Nro__SerieColumn" msprop:Generator_UserColumnName="Nro. Serie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Domicilio_x0020_Transportista" msprop:Generator_ColumnVarNameInTable="columnDomicilio_Transportista" msprop:Generator_ColumnPropNameInRow="Domicilio_Transportista" msprop:Generator_ColumnPropNameInTable="Domicilio_TransportistaColumn" msprop:Generator_UserColumnName="Domicilio Transportista" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ruc" msprop:Generator_ColumnVarNameInTable="columnruc" msprop:Generator_ColumnPropNameInRow="ruc" msprop:Generator_ColumnPropNameInTable="rucColumn" msprop:Generator_UserColumnName="ruc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro._x0020_Placa_x0020_Remolque" msdata:Caption="Nro_ Placa Remolque" msprop:Generator_ColumnVarNameInTable="_columnNro__Placa_Remolque" msprop:Generator_ColumnPropNameInRow="_Nro__Placa_Remolque" msprop:Generator_ColumnPropNameInTable="_Nro__Placa_RemolqueColumn" msprop:Generator_UserColumnName="Nro. Placa Remolque">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro._x0020_Placa_x0020_Semi_x0020_-_x0020_Remolque" msdata:Caption="Nro_ Placa Semi - Remolque" msprop:Generator_ColumnVarNameInTable="_columnNro__Placa_Semi___Remolque" msprop:Generator_ColumnPropNameInRow="_Nro__Placa_Semi___Remolque" msprop:Generator_ColumnPropNameInTable="_Nro__Placa_Semi___RemolqueColumn" msprop:Generator_UserColumnName="Nro. Placa Semi - Remolque" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre_x0020_Chofer" msprop:Generator_ColumnVarNameInTable="columnNombre_Chofer" msprop:Generator_ColumnPropNameInRow="Nombre_Chofer" msprop:Generator_ColumnPropNameInTable="Nombre_ChoferColumn" msprop:Generator_UserColumnName="Nombre Chofer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido_x0020_Chofer" msprop:Generator_ColumnVarNameInTable="columnApellido_Chofer" msprop:Generator_ColumnPropNameInRow="Apellido_Chofer" msprop:Generator_ColumnPropNameInTable="Apellido_ChoferColumn" msprop:Generator_UserColumnName="Apellido Chofer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Brevete" msprop:Generator_ColumnVarNameInTable="columnBrevete" msprop:Generator_ColumnPropNameInRow="Brevete" msprop:Generator_ColumnPropNameInTable="BreveteColumn" msprop:Generator_UserColumnName="Brevete">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefono_x0020_Chofer" msprop:Generator_ColumnVarNameInTable="columnTelefono_Chofer" msprop:Generator_ColumnPropNameInRow="Telefono_Chofer" msprop:Generator_ColumnPropNameInTable="Telefono_ChoferColumn" msprop:Generator_UserColumnName="Telefono Chofer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Destinatario" msprop:Generator_ColumnVarNameInTable="columnDestinatario" msprop:Generator_ColumnPropNameInRow="Destinatario" msprop:Generator_ColumnPropNameInTable="DestinatarioColumn" msprop:Generator_UserColumnName="Destinatario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Direccion_x0020_Destinatario" msprop:Generator_ColumnVarNameInTable="columnDireccion_Destinatario" msprop:Generator_ColumnPropNameInRow="Direccion_Destinatario" msprop:Generator_ColumnPropNameInTable="Direccion_DestinatarioColumn" msprop:Generator_UserColumnName="Direccion Destinatario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefono_x0020_Destinatario" msprop:Generator_ColumnVarNameInTable="columnTelefono_Destinatario" msprop:Generator_ColumnPropNameInRow="Telefono_Destinatario" msprop:Generator_ColumnPropNameInTable="Telefono_DestinatarioColumn" msprop:Generator_UserColumnName="Telefono Destinatario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Costo_x0020_Flete" msprop:Generator_ColumnVarNameInTable="columnCosto_Flete" msprop:Generator_ColumnPropNameInRow="Costo_Flete" msprop:Generator_ColumnPropNameInTable="Costo_FleteColumn" msprop:Generator_UserColumnName="Costo Flete" type="xs:double" minOccurs="0" />
+              <xs:element name="A_x0020_Cuenta" msprop:Generator_ColumnVarNameInTable="columnA_Cuenta" msprop:Generator_ColumnPropNameInRow="A_Cuenta" msprop:Generator_ColumnPropNameInTable="A_CuentaColumn" msprop:Generator_UserColumnName="A Cuenta" type="xs:double" minOccurs="0" />
+              <xs:element name="Toneladas" msprop:Generator_ColumnVarNameInTable="columnToneladas" msprop:Generator_ColumnPropNameInRow="Toneladas" msprop:Generator_ColumnPropNameInTable="ToneladasColumn" msprop:Generator_UserColumnName="Toneladas" type="xs:double" minOccurs="0" />
+              <xs:element name="observacion" msprop:Generator_ColumnVarNameInTable="columnobservacion" msprop:Generator_ColumnPropNameInRow="observacion" msprop:Generator_ColumnPropNameInTable="observacionColumn" msprop:Generator_UserColumnName="observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comentario" msprop:Generator_ColumnVarNameInTable="columnComentario" msprop:Generator_ColumnPropNameInRow="Comentario" msprop:Generator_ColumnPropNameInTable="ComentarioColumn" msprop:Generator_UserColumnName="Comentario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remitente" msprop:Generator_ColumnVarNameInTable="columnRemitente" msprop:Generator_ColumnPropNameInRow="Remitente" msprop:Generator_ColumnPropNameInTable="RemitenteColumn" msprop:Generator_UserColumnName="Remitente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

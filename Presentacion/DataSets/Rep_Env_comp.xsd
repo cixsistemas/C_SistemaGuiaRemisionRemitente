@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Rep_Env_comp" targetNamespace="http://tempuri.org/Rep_Env_comp.xsd" xmlns:mstns="http://tempuri.org/Rep_Env_comp.xsd" xmlns="http://tempuri.org/Rep_Env_comp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Guia_RemisionConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Guia_RemisionConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.My.MySettings.GlobalReference.Default.Guia_RemisionConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Rep_Env_comp" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Rep_Env_comp" msprop:Generator_UserDSName="Rep_Env_comp">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="pa_Listar_Rep_Listar_Envio_Comp_de_Pago" msprop:Generator_TableClassName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoDataTable" msprop:Generator_TableVarName="tablepa_Listar_Rep_Listar_Envio_Comp_de_Pago" msprop:Generator_TablePropName="pa_Listar_Rep_Listar_Envio_Comp_de_Pago" msprop:Generator_RowDeletingName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRowDeleting" msprop:Generator_UserTableName="pa_Listar_Rep_Listar_Envio_Comp_de_Pago" msprop:Generator_RowChangingName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRowChanging" msprop:Generator_RowEvHandlerName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRowChangeEventHandler" msprop:Generator_RowDeletedName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRowDeleted" msprop:Generator_RowEvArgName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRowChangeEvent" msprop:Generator_RowChangedName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRowChanged" msprop:Generator_RowClassName="pa_Listar_Rep_Listar_Envio_Comp_de_PagoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Detalle_Env_Comp" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId_Detalle_Env_Comp" msprop:Generator_ColumnPropNameInRow="Id_Detalle_Env_Comp" msprop:Generator_ColumnPropNameInTable="Id_Detalle_Env_CompColumn" msprop:Generator_UserColumnName="Id_Detalle_Env_Comp" type="xs:int" />
+              <xs:element name="Fecha_x0020_de_x0020_Envio" msprop:Generator_ColumnVarNameInTable="columnFecha_de_Envio" msprop:Generator_ColumnPropNameInRow="Fecha_de_Envio" msprop:Generator_ColumnPropNameInTable="Fecha_de_EnvioColumn" msprop:Generator_UserColumnName="Fecha de Envio" type="xs:dateTime" />
+              <xs:element name="Comisionista" msprop:Generator_ColumnVarNameInTable="columnComisionista" msprop:Generator_ColumnPropNameInRow="Comisionista" msprop:Generator_ColumnPropNameInTable="ComisionistaColumn" msprop:Generator_UserColumnName="Comisionista">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Remitente" msprop:Generator_ColumnVarNameInTable="columnRemitente" msprop:Generator_ColumnPropNameInRow="Remitente" msprop:Generator_ColumnPropNameInTable="RemitenteColumn" msprop:Generator_UserColumnName="Remitente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comprobante_x0020_de_x0020_Pago" msprop:Generator_ColumnVarNameInTable="columnComprobante_de_Pago" msprop:Generator_ColumnPropNameInRow="Comprobante_de_Pago" msprop:Generator_ColumnPropNameInTable="Comprobante_de_PagoColumn" msprop:Generator_UserColumnName="Comprobante de Pago">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serie" msprop:Generator_ColumnVarNameInTable="columnSerie" msprop:Generator_ColumnPropNameInRow="Serie" msprop:Generator_ColumnPropNameInTable="SerieColumn" msprop:Generator_UserColumnName="Serie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="28" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Envio_Comp" msprop:Generator_ColumnVarNameInTable="columnId_Envio_Comp" msprop:Generator_ColumnPropNameInRow="Id_Envio_Comp" msprop:Generator_ColumnPropNameInTable="Id_Envio_CompColumn" msprop:Generator_UserColumnName="Id_Envio_Comp" type="xs:int" />
+              <xs:element name="Id_Detalle_Ing_Comp" msprop:Generator_ColumnVarNameInTable="columnId_Detalle_Ing_Comp" msprop:Generator_ColumnPropNameInRow="Id_Detalle_Ing_Comp" msprop:Generator_ColumnPropNameInTable="Id_Detalle_Ing_CompColumn" msprop:Generator_UserColumnName="Id_Detalle_Ing_Comp" type="xs:int" />
+              <xs:element name="Id_Ing_Comp" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId_Ing_Comp" msprop:Generator_ColumnPropNameInRow="Id_Ing_Comp" msprop:Generator_ColumnPropNameInTable="Id_Ing_CompColumn" msprop:Generator_UserColumnName="Id_Ing_Comp" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,7 @@
+﻿DATAVIEW
+Representa una vista personalizada y enlazable a datos de un DataTable 
+para ordenar, filtrar, buscar, editar y navegar. DataView no almacena datos, 
+sino que representa una vista conectada de su DataTable correspondiente . 
+Los cambios en los datos de DataView afectarán a DataTable. 
+Los cambios en los datos de DataTable afectarán a todos los DataView asociados con él.
+

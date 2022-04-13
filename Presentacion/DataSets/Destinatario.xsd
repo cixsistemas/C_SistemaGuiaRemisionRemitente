@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="clientes" targetNamespace="http://tempuri.org/clientes.xsd" xmlns:mstns="http://tempuri.org/clientes.xsd" xmlns="http://tempuri.org/clientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.Presentacion.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="clientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="clientes" msprop:Generator_UserDSName="clientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="clientes" msprop:Generator_UserTableName="clientes" msprop:Generator_RowEvArgName="clientesRowChangeEvent" msprop:Generator_TableVarName="tableclientes" msprop:Generator_TablePropName="_clientes" msprop:Generator_RowDeletingName="clientesRowDeleting" msprop:Generator_RowChangingName="clientesRowChanging" msprop:Generator_RowDeletedName="clientesRowDeleted" msprop:Generator_TableClassName="clientesDataTable" msprop:Generator_RowChangedName="clientesRowChanged" msprop:Generator_RowEvHandlerName="clientesRowChangeEventHandler" msprop:Generator_RowClassName="clientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Razon_x0020_social" msprop:Generator_ColumnVarNameInTable="columnRazon_social" msprop:Generator_ColumnPropNameInRow="Razon_social" msprop:Generator_ColumnPropNameInTable="Razon_socialColumn" msprop:Generator_UserColumnName="Razon social" type="xs:string" minOccurs="0" />
+              <xs:element name="ruc" msprop:Generator_ColumnVarNameInTable="columnruc" msprop:Generator_ColumnPropNameInRow="ruc" msprop:Generator_ColumnPropNameInTable="rucColumn" msprop:Generator_UserColumnName="ruc" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipo_x0020_doc" msprop:Generator_ColumnVarNameInTable="columnTipo_doc" msprop:Generator_ColumnPropNameInRow="Tipo_doc" msprop:Generator_ColumnPropNameInTable="Tipo_docColumn" msprop:Generator_UserColumnName="Tipo doc" type="xs:string" minOccurs="0" />
+              <xs:element name="Nro_x0020_doc" msprop:Generator_ColumnVarNameInTable="columnNro_doc" msprop:Generator_ColumnPropNameInRow="Nro_doc" msprop:Generator_ColumnPropNameInTable="Nro_docColumn" msprop:Generator_UserColumnName="Nro doc" type="xs:string" minOccurs="0" />
+              <xs:element name="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_UserColumnName="Direccion" type="xs:string" minOccurs="0" />
+              <xs:element name="Distrito" msprop:Generator_ColumnVarNameInTable="columnDistrito" msprop:Generator_ColumnPropNameInRow="Distrito" msprop:Generator_ColumnPropNameInTable="DistritoColumn" msprop:Generator_UserColumnName="Distrito" type="xs:string" minOccurs="0" />
+              <xs:element name="Representante_x0020_Legal" msprop:Generator_ColumnVarNameInTable="columnRepresentante_Legal" msprop:Generator_ColumnPropNameInRow="Representante_Legal" msprop:Generator_ColumnPropNameInTable="Representante_LegalColumn" msprop:Generator_UserColumnName="Representante Legal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

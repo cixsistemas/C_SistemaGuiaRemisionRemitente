@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="unidadtransportes" targetNamespace="http://tempuri.org/unidadtransportes.xsd" xmlns:mstns="http://tempuri.org/unidadtransportes.xsd" xmlns="http://tempuri.org/unidadtransportes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Guia_RemisionConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Guia_RemisionConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.My.MySettings.GlobalReference.Default.Guia_RemisionConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="unidadtransportes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="unidadtransportes" msprop:Generator_UserDSName="unidadtransportes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="unidadtransportes" msprop:Generator_TableClassName="unidadtransportesDataTable" msprop:Generator_TableVarName="tableunidadtransportes" msprop:Generator_TablePropName="_unidadtransportes" msprop:Generator_RowDeletingName="unidadtransportesRowDeleting" msprop:Generator_RowChangingName="unidadtransportesRowChanging" msprop:Generator_RowEvHandlerName="unidadtransportesRowChangeEventHandler" msprop:Generator_RowDeletedName="unidadtransportesRowDeleted" msprop:Generator_UserTableName="unidadtransportes" msprop:Generator_RowChangedName="unidadtransportesRowChanged" msprop:Generator_RowEvArgName="unidadtransportesRowChangeEvent" msprop:Generator_RowClassName="unidadtransportesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Empresa_x0020_Transporte" msprop:Generator_ColumnVarNameInTable="columnEmpresa_Transporte" msprop:Generator_ColumnPropNameInRow="Empresa_Transporte" msprop:Generator_ColumnPropNameInTable="Empresa_TransporteColumn" msprop:Generator_UserColumnName="Empresa Transporte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC_x0020_Emp_x0020_Transporte" msprop:Generator_ColumnVarNameInTable="columnRUC_Emp_Transporte" msprop:Generator_ColumnPropNameInRow="RUC_Emp_Transporte" msprop:Generator_ColumnPropNameInTable="RUC_Emp_TransporteColumn" msprop:Generator_UserColumnName="RUC Emp Transporte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca_x0020_Camion" msprop:Generator_ColumnVarNameInTable="columnMarca_Camion" msprop:Generator_ColumnPropNameInRow="Marca_Camion" msprop:Generator_ColumnPropNameInTable="Marca_CamionColumn" msprop:Generator_UserColumnName="Marca Camion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro._x0020_placa_x0020_Camion" msprop:Generator_ColumnVarNameInTable="_columnNro__placa_Camion" msprop:Generator_ColumnPropNameInRow="_Nro__placa_Camion" msprop:Generator_ColumnPropNameInTable="_Nro__placa_CamionColumn" msprop:Generator_UserColumnName="Nro. placa Camion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro._x0020_certificado_x0020_Camion" msprop:Generator_ColumnVarNameInTable="_columnNro__certificado_Camion" msprop:Generator_ColumnPropNameInRow="_Nro__certificado_Camion" msprop:Generator_ColumnPropNameInTable="_Nro__certificado_CamionColumn" msprop:Generator_UserColumnName="Nro. certificado Camion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca_x0020_Carreta" msprop:Generator_ColumnVarNameInTable="columnMarca_Carreta" msprop:Generator_ColumnPropNameInRow="Marca_Carreta" msprop:Generator_ColumnPropNameInTable="Marca_CarretaColumn" msprop:Generator_UserColumnName="Marca Carreta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro._x0020_Placa_x0020_Carreta" msprop:Generator_ColumnVarNameInTable="_columnNro__Placa_Carreta" msprop:Generator_ColumnPropNameInRow="_Nro__Placa_Carreta" msprop:Generator_ColumnPropNameInTable="_Nro__Placa_CarretaColumn" msprop:Generator_UserColumnName="Nro. Placa Carreta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro._x0020_Certificado_x0020_Carreta" msprop:Generator_ColumnVarNameInTable="_columnNro__Certificado_Carreta" msprop:Generator_ColumnPropNameInRow="_Nro__Certificado_Carreta" msprop:Generator_ColumnPropNameInTable="_Nro__Certificado_CarretaColumn" msprop:Generator_UserColumnName="Nro. Certificado Carreta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Largo_x0020_Camion" msprop:Generator_ColumnVarNameInTable="columnLargo_Camion" msprop:Generator_ColumnPropNameInRow="Largo_Camion" msprop:Generator_ColumnPropNameInTable="Largo_CamionColumn" msprop:Generator_UserColumnName="Largo Camion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ancho_x0020_Camion" msprop:Generator_ColumnVarNameInTable="columnAncho_Camion" msprop:Generator_ColumnPropNameInRow="Ancho_Camion" msprop:Generator_ColumnPropNameInTable="Ancho_CamionColumn" msprop:Generator_UserColumnName="Ancho Camion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Alto_x0020_Camion" msprop:Generator_ColumnVarNameInTable="columnAlto_Camion" msprop:Generator_ColumnPropNameInRow="Alto_Camion" msprop:Generator_ColumnPropNameInTable="Alto_CamionColumn" msprop:Generator_UserColumnName="Alto Camion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Largo_x0020_Carreta" msprop:Generator_ColumnVarNameInTable="columnLargo_Carreta" msprop:Generator_ColumnPropNameInRow="Largo_Carreta" msprop:Generator_ColumnPropNameInTable="Largo_CarretaColumn" msprop:Generator_UserColumnName="Largo Carreta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ancho_x0020_Carreta" msprop:Generator_ColumnVarNameInTable="columnAncho_Carreta" msprop:Generator_ColumnPropNameInRow="Ancho_Carreta" msprop:Generator_ColumnPropNameInTable="Ancho_CarretaColumn" msprop:Generator_UserColumnName="Ancho Carreta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Alto_x0020_Carreta" msprop:Generator_ColumnVarNameInTable="columnAlto_Carreta" msprop:Generator_ColumnPropNameInRow="Alto_Carreta" msprop:Generator_ColumnPropNameInTable="Alto_CarretaColumn" msprop:Generator_UserColumnName="Alto Carreta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Configuracion_x0020_Vehicular" msprop:Generator_ColumnVarNameInTable="columnConfiguracion_Vehicular" msprop:Generator_ColumnPropNameInRow="Configuracion_Vehicular" msprop:Generator_ColumnPropNameInTable="Configuracion_VehicularColumn" msprop:Generator_UserColumnName="Configuracion Vehicular" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Peso_x0020_Vehicular" msprop:Generator_ColumnVarNameInTable="columnPeso_Vehicular" msprop:Generator_ColumnPropNameInRow="Peso_Vehicular" msprop:Generator_ColumnPropNameInTable="Peso_VehicularColumn" msprop:Generator_UserColumnName="Peso Vehicular" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Logotipo" targetNamespace="http://tempuri.org/Logotipo.xsd" xmlns:mstns="http://tempuri.org/Logotipo.xsd" xmlns="http://tempuri.org/Logotipo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Guia_RemisionConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Guia_RemisionConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.My.MySettings.GlobalReference.Default.Guia_RemisionConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Logotipo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Logotipo" msprop:Generator_UserDSName="Logotipo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Logotipo" msprop:Generator_TableClassName="LogotipoDataTable" msprop:Generator_TableVarName="tableLogotipo" msprop:Generator_TablePropName="_Logotipo" msprop:Generator_RowDeletingName="LogotipoRowDeleting" msprop:Generator_UserTableName="Logotipo" msprop:Generator_RowChangingName="LogotipoRowChanging" msprop:Generator_RowEvHandlerName="LogotipoRowChangeEventHandler" msprop:Generator_RowDeletedName="LogotipoRowDeleted" msprop:Generator_RowEvArgName="LogotipoRowChangeEvent" msprop:Generator_RowChangedName="LogotipoRowChanged" msprop:Generator_RowClassName="LogotipoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre_x0020_Logotipo" msprop:Generator_ColumnVarNameInTable="columnNombre_Logotipo" msprop:Generator_ColumnPropNameInRow="Nombre_Logotipo" msprop:Generator_ColumnPropNameInTable="Nombre_LogotipoColumn" msprop:Generator_UserColumnName="Nombre Logotipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion_x0020_Logotipo" msprop:Generator_ColumnVarNameInTable="columnDescripcion_Logotipo" msprop:Generator_ColumnPropNameInRow="Descripcion_Logotipo" msprop:Generator_ColumnPropNameInTable="Descripcion_LogotipoColumn" msprop:Generator_UserColumnName="Descripcion Logotipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
