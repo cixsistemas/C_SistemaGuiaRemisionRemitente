@@ -1,0 +1,78 @@
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Presentacion.exe
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Presentacion.pdb
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Presentacion.xml
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Negocio.dll
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Datos.dll
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Negocio.pdb
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Negocio.xml
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Datos.pdb
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Datos.xml
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\ResolveAssemblyReference.cache
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FIngresoSistema.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FMant_Categoria.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FMant_Envasado.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FMant_Logotipo.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FMant_Persona.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FMant_Producto.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FMenuGuia.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FNuevo_Usuario.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.FRegistrar_usuario.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.Resources.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.Cache
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.exe
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.xml
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.pdb
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.exe
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.xml
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.pdb
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Presentacion.exe
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Presentacion.pdb
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Presentacion.xml
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Negocio.dll
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Datos.dll
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Negocio.pdb
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Negocio.xml
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Datos.pdb
+F:\Remision (Guia)\Guia\Presentacion\bin\Debug\Datos.xml
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\ResolveAssemblyReference.cache
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FIngresoSistema.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FMant_Categoria.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FMant_Envasado.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FMant_Logotipo.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FMant_Persona.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FMant_Producto.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FMenuGuia.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FNuevo_Usuario.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.FRegistrar_usuario.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.Resources.resources
+F:\Remision (Guia)\Guia\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.Cache
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmguia.resources
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\clinicapacifico.dll
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\clinicapacifico.pdb
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\clinicapacifico.xml
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmremitentes.resources
+F:\Guia de Remision\Guia\Presentacion\bin\Debug\Presentacion.exe.config
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmproductos.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmemptransportes.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmubigeos.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmdestinatarios.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmvehiculos.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmguias.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmImprimir.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.crguiaremision.rpt
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmumision.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmproducto.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmlproductos.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.crproductos.rpt
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmcliente.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmclientes.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.crclientes.rpt
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmremitente.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmlremitentes.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.crremitentes.rpt
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmunidadtransporte.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmunidadtransportes.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.crunidadtransportes.rpt
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmemptransporte.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.frmlemptransportes.resources
+F:\Guia de Remision\Guia\Presentacion\obj\Debug\Presentacion.cremptransportes.rpt
