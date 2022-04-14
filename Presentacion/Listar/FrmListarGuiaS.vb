@@ -85,27 +85,27 @@ Public Class FrmListarGuiaS
     End Sub
 
 
-    Private Sub FrmListarGuiaSs_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarGuiaSs_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_guias(Nothing)
         txtbusca.Focus()
     End Sub
 
-    Private Sub txtbusca_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtbusca.KeyPress
+    Private Sub txtbusca_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtbusca.KeyPress
         ' saltar(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         listar_guias(txtbusca.Text)
     End Sub
-    Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         indice = e.RowIndex
         idguia = dgvlista.Item("ID GUIA", indice).Value
         'listar_detalle_guias(idguia)
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 

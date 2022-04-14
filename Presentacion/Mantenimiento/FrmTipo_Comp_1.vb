@@ -36,7 +36,7 @@ Public Class FrmTipo_Comp_1
             MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -52,7 +52,7 @@ Public Class FrmTipo_Comp_1
         End If
     End Sub
 
-    Private Sub FrmTipo_Comp_1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTipo_Comp_1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         txtbusca.Focus()
@@ -89,7 +89,7 @@ Public Class FrmTipo_Comp_1
     End Sub
 
 
-    Private Sub btnNuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
         Dim f As New FrmTipo_Comp_2
 
         ' f.TxtNro_Secado.Text = generar_numero_secado()
@@ -107,7 +107,7 @@ Public Class FrmTipo_Comp_1
 
         lista(Nothing)
     End Sub
-    Private Sub BtnModificar_Click(sender As System.Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
         Dim f As New FrmTipo_Comp_2
 
 
@@ -144,7 +144,7 @@ Public Class FrmTipo_Comp_1
         TxtBusca.BackColor = Color.White
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(TxtBusca.Text)
     End Sub
 

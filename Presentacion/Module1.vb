@@ -81,7 +81,7 @@ Module Module1
         Next
         Return ok
     End Function
-    Public Sub SoloNumeros(ByVal e As System.Windows.Forms.KeyPressEventArgs, ByVal Punto As Boolean, ByVal Texto As String)
+    Public Sub SoloNumeros(ByVal e As KeyPressEventArgs, ByVal Punto As Boolean, ByVal Texto As String)
         Select Case Asc(e.KeyChar)
             Case 8
             Case 46
@@ -106,7 +106,7 @@ Module Module1
         End If
     End Sub
 
-    Public Sub saltar_ENTER(ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Public Sub saltar_ENTER(ByVal e As KeyPressEventArgs)
         'PASAR DE UN CONTROL A OTRO CON ENTER
         If e.KeyChar = ChrW(Keys.Enter) Then
             e.Handled = True

@@ -157,7 +157,7 @@ Public Class frmguias
     End Sub
 
 
-    Private Sub frmguiass_Load(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
+    Private Sub frmguiass_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_guias("1", "", "")
@@ -169,13 +169,13 @@ Public Class frmguias
     'End Sub
 
 
-    Private Sub btnactualizar_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles btnactualizar.Click
+    Private Sub btnactualizar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnactualizar.Click
         'ACTUALIZAR DATA GRID
         listar_guias("1", "", "")
         listar_detalle_guias(idguia)
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         '   Me.formulario.lista(7)
         'Me.formulario.direccion_pto_llegadaa.SelectedIndex = 0
         formulario.ShowDialog() 'presentamos formulario.
@@ -320,7 +320,7 @@ Public Class frmguias
         listar_guias("1", "", "")
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As System.Object, ByVal e As EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Guía de Remisión", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -596,7 +596,7 @@ Public Class frmguias
 
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As System.Object, ByVal e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvdetalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -649,7 +649,7 @@ Public Class frmguias
         End If
         listar_detalle_guias(idguia)
     End Sub
-    Private Sub nroguia_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nroguia.KeyPress
+    Private Sub nroguia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nroguia.KeyPress
         SoloNumeros(e, False, sender.Text)
     End Sub
     'Private Sub nroguia_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroguia.Enter
@@ -661,11 +661,11 @@ Public Class frmguias
     Private Sub nroguia_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nroguia.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub btnCerrar_Click_1(ByVal sender As System.Object, ByVal e As EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
-    Private Sub nroguia_TextChanged_1(ByVal sender As System.Object, ByVal e As EventArgs) Handles nroguia.TextChanged
+    Private Sub nroguia_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles nroguia.TextChanged
         Dim valor As String = nroguia.Text.Trim
         listar_guias("1", valor, "")
         dgvdetalle.DataSource = Nothing
@@ -677,7 +677,7 @@ Public Class frmguias
         txtdest.BackColor = Color.White
     End Sub
 
-    Private Sub txtdest_TextChanged_1(ByVal sender As System.Object, ByVal e As EventArgs) Handles txtdest.TextChanged
+    Private Sub txtdest_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles txtdest.TextChanged
         'Dim valor As String = Me.txtdest.Text
         'listar_guias(Nothing, valor)
         'dgvdetalle.DataSource = Nothing
@@ -685,7 +685,7 @@ Public Class frmguias
         listar_guias("1", "", txtdest.Text)
     End Sub
 
-    Private Sub dgvdetalle_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick
+    Private Sub dgvdetalle_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick
 
     End Sub
 
@@ -710,7 +710,7 @@ Public Class frmguias
         'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_CellContentClick_1(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick_1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         Try
             indice = e.RowIndex
             idguia = dgvlista.Item("ID", indice).Value
@@ -740,7 +740,7 @@ Public Class frmguias
 
     REM ============================================================================
 #Region "IMPRIMIR"
-    Private Sub btnImprimir_Click_1(ByVal sender As System.Object, ByVal e As EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
         Dim fu As New frmOpcImpGuia
         fu.ShowDialog()
         'If fu.rbps.Checked = True Then

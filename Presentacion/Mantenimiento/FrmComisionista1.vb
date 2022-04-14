@@ -36,7 +36,7 @@ Public Class FrmComisionista1
             MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    Private Sub btnCerrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -52,11 +52,11 @@ Public Class FrmComisionista1
         End If
     End Sub
 
-    Private Sub FrmComisionista1_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmComisionista1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
 
     End Sub
 
-    Private Sub FrmComisionista1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmComisionista1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         txtbusca.Focus()
@@ -93,7 +93,7 @@ Public Class FrmComisionista1
     End Sub
 
 
-    Private Sub btnNuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
         Dim f As New FrmComisionista2
 
 
@@ -106,7 +106,7 @@ Public Class FrmComisionista1
         lista(Nothing)
     End Sub
 
-    Private Sub BtnModificar_Click(sender As System.Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
         Dim f As New FrmComisionista2
 
         If (indice = -1) Then
@@ -136,7 +136,7 @@ Public Class FrmComisionista1
         lista(Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As System.EventArgs) Handles btnEliminar.Click
 
         If (indice = -1) Then
             MessageBox.Show("Seleccione Cliente", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -199,12 +199,12 @@ Public Class FrmComisionista1
         TxtBusca.BackColor = Color.White
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(TxtBusca.Text)
     End Sub
 
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As Object, e As System.EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_COMISIONISTAS"
         f.Tabla_Imprimir = tabla_comisionista

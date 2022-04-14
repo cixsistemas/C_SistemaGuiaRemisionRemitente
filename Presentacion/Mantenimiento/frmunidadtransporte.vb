@@ -20,7 +20,7 @@ Public Class frmunidadtransporte
         Hide()
     End Sub
 
-    Private Sub frmunidadtransporte_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmunidadtransporte_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'lista_emptransporte(3)
     End Sub
@@ -77,7 +77,7 @@ Public Class frmunidadtransporte
         End Try
         peso_neto2.BackColor = Color.White
     End Sub
-    Private Sub Peso_neto1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Peso_neto1.TextChanged
+    Private Sub Peso_neto1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Peso_neto1.TextChanged
         valida()
     End Sub
 
@@ -87,14 +87,14 @@ Public Class frmunidadtransporte
 
  
 
-    Private Sub peso_neto2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles peso_neto2.TextChanged
+    Private Sub peso_neto2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles peso_neto2.TextChanged
         valida()
     End Sub
 
     Private Sub peso_neto2_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles peso_neto2.VisibleChanged
         valida()
     End Sub
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Dim okk As Boolean
         okk = Peso_neto1.Text.Trim <> ""
         If (okk = False) Then
@@ -120,17 +120,17 @@ Public Class frmunidadtransporte
         Aceptar = True
         Hide()
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
-    Private Sub cboemptransporte_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub cboemptransporte_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
         valida()
     End Sub
     Private Sub marca_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles marca.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub marca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles marca.TextChanged
+    Private Sub marca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca.TextChanged
         valida()
     End Sub
     Private Sub marca_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca.VisibleChanged
@@ -141,7 +141,7 @@ Public Class frmunidadtransporte
         saltar_Flechas(e)
 
     End Sub
-    Private Sub nroplaca_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nroplaca.TextChanged
+    Private Sub nroplaca_TextChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca.TextChanged
         valida()
     End Sub
     Private Sub nroplaca_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca.VisibleChanged
@@ -151,7 +151,7 @@ Public Class frmunidadtransporte
     Private Sub nrocertificado_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nrocertificado.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nrocertificado_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nrocertificado.TextChanged
+    Private Sub nrocertificado_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado.TextChanged
         valida()
     End Sub
     Private Sub nrocertificado_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado.VisibleChanged
@@ -161,7 +161,7 @@ Public Class frmunidadtransporte
     Private Sub marca2_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles marca2.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub marca2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles marca2.TextChanged
+    Private Sub marca2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca2.TextChanged
         valida()
     End Sub
 
@@ -174,7 +174,7 @@ Public Class frmunidadtransporte
     End Sub
 
 
-    Private Sub nroplaca2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nroplaca2.TextChanged
+    Private Sub nroplaca2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca2.TextChanged
         valida()
     End Sub
 
@@ -185,7 +185,7 @@ Public Class frmunidadtransporte
     Private Sub nrocertificado2_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nrocertificado2.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nrocertificado2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nrocertificado2.TextChanged
+    Private Sub nrocertificado2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado2.TextChanged
         valida()
     End Sub
 
@@ -382,7 +382,7 @@ Public Class frmunidadtransporte
         saltar_Flechas(e)
     End Sub
 
-    Private Sub btnTransport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTransport.Click
+    Private Sub btnTransport_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTransport.Click
         Try
             Dim f As New FrmListarTransportista
             f.ShowDialog()

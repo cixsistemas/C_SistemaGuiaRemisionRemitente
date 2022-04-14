@@ -2,7 +2,7 @@
     Dim T As Integer
     Dim i As Integer
 
-    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         ''Me.Text = "Tabla"
         ''T = Val(InputBox("¿Qué tabla quiere conocer?" & vbCrLf & _
         ''"(Introduzca un número de 1 a 10)", "¿Número?"))
@@ -31,7 +31,7 @@
         'Next i
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As System.EventArgs) Handles Button1.Click
         T = TextBox1.Text
         For i = 1 To T
             dgvlista.Rows.Add()

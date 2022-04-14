@@ -8,7 +8,7 @@
     Public id_tipo_Dcto As Integer = -1
     Public id_Zona As Integer = -1
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = nombre.Text <> ""
@@ -65,7 +65,7 @@
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -80,11 +80,11 @@
             Close()
         End If
     End Sub
-    Private Sub FrmCliente1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmCliente1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private Sub btnZona_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnZona.Click
+    Private Sub btnZona_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnZona.Click
         Try
             Dim f As New FrmListarZona
             f.ShowDialog()
@@ -106,7 +106,7 @@
         End Try
         btnTipo_Dcto.Focus()
     End Sub
-    Private Sub btnTipo_Dcto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTipo_Dcto.Click
+    Private Sub btnTipo_Dcto_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTipo_Dcto.Click
         Try
             Dim f As New FrmListarTipo_Dcto
             f.ShowDialog()
@@ -129,7 +129,7 @@
         nro_doc.Focus()
     End Sub
 
-    Private Sub BtnTipo_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnTipo_Cliente.Click
+    Private Sub BtnTipo_Cliente_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTipo_Cliente.Click
         Try
             Dim f As New FrmListarTipo_Cliente
             f.ShowDialog()
@@ -154,7 +154,7 @@
 
 #Region "Text Box"
 
-    Private Sub FrmCliente1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmCliente1_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Me.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -237,7 +237,7 @@
         End If
         txtLinea_Credito.BackColor = Color.White
     End Sub
-    Private Sub nro_doc_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nro_doc.KeyPress
+    Private Sub nro_doc_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nro_doc.KeyPress
         SoloNumeros(e, False, sender.Text)
     End Sub
 

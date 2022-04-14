@@ -16,7 +16,7 @@
         End If
     End Sub
 
-    Private Sub FrmOperacion_2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmOperacion_2_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Me.KeyPress
         saltar_ENTER(e)
     End Sub
     Private Sub TxtCodigo_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.Enter
@@ -54,7 +54,7 @@
     Private Sub TxtDescrip_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDescrip.Leave
         TxtDescrip.BackColor = Color.White
     End Sub
-    Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
+    Private Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
         Dim ok As Boolean
 
         ok = TxtNombre.Text <> ""
@@ -75,15 +75,15 @@
         Hide()
     End Sub
 
-    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Aceptar = False
         Hide()
     End Sub
-    Private Sub FrmOperacion_2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmOperacion_2_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private Sub BtnTipoOpe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnTipoOpe.Click
+    Private Sub BtnTipoOpe_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnTipoOpe.Click
         Try
             Dim f As New FrmListar_Tipo_Ope
             f.ShowDialog()

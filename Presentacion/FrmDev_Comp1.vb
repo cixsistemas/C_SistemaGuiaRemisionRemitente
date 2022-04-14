@@ -136,12 +136,12 @@ Public Class FrmDev_Comp1
         End If
     End Sub
 
-    Private Sub FrmDev_Comp1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmDev_Comp1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Dev_Comp("", "", "")
     End Sub
-    Private Sub dgvlista_CellContentClick(sender As System.Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         Try
             indice = e.RowIndex
             id_dev_Comp = dgvlista.Item("Id Dev Comp", indice).Value
@@ -183,7 +183,7 @@ Public Class FrmDev_Comp1
     End Sub
 
 
-    Private Sub btnNuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
         Dim f As New FrmDev_Comp2
         'f.CbEstado.SelectedIndex = 0
         f.Nivel = "N"
@@ -196,7 +196,7 @@ Public Class FrmDev_Comp1
         ' f.dgvlista.Refresh()
     End Sub
 
-    Private Sub BtnModificar_Click(sender As System.Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione Registro por favor.", "Sistema de inventario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -258,11 +258,11 @@ Public Class FrmDev_Comp1
         'dgvproduccion.DataSource = Nothing
         'Me.BtnModificar.Enabled = False
     End Sub
-    Private Sub BtnCerrar_Click(sender As System.Object, e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub BtnCerrar_Click(sender As Object, e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
-    Private Sub btnEliminar_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As System.EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvlistaDetalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -315,7 +315,7 @@ Public Class FrmDev_Comp1
         End If
         listar_detalle_Dev_Comp(id_dev_Comp)
     End Sub
-    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
         listar_Dev_Comp(IIf(CbFechaIng.Checked = True, Year(dtpfinic.Value).ToString + "-" + Month(dtpfinic.Value).ToString + "-" + dtpfinic.Value.Day.ToString, ""),
                IIf(CbFechaIng.Checked = True, Year(dtpffin.Value).ToString + "-" + Month(dtpffin.Value).ToString + "-" + dtpffin.Value.Day.ToString, ""),
          IIf(TxtDistrito.Text.Trim <> "", TxtDistrito.Text.Trim, ""))
@@ -324,7 +324,7 @@ Public Class FrmDev_Comp1
 
         dgvlistaDetalle.DataSource = Nothing
     End Sub
-    Private Sub CbFechaIng_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CbFechaIng.CheckedChanged
+    Private Sub CbFechaIng_CheckedChanged(sender As Object, e As System.EventArgs) Handles CbFechaIng.CheckedChanged
         dtpfinic.Enabled = CbFechaIng.Checked : dtpffin.Enabled = CbFechaIng.Checked
         dtpfinic.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
@@ -332,7 +332,7 @@ Public Class FrmDev_Comp1
         dtpfinic.Focus()
     End Sub
 
-    Private Sub CboDistrito_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboDistrito.CheckedChanged
+    Private Sub CboDistrito_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboDistrito.CheckedChanged
         TxtDistrito.Enabled = CboDistrito.Checked : TxtDistrito.Text = "" : TxtDistrito.Focus()
     End Sub
 

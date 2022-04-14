@@ -36,7 +36,6 @@ Partial Class frmListarRemitentes
         Me.dgvlista = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LBF2 = New DevComponents.DotNetBar.LabelX()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,7 +56,7 @@ Partial Class frmListarRemitentes
         Me.Highlighter1.SetHighlightOnFocus(Me.txtbusca, True)
         Me.txtbusca.Location = New System.Drawing.Point(243, 18)
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(323, 23)
+        Me.txtbusca.Size = New System.Drawing.Size(323, 27)
         Me.txtbusca.TabIndex = 135
         '
         'StyleManager1
@@ -150,7 +149,7 @@ Partial Class frmListarRemitentes
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(12, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(202, 16)
+        Me.Label1.Size = New System.Drawing.Size(247, 20)
         Me.Label1.TabIndex = 134
         Me.Label1.Text = "Ingrese Remitente a buscar:"
         '
@@ -170,21 +169,11 @@ Partial Class frmListarRemitentes
         Me.LBF2.Text = " [F2]"
         Me.LBF2.TextAlignment = System.Drawing.StringAlignment.Center
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(473, 368)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 221
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'frmListarRemitentes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(593, 436)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.LBF2)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btn_Acep)
@@ -197,6 +186,7 @@ Partial Class frmListarRemitentes
         Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
         Me.Name = "frmListarRemitentes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listar Remitente"
@@ -214,5 +204,4 @@ Partial Class frmListarRemitentes
     Friend WithEvents txtbusca As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents LBF2 As DevComponents.DotNetBar.LabelX
-    Friend WithEvents Button1 As Button
 End Class

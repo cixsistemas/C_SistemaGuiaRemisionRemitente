@@ -47,7 +47,7 @@ Public Class FrmLoGo2
             txtbusca.Focus()
         End If
     End Sub
-    Private Sub FrmLoGo22_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmLoGo22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
 
         lista(Nothing)
@@ -83,10 +83,10 @@ Public Class FrmLoGo2
     End Sub
 
 
-    Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         indice = e.RowIndex
     End Sub
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea guardar LOGOTIPO?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -132,7 +132,7 @@ Public Class FrmLoGo2
         lista(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione LOGOTIPO", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -184,7 +184,7 @@ Public Class FrmLoGo2
         lista(Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione LOGOTIPO", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -229,7 +229,7 @@ Public Class FrmLoGo2
         lista(Nothing)
     End Sub
 
-    Private Sub btnImprimir_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_LOGOTIPO"
         f.Tabla_Imprimir = tabla_logo
@@ -237,10 +237,10 @@ Public Class FrmLoGo2
         f.ShowDialog()
     End Sub
 
-    Private Sub btnCerrar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
     End Sub
     'Private Sub txtbusca_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtbusca.KeyDown

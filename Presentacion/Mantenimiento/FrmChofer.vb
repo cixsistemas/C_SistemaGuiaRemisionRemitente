@@ -23,11 +23,11 @@
         End If
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Aceptar = True
         Hide()
     End Sub
-    Private Sub cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cancelar.Click
+    Private Sub cancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -35,7 +35,7 @@
     Private Sub nombre_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nombre.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
+    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
         valida()
     End Sub
     Private Sub nombre_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.VisibleChanged
@@ -47,7 +47,7 @@
     End Sub
 
 
-    Private Sub apellido_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles apellido.TextChanged
+    Private Sub apellido_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles apellido.TextChanged
         valida()
     End Sub
     Private Sub apellido_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles apellido.VisibleChanged
@@ -58,7 +58,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub brevete_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles brevete.TextChanged
+    Private Sub brevete_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles brevete.TextChanged
         valida()
     End Sub
     Private Sub brevete_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles brevete.VisibleChanged
@@ -68,23 +68,23 @@
     Private Sub telefono_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles telefono.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub telefono_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles telefono.TextChanged
+    Private Sub telefono_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles telefono.TextChanged
         valida()
     End Sub
     Private Sub telefono_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles telefono.VisibleChanged
         valida()
     End Sub
 
-    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nombre.KeyPress
+    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nombre.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub apellido_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles apellido.KeyPress
+    Private Sub apellido_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles apellido.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub brevete_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles brevete.KeyPress
+    Private Sub brevete_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles brevete.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub telefono_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles telefono.KeyPress
+    Private Sub telefono_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles telefono.KeyPress
         saltar_ENTER(e)
     End Sub
     Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter

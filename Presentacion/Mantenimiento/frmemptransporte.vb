@@ -27,12 +27,12 @@ Public Class frmemptransporte
         End If
     End Sub
 
-    Private Sub btnaceptar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Aceptar = True
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -40,7 +40,7 @@ Public Class frmemptransporte
     Private Sub nombre_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nombre.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nombre_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
+    Private Sub nombre_TextChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
         valida()
     End Sub
     Private Sub nombre_VisibleChanged1(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.VisibleChanged
@@ -50,7 +50,7 @@ Public Class frmemptransporte
     Private Sub ruc_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles ruc.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub ruc_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ruc.TextChanged
+    Private Sub ruc_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ruc.TextChanged
         valida()
     End Sub
 
@@ -61,20 +61,20 @@ Public Class frmemptransporte
     Private Sub domicilio_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles domicilio.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub domicilio_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles domicilio.TextChanged
+    Private Sub domicilio_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles domicilio.TextChanged
         valida()
     End Sub
     Private Sub domicilio_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles domicilio.VisibleChanged
         valida()
     End Sub
-    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles nombre.KeyPress
+    Private Sub nombre_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nombre.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub ruc_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ruc.KeyPress
+    Private Sub ruc_KeyPress1(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles ruc.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub domicilio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles domicilio.KeyPress
+    Private Sub domicilio_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles domicilio.KeyPress
         saltar_ENTER(e)
     End Sub
     Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter

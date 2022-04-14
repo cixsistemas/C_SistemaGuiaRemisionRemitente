@@ -92,11 +92,11 @@ Public Class FrmRep_Con_Comp_Pago
         End If
     End Sub
 
-    Private Sub FrmRep_Con_Comp_Pago_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+    Private Sub FrmRep_Con_Comp_Pago_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
   
     End Sub
 
-    Private Sub FrmRep_Con_Comp_Pago_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmRep_Con_Comp_Pago_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Control_Comp("", "", "", "", "")
         actualiza()
@@ -195,31 +195,31 @@ Public Class FrmRep_Con_Comp_Pago
 
         End Try
     End Sub
-    Private Sub cbFecha_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
         dtpff.Value = DateTime.Now
         dtpfin.Focus()
     End Sub
-    Private Sub CboRemitente_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
+    Private Sub CboRemitente_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
         TxtRemitente.Enabled = CboRemitente.Checked : TxtRemitente.Text = "" : TxtRemitente.Focus()
     End Sub
-    Private Sub CboTipoCom_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
+    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
         TxtTipo_Comp.Enabled = CboTipoCom.Checked : TxtTipo_Comp.Text = "" : TxtTipo_Comp.Focus()
     End Sub
-    Private Sub dtpfin_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles dtpfin.KeyPress
+    Private Sub dtpfin_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dtpfin.KeyPress
         saltar_ENTER(e)
     End Sub
 
-    Private Sub dtpff_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles dtpff.KeyPress
+    Private Sub dtpff_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dtpff.KeyPress
         saltar_ENTER(e)
         'Me.btnBuscar.Focus()
     End Sub
-    Private Sub CboComis_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CboComis.CheckedChanged
+    Private Sub CboComis_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboComis.CheckedChanged
         TxtComisionista.Enabled = CboComis.Checked : TxtComisionista.Text = "" : TxtComisionista.Focus()
     End Sub
-    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
         listar_Control_Comp(IIf(cbFecha.Checked = True, Year(dtpfin.Value).ToString + "-" + Month(dtpfin.Value).ToString + "-" + dtpfin.Value.Day.ToString, ""), _
                     IIf(cbFecha.Checked = True, Year(dtpff.Value).ToString + "-" + Month(dtpff.Value).ToString + "-" + dtpff.Value.Day.ToString, ""), _
                        IIf(TxtRemitente.Text.Trim <> "", TxtRemitente.Text.Trim, ""), _
@@ -267,7 +267,7 @@ Public Class FrmRep_Con_Comp_Pago
 
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As Object, e As System.EventArgs) Handles btnImprimir.Click
         'Me.Close()
         'Dim f As New frmImprimiR
         'f.Nivel = "FORMULARIO_LISTA_CONTROL_DE_COMPROBANTES_DE_PAGO"
@@ -294,7 +294,7 @@ Public Class FrmRep_Con_Comp_Pago
 
     End Sub
 
-    Private Sub TxtRemitente_TextChanged(sender As System.Object, e As System.EventArgs) Handles TxtRemitente.TextChanged
+    Private Sub TxtRemitente_TextChanged(sender As Object, e As System.EventArgs) Handles TxtRemitente.TextChanged
 
     End Sub
 End Class

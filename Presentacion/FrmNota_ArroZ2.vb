@@ -123,13 +123,13 @@ Public Class FrmNota_ArroZ2
     End Sub
 
 
-    Private Sub FrmNota_ArroZ22_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmNota_ArroZ22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Nota_Arroz(Nothing)
     End Sub
 
-    Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         Try
             indice = e.RowIndex
             Id_nota_arroz = dgvlista.Item("ID Nota Arroz", indice).Value
@@ -170,7 +170,7 @@ Public Class FrmNota_ArroZ2
     End Sub
 
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea guardar Nota de Envio?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -247,7 +247,7 @@ Public Class FrmNota_ArroZ2
         listar_Nota_Arroz(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -366,7 +366,7 @@ Public Class FrmNota_ArroZ2
         dgvdetalle.DataSource = Nothing
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -419,11 +419,11 @@ Public Class FrmNota_ArroZ2
         listar_Nota_Arroz(Nothing)
     End Sub
 
-    Private Sub btncerrar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btncerrar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
-    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_NOTA_ENVIO_ARROZ"
         f.Tabla_Imprimir = tabla_detalle_guias
@@ -443,7 +443,7 @@ Public Class FrmNota_ArroZ2
         'End If
     End Sub
 
-    Private Sub txtbusca_KeyPress1(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtbusca.KeyPress
+    Private Sub txtbusca_KeyPress1(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtbusca.KeyPress
         SoloNumeros(e, False, sender.Text)
     End Sub
 
@@ -451,21 +451,21 @@ Public Class FrmNota_ArroZ2
         txtbusca.BackColor = Color.White
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
         Dim valor As String = txtbusca.Text.Trim
         listar_Nota_Arroz(valor)
         dgvdetalle.DataSource = Nothing
     End Sub
 
-    Private Sub Pag_Minist_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Pag_Minist.LinkClicked
+    Private Sub Pag_Minist_LinkClicked(ByVal sender As Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Pag_Minist.LinkClicked
         System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
     End Sub
 
-    Private Sub Cons_Ruc_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Cons_Ruc.LinkClicked
+    Private Sub Cons_Ruc_LinkClicked(ByVal sender As Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Cons_Ruc.LinkClicked
         System.Diagnostics.Process.Start("http://www.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias")
     End Sub
 
-    Private Sub dgvdetalle_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick
+    Private Sub dgvdetalle_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick
         txtLogotipo.Text = dgvdetalle.CurrentRow.Cells("Logotipo").Value.ToString()
     End Sub
 End Class

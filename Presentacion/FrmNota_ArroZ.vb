@@ -6,7 +6,7 @@
 
     Public Aceptar As Boolean = False
 
-    Private Sub btnaceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
         ok = Id_guia <> -1
 
@@ -39,12 +39,12 @@
         Aceptar = False
         Hide()
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub btnGuia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuia.Click
+    Private Sub btnGuia_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuia.Click
         Try
             Dim f As New FrmListarGuiaS
             f.ShowDialog()
@@ -102,7 +102,7 @@
     End Sub
 
 
-    Private Sub btn_Precios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Precios.Click
+    Private Sub btn_Precios_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Precios.Click
         Try
             Dim f As New FrmListarPagoDetrac
             f.ShowDialog()
@@ -122,7 +122,7 @@
         End Try
         btnTrabaj.Focus()
     End Sub
-    Private Sub btnTrabaj_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTrabaj.Click
+    Private Sub btnTrabaj_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTrabaj.Click
         Try
             Dim f As New FrmListarTrabajador
             f.ShowDialog()
@@ -143,7 +143,7 @@
         End Try
         BtnCliente.Focus()
     End Sub
-    Private Sub BtnCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCliente.Click
+    Private Sub BtnCliente_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCliente.Click
         Try
             Dim f As New FrmListarCliente
             f.ShowDialog()
@@ -176,21 +176,21 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub Destinatario_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Destinatario.KeyPress
+    Private Sub Destinatario_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Destinatario.KeyPress
         saltar_ENTER(e)
     End Sub
 
     Private Sub telefono_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles telefono.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub telefono_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles telefono.KeyPress
+    Private Sub telefono_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles telefono.KeyPress
         saltar_ENTER(e)
     End Sub
 
     Private Sub direccion_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles direccion.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub direccion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles direccion.KeyPress
+    Private Sub direccion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles direccion.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -198,7 +198,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub costo_flet_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles costo_flet.KeyPress
+    Private Sub costo_flet_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles costo_flet.KeyPress
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
@@ -206,21 +206,21 @@
     Private Sub a_cuenta_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles a_cuenta.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub a_cuenta_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles a_cuenta.KeyPress
+    Private Sub a_cuenta_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles a_cuenta.KeyPress
         saltar_ENTER(e)
     End Sub
 
     Private Sub Comentario_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Comentario.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub Comentario_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Comentario.KeyPress
+    Private Sub Comentario_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Comentario.KeyPress
         saltar_ENTER(e)
     End Sub
 
     Private Sub observacion_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles observacion.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub observacion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles observacion.KeyPress
+    Private Sub observacion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles observacion.KeyPress
         saltar_ENTER(e)
     End Sub
 
@@ -274,7 +274,7 @@
     Private Sub toneladas_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles toneladas.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub toneladas_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles toneladas.KeyPress
+    Private Sub toneladas_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles toneladas.KeyPress
         saltar_ENTER(e)
     End Sub
     Private Sub toneladas_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles toneladas.Leave

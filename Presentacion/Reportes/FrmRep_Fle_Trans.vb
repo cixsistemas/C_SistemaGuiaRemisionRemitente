@@ -69,7 +69,7 @@ Public Class FrmRep_Fle_Trans
         End If
     End Sub
 
-    Private Sub FrmRep_Fle_Trans_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmRep_Fle_Trans_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing, Nothing, Nothing, Nothing)
     End Sub
@@ -79,7 +79,7 @@ Public Class FrmRep_Fle_Trans
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs)
         indice = e.RowIndex
     End Sub
-    Private Sub cbFecha_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
@@ -93,25 +93,25 @@ Public Class FrmRep_Fle_Trans
         txtTransportista.Text = CStr(f.dgvlista.Item("Empresa", indice).Value.ToString.Trim)
         btnConsultar.Focus()
     End Sub
-    Private Sub cbTransportista_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbTransportista.CheckedChanged
+    Private Sub cbTransportista_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbTransportista.CheckedChanged
         txtTransportista.Enabled = cbTransportista.Checked : txtTransportista.Text = "" : txtTransportista.Focus()
     End Sub
-    Private Sub cbNro_Guia_CheckedChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbNro_Guia.CheckedChanged
+    Private Sub cbNro_Guia_CheckedChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbNro_Guia.CheckedChanged
         txtnro_Guia.Enabled = cbNro_Guia.Checked : txtnro_Guia.Text = "" : txtnro_Guia.Focus()
     End Sub
-    Private Sub dtpfin_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles dtpfin.KeyPress
+    Private Sub dtpfin_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dtpfin.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub dtpff_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles dtpff.KeyPress
+    Private Sub dtpff_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dtpff.KeyPress
         saltar_ENTER(e)
         'Me.btnBuscar.Focus()
     End Sub
-    Private Sub txtnro_Guia_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtnro_Guia.KeyPress
+    Private Sub txtnro_Guia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtnro_Guia.KeyPress
         saltar_ENTER(e)
     End Sub
 
 
-    Private Sub btnConsultar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
+    Private Sub btnConsultar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
         'FECHA
         If cbFecha.Checked = True And cbNro_Guia.Checked = False And cbTransportista.Checked = False Then
             lista(CDate(dtpfin.Value.ToShortDateString), CDate(dtpff.Value.ToString), Nothing, Nothing)
@@ -138,7 +138,7 @@ Public Class FrmRep_Fle_Trans
         End If
     End Sub
 
-    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_FLETE_TRANSPORTISTA"
         f.Tabla_Imprimir = tabla_Nota_Arroz
@@ -146,7 +146,7 @@ Public Class FrmRep_Fle_Trans
         f.ShowDialog()
     End Sub
 
-    Private Sub txtTransportista_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTransportista.TextChanged
+    Private Sub txtTransportista_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtTransportista.TextChanged
 
     End Sub
 End Class
