@@ -59,7 +59,7 @@ Public Class FrmRepEnvioxEmp
         End If
     End Sub
 
-    Private Sub FrmRepVentaxEmp_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmRepVentaxEmp_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing, Nothing, Nothing, Nothing)
     End Sub
@@ -70,15 +70,15 @@ Public Class FrmRepEnvioxEmp
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
-    Private Sub cbNro_Guia_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbNro_Guia.CheckedChanged
+    Private Sub cbNro_Guia_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbNro_Guia.CheckedChanged
         txtnro_Guia.Enabled = cbNro_Guia.Checked : txtnro_Guia.Text = "" : txtnro_Guia.Focus()
     End Sub
 
-    Private Sub cbEmpresa_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbRemitente.CheckedChanged
+    Private Sub cbEmpresa_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbRemitente.CheckedChanged
         txtRemitente.Enabled = cbRemitente.Checked : txtRemitente.Text = "" : txtRemitente.Focus()
     End Sub
 
-    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
@@ -86,7 +86,7 @@ Public Class FrmRepEnvioxEmp
         dtpfin.Focus()
     End Sub
 
-    Private Sub txtRemitente_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtRemitente.Enter
+    Private Sub txtRemitente_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtRemitente.Enter
         Dim f As New frmListarRemitentes
         f.ShowDialog()
         txtRemitente.Text = CStr(f.dgvlista.Item("Remitente", indice).Value.ToString.Trim)
@@ -94,7 +94,7 @@ Public Class FrmRepEnvioxEmp
     End Sub
 
 
-    Private Sub btnConsultar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnConsultar.Click
+    Private Sub btnConsultar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnConsultar.Click
         'FECHA
         If cbFecha.Checked = True And cbNro_Guia.Checked = False And cbRemitente.Checked = False Then
             lista(CDate(dtpfin.Value.ToShortDateString), CDate(dtpff.Value.ToString), Nothing, Nothing)
@@ -121,7 +121,7 @@ Public Class FrmRepEnvioxEmp
         End If
     End Sub
 
-    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_VENTAS_REMITENTE"
         f.Tabla_Imprimir = tabla_Ventas_Rem
@@ -136,7 +136,7 @@ Public Class FrmRepEnvioxEmp
         saltar_ENTER(e)
         'Me.btnBuscar.Focus()
     End Sub
-    Private Sub dtpfin_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dtpfin.ValueChanged
+    Private Sub dtpfin_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dtpfin.ValueChanged
 
     End Sub
 
@@ -144,11 +144,11 @@ Public Class FrmRepEnvioxEmp
         saltar_ENTER(e)
     End Sub
 
-    Private Sub txtnro_Guia_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtnro_Guia.TextChanged
+    Private Sub txtnro_Guia_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtnro_Guia.TextChanged
 
     End Sub
 
-    Private Sub txtRemitente_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtRemitente.TextChanged
+    Private Sub txtRemitente_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtRemitente.TextChanged
 
     End Sub
 End Class

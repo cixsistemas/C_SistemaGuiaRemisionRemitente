@@ -36,7 +36,7 @@ Public Class FrmTipo_Dcto_1
             MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -53,7 +53,7 @@ Public Class FrmTipo_Dcto_1
     End Sub
 
 
-    Private Sub FrmTipo_Dcto_1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTipo_Dcto_1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
     End Sub
@@ -81,7 +81,7 @@ Public Class FrmTipo_Dcto_1
         ' Me.btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         btnmodificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         'Me.btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -90,7 +90,7 @@ Public Class FrmTipo_Dcto_1
     Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         'indice = e.RowIndex
     End Sub
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea Guardar Tipo de Documento de Identidad?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -138,7 +138,7 @@ Public Class FrmTipo_Dcto_1
         lista(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Tipo de Documento de Identidad", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -197,7 +197,7 @@ Public Class FrmTipo_Dcto_1
         lista(Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Tipo de Documento de Identidad", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -236,7 +236,7 @@ Public Class FrmTipo_Dcto_1
         indice = -1
         lista(Nothing)
     End Sub
-    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
+    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Enter
         ' Me.TxtBusca.BackColor = Color.Azure
     End Sub
 
@@ -247,11 +247,11 @@ Public Class FrmTipo_Dcto_1
         End If
     End Sub
 
-    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         TxtBusca.BackColor = Color.White
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         lista(TxtBusca.Text)
     End Sub
 End Class

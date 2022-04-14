@@ -9,7 +9,7 @@
 
     
 
-    Private Sub FrmPago_Detra1_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmPago_Detra1_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -22,13 +22,13 @@
     End Sub
 
 
-    Private Sub FrmPago_Detra1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmPago_Detra1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
 
       
     End Sub
 
-    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAgregar.Click
 
         If operacion = "" Then
             MessageBox.Show("Seleccione nuevo ó editar.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -100,14 +100,14 @@
         cantidad_sacos.Text = ""
     End Sub
 
-    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnnuevo_examen.Click
+    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnnuevo_examen.Click
         operacion = "N"
         indice = -1
         activar2(True)
 
         btnCategoria.Focus()
     End Sub
-    Private Sub btnRemitente_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRemitente.Click
+    Private Sub btnRemitente_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRemitente.Click
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -135,7 +135,7 @@
        
 
     End Sub
-    Private Sub btnCategoria_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCategoria.Click
+    Private Sub btnCategoria_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCategoria.Click
         Try
             Dim f As New FrmListarCat
             f.ShowDialog()
@@ -173,7 +173,7 @@
 
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
 
         Dim ok As Boolean
 
@@ -202,7 +202,7 @@
         btneditar_hpm.Enabled = CBool(IIf(Detalle_Cat.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub Detalle_Cat_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detalle_Cat.VisibleChanged
+    Private Sub Detalle_Cat_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Detalle_Cat.VisibleChanged
         btnquitar_hpm.Enabled = CBool(IIf(Detalle_Cat.Rows.Count > 0, True, False))
         btneditar_hpm.Enabled = CBool(IIf(Detalle_Cat.Rows.Count > 0, True, False))
     End Sub
@@ -214,12 +214,12 @@
         txtivap.Enabled = activa
         btnAgregar.Enabled = activa
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btneditar_hpm.Click
+    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btneditar_hpm.Click
 
        
         Try
@@ -241,7 +241,7 @@
        
 
     End Sub
-    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnquitar_hpm.Click
+    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnquitar_hpm.Click
         If check_fila_grilla(Detalle_Cat) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -256,20 +256,20 @@
 
     End Sub
 
-    Private Sub txtDescripcion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDescripcion.Enter
+    Private Sub txtDescripcion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtDescripcion.Enter
         txtDescripcion.BackColor = Color.Moccasin
     End Sub
-    Private Sub txtDescripcion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDescripcion.Leave
+    Private Sub txtDescripcion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtDescripcion.Leave
         txtDescripcion.BackColor = Color.White
     End Sub
     Private Sub txtDescripcion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtDescripcion.KeyPress
         saltar_ENTER(e)
 
     End Sub
-    Private Sub cantidad_sacos_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles cantidad_sacos.Leave
+    Private Sub cantidad_sacos_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles cantidad_sacos.Leave
         cantidad_sacos.BackColor = Color.White
     End Sub
-    Private Sub cantidad_sacos_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles cantidad_sacos.Enter
+    Private Sub cantidad_sacos_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles cantidad_sacos.Enter
         cantidad_sacos.BackColor = Color.Moccasin
     End Sub
 
@@ -278,20 +278,20 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtivap_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtivap.Enter
+    Private Sub txtivap_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtivap.Enter
         txtivap.BackColor = Color.Moccasin
     End Sub
-    Private Sub txtivap_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtivap.Leave
+    Private Sub txtivap_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtivap.Leave
         txtivap.BackColor = Color.White
     End Sub
     Private Sub txtivap_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtivap.KeyPress
         saltar_ENTER(e)
     End Sub
 
-    Private Sub txtprecio_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtprecio.Enter
+    Private Sub txtprecio_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtprecio.Enter
         txtprecio.BackColor = Color.Moccasin
     End Sub
-    Private Sub txtprecio_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtprecio.Leave
+    Private Sub txtprecio_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtprecio.Leave
         txtprecio.BackColor = Color.White
     End Sub
     Private Sub txtprecio_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles txtprecio.KeyPress
@@ -313,7 +313,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtTot_Sup_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtTot_Sup.TextChanged
+    Private Sub txtTot_Sup_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtTot_Sup.TextChanged
         txtTot_Sup.Text = Val(txtsup1.Text) + Val(txtsup2.Text) + Val(txtsup3.Text) + Val(txtsup4.Text) + Val(txtsup5.Text)
         txt_TOTAL.Text = Val(txtTot_Ext.Text) + Val(txtTot_Sup.Text) + Val(txtDespTotal.Text)
     End Sub
@@ -331,7 +331,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtsup1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtsup1.TextChanged
+    Private Sub txtsup1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtsup1.TextChanged
         txtTot_Sup.Text = Val(txtsup1.Text) + Val(txtsup2.Text) + Val(txtsup3.Text) + Val(txtsup4.Text) + Val(txtsup5.Text)
     End Sub
 
@@ -343,7 +343,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtsup2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtsup2.TextChanged
+    Private Sub txtsup2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtsup2.TextChanged
         txtTot_Sup.Text = Val(txtsup1.Text) + Val(txtsup2.Text) + Val(txtsup3.Text) + Val(txtsup4.Text) + Val(txtsup5.Text)
     End Sub
 
@@ -355,7 +355,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtsup3_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtsup3.TextChanged
+    Private Sub txtsup3_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtsup3.TextChanged
         txtTot_Sup.Text = Val(txtsup1.Text) + Val(txtsup2.Text) + Val(txtsup3.Text) + Val(txtsup4.Text) + Val(txtsup5.Text)
     End Sub
 
@@ -367,7 +367,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtsup4_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtsup4.TextChanged
+    Private Sub txtsup4_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtsup4.TextChanged
         txtTot_Sup.Text = Val(txtsup1.Text) + Val(txtsup2.Text) + Val(txtsup3.Text) + Val(txtsup4.Text) + Val(txtsup5.Text)
     End Sub
 
@@ -379,7 +379,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtsup5_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtsup5.TextChanged
+    Private Sub txtsup5_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtsup5.TextChanged
         txtTot_Sup.Text = Val(txtsup1.Text) + Val(txtsup2.Text) + Val(txtsup3.Text) + Val(txtsup4.Text) + Val(txtsup5.Text)
     End Sub
 #End Region
@@ -395,7 +395,7 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtDespTotal_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDespTotal.TextChanged
+    Private Sub txtDespTotal_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtDespTotal.TextChanged
         txtDespTotal.Text = Val(txtdesp1.Text) + Val(txtdesp2.Text) + Val(txtdesp3.Text) + Val(txtdesp4.Text) + Val(txtdesp5.Text)
         txt_TOTAL.Text = Val(txtTot_Ext.Text) + Val(txtTot_Sup.Text) + Val(txtDespTotal.Text)
     End Sub
@@ -408,7 +408,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtdesp1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdesp1.TextChanged
+    Private Sub txtdesp1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtdesp1.TextChanged
         txtDespTotal.Text = Val(txtdesp1.Text) + Val(txtdesp2.Text) + Val(txtdesp3.Text) + Val(txtdesp4.Text) + Val(txtdesp5.Text)
     End Sub
 
@@ -420,7 +420,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtdesp2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdesp2.TextChanged
+    Private Sub txtdesp2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtdesp2.TextChanged
         txtDespTotal.Text = Val(txtdesp1.Text) + Val(txtdesp2.Text) + Val(txtdesp3.Text) + Val(txtdesp4.Text) + Val(txtdesp5.Text)
     End Sub
 
@@ -432,7 +432,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtdesp3_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdesp3.TextChanged
+    Private Sub txtdesp3_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtdesp3.TextChanged
         txtDespTotal.Text = Val(txtdesp1.Text) + Val(txtdesp2.Text) + Val(txtdesp3.Text) + Val(txtdesp4.Text) + Val(txtdesp5.Text)
     End Sub
 
@@ -445,7 +445,7 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtdesp4_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdesp4.TextChanged
+    Private Sub txtdesp4_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtdesp4.TextChanged
         txtDespTotal.Text = Val(txtdesp1.Text) + Val(txtdesp2.Text) + Val(txtdesp3.Text) + Val(txtdesp4.Text) + Val(txtdesp5.Text)
     End Sub
 
@@ -458,7 +458,7 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtdesp5_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdesp5.TextChanged
+    Private Sub txtdesp5_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtdesp5.TextChanged
         txtDespTotal.Text = Val(txtdesp1.Text) + Val(txtdesp2.Text) + Val(txtdesp3.Text) + Val(txtdesp4.Text) + Val(txtdesp5.Text)
     End Sub
 #End Region
@@ -473,7 +473,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtExt1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtExt1.TextChanged
+    Private Sub txtExt1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtExt1.TextChanged
         txtTot_Ext.Text = Val(txtExt1.Text) + Val(txtExt2.Text) + Val(txtExt3.Text) + Val(txtExt4.Text)
         txt_TOTAL.Text = Val(txtTot_Ext.Text) + Val(txtTot_Sup.Text) + Val(txtDespTotal.Text)
     End Sub
@@ -487,7 +487,7 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtExt2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtExt2.TextChanged
+    Private Sub txtExt2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtExt2.TextChanged
         txtTot_Ext.Text = Val(txtExt1.Text) + Val(txtExt2.Text) + Val(txtExt3.Text) + Val(txtExt4.Text)
     End Sub
 
@@ -500,7 +500,7 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtExt3_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtExt3.TextChanged
+    Private Sub txtExt3_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtExt3.TextChanged
         txtTot_Ext.Text = Val(txtExt1.Text) + Val(txtExt2.Text) + Val(txtExt3.Text) + Val(txtExt4.Text)
     End Sub
 
@@ -513,7 +513,7 @@
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtExt4_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtExt4.TextChanged
+    Private Sub txtExt4_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtExt4.TextChanged
         txtTot_Ext.Text = Val(txtExt1.Text) + Val(txtExt2.Text) + Val(txtExt3.Text) + Val(txtExt4.Text)
     End Sub
 
@@ -525,7 +525,7 @@
         saltar_ENTER(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtTot_Ext_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtTot_Ext.TextChanged
+    Private Sub txtTot_Ext_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtTot_Ext.TextChanged
         txtTot_Ext.Text = Val(txtExt1.Text) + Val(txtExt2.Text) + Val(txtExt3.Text) + Val(txtExt4.Text)
         txt_TOTAL.Text = Val(txtTot_Ext.Text) + Val(txtTot_Sup.Text) + Val(txtDespTotal.Text)
     End Sub
@@ -537,19 +537,19 @@
     End Sub
 
     
-    Private Sub txt_TOTAL_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_TOTAL.TextChanged
+    Private Sub txt_TOTAL_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txt_TOTAL.TextChanged
         txt_TOTAL.Text = Val(txtTot_Ext.Text) + Val(txtTot_Sup.Text) + Val(txtDespTotal.Text)
     End Sub
 
   
-    Private Sub btnCALC_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCALC.Click
+    Private Sub btnCALC_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCALC.Click
         Dim Proceso As New Process()
         Proceso.StartInfo.FileName = "CALC.exe"
         Proceso.StartInfo.Arguments = ""
         Proceso.Start()
     End Sub
 
-    Private Sub BTN_PAGINA_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTN_PAGINA.Click
+    Private Sub BTN_PAGINA_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BTN_PAGINA.Click
         System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2018")
     End Sub
 
@@ -557,7 +557,7 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub Detalle_Cat_Leave(sender As Object, e As System.EventArgs) Handles Detalle_Cat.Leave
+    Private Sub Detalle_Cat_Leave(sender As Object, e As EventArgs) Handles Detalle_Cat.Leave
         'If CInt(Detalle_Cat.Item("id_cat", indice).Value) = "" Then
         '    Dim f As New FrmListarCat
         '    f.ShowDialog()
@@ -567,7 +567,7 @@
 
     End Sub
 
-    Private Sub Detalle_Cat_Enter(sender As Object, e As System.EventArgs) Handles Detalle_Cat.Enter
+    Private Sub Detalle_Cat_Enter(sender As Object, e As EventArgs) Handles Detalle_Cat.Enter
         'If CInt(Detalle_Cat.Item("id_cat", indice).Value) = "" Then
         '    Dim f As New FrmListarCat
         '    f.ShowDialog()

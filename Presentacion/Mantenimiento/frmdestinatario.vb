@@ -43,18 +43,18 @@ Public Class frmdestinatario
     End If
   End Sub
 
-  Private Sub frmcliente_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+  Private Sub frmcliente_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
     Aceptar = False
     Hide()
     End Sub
 
-    Private Sub frmcliente_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmcliente_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'lista_tipodoc(11)
 
     End Sub
 
-    Private Sub cbotipodoc_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbotipodoc.SelectedIndexChanged
+    Private Sub cbotipodoc_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbotipodoc.SelectedIndexChanged
         nro_doc.Text = ""
         nro_doc.Focus()
         valida()
@@ -73,7 +73,7 @@ Public Class frmdestinatario
     End Sub
 
 
-  Private Sub ruc_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ruc.TextChanged
+  Private Sub ruc_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ruc.TextChanged
     If ruc.Text.Trim <> "" Then
       activa(False)
     Else
@@ -82,7 +82,7 @@ Public Class frmdestinatario
     valida()
   End Sub
 
-  Private Sub ruc_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ruc.VisibleChanged
+  Private Sub ruc_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ruc.VisibleChanged
     'If ruc.Text.Trim <> "" Then
     '    activa(False)
     'Else
@@ -95,7 +95,7 @@ Public Class frmdestinatario
         saltar_Flechas(e)
     End Sub
 
-    Private Sub nro_doc_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nro_doc.TextChanged
+    Private Sub nro_doc_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nro_doc.TextChanged
         If nro_doc.Text.Trim <> "" Then
             ruc.Text = ""
             ruc.Enabled = False
@@ -106,16 +106,16 @@ Public Class frmdestinatario
         valida()
     End Sub
 
-  Private Sub nro_doc_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nro_doc.VisibleChanged
+  Private Sub nro_doc_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nro_doc.VisibleChanged
     valida()
   End Sub
 
-  Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+  Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
     Aceptar = True
     Hide()
   End Sub
 
-  Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+  Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
     Aceptar = False
     Hide()
     End Sub
@@ -124,15 +124,15 @@ Public Class frmdestinatario
         saltar_Flechas(e)
     End Sub
 
-    Private Sub razonsocial_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles razonsocial.TextChanged
+    Private Sub razonsocial_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles razonsocial.TextChanged
         valida()
     End Sub
 
-  Private Sub razonsocial_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles razonsocial.VisibleChanged
+  Private Sub razonsocial_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles razonsocial.VisibleChanged
     valida()
   End Sub
 
-  Private Sub cbotipodoc_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbotipodoc.VisibleChanged
+  Private Sub cbotipodoc_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbotipodoc.VisibleChanged
     valida()
     End Sub
 
@@ -157,21 +157,21 @@ Public Class frmdestinatario
         saltar_ENTER(e)
     End Sub
 
-    Private Sub razonsocial_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles razonsocial.Leave
+    Private Sub razonsocial_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles razonsocial.Leave
         razonsocial.BackColor = Color.White
     End Sub
-    Private Sub razonsocial_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles razonsocial.Enter
+    Private Sub razonsocial_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles razonsocial.Enter
         razonsocial.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub ruc_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ruc.Enter
+    Private Sub ruc_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles ruc.Enter
         ruc.BackColor = Color.Moccasin
     End Sub
-    Private Sub ruc_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ruc.Leave
+    Private Sub ruc_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles ruc.Leave
         ruc.BackColor = Color.White
     End Sub
 
-    Private Sub btnUbigeo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnUbigeo.Click
+    Private Sub btnUbigeo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUbigeo.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -194,7 +194,7 @@ Public Class frmdestinatario
         btnaceptar.Focus()
     End Sub
 
-    Private Sub Direccion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Direccion.Enter
+    Private Sub Direccion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Direccion.Enter
         Direccion.BackColor = Color.Moccasin
     End Sub
 
@@ -202,15 +202,15 @@ Public Class frmdestinatario
         saltar_ENTER(e)
     End Sub
 
-    Private Sub Direccion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Direccion.Leave
+    Private Sub Direccion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Direccion.Leave
         Direccion.BackColor = Color.White
     End Sub
 
-    Private Sub Direccion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Direccion.TextChanged
+    Private Sub Direccion_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Direccion.TextChanged
 
     End Sub
 
-    Private Sub Rep_Legal_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rep_Legal.Enter
+    Private Sub Rep_Legal_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Rep_Legal.Enter
         Rep_Legal.BackColor = Color.Moccasin
     End Sub
 
@@ -218,11 +218,11 @@ Public Class frmdestinatario
         saltar_ENTER(e)
     End Sub
 
-    Private Sub Rep_Legal_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rep_Legal.Leave
+    Private Sub Rep_Legal_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Rep_Legal.Leave
         Rep_Legal.BackColor = Color.White
     End Sub
 
-    Private Sub Rep_Legal_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rep_Legal.TextChanged
+    Private Sub Rep_Legal_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Rep_Legal.TextChanged
 
     End Sub
 End Class

@@ -15,12 +15,12 @@ Public Class frmunidadtransporte
     End Sub
 
 
-    Private Sub frmunidadtransporte_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub frmunidadtransporte_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub frmunidadtransporte_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmunidadtransporte_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'lista_emptransporte(3)
     End Sub
@@ -36,7 +36,7 @@ Public Class frmunidadtransporte
         saltar_Flechas(e)
     End Sub
 
-    Private Sub Pes_Veh_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Pes_Veh.Leave
+    Private Sub Pes_Veh_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Pes_Veh.Leave
         Try
             Pes_Veh.Text = Format(CType(Pes_Veh.Text, Decimal), "#,##0")
         Catch ex As Exception
@@ -44,21 +44,21 @@ Public Class frmunidadtransporte
         End Try
         Pes_Veh.BackColor = Color.White
     End Sub
-    Private Sub Pes_Veh_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Pes_Veh.Enter
+    Private Sub Pes_Veh_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Pes_Veh.Enter
         Pes_Veh.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub Descripcion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Descripcion.Enter
+    Private Sub Descripcion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Descripcion.Enter
         Descripcion.BackColor = Color.Moccasin
     End Sub
-    Private Sub Descripcion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Descripcion.Leave
+    Private Sub Descripcion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Descripcion.Leave
         Descripcion.BackColor = Color.White
     End Sub
 
-    Private Sub Peso_neto1_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Peso_neto1.Enter
+    Private Sub Peso_neto1_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Peso_neto1.Enter
         Peso_neto1.BackColor = Color.Moccasin
     End Sub
-    Private Sub Peso_neto1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Peso_neto1.Leave
+    Private Sub Peso_neto1_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Peso_neto1.Leave
         Try
             Peso_neto1.Text = Format(CType(Peso_neto1.Text, Decimal), "#,##0")
         Catch ex As Exception
@@ -66,10 +66,10 @@ Public Class frmunidadtransporte
         End Try
         Peso_neto1.BackColor = Color.White
     End Sub
-    Private Sub peso_neto2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles peso_neto2.Enter
+    Private Sub peso_neto2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles peso_neto2.Enter
         peso_neto2.BackColor = Color.Moccasin
     End Sub
-    Private Sub peso_neto2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles peso_neto2.Leave
+    Private Sub peso_neto2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles peso_neto2.Leave
         Try
             peso_neto2.Text = Format(CType(peso_neto2.Text, Decimal), "#,##0")
         Catch ex As Exception
@@ -77,24 +77,24 @@ Public Class frmunidadtransporte
         End Try
         peso_neto2.BackColor = Color.White
     End Sub
-    Private Sub Peso_neto1_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Peso_neto1.TextChanged
+    Private Sub Peso_neto1_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Peso_neto1.TextChanged
         valida()
     End Sub
 
-    Private Sub Peso_neto1_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Peso_neto1.VisibleChanged
+    Private Sub Peso_neto1_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Peso_neto1.VisibleChanged
         valida()
     End Sub
 
  
 
-    Private Sub peso_neto2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles peso_neto2.TextChanged
+    Private Sub peso_neto2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles peso_neto2.TextChanged
         valida()
     End Sub
 
-    Private Sub peso_neto2_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles peso_neto2.VisibleChanged
+    Private Sub peso_neto2_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles peso_neto2.VisibleChanged
         valida()
     End Sub
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
         Dim okk As Boolean
         okk = Peso_neto1.Text.Trim <> ""
         If (okk = False) Then
@@ -120,20 +120,20 @@ Public Class frmunidadtransporte
         Aceptar = True
         Hide()
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
-    Private Sub cboemptransporte_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub cboemptransporte_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
         valida()
     End Sub
     Private Sub marca_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles marca.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub marca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca.TextChanged
+    Private Sub marca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles marca.TextChanged
         valida()
     End Sub
-    Private Sub marca_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca.VisibleChanged
+    Private Sub marca_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles marca.VisibleChanged
         valida()
     End Sub
 
@@ -141,31 +141,31 @@ Public Class frmunidadtransporte
         saltar_Flechas(e)
 
     End Sub
-    Private Sub nroplaca_TextChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca.TextChanged
+    Private Sub nroplaca_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca.TextChanged
         valida()
     End Sub
-    Private Sub nroplaca_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca.VisibleChanged
+    Private Sub nroplaca_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca.VisibleChanged
         valida()
     End Sub
 
     Private Sub nrocertificado_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nrocertificado.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nrocertificado_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado.TextChanged
+    Private Sub nrocertificado_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado.TextChanged
         valida()
     End Sub
-    Private Sub nrocertificado_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado.VisibleChanged
+    Private Sub nrocertificado_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado.VisibleChanged
         valida()
     End Sub
 
     Private Sub marca2_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles marca2.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub marca2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca2.TextChanged
+    Private Sub marca2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles marca2.TextChanged
         valida()
     End Sub
 
-    Private Sub marca2_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca2.VisibleChanged
+    Private Sub marca2_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles marca2.VisibleChanged
         valida()
     End Sub
 
@@ -174,22 +174,22 @@ Public Class frmunidadtransporte
     End Sub
 
 
-    Private Sub nroplaca2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca2.TextChanged
+    Private Sub nroplaca2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca2.TextChanged
         valida()
     End Sub
 
-    Private Sub nroplaca2_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca2.VisibleChanged
+    Private Sub nroplaca2_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca2.VisibleChanged
         valida()
     End Sub
 
     Private Sub nrocertificado2_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nrocertificado2.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nrocertificado2_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado2.TextChanged
+    Private Sub nrocertificado2_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado2.TextChanged
         valida()
     End Sub
 
-    Private Sub nrocertificado2_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado2.VisibleChanged
+    Private Sub nrocertificado2_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado2.VisibleChanged
         valida()
     End Sub
 
@@ -283,87 +283,87 @@ Public Class frmunidadtransporte
     Private Sub Descripcion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Descripcion.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub marca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca.Enter
+    Private Sub marca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles marca.Enter
         marca.BackColor = Color.Moccasin
     End Sub
-    Private Sub marca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca.Leave
+    Private Sub marca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles marca.Leave
         marca.BackColor = Color.White
     End Sub
 
-    Private Sub nroplaca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca.Enter
+    Private Sub nroplaca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca.Enter
         nroplaca.BackColor = Color.Moccasin
     End Sub
-    Private Sub nroplaca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca.Leave
+    Private Sub nroplaca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca.Leave
         nroplaca.BackColor = Color.White
     End Sub
-    Private Sub nrocertificado_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado.Enter
+    Private Sub nrocertificado_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado.Enter
         nrocertificado.BackColor = Color.Moccasin
     End Sub
-    Private Sub nrocertificado_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado.Leave
+    Private Sub nrocertificado_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado.Leave
         nrocertificado.BackColor = Color.White
     End Sub
-    Private Sub largo_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles largo.Enter
+    Private Sub largo_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles largo.Enter
         largo.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub largo_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles largo.Leave
+    Private Sub largo_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles largo.Leave
         largo.BackColor = Color.White
     End Sub
-    Private Sub alto_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles alto.Enter
+    Private Sub alto_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles alto.Enter
         alto.BackColor = Color.Moccasin
     End Sub
-    Private Sub alto_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles alto.Leave
+    Private Sub alto_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles alto.Leave
         alto.BackColor = Color.White
     End Sub
-    Private Sub ancho_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ancho.Enter
+    Private Sub ancho_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles ancho.Enter
         ancho.BackColor = Color.Moccasin
     End Sub
-    Private Sub ancho_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ancho.Leave
+    Private Sub ancho_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles ancho.Leave
         ancho.BackColor = Color.White
     End Sub
-    Private Sub marca2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca2.Enter
+    Private Sub marca2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles marca2.Enter
         marca2.BackColor = Color.Moccasin
     End Sub
-    Private Sub marca2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles marca2.Leave
+    Private Sub marca2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles marca2.Leave
         marca2.BackColor = Color.White
     End Sub
 
-    Private Sub nroplaca2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca2.Enter
+    Private Sub nroplaca2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca2.Enter
         nroplaca2.BackColor = Color.Moccasin
     End Sub
-    Private Sub nroplaca2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroplaca2.Leave
+    Private Sub nroplaca2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nroplaca2.Leave
         nroplaca2.BackColor = Color.White
     End Sub
-    Private Sub nrocertificado2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado2.Enter
+    Private Sub nrocertificado2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado2.Enter
         nrocertificado2.BackColor = Color.Moccasin
     End Sub
-    Private Sub nrocertificado2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nrocertificado2.Leave
+    Private Sub nrocertificado2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nrocertificado2.Leave
         nrocertificado2.BackColor = Color.White
     End Sub
-    Private Sub largo2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles largo2.Enter
+    Private Sub largo2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles largo2.Enter
         largo2.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub largo2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles largo2.Leave
+    Private Sub largo2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles largo2.Leave
         largo2.BackColor = Color.White
     End Sub
-    Private Sub alto2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles alto2.Enter
+    Private Sub alto2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles alto2.Enter
         alto2.BackColor = Color.Moccasin
     End Sub
-    Private Sub alto2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles alto2.Leave
+    Private Sub alto2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles alto2.Leave
         alto2.BackColor = Color.White
     End Sub
-    Private Sub ancho2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ancho2.Enter
+    Private Sub ancho2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles ancho2.Enter
         ancho2.BackColor = Color.Moccasin
     End Sub
-    Private Sub ancho2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles ancho2.Leave
+    Private Sub ancho2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles ancho2.Leave
         ancho2.BackColor = Color.White
     End Sub
 
-    Private Sub Conf_Vehi_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Conf_Vehi.Enter
+    Private Sub Conf_Vehi_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Conf_Vehi.Enter
         Conf_Vehi.BackColor = Color.Moccasin
     End Sub
-    Private Sub Conf_Vehi_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Conf_Vehi.Leave
+    Private Sub Conf_Vehi_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Conf_Vehi.Leave
         Conf_Vehi.BackColor = Color.White
     End Sub
 
@@ -382,7 +382,7 @@ Public Class frmunidadtransporte
         saltar_Flechas(e)
     End Sub
 
-    Private Sub btnTransport_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTransport.Click
+    Private Sub btnTransport_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnTransport.Click
         Try
             Dim f As New FrmListarTransportista
             f.ShowDialog()

@@ -41,6 +41,7 @@ Partial Class frmproducto
         Me.txtlogotipo = New System.Windows.Forms.TextBox()
         Me.Nombre_Com = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbProdSinDetalle = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -57,11 +58,11 @@ Partial Class frmproducto
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(11, 48)
+        Me.Label2.Location = New System.Drawing.Point(13, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 18)
+        Me.Label2.Size = New System.Drawing.Size(73, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nombre:"
+        Me.Label2.Text = "Producto:"
         '
         'prod_nom
         '
@@ -70,14 +71,14 @@ Partial Class frmproducto
         Me.prod_nom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.prod_nom.Location = New System.Drawing.Point(14, 74)
         Me.prod_nom.Name = "prod_nom"
-        Me.prod_nom.Size = New System.Drawing.Size(315, 21)
+        Me.prod_nom.Size = New System.Drawing.Size(923, 21)
         Me.prod_nom.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(345, 48)
+        Me.Label3.Location = New System.Drawing.Point(15, 101)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(129, 18)
         Me.Label3.TabIndex = 3
@@ -87,17 +88,18 @@ Partial Class frmproducto
         '
         Me.prod_peso_uni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.prod_peso_uni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.prod_peso_uni.Location = New System.Drawing.Point(348, 74)
+        Me.prod_peso_uni.Location = New System.Drawing.Point(17, 120)
         Me.prod_peso_uni.Name = "prod_peso_uni"
-        Me.prod_peso_uni.Size = New System.Drawing.Size(110, 21)
+        Me.prod_peso_uni.Size = New System.Drawing.Size(182, 21)
         Me.prod_peso_uni.TabIndex = 2
+        Me.prod_peso_uni.Text = "0"
         '
         'prod_color
         '
         Me.prod_color.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.prod_color.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.prod_color.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.prod_color.Location = New System.Drawing.Point(485, 131)
+        Me.prod_color.Location = New System.Drawing.Point(482, 174)
         Me.prod_color.Name = "prod_color"
         Me.prod_color.Size = New System.Drawing.Size(397, 21)
         Me.prod_color.TabIndex = 6
@@ -106,7 +108,7 @@ Partial Class frmproducto
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(485, 111)
+        Me.Label4.Location = New System.Drawing.Point(482, 154)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 18)
         Me.Label4.TabIndex = 5
@@ -116,7 +118,7 @@ Partial Class frmproducto
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(11, 111)
+        Me.Label5.Location = New System.Drawing.Point(15, 153)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(76, 18)
         Me.Label5.TabIndex = 7
@@ -128,7 +130,7 @@ Partial Class frmproducto
         Me.cbocategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbocategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbocategoria.FormattingEnabled = True
-        Me.cbocategoria.Location = New System.Drawing.Point(12, 132)
+        Me.cbocategoria.Location = New System.Drawing.Point(16, 174)
         Me.cbocategoria.Name = "cbocategoria"
         Me.cbocategoria.Size = New System.Drawing.Size(183, 23)
         Me.cbocategoria.TabIndex = 4
@@ -137,7 +139,7 @@ Partial Class frmproducto
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(483, 48)
+        Me.Label6.Location = New System.Drawing.Point(234, 101)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(70, 18)
         Me.Label6.TabIndex = 9
@@ -149,7 +151,7 @@ Partial Class frmproducto
         Me.cboenvasado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cboenvasado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboenvasado.FormattingEnabled = True
-        Me.cboenvasado.Location = New System.Drawing.Point(222, 132)
+        Me.cboenvasado.Location = New System.Drawing.Point(226, 174)
         Me.cboenvasado.Name = "cboenvasado"
         Me.cboenvasado.Size = New System.Drawing.Size(249, 23)
         Me.cboenvasado.TabIndex = 5
@@ -158,7 +160,7 @@ Partial Class frmproducto
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(222, 111)
+        Me.Label7.Location = New System.Drawing.Point(226, 153)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(78, 18)
         Me.Label7.TabIndex = 11
@@ -172,7 +174,7 @@ Partial Class frmproducto
         Me.btnaceptar.ForeColor = System.Drawing.Color.Blue
         Me.btnaceptar.Image = CType(resources.GetObject("btnaceptar.Image"), System.Drawing.Image)
         Me.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnaceptar.Location = New System.Drawing.Point(701, 172)
+        Me.btnaceptar.Location = New System.Drawing.Point(698, 209)
         Me.btnaceptar.Name = "btnaceptar"
         Me.btnaceptar.Size = New System.Drawing.Size(113, 50)
         Me.btnaceptar.TabIndex = 8
@@ -188,7 +190,7 @@ Partial Class frmproducto
         Me.btncancelar.ForeColor = System.Drawing.Color.Blue
         Me.btncancelar.Image = CType(resources.GetObject("btncancelar.Image"), System.Drawing.Image)
         Me.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btncancelar.Location = New System.Drawing.Point(820, 172)
+        Me.btncancelar.Location = New System.Drawing.Point(817, 209)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(121, 50)
         Me.btncancelar.TabIndex = 9
@@ -201,7 +203,7 @@ Partial Class frmproducto
         Me.btnlogotipo.BackColor = System.Drawing.Color.Gainsboro
         Me.btnlogotipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlogotipo.Image = CType(resources.GetObject("btnlogotipo.Image"), System.Drawing.Image)
-        Me.btnlogotipo.Location = New System.Drawing.Point(894, 55)
+        Me.btnlogotipo.Location = New System.Drawing.Point(894, 101)
         Me.btnlogotipo.Name = "btnlogotipo"
         Me.btnlogotipo.Size = New System.Drawing.Size(43, 40)
         Me.btnlogotipo.TabIndex = 3
@@ -213,17 +215,18 @@ Partial Class frmproducto
         Me.txtlogotipo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtlogotipo.Enabled = False
         Me.txtlogotipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtlogotipo.Location = New System.Drawing.Point(483, 74)
+        Me.txtlogotipo.Location = New System.Drawing.Point(229, 120)
         Me.txtlogotipo.Name = "txtlogotipo"
-        Me.txtlogotipo.Size = New System.Drawing.Size(400, 21)
+        Me.txtlogotipo.Size = New System.Drawing.Size(654, 21)
         Me.txtlogotipo.TabIndex = 13
+        Me.txtlogotipo.Text = "."
         '
         'Nombre_Com
         '
         Me.Nombre_Com.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Nombre_Com.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Nombre_Com.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nombre_Com.Location = New System.Drawing.Point(14, 192)
+        Me.Nombre_Com.Location = New System.Drawing.Point(14, 229)
         Me.Nombre_Com.MaxLength = 150
         Me.Nombre_Com.Name = "Nombre_Com"
         Me.Nombre_Com.Size = New System.Drawing.Size(326, 21)
@@ -233,18 +236,33 @@ Partial Class frmproducto
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(14, 172)
+        Me.Label8.Location = New System.Drawing.Point(14, 209)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(138, 18)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Nombre Comercial:"
+        '
+        'cbProdSinDetalle
+        '
+        Me.cbProdSinDetalle.AutoSize = True
+        Me.cbProdSinDetalle.Checked = True
+        Me.cbProdSinDetalle.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbProdSinDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbProdSinDetalle.ForeColor = System.Drawing.Color.Red
+        Me.cbProdSinDetalle.Location = New System.Drawing.Point(14, 29)
+        Me.cbProdSinDetalle.Name = "cbProdSinDetalle"
+        Me.cbProdSinDetalle.Size = New System.Drawing.Size(154, 19)
+        Me.cbProdSinDetalle.TabIndex = 15
+        Me.cbProdSinDetalle.Text = "Producto sin detalle"
+        Me.cbProdSinDetalle.UseVisualStyleBackColor = True
         '
         'frmproducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
-        Me.ClientSize = New System.Drawing.Size(950, 234)
+        Me.ClientSize = New System.Drawing.Size(950, 267)
+        Me.Controls.Add(Me.cbProdSinDetalle)
         Me.Controls.Add(Me.Nombre_Com)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtlogotipo)
@@ -292,4 +310,5 @@ Partial Class frmproducto
     Friend WithEvents txtlogotipo As System.Windows.Forms.TextBox
     Friend WithEvents Nombre_Com As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents cbProdSinDetalle As CheckBox
 End Class

@@ -87,13 +87,13 @@ Public Class FrmListarUnidTransp
     End Sub
 
 
-    Private Sub FrmListarUnidTransps_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarUnidTransps_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(6, Nothing)
         rbplac_Rem.Checked = True
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
     Private Sub dgvlista_CellClick1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
@@ -131,7 +131,7 @@ Public Class FrmListarUnidTransp
     End Sub
 
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         Insertar()
     End Sub
 
@@ -227,7 +227,7 @@ Public Class FrmListarUnidTransp
     REM ========================================================================
 #Region "TEXTBOX"
 
-    Private Sub txtbusca_TextChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
 
         If rbEmpresa.Checked = True Then
@@ -245,32 +245,32 @@ Public Class FrmListarUnidTransp
 
         End If
     End Sub
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
     End Sub
 
-    Private Sub rbEmpresa_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbEmpresa.CheckedChanged
+    Private Sub rbEmpresa_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbEmpresa.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbmar_rem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbmar_rem.CheckedChanged
+    Private Sub rbmar_rem_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbmar_rem.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbplac_Rem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbplac_Rem.CheckedChanged
+    Private Sub rbplac_Rem_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbplac_Rem.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbMar_Semi_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbMar_Semi.CheckedChanged
+    Private Sub RbMar_Semi_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbMar_Semi.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbPlac_Sem.CheckedChanged
+    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbPlac_Sem.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub

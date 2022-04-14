@@ -151,7 +151,7 @@ Public Class FrmIng_Comp1
 
     End Sub
 
-    Private Sub FrmIng_Comp1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmIng_Comp1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Ing_Comp("", "", "", "")
@@ -187,14 +187,14 @@ Public Class FrmIng_Comp1
     End Sub
 
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlistaDetalle.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlistaDetalle.VisibleChanged
         BtnModificar.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
         btnEliminar.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False))
         ' Me.btnImprimir.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False)) ' : mesajeerror.Text = ""
     End Sub
 
 
-    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim f As New FrmIng_Comp2
         f.btneliminar.Enabled = False
         f.btnQuitar.Enabled = True
@@ -207,7 +207,7 @@ Public Class FrmIng_Comp1
         'f.dgvlista.DataSource = Nothing
         ' f.dgvlista.Refresh()
     End Sub
-    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione Ingreso de Comprobantes de Pago por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -273,7 +273,7 @@ Public Class FrmIng_Comp1
         'f.id_tipo_Comp = -1
         'f.TxtTipoComp.Text = ""
     End Sub
-    Private Sub btnEliminar_Click(sender As Object, e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvlistaDetalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -326,11 +326,11 @@ Public Class FrmIng_Comp1
 
     End Sub
 
-    Private Sub BtnCerrar_Click(sender As Object, e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
-    Private Sub CbFechaIng_CheckedChanged(sender As Object, e As System.EventArgs) Handles CbFechaIng.CheckedChanged
+    Private Sub CbFechaIng_CheckedChanged(sender As Object, e As EventArgs) Handles CbFechaIng.CheckedChanged
         dtpfinic.Enabled = CbFechaIng.Checked : dtpffin.Enabled = CbFechaIng.Checked
         dtpfinic.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
@@ -338,16 +338,16 @@ Public Class FrmIng_Comp1
         dtpfinic.Focus()
     End Sub
 
-    Private Sub CboRemitente_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
+    Private Sub CboRemitente_CheckedChanged(sender As Object, e As EventArgs) Handles CboRemitente.CheckedChanged
         TxtRemitente.Enabled = CboRemitente.Checked : TxtRemitente.Text = "" : TxtRemitente.Focus()
     End Sub
-    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
+    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As EventArgs) Handles CboTipoCom.CheckedChanged
         TxtTipo_Comp.Enabled = CboTipoCom.Checked : TxtTipo_Comp.Text = "" : TxtTipo_Comp.Focus()
     End Sub
 
   
 
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         listar_Ing_Comp(IIf(TxtRemitente.Text.Trim <> "", TxtRemitente.Text.Trim, ""), _
                             IIf(TxtTipo_Comp.Text.Trim <> "", TxtTipo_Comp.Text.Trim, ""), _
                            IIf(CbFechaIng.Checked = True, Year(dtpfinic.Value).ToString + "-" + Month(dtpfinic.Value).ToString + "-" + dtpfinic.Value.Day.ToString, ""), _
@@ -356,7 +356,7 @@ Public Class FrmIng_Comp1
         dgvlistaDetalle.DataSource = Nothing
     End Sub
 
-    Private Sub TxtRemitente_Enter(sender As Object, e As System.EventArgs) Handles TxtRemitente.Enter
+    Private Sub TxtRemitente_Enter(sender As Object, e As EventArgs) Handles TxtRemitente.Enter
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -369,11 +369,11 @@ Public Class FrmIng_Comp1
        
     End Sub
 
-    Private Sub TxtRemitente_Leave(sender As Object, e As System.EventArgs) Handles TxtRemitente.Leave
+    Private Sub TxtRemitente_Leave(sender As Object, e As EventArgs) Handles TxtRemitente.Leave
         TxtRemitente.BackColor = Color.White
     End Sub
 
-    Private Sub TxtTipo_Comp_Enter(sender As Object, e As System.EventArgs) Handles TxtTipo_Comp.Enter
+    Private Sub TxtTipo_Comp_Enter(sender As Object, e As EventArgs) Handles TxtTipo_Comp.Enter
         Try
             Dim f As New FrmListar_Tipo_Comp
             f.ShowDialog()

@@ -98,7 +98,7 @@ Public Class FrmListar_Tipo_Ope
         End If
     End Sub
 
-    Private Sub FrmListar_Tipo_Ope_Load_1(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListar_Tipo_Ope_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         indice = -1
@@ -133,19 +133,19 @@ Public Class FrmListar_Tipo_Ope
         End If
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         lista(TxtBusca.Text)
     End Sub
-    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
+    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Enter
         ' Me.TxtBusca.BackColor = Color.Azure
     End Sub
 
-    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         TxtBusca.BackColor = Color.White
     End Sub
 
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea Guardar Tipo de Operacion?", "Sistema de Inventario", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -191,7 +191,7 @@ Public Class FrmListar_Tipo_Ope
         lista(Nothing)
     End Sub
 
-    Private Sub btn_Acep_Click(sender As Object, e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(sender As Object, e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 

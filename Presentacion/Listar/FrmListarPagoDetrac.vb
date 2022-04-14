@@ -92,7 +92,7 @@ Public Class FrmListarPagoDetrac
     End Sub
 
 
-    Private Sub FrmListarPagoDetraci_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarPagoDetraci_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_pago_det(Nothing, Nothing)
@@ -243,11 +243,11 @@ Public Class FrmListarPagoDetrac
     End Sub
 
 
-    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog() 'presentamos formulario.
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no guardar programación médica.
@@ -346,7 +346,7 @@ Public Class FrmListarPagoDetrac
         listar_pago_det(Nothing, Nothing)
     End Sub
 
-    Private Sub btnbusca_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnbusca.Click
+    Private Sub btnbusca_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnbusca.Click
         If cbFecha.Checked = True Then
             listar_pago_det(CDate(dtpfin.Value.ToShortDateString), CDate(dtpff.Value.ToString))
         Else
@@ -356,7 +356,7 @@ Public Class FrmListarPagoDetrac
         End If
     End Sub
 
-    Private Sub cbFecha_CheckedChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         dtpff.Value = DateTime.Now

@@ -3,7 +3,7 @@
     Public Id_peso_med As Integer = -1
     Public Aceptar As Boolean = False
 
-    Private Sub FrmPeso_Med_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmPeso_Med_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -15,7 +15,7 @@
         End If
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
         ok = Id_guia <> -1
         If (ok = False) Then
@@ -27,12 +27,12 @@
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub btnGuia_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuia.Click
+    Private Sub btnGuia_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnGuia.Click
         Try
             Dim f As New FrmListarGuiaS
             f.ShowDialog()
@@ -111,7 +111,7 @@
         observacion.Focus()
     End Sub
 
-    Private Sub Pes_Transp_Enter1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Pes_Transp.Enter
+    Private Sub Pes_Transp_Enter1(ByVal sender As Object, ByVal e As EventArgs) Handles Pes_Transp.Enter
         Pes_Transp.BackColor = Color.Moccasin
     End Sub
 
@@ -119,7 +119,7 @@
         ' SoloNumeros(e, True, sender.Text)
     End Sub
 
-    Private Sub Pes_Transp_Leave1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Pes_Transp.Leave
+    Private Sub Pes_Transp_Leave1(ByVal sender As Object, ByVal e As EventArgs) Handles Pes_Transp.Leave
         'Try
         '    'Me.Pes_Transp.Text = Format(CType(Me.Pes_Transp.Text, Decimal), "#,##0.00")
         '    Me.Pes_Transp.Text = Format(CType(Me.Pes_Transp.Text, Decimal), "#,##0")
@@ -138,15 +138,15 @@
         'btnaceptar.Focus()
     End Sub
 
-    Private Sub observacion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles observacion.Leave
+    Private Sub observacion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles observacion.Leave
         observacion.BackColor = Color.White
     End Sub
 
-    Private Sub observacion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles observacion.Enter
+    Private Sub observacion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles observacion.Enter
         observacion.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub FrmPeso_Med_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmPeso_Med_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

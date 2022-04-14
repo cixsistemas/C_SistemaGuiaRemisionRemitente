@@ -1,6 +1,6 @@
 Public Class FrmOpcImpPes_Med1
     Public Aceptar As Boolean = False
-    Private Sub FrmOpcImpPes_Med1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmOpcImpPes_Med1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RBConsorcio.ForeColor = Color.Red
         RbMolinos.ForeColor = Color.Firebrick
         RbBantemar.ForeColor = Color.RoyalBlue
@@ -8,7 +8,7 @@ Public Class FrmOpcImpPes_Med1
     End Sub
 
 
-    Private Sub BtnAceptar_Click(sender As Object, e As System.EventArgs) Handles BtnAceptar.Click
+    Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles BtnAceptar.Click
         If RBConsorcio.Checked = True Then
             'btnAceptar.Focus()
             Aceptar = True

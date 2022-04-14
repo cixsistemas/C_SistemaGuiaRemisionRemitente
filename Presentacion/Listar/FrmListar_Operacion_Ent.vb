@@ -112,7 +112,7 @@ Public Class FrmListar_Operacion_Ent
         End If
     End Sub
 
-    Private Sub FrmListar_Operacion_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListar_Operacion_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(3, Nothing)
         RbEntrada.Checked = True
@@ -149,7 +149,7 @@ Public Class FrmListar_Operacion_Ent
         End If
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = TxtBusca.Text.Trim
         ' Dim TIPO_OPERACION As String = Me.TextBox1.Text
         If RbEntrada.Checked = True Then
@@ -168,14 +168,14 @@ Public Class FrmListar_Operacion_Ent
 
         ' lista(3, TxtBusca.Text)
     End Sub
-    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
+    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Enter
         '   Me.TxtBusca.BackColor = Color.Azure
     End Sub
 
-    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         TxtBusca.BackColor = Color.White
     End Sub
-    Private Sub btn_Acep_Click(sender As Object, e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(sender As Object, e As EventArgs) Handles btn_Acep.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtbusca.Focus()
@@ -183,7 +183,7 @@ Public Class FrmListar_Operacion_Ent
             Close()
         End If
     End Sub
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea Guardar Operacion?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -234,19 +234,19 @@ Public Class FrmListar_Operacion_Ent
         lista(3, Nothing)
     End Sub
 
-    Private Sub RbEntrada_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbEntrada.CheckedChanged
+    Private Sub RbEntrada_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbEntrada.CheckedChanged
         TxtBusca.Text = ""
         TxtBusca.Focus()
         lista(1, TxtBusca.Text)
     End Sub
 
-    Private Sub RbSalida_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbSalida.CheckedChanged
+    Private Sub RbSalida_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbSalida.CheckedChanged
         TxtBusca.Text = ""
         TxtBusca.Focus()
         lista(2, TxtBusca.Text)
     End Sub
 
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         TxtBusca.Text = ""
         TxtBusca.Focus()
         lista(3, TxtBusca.Text)

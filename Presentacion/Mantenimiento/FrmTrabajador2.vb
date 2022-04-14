@@ -41,7 +41,7 @@ Public Class FrmTrabajador2
             MessageBox.Show(__mesajeerror, "Molinos los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -61,7 +61,7 @@ Public Class FrmTrabajador2
         End If
     End Sub
 
-    Private Sub FrmTrabajador22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTrabajador22_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
     End Sub
@@ -90,7 +90,7 @@ Public Class FrmTrabajador2
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         btnmodificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -100,7 +100,7 @@ Public Class FrmTrabajador2
         'indice = e.RowIndex
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
     End Sub
 
@@ -111,7 +111,7 @@ Public Class FrmTrabajador2
         End If
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea Guardar Trabajador?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -177,7 +177,7 @@ Public Class FrmTrabajador2
         lista(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Chofer", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -359,7 +359,7 @@ Public Class FrmTrabajador2
         End If
     End Sub
 
-    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Trabajador", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub

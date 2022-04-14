@@ -8,7 +8,7 @@
     Public id_zona As Integer = -1
     Dim Opc As String = "Nuevo"
 
-    Private Sub FrmEnv_Comp2_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs)
+    Private Sub FrmEnv_Comp2_FormClosed(sender As Object, e As FormClosedEventArgs)
         Aceptar = False
         Hide()
     End Sub
@@ -24,10 +24,10 @@
         'Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
 
-    Private Sub FrmEnv_Comp2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmEnv_Comp2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
-    Private Sub btnAgregar_Click_1(sender As Object, e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim ok As Boolean
         ok = id_ope <> -1
         If ok = False Then
@@ -104,7 +104,7 @@
     End Sub
    
    
-    Private Sub btnQuitar_Click(sender As Object, e As System.EventArgs) Handles btnQuitar.Click
+    Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         Try
             dgvlista.Rows.Remove(dgvlista.CurrentRow)
         Catch ex As Exception
@@ -123,7 +123,7 @@
         indice = e.RowIndex
     End Sub
 
-    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = dgvlista.Rows.Count > 0
@@ -214,7 +214,7 @@
         'indice = -1
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As System.EventArgs) Handles btneliminar.Click
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
         If check_fila_grilla(dgvlista) = False Then
             MessageBox.Show("Seleccione registro", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
@@ -291,7 +291,7 @@
 
     End Sub
 
-    Private Sub BtnOperacion_Click(sender As Object, e As System.EventArgs) Handles BtnOperacion.Click
+    Private Sub BtnOperacion_Click(sender As Object, e As EventArgs) Handles BtnOperacion.Click
         Try
             Dim f As New FrmListar_Operacion_Sal
             f.ShowDialog()
@@ -312,7 +312,7 @@
         btnZona.Focus()
     End Sub
 
-    Private Sub btnZona_Click(sender As Object, e As System.EventArgs) Handles btnZona.Click
+    Private Sub btnZona_Click(sender As Object, e As EventArgs) Handles btnZona.Click
         Try
             Dim f As New FrmListarZona
             ' Dim f As New FrmProveedor_1
@@ -335,7 +335,7 @@
       
     End Sub
 
-    Private Sub btnComisionista_Click(sender As Object, e As System.EventArgs) Handles btnComisionista.Click
+    Private Sub btnComisionista_Click(sender As Object, e As EventArgs) Handles btnComisionista.Click
         Try
             Dim f As New frmListarComisionistas
             ' Dim f As New FrmProveedor_1
@@ -364,14 +364,14 @@
 
    
 
-    Private Sub btncancelar_Click(sender As Object, e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
     Private Sub Fecha_Ingreso_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Fecha_Ingreso.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub txtDescrip_Enter(sender As Object, e As System.EventArgs) Handles txtDescrip.Enter
+    Private Sub txtDescrip_Enter(sender As Object, e As EventArgs) Handles txtDescrip.Enter
         txtDescrip.BackColor = Color.Moccasin
     End Sub
 
@@ -379,7 +379,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub txtDescrip_Leave(sender As Object, e As System.EventArgs) Handles txtDescrip.Leave
+    Private Sub txtDescrip_Leave(sender As Object, e As EventArgs) Handles txtDescrip.Leave
         txtDescrip.BackColor = Color.White
     End Sub
     Private Sub txtDescrip_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescrip.KeyPress

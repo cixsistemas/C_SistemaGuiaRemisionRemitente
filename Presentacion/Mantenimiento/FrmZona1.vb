@@ -13,7 +13,7 @@
         btnaceptar.Enabled = ok
     End Sub
 
-    Private Sub FrmZona1_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmZona1_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -21,11 +21,11 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
+    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.TextChanged
         valida()
     End Sub
 
-    Private Sub nombre_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.VisibleChanged
+    Private Sub nombre_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.VisibleChanged
         valida()
     End Sub
 
@@ -36,11 +36,11 @@
 
 
 
-    Private Sub direccion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles orden.TextChanged
+    Private Sub direccion_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles orden.TextChanged
         valida()
     End Sub
 
-    Private Sub direccion_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles orden.VisibleChanged
+    Private Sub direccion_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles orden.VisibleChanged
         valida()
     End Sub
 
@@ -48,14 +48,14 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub descripcion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.TextChanged
+    Private Sub descripcion_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.TextChanged
         valida()
     End Sub
 
-    Private Sub descripcion_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.VisibleChanged
+    Private Sub descripcion_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.VisibleChanged
         valida()
     End Sub
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
         ok = id_ubigeo <> -1
         If (ok = False) Then
@@ -68,12 +68,12 @@
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub btnUbigeo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnUbigeo.Click
+    Private Sub btnUbigeo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUbigeo.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -106,22 +106,22 @@
     Private Sub FrmZona1_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Me.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter
+    Private Sub nombre_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.Enter
         nombre.BackColor = Color.Moccasin
     End Sub
-    Private Sub nombre_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Leave
+    Private Sub nombre_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.Leave
         nombre.BackColor = Color.White
     End Sub
-    Private Sub orden_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles orden.Leave
+    Private Sub orden_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles orden.Leave
         orden.BackColor = Color.White
     End Sub
-    Private Sub orden_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles orden.Enter
+    Private Sub orden_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles orden.Enter
         orden.BackColor = Color.Moccasin
     End Sub
-    Private Sub descripcion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.Leave
+    Private Sub descripcion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.Leave
         descripcion.BackColor = Color.White
     End Sub
-    Private Sub descripcion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.Enter
+    Private Sub descripcion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.Enter
         descripcion.BackColor = Color.Moccasin
     End Sub
 

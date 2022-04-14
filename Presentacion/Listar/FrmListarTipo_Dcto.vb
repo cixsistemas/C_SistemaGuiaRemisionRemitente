@@ -37,7 +37,7 @@ Public Class FrmListarTipo_Dcto
         End If
     End Sub
 
-    Private Sub FrmListarTipo_Dcto_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarTipo_Dcto_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         indice = -1
@@ -69,11 +69,11 @@ Public Class FrmListarTipo_Dcto
         End If
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
         ' Aplicar_Filtro()
     End Sub
-    Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         txtbusca.BackColor = Color.White
     End Sub
     'Private Sub txtbusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
@@ -87,7 +87,7 @@ Public Class FrmListarTipo_Dcto
         End If
     End Sub
 
-    Private Sub btn_Acep_Click(sender As Object, e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(sender As Object, e As EventArgs) Handles btn_Acep.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtbusca.Focus()

@@ -6,7 +6,7 @@
 
     Public Aceptar As Boolean = False
 
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
         ok = Id_guia <> -1
 
@@ -35,16 +35,16 @@
         Hide()
 
     End Sub
-    Private Sub FrmNota_ArroZ_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmNota_ArroZ_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub btnGuia_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnGuia.Click
+    Private Sub btnGuia_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnGuia.Click
         Try
             Dim f As New FrmListarGuiaS
             f.ShowDialog()
@@ -102,7 +102,7 @@
     End Sub
 
 
-    Private Sub btn_Precios_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Precios.Click
+    Private Sub btn_Precios_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Precios.Click
         Try
             Dim f As New FrmListarPagoDetrac
             f.ShowDialog()
@@ -122,7 +122,7 @@
         End Try
         btnTrabaj.Focus()
     End Sub
-    Private Sub btnTrabaj_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTrabaj.Click
+    Private Sub btnTrabaj_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnTrabaj.Click
         Try
             Dim f As New FrmListarTrabajador
             f.ShowDialog()
@@ -143,7 +143,7 @@
         End Try
         BtnCliente.Focus()
     End Sub
-    Private Sub BtnCliente_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCliente.Click
+    Private Sub BtnCliente_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCliente.Click
         Try
             Dim f As New FrmListarCliente
             f.ShowDialog()
@@ -224,50 +224,50 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub Destinatario_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Destinatario.Leave
+    Private Sub Destinatario_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Destinatario.Leave
         Destinatario.BackColor = Color.White
     End Sub
-    Private Sub Destinatario_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Destinatario.Enter
+    Private Sub Destinatario_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Destinatario.Enter
         Destinatario.BackColor = Color.Moccasin
     End Sub
-    Private Sub telefono_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles telefono.Leave
+    Private Sub telefono_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles telefono.Leave
         telefono.BackColor = Color.White
     End Sub
-    Private Sub telefono_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles telefono.Enter
+    Private Sub telefono_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles telefono.Enter
         telefono.BackColor = Color.Moccasin
     End Sub
-    Private Sub direccion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion.Leave
+    Private Sub direccion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles direccion.Leave
         direccion.BackColor = Color.White
     End Sub
-    Private Sub direccion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion.Enter
+    Private Sub direccion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles direccion.Enter
         direccion.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub costo_flet_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles costo_flet.Leave
+    Private Sub costo_flet_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles costo_flet.Leave
         costo_flet.BackColor = Color.White
     End Sub
-    Private Sub costo_flet_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles costo_flet.Enter
+    Private Sub costo_flet_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles costo_flet.Enter
         costo_flet.BackColor = Color.Moccasin
     End Sub
-    Private Sub a_cuenta_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles a_cuenta.Leave
+    Private Sub a_cuenta_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles a_cuenta.Leave
         a_cuenta.BackColor = Color.White
     End Sub
-    Private Sub a_cuenta_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles a_cuenta.Enter
+    Private Sub a_cuenta_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles a_cuenta.Enter
         a_cuenta.BackColor = Color.Moccasin
     End Sub
-    Private Sub Comentario_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Comentario.Leave
+    Private Sub Comentario_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Comentario.Leave
         Comentario.BackColor = Color.White
     End Sub
-    Private Sub Comentario_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Comentario.Enter
+    Private Sub Comentario_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Comentario.Enter
         Comentario.BackColor = Color.Moccasin
     End Sub
-    Private Sub observacion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles observacion.Leave
+    Private Sub observacion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles observacion.Leave
         observacion.BackColor = Color.White
     End Sub
-    Private Sub observacion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles observacion.Enter
+    Private Sub observacion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles observacion.Enter
         observacion.BackColor = Color.Moccasin
     End Sub
-    Private Sub toneladas_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles toneladas.Enter
+    Private Sub toneladas_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles toneladas.Enter
         toneladas.BackColor = Color.Moccasin
     End Sub
 
@@ -277,7 +277,7 @@
     Private Sub toneladas_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles toneladas.KeyPress
         saltar_ENTER(e)
     End Sub
-    Private Sub toneladas_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles toneladas.Leave
+    Private Sub toneladas_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles toneladas.Leave
         toneladas.BackColor = Color.White
     End Sub
 

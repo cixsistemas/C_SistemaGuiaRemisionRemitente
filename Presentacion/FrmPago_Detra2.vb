@@ -91,7 +91,7 @@ Public Class FrmPago_Detra2
         End If
     End Sub
 
-    Private Sub FrmPago_Detra22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmPago_Detra22_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_pago_det(Nothing, Nothing)
@@ -145,13 +145,13 @@ Public Class FrmPago_Detra2
         'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub Ddgvdetalle_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvdetalle.VisibleChanged
+    Private Sub Ddgvdetalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvdetalle.VisibleChanged
         btnmodificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         '  Me.btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog() 'presentamos formulario.
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no guardar programación médica.
@@ -254,7 +254,7 @@ Public Class FrmPago_Detra2
         listar_pago_det(Nothing, Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Pago de Detracción", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -381,7 +381,7 @@ Public Class FrmPago_Detra2
 
         listar_pago_det(Nothing, Nothing)
     End Sub
-    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvdetalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -433,7 +433,7 @@ Public Class FrmPago_Detra2
         listar_detalle_pago_det(idpago)
     End Sub
 
-    Private Sub btnBuscar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBuscar.Click
         If cbFecha.Checked = True Then
             listar_pago_det(CDate(dtpfin.Value.ToShortDateString), CDate(dtpff.Value.ToString))
         Else
@@ -442,7 +442,7 @@ Public Class FrmPago_Detra2
             'listar_detalle_pago_det(Nothing)
         End If
     End Sub
-    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         dtpff.Value = DateTime.Now
@@ -458,7 +458,7 @@ Public Class FrmPago_Detra2
     End Sub
 
 
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -482,7 +482,7 @@ Public Class FrmPago_Detra2
         End Try
     End Sub
 
-    Private Sub BTN_PAGINA_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BTN_PAGINA.Click
+    Private Sub BTN_PAGINA_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BTN_PAGINA.Click
         System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
     End Sub
 
@@ -499,7 +499,7 @@ Public Class FrmPago_Detra2
         End Try
     End Sub
 
-    Private Sub txtTotal_Click(sender As Object, e As System.EventArgs) Handles txtTotal.Click
+    Private Sub txtTotal_Click(sender As Object, e As EventArgs) Handles txtTotal.Click
 
     End Sub
 End Class

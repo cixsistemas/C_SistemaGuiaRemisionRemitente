@@ -69,7 +69,7 @@ Public Class FrmChofer2
     End Sub
 
 
-    Private Sub FrmChofer22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmChofer22_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(1, "", "")
         'Me.rbbrevete.Checked = True
@@ -95,12 +95,12 @@ Public Class FrmChofer2
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         btnmodificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
-    Private Sub btnNuevo_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea guardar Chofer?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -149,7 +149,7 @@ Public Class FrmChofer2
         lista(1, "", "")
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Chofer", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -210,7 +210,7 @@ Public Class FrmChofer2
         lista(1, "", "")
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Chofer", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -255,7 +255,7 @@ Public Class FrmChofer2
         lista(1, "", "")
     End Sub
 
-    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_CHOFERES"
         f.Tabla_Imprimir = tabla_chofer
@@ -264,7 +264,7 @@ Public Class FrmChofer2
         f.ShowDialog()
     End Sub
 
-    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
     Private Sub dgvlista_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
@@ -293,29 +293,29 @@ Public Class FrmChofer2
     '    saltar_Flechas(e)
     'End Sub
 
-    Private Sub rbNombre_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbNombre.CheckedChanged
+    Private Sub rbNombre_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbNombre.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
   
 
-    Private Sub rbbrevete_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbbrevete.CheckedChanged
+    Private Sub rbbrevete_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbbrevete.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
     End Sub
-    Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         txtbusca.BackColor = Color.White
     End Sub
     'Private Sub txtbusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
     '    Me.txtbusca.BackColor = Color.Moccasin
     'End Sub
 
-    Private Sub txtbusca_TextChanged_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
         ' Dim indice As Integer = rbdepartamento.Checked = True
         If rbNombre.Checked = True Then

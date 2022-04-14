@@ -125,12 +125,12 @@ Public Class FrmListarIngCompAct
         End If
     End Sub
 
-    Private Sub FrmListarIngCompAct_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarIngCompAct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Ing_Comp("", "", "")
     End Sub
 
-    Private Sub btn_Acep_Click(sender As Object, e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(sender As Object, e As EventArgs) Handles btn_Acep.Click
 
         'Close()
 
@@ -180,26 +180,26 @@ Public Class FrmListarIngCompAct
             e.CellStyle.BackColor = Color.LightYellow
         End If
     End Sub
-    Private Sub CboRemitente_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
+    Private Sub CboRemitente_CheckedChanged(sender As Object, e As EventArgs) Handles CboRemitente.CheckedChanged
         TxtRemitente.Enabled = CboRemitente.Checked : TxtRemitente.Text = "" : TxtRemitente.Focus()
     End Sub
-    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
+    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As EventArgs) Handles CboTipoCom.CheckedChanged
         TxtTipo_Comp.Enabled = CboTipoCom.Checked : TxtTipo_Comp.Text = "" : TxtTipo_Comp.Focus()
     End Sub
 
-    Private Sub CboNumero_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboNumero.CheckedChanged
+    Private Sub CboNumero_CheckedChanged(sender As Object, e As EventArgs) Handles CboNumero.CheckedChanged
         TxtNumero.Enabled = CboNumero.Checked : TxtNumero.Text = "" : TxtNumero.Focus()
     End Sub
 
 
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         listar_Ing_Comp(IIf(TxtRemitente.Text.Trim <> "", TxtRemitente.Text.Trim, ""), _
                             IIf(TxtTipo_Comp.Text.Trim <> "", TxtTipo_Comp.Text.Trim, ""), _
                             IIf(TxtNumero.Text.Trim <> "", TxtNumero.Text.Trim, ""))
         ' dgvlistaDetalle.DataSource = Nothing
     End Sub
 
-    Private Sub TxtRemitente_Enter(sender As Object, e As System.EventArgs) Handles TxtRemitente.Enter
+    Private Sub TxtRemitente_Enter(sender As Object, e As EventArgs) Handles TxtRemitente.Enter
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -213,11 +213,11 @@ Public Class FrmListarIngCompAct
        
     End Sub
 
-    Private Sub TxtRemitente_Leave(sender As Object, e As System.EventArgs) Handles TxtRemitente.Leave
+    Private Sub TxtRemitente_Leave(sender As Object, e As EventArgs) Handles TxtRemitente.Leave
         TxtRemitente.BackColor = Color.White
     End Sub
 
-    Private Sub TxtTipo_Comp_Enter(sender As Object, e As System.EventArgs) Handles TxtTipo_Comp.Enter
+    Private Sub TxtTipo_Comp_Enter(sender As Object, e As EventArgs) Handles TxtTipo_Comp.Enter
         Try
             Dim f As New FrmListar_Tipo_Comp
             f.ShowDialog()

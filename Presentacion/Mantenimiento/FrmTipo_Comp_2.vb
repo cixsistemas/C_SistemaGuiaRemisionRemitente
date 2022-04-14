@@ -14,7 +14,7 @@
         BtnAceptar.Enabled = ok
     End Sub
 
-    Private Sub FrmTipo_Comp_2_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmTipo_Comp_2_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -30,7 +30,7 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub TxtNombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtNombre.Enter
+    Private Sub TxtNombre_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtNombre.Enter
         TxtNombre.BackColor = Color.Moccasin
     End Sub
 
@@ -38,7 +38,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtNombre_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtNombre.Leave
+    Private Sub TxtNombre_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtNombre.Leave
         TxtNombre.BackColor = Color.White
     End Sub
 
@@ -46,15 +46,15 @@
     '    saltar_ENTER(e)
     'End Sub
 
-    Private Sub TxtNombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtNombre.TextChanged
+    Private Sub TxtNombre_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtNombre.TextChanged
         valida()
     End Sub
 
-    Private Sub TxtNombre_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtNombre.VisibleChanged
+    Private Sub TxtNombre_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtNombre.VisibleChanged
         valida()
     End Sub
 
-    Private Sub TxtDescrip_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDescrip.Enter
+    Private Sub TxtDescrip_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtDescrip.Enter
         TxtDescrip.BackColor = Color.Moccasin
     End Sub
 
@@ -62,7 +62,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtDescrip_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDescrip.Leave
+    Private Sub TxtDescrip_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtDescrip.Leave
         TxtDescrip.BackColor = Color.White
     End Sub
 
@@ -71,15 +71,15 @@
 
     'End Sub
 
-    Private Sub TxtDescrip_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDescrip.TextChanged
+    Private Sub TxtDescrip_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtDescrip.TextChanged
         valida()
     End Sub
 
-    Private Sub TxtDescrip_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDescrip.VisibleChanged
+    Private Sub TxtDescrip_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtDescrip.VisibleChanged
         valida()
     End Sub
 
-    Private Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
+    Private Sub BtnAceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnAceptar.Click
         Dim ok As Boolean
 
         ok = TxtCodigo.Text <> ""
@@ -135,12 +135,12 @@
     End Sub
 
 
-    Private Sub btnCancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub TxtCodigo_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.Enter
+    Private Sub TxtCodigo_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodigo.Enter
         TxtCodigo.BackColor = Color.Moccasin
     End Sub
 
@@ -148,18 +148,18 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtCodigo_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.Leave
+    Private Sub TxtCodigo_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodigo.Leave
         TxtCodigo.BackColor = Color.White
     End Sub
 
-    Private Sub TxtCodigo_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.TextChanged
+    Private Sub TxtCodigo_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodigo.TextChanged
         valida()
     End Sub
 
-    Private Sub TxtCodigo_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCodigo.VisibleChanged
+    Private Sub TxtCodigo_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodigo.VisibleChanged
         valida()
     End Sub
-    Private Sub TxtSiglas_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtSiglas.Enter
+    Private Sub TxtSiglas_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtSiglas.Enter
         TxtSiglas.BackColor = Color.Moccasin
     End Sub
 
@@ -167,11 +167,11 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub TxtSiglas_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtSiglas.Leave
+    Private Sub TxtSiglas_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtSiglas.Leave
         TxtSiglas.BackColor = Color.White
     End Sub
 
-    Private Sub FrmTipo_Comp_2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTipo_Comp_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
 End Class

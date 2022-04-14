@@ -16,7 +16,7 @@
         BtnAceptar.Enabled = ok
     End Sub
 
-    Private Sub FrmComisionista2_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmComisionista2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -32,14 +32,14 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub FrmComisionista2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmComisionista2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
-    Private Sub btnZona_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnZona.Click
+    Private Sub btnZona_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnZona.Click
         Try
             Dim f As New FrmListarZona
             ' Dim f As New FrmProveedor_1
@@ -70,7 +70,7 @@
 
        
     End Sub
-    Private Sub btnTipo_Dcto_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTipo_Dcto.Click
+    Private Sub btnTipo_Dcto_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnTipo_Dcto.Click
         Try
             Dim f As New FrmListarTipo_Dcto
             ' Dim f As New FrmProveedor_1
@@ -102,40 +102,40 @@
 #Region "Text Box"
 
 
-    Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter
+    Private Sub nombre_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.Enter
         nombre.BackColor = Color.Moccasin
     End Sub
-    Private Sub nombre_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Leave
+    Private Sub nombre_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.Leave
         nombre.BackColor = Color.White
     End Sub
 
     Private Sub nombre_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nombre.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub nro_doc_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nro_doc.Enter
+    Private Sub nro_doc_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nro_doc.Enter
         nro_doc.BackColor = Color.Moccasin
     End Sub
-    Private Sub nro_doc_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nro_doc.Leave
+    Private Sub nro_doc_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nro_doc.Leave
         nro_doc.BackColor = Color.White
     End Sub
     Private Sub nro_doc_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nro_doc.KeyDown
         saltar_Flechas(e)
     End Sub
 
-    Private Sub txtDireccion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDireccion.Enter
+    Private Sub txtDireccion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtDireccion.Enter
         txtDireccion.BackColor = Color.Moccasin
     End Sub
 
-    Private Sub txtDireccion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDireccion.Leave
+    Private Sub txtDireccion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtDireccion.Leave
         txtDireccion.BackColor = Color.White
     End Sub
     Private Sub txtDireccion_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles txtDireccion.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub txtTelefono_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtTelefono.Leave
+    Private Sub txtTelefono_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtTelefono.Leave
         txtTelefono.BackColor = Color.White
     End Sub
-    Private Sub txtTelefono_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtTelefono.Enter
+    Private Sub txtTelefono_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtTelefono.Enter
         txtTelefono.BackColor = Color.Moccasin
     End Sub
 
@@ -144,10 +144,10 @@
     End Sub
 
 
-    Private Sub txtDescrip_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDescrip.Enter
+    Private Sub txtDescrip_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtDescrip.Enter
         txtDescrip.BackColor = Color.Moccasin
     End Sub
-    Private Sub txtDescrip_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDescrip.Leave
+    Private Sub txtDescrip_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtDescrip.Leave
         txtDescrip.BackColor = Color.White
     End Sub
     Private Sub txtDescrip_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles txtDescrip.KeyDown
@@ -161,7 +161,7 @@
 
 #End Region
 
-    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = nombre.Text <> ""
@@ -251,7 +251,7 @@
     End Sub
 
 
-    Private Sub btnZona_Leave(sender As Object, e As System.EventArgs) Handles btnZona.Leave
+    Private Sub btnZona_Leave(sender As Object, e As EventArgs) Handles btnZona.Leave
         If txtZona.Text = "" Then
             MessageBox.Show("Busque o Seleccione Zona por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnZona.Focus()
@@ -259,7 +259,7 @@
     End Sub
 
 
-    Private Sub btnTipo_Dcto_Leave(sender As Object, e As System.EventArgs) Handles btnTipo_Dcto.Leave
+    Private Sub btnTipo_Dcto_Leave(sender As Object, e As EventArgs) Handles btnTipo_Dcto.Leave
         If txtTipo_Dcto.Text = "" Then
             MessageBox.Show("Busque o Seleccione Tipo de documento por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnTipo_Dcto.Focus()

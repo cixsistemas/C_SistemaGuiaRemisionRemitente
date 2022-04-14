@@ -86,7 +86,7 @@ Public Class FrmListarChofer
     End Sub
 
 
-    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 
@@ -204,21 +204,21 @@ Public Class FrmListarChofer
 
     '=========================================================
 #Region "RADIOBUTTONS"
-    Private Sub rbNombre_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbNombre.CheckedChanged
+    Private Sub rbNombre_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbNombre.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
-    Private Sub rbapellido_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub rbbrevete_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbbrevete.CheckedChanged
+    Private Sub rbapellido_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs)
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub rbbrevete_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbbrevete.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
     End Sub

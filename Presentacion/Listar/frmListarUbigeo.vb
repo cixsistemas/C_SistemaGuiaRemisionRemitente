@@ -63,7 +63,7 @@ Public Class frmListarUbigeo
         End If
        
     End Sub
-    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 
@@ -90,7 +90,7 @@ Public Class frmListarUbigeo
         End If
     End Sub
 
-    Private Sub frmListarUbigeo_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmListarUbigeo_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(4, Nothing)
         rbdistrito.Checked = True
@@ -98,7 +98,7 @@ Public Class frmListarUbigeo
         '  Me.txtbusca.Focus()
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
         ' Dim indice As Integer = rbdepartamento.Checked = True
         If rbdepartamento.Checked = True Then
@@ -112,17 +112,17 @@ Public Class frmListarUbigeo
             'Me.txtbusca.Focus()
         End If
     End Sub
-    Private Sub rbdepartamento_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbdepartamento.CheckedChanged
+    Private Sub rbdepartamento_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbdepartamento.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbprovincia_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbprovincia.CheckedChanged
+    Private Sub rbprovincia_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbprovincia.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub rbdistrito_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbdistrito.CheckedChanged
+    Private Sub rbdistrito_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbdistrito.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub

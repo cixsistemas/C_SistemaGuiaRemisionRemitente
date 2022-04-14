@@ -684,20 +684,20 @@ Public Class FMenuGuia
     'Dim cBita As New cBitacora
 
 
-    Private Sub FMenuBib_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FMenuBib_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         '    Me.Text = "SISTEMA DE GUIA DE REMISON-REMITENTE << CONTADOR -- " + cLec.Mostrar_Lector_Usuario(Usuario) + " >>"
 
         'Me.StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "dd/MM/yyyy")
         StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "LONG DATE")
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
         ToolStripStatusLabel2.Text = "    Hora: " & TimeString
 
 
     End Sub
 
-    Private Sub FMenuBib_Closed(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Closed
+    Private Sub FMenuBib_Closed(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Closed
         'FechaIng = Format(Now, "dd/MM/yyyy hh:mm:ss")
         ' cBita.Registrar_Salida_Bitacora(FechaIng)
         'End
@@ -705,7 +705,7 @@ Public Class FMenuGuia
 
 
 
-    Private Sub BtnSesion_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub BtnSesion_Click(ByVal sender As Object, ByVal e As EventArgs)
         'If MessageBox.Show("Esta seguro que desea cerrar sesión", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
         '  FechaIng = Format(Now, "dd/MM/yyyy hh:mm:ss")
         '  cBita.Registrar_Salida_Bitacora(FechaIng)
@@ -717,55 +717,55 @@ Public Class FMenuGuia
         'End If
     End Sub
 
-    Private Sub FMenuBib_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Activated
+    Private Sub FMenuBib_Activated(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Activated
         'If Sesion = False Then
         '  Me.Text = "SISTEMA DE GUIA DE REMISON-REMITENTE << CONTADOR -- " + cLec.Mostrar_Lector_Usuario(Usuario) + " >>"
         'End If
     End Sub
 
-    Private Sub MenuPrincipalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MenuPrincipalToolStripMenuItem.Click
+    Private Sub MenuPrincipalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles MenuPrincipalToolStripMenuItem.Click
         Dim mRegPro As New frmguias
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub PesoMedidaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PesoMedidaToolStripMenuItem.Click
+    Private Sub PesoMedidaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles PesoMedidaToolStripMenuItem.Click
         Dim FMantpeso_med As New FrmPeso_Med2
         FMantpeso_med.MdiParent = Me
         FMantpeso_med.Show()
     End Sub
 
-    Private Sub NotaDeEnvioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotaDeEnvioToolStripMenuItem.Click
+    Private Sub NotaDeEnvioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles NotaDeEnvioToolStripMenuItem.Click
         Dim Fnot_paj As New FrmNota_ArroZ2
         Fnot_paj.MdiParent = Me
         Fnot_paj.Show()
     End Sub
 
-    Private Sub CategoriaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub CategoriaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
 
     End Sub
 
-    Private Sub LogotipoToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub LogotipoToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
 
     End Sub
 
-    Private Sub ProductoToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ProductoToolStripMenuItem.Click
+    Private Sub ProductoToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ProductoToolStripMenuItem.Click
 
     End Sub
-    Private Sub EnvaseToolStripMenuItem_Click_1(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub EnvaseToolStripMenuItem_Click_1(ByVal sender As Object, ByVal e As EventArgs)
 
     End Sub
-    Private Sub TransportistaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub TransportistaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim mRegPro As New frmlemptransportes
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub UnidadDeTransporteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles UnidadDeTransporteToolStripMenuItem.Click
+    Private Sub UnidadDeTransporteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles UnidadDeTransporteToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub ChoferToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub ChoferToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim FMantchofer As New FrmChofer2
         FMantchofer.MdiParent = Me
         FMantchofer.Show()
@@ -783,30 +783,30 @@ Public Class FMenuGuia
     '    Fcuenta.Show()
     'End Sub
 
-    Private Sub DestinatarioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DestinatarioToolStripMenuItem.Click
+    Private Sub DestinatarioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles DestinatarioToolStripMenuItem.Click
         Dim mRegPro As New frmmdestinario1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub RemitenteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles RemitenteToolStripMenuItem.Click
+    Private Sub RemitenteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles RemitenteToolStripMenuItem.Click
         Dim mRegPro As New frmlremitenteS
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub SunatToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SunatToolStripMenuItem.Click
+    Private Sub SunatToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SunatToolStripMenuItem.Click
         Dim FSunat As New FrmSunat
         FSunat.MdiParent = Me
         FSunat.Show()
     End Sub
 
-    Private Sub PagoDeDetraccionToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles PagoDeDetraccionToolStripMenuItem.Click
+    Private Sub PagoDeDetraccionToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles PagoDeDetraccionToolStripMenuItem.Click
         Dim FPago As New FrmPago_Detra2
         FPago.MdiParent = Me
         FPago.Show()
     End Sub
-    Private Sub CalculadoraToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles CalculadoraToolStripMenuItem.Click
+    Private Sub CalculadoraToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CalculadoraToolStripMenuItem.Click
         ''Dim FCalc As New FrmCalc
         ''FCalc.MdiParent = Me
         ''FCalc.Show()
@@ -817,204 +817,204 @@ Public Class FMenuGuia
         Process.Start(Application.StartupPath + "\\CCalc.exe")
     End Sub
 
-    Private Sub FacturaVentaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FacturaVentaToolStripMenuItem.Click
+    Private Sub FacturaVentaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles FacturaVentaToolStripMenuItem.Click
         Dim FRep As New FrmRepEnvioxEmp
         FRep.MdiParent = Me
         FRep.Show()
     End Sub
 
-    Private Sub FleteTransportistaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FleteTransportistaToolStripMenuItem.Click
+    Private Sub FleteTransportistaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles FleteTransportistaToolStripMenuItem.Click
         Dim FRep As New FrmRep_Fle_Trans
         FRep.MdiParent = Me
         FRep.Show()
     End Sub
 
-    Private Sub ControlGuiasFacturasToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ControlGuiasFacturasToolStripMenuItem.Click
+    Private Sub ControlGuiasFacturasToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ControlGuiasFacturasToolStripMenuItem.Click
         Dim FRep As New FrmRepCont_Gui_FT
         FRep.MdiParent = Me
         FRep.Show()
     End Sub
 
-    Private Sub TipoDeTrabajadorToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub TipoDeTrabajadorToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim mRegPro As New FrmTip_Trab2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TrabajadorToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles TrabajadorToolStripMenuItem.Click
+    Private Sub TrabajadorToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles TrabajadorToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub TipoDeClienteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub TipoDeClienteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim mRegPro As New FrmTip_Cliente2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ZonaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ZonaToolStripMenuItem.Click
+    Private Sub ZonaToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ZonaToolStripMenuItem.Click
         Dim mRegPro As New FrmZona2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ClienteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ClienteToolStripMenuItem.Click
+    Private Sub ClienteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ClienteToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub DNIRENIECToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles DNIRENIECToolStripMenuItem.Click
+    Private Sub DNIRENIECToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DNIRENIECToolStripMenuItem.Click
         System.Diagnostics.Process.Start("https://cel.reniec.gob.pe/valreg/valreg.do?accion=ini")
     End Sub
 
 
-    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles AcercaDeToolStripMenuItem.Click
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
         Dim mRegPro As New Acercarde
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub FacturaToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles FacturaToolStripMenuItem.Click
+    Private Sub FacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacturaToolStripMenuItem.Click
         Dim mRegPro As New FrmIng_Comp1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub UbigeoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles UbigeoToolStripMenuItem.Click
+    Private Sub UbigeoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UbigeoToolStripMenuItem.Click
         Dim mRegPro As New FrmUbigeo1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeComprobanteDePagoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TipoDeComprobanteDePagoToolStripMenuItem1.Click
+    Private Sub TipoDeComprobanteDePagoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TipoDeComprobanteDePagoToolStripMenuItem1.Click
         Dim mRegPro As New FrmTipo_Comp_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeDctoDeIdentidadTabla2ToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Click
+    Private Sub TipoDeDctoDeIdentidadTabla2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Click
         Dim mRegPro As New FrmTipo_Dcto_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TrabajadorToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TrabajadorToolStripMenuItem1.Click
+    Private Sub TrabajadorToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TrabajadorToolStripMenuItem1.Click
         Dim mRegPro As New FrmTrabajador2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeTrabajadorToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TipoDeTrabajadorToolStripMenuItem1.Click
+    Private Sub TipoDeTrabajadorToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TipoDeTrabajadorToolStripMenuItem1.Click
         Dim mRegPro As New FrmTip_Trab2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ClienteToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles ClienteToolStripMenuItem1.Click
+    Private Sub ClienteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClienteToolStripMenuItem1.Click
         Dim mRegPro As New FrmCliente2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeClienteToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TipoDeClienteToolStripMenuItem1.Click
+    Private Sub TipoDeClienteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TipoDeClienteToolStripMenuItem1.Click
         Dim mRegPro As New FrmTip_Cliente2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TipoDeOperacionToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles TipoDeOperacionToolStripMenuItem.Click
+    Private Sub TipoDeOperacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDeOperacionToolStripMenuItem.Click
         Dim mRegPro As New FrmTipo_oPE_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub UnidadDeTransporteToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles UnidadDeTransporteToolStripMenuItem1.Click
+    Private Sub UnidadDeTransporteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UnidadDeTransporteToolStripMenuItem1.Click
         Dim mRegPro As New frmunidadtransportes
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub TransportistaToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles TransportistaToolStripMenuItem1.Click
+    Private Sub TransportistaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TransportistaToolStripMenuItem1.Click
         Dim mRegPro As New frmlemptransportes
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ChoferToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles ChoferToolStripMenuItem1.Click
+    Private Sub ChoferToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ChoferToolStripMenuItem1.Click
         Dim mRegPro As New FrmChofer2
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub OperacionToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles OperacionToolStripMenuItem.Click
+    Private Sub OperacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OperacionToolStripMenuItem.Click
         Dim mRegPro As New FrmOperacion_1
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub ProductoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles ProductoToolStripMenuItem1.Click
+    Private Sub ProductoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProductoToolStripMenuItem1.Click
         Dim mRegPro As New frmproductos
         mRegPro.MdiParent = Me
         mRegPro.Show()
     End Sub
 
-    Private Sub EnvaseToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles EnvaseToolStripMenuItem1.Click
+    Private Sub EnvaseToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EnvaseToolStripMenuItem1.Click
         Dim mRegLogo As New FrmLoGo2
         mRegLogo.MdiParent = Me
         mRegLogo.Show()
     End Sub
 
-    Private Sub EnvaseToolStripMenuItem2_Click(sender As Object, e As System.EventArgs) Handles EnvaseToolStripMenuItem2.Click
+    Private Sub EnvaseToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EnvaseToolStripMenuItem2.Click
         Dim mRegEnvas As New FrmEnvase2
         mRegEnvas.MdiParent = Me
         mRegEnvas.Show()
     End Sub
 
-    Private Sub CategoriaToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles CategoriaToolStripMenuItem1.Click
+    Private Sub CategoriaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CategoriaToolStripMenuItem1.Click
         Dim mRegCat As New FrmCategoria2
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub ComisionistaToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles ComisionistaToolStripMenuItem.Click
+    Private Sub ComisionistaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComisionistaToolStripMenuItem.Click
         Dim mRegCat As New FrmComisionista1
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles SalirToolStripMenuItem.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
 
-    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmEnv_Comp1
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmDev_Comp1
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub IngresoDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles IngresoDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub IngresoDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresoDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmRep_Ing_Comp
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem1.Click
+    Private Sub EnvioDeComprobantesDePagoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EnvioDeComprobantesDePagoToolStripMenuItem1.Click
         Dim mRegCat As New FrmRep_Envio_Comp
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem1_Click(sender As Object, e As System.EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem1.Click
+    Private Sub DevoluciónDeComprobantesDePagoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DevoluciónDeComprobantesDePagoToolStripMenuItem1.Click
         Dim mRegCat As New FrmRep_Dev_Comp
         mRegCat.MdiParent = Me
         mRegCat.Show()
     End Sub
 
-    Private Sub ControlDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As System.EventArgs) Handles ControlDeComprobantesDePagoToolStripMenuItem.Click
+    Private Sub ControlDeComprobantesDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeComprobantesDePagoToolStripMenuItem.Click
         Dim mRegCat As New FrmRep_Con_Comp_Pago
         mRegCat.MdiParent = Me
         mRegCat.Show()

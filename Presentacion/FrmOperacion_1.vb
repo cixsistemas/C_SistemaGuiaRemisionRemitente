@@ -38,7 +38,7 @@ Public Class FrmOperacion_1
             MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
     Private Sub FrmOperacion_1_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
@@ -61,7 +61,7 @@ Public Class FrmOperacion_1
         End If
     End Sub
 
-    Private Sub FrmOperacion_1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmOperacion_1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(4, Nothing)
@@ -90,7 +90,7 @@ Public Class FrmOperacion_1
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         btnmodificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -99,7 +99,7 @@ Public Class FrmOperacion_1
     Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         'indice = e.RowIndex
     End Sub
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea Guardar Operacion?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -150,7 +150,7 @@ Public Class FrmOperacion_1
         lista(4, Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Operacion", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -212,7 +212,7 @@ Public Class FrmOperacion_1
         lista(4, Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Operacion", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -253,15 +253,15 @@ Public Class FrmOperacion_1
         lista(4, Nothing)
     End Sub
 
-    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
+    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Enter
         '  Me.TxtBusca.BackColor = Color.Azure
     End Sub
 
-    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         TxtBusca.BackColor = Color.White
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = TxtBusca.Text.Trim
         ' Dim TIPO_OPERACION As String = Me.TextBox1.Text
         If RbEntrada.Checked = True Then
@@ -285,19 +285,19 @@ Public Class FrmOperacion_1
         End If
     End Sub
 
-    Private Sub RbEntrada_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbEntrada.CheckedChanged
+    Private Sub RbEntrada_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbEntrada.CheckedChanged
         TxtBusca.Text = ""
         TxtBusca.Focus()
         lista(1, TxtBusca.Text)
     End Sub
 
-    Private Sub RbSalida_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbSalida.CheckedChanged
+    Private Sub RbSalida_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbSalida.CheckedChanged
         TxtBusca.Text = ""
         TxtBusca.Focus()
         lista(2, TxtBusca.Text)
     End Sub
 
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         TxtBusca.Text = ""
         TxtBusca.Focus()
         lista(3, TxtBusca.Text)

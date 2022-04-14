@@ -23,7 +23,7 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub FrmUbigeo2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmUbigeo2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'Aceptar = False
         'Hide()
@@ -31,7 +31,7 @@
         'Me.txtcodigo.Focus()
     End Sub
 
-    Private Sub txtdistrito_Enter(sender As Object, e As System.EventArgs) Handles txtdistrito.Enter
+    Private Sub txtdistrito_Enter(sender As Object, e As EventArgs) Handles txtdistrito.Enter
         txtdistrito.BackColor = Color.Moccasin
     End Sub
 
@@ -43,11 +43,11 @@
         '  saltar_ENTER(e)
     End Sub
 
-    Private Sub txtdistrito_Leave(sender As Object, e As System.EventArgs) Handles txtdistrito.Leave
+    Private Sub txtdistrito_Leave(sender As Object, e As EventArgs) Handles txtdistrito.Leave
         txtdistrito.BackColor = Color.White
     End Sub
 
-    Private Sub txtprovincia_Enter(sender As Object, e As System.EventArgs) Handles txtprovincia.Enter
+    Private Sub txtprovincia_Enter(sender As Object, e As EventArgs) Handles txtprovincia.Enter
         txtprovincia.BackColor = Color.Moccasin
     End Sub
 
@@ -59,12 +59,12 @@
         ' saltar_ENTER(e)
     End Sub
 
-    Private Sub txtprovincia_Leave(sender As Object, e As System.EventArgs) Handles txtprovincia.Leave
+    Private Sub txtprovincia_Leave(sender As Object, e As EventArgs) Handles txtprovincia.Leave
         txtprovincia.BackColor = Color.White
     End Sub
 
 
-    Private Sub txtdepartamento_Enter(sender As Object, e As System.EventArgs) Handles txtdepartamento.Enter
+    Private Sub txtdepartamento_Enter(sender As Object, e As EventArgs) Handles txtdepartamento.Enter
         txtdepartamento.BackColor = Color.Moccasin
     End Sub
 
@@ -76,10 +76,10 @@
         '  saltar_ENTER(e)
     End Sub
 
-    Private Sub txtdepartamento_Leave(sender As Object, e As System.EventArgs) Handles txtdepartamento.Leave
+    Private Sub txtdepartamento_Leave(sender As Object, e As EventArgs) Handles txtdepartamento.Leave
         txtdepartamento.BackColor = Color.White
     End Sub
-    Private Sub txtcodigo_Enter(sender As Object, e As System.EventArgs) Handles txtcodigo.Enter
+    Private Sub txtcodigo_Enter(sender As Object, e As EventArgs) Handles txtcodigo.Enter
         txtcodigo.BackColor = Color.Moccasin
     End Sub
 
@@ -91,11 +91,11 @@
         ' SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtcodigo_Leave(sender As Object, e As System.EventArgs) Handles txtcodigo.Leave
+    Private Sub txtcodigo_Leave(sender As Object, e As EventArgs) Handles txtcodigo.Leave
         txtcodigo.BackColor = Color.White
     End Sub
 
-    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = TxtCodigo.Text <> ""
@@ -164,26 +164,26 @@
         End If
     End Sub
 
-    Private Sub cancelar_Click(sender As Object, e As System.EventArgs) Handles cancelar.Click
+    Private Sub cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
  
    
-    Private Sub txtcodigo_TextChanged(sender As Object, e As System.EventArgs) Handles txtcodigo.TextChanged
+    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
         ' valida()
     End Sub
 
-    Private Sub txtdistrito_TextChanged(sender As Object, e As System.EventArgs) Handles txtdistrito.TextChanged
+    Private Sub txtdistrito_TextChanged(sender As Object, e As EventArgs) Handles txtdistrito.TextChanged
         ' valida()
     End Sub
 
-    Private Sub txtprovincia_TextChanged(sender As Object, e As System.EventArgs) Handles txtprovincia.TextChanged
+    Private Sub txtprovincia_TextChanged(sender As Object, e As EventArgs) Handles txtprovincia.TextChanged
         ' valida()
     End Sub
 
-    Private Sub txtdepartamento_TextChanged(sender As Object, e As System.EventArgs) Handles txtdepartamento.TextChanged
+    Private Sub txtdepartamento_TextChanged(sender As Object, e As EventArgs) Handles txtdepartamento.TextChanged
         '  valida()
     End Sub
 End Class

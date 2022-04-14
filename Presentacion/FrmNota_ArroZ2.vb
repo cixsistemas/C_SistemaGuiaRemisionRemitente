@@ -123,7 +123,7 @@ Public Class FrmNota_ArroZ2
     End Sub
 
 
-    Private Sub FrmNota_ArroZ22_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmNota_ArroZ22_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Nota_Arroz(Nothing)
@@ -162,7 +162,7 @@ Public Class FrmNota_ArroZ2
         btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         ' Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
     End Sub
-    Private Sub Ddgvdetalle_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvdetalle.VisibleChanged
+    Private Sub Ddgvdetalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvdetalle.VisibleChanged
         BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
@@ -170,7 +170,7 @@ Public Class FrmNota_ArroZ2
     End Sub
 
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             If MessageBox.Show("¿Desea guardar Nota de Envio?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
@@ -247,7 +247,7 @@ Public Class FrmNota_ArroZ2
         listar_Nota_Arroz(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -366,7 +366,7 @@ Public Class FrmNota_ArroZ2
         dgvdetalle.DataSource = Nothing
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -419,11 +419,11 @@ Public Class FrmNota_ArroZ2
         listar_Nota_Arroz(Nothing)
     End Sub
 
-    Private Sub btncerrar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btncerrar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
-    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_NOTA_ENVIO_ARROZ"
         f.Tabla_Imprimir = tabla_detalle_guias
@@ -447,11 +447,11 @@ Public Class FrmNota_ArroZ2
         SoloNumeros(e, False, sender.Text)
     End Sub
 
-    Private Sub txtbusca_Leave1(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub txtbusca_Leave1(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         txtbusca.BackColor = Color.White
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim valor As String = txtbusca.Text.Trim
         listar_Nota_Arroz(valor)
         dgvdetalle.DataSource = Nothing

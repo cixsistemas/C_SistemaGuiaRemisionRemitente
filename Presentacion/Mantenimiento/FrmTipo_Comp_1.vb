@@ -36,7 +36,7 @@ Public Class FrmTipo_Comp_1
             MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
 
@@ -52,7 +52,7 @@ Public Class FrmTipo_Comp_1
         End If
     End Sub
 
-    Private Sub FrmTipo_Comp_1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmTipo_Comp_1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         txtbusca.Focus()
@@ -82,14 +82,14 @@ Public Class FrmTipo_Comp_1
     End Sub
 
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False)) ' : mesajeerror.Text = ""
     End Sub
 
 
-    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim f As New FrmTipo_Comp_2
 
         ' f.TxtNro_Secado.Text = generar_numero_secado()
@@ -107,7 +107,7 @@ Public Class FrmTipo_Comp_1
 
         lista(Nothing)
     End Sub
-    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         Dim f As New FrmTipo_Comp_2
 
 
@@ -136,15 +136,15 @@ Public Class FrmTipo_Comp_1
             DgvLista.Focus()
         End If
     End Sub
-    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
+    Private Sub TxtBusca_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Enter
         'Me.TxtBusca.BackColor = Color.Azure
     End Sub
 
-    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub TxtBusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         TxtBusca.BackColor = Color.White
     End Sub
 
-    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub TxtBusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         lista(TxtBusca.Text)
     End Sub
 

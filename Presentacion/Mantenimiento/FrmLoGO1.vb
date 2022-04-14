@@ -10,7 +10,7 @@
         btnaceptar.Enabled = ok
     End Sub
 
-    Private Sub frmlogo1_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub frmlogo1_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -19,11 +19,11 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.TextChanged
+    Private Sub nombre_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.TextChanged
         valida()
     End Sub
 
-    Private Sub nombre_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.VisibleChanged
+    Private Sub nombre_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.VisibleChanged
         valida()
     End Sub
 
@@ -31,19 +31,19 @@
         saltar_Flechas(e)
     End Sub
     'ingreso nuevo
-    Private Sub descripcion_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.TextChanged
+    Private Sub descripcion_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.TextChanged
         valida()
     End Sub
-    Private Sub descripcion_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.VisibleChanged
+    Private Sub descripcion_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.VisibleChanged
         valida()
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
         Aceptar = True
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         'Me.Close()
         Hide()
@@ -61,16 +61,16 @@
     Private Sub descripcion_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles descripcion.KeyPress
        saltar_ENTER(e)
     End Sub
-    Private Sub nombre_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Enter
+    Private Sub nombre_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.Enter
         nombre.BackColor = Color.Moccasin
     End Sub
-    Private Sub nombre_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nombre.Leave
+    Private Sub nombre_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nombre.Leave
         nombre.BackColor = Color.White
     End Sub
-    Private Sub descripcion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.Enter
+    Private Sub descripcion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.Enter
         descripcion.BackColor = Color.Moccasin
     End Sub
-    Private Sub descripcion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles descripcion.Leave
+    Private Sub descripcion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles descripcion.Leave
         descripcion.BackColor = Color.White
     End Sub
 End Class

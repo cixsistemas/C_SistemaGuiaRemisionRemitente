@@ -1,6 +1,6 @@
 Public Class frmOpcImpGuia
     Public Aceptar As Boolean = False
-    Private Sub frmumision_Activated(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub frmumision_Activated(ByVal sender As Object, ByVal e As EventArgs)
         rbps.Checked = False
         rbpll.Checked = False
     End Sub
@@ -10,7 +10,7 @@ Public Class frmOpcImpGuia
             Close()
         End If
     End Sub
-    Private Sub Aceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Aceptarr.Click
+    Private Sub Aceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Aceptarr.Click
         Dim ok As Boolean = False
         If rbps.Checked = True Then
             For i As Integer = 0 To cblps.Items.Count - 1
@@ -64,15 +64,15 @@ Public Class frmOpcImpGuia
         End If
     End Sub
 
-    Private Sub RbMagllogri3_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub RbMagllogri3_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs)
 
     End Sub
 
-    Private Sub RbMagllogri2_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub RbMagllogri2_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs)
 
     End Sub
 
-    Private Sub RbMolino_CheckedChanged(sender As Object, e As System.EventArgs) Handles RbMolino.CheckedChanged
+    Private Sub RbMolino_CheckedChanged(sender As Object, e As EventArgs) Handles RbMolino.CheckedChanged
 
     End Sub
 End Class

@@ -6,7 +6,7 @@
     Public id_ope As Integer = -1
     Public id_Ubigeo As Integer = -1
     Dim Opc As String = "Nuevo"
-    Private Sub FrmDev_Comp2_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmDev_Comp2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -18,10 +18,10 @@
         End If
     End Sub
 
-    Private Sub FrmDev_Comp2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmDev_Comp2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
-    Private Sub btnAgregar_Click_1(sender As Object, e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim ok As Boolean
         ok = id_ope <> -1
         If ok = False Then
@@ -94,7 +94,7 @@
     End Sub
 
 
-    Private Sub btnQuitar_Click(sender As Object, e As System.EventArgs) Handles btnQuitar.Click
+    Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         Try
             dgvlista.Rows.Remove(dgvlista.CurrentRow)
         Catch ex As Exception
@@ -116,7 +116,7 @@
 
 
 
-    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = dgvlista.Item("I", dgvlista.Rows.Count - 1).Value <> ""
@@ -211,7 +211,7 @@
         '    e.CellStyle.BackColor = Color.LightYellow
         'End If
     End Sub
-    Private Sub BtnOperacion_Click(sender As Object, e As System.EventArgs) Handles BtnOperacion.Click
+    Private Sub BtnOperacion_Click(sender As Object, e As EventArgs) Handles BtnOperacion.Click
         Try
             Dim f As New FrmListar_Operacion_Ent
             f.ShowDialog()
@@ -231,7 +231,7 @@
 
         Fecha_Ingreso.Focus()
     End Sub
-    Private Sub btnubigeo_Click(sender As Object, e As System.EventArgs) Handles btnubigeo.Click
+    Private Sub btnubigeo_Click(sender As Object, e As EventArgs) Handles btnubigeo.Click
 
 
 
@@ -261,17 +261,17 @@
     Private Sub direccion_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles direccion.KeyDown
         saltar_Flechas(e)
     End Sub
-    Private Sub direccion_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion.Enter
+    Private Sub direccion_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles direccion.Enter
         direccion.BackColor = Color.Moccasin
     End Sub
-    Private Sub direccion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion.Leave
+    Private Sub direccion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles direccion.Leave
         direccion.BackColor = Color.White
     End Sub
     Private Sub Fecha_Ingreso_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Fecha_Ingreso.KeyPress
         saltar_ENTER(e)
     End Sub
 
-    Private Sub txtDescrip_Enter(sender As Object, e As System.EventArgs) Handles txtDescrip.Enter
+    Private Sub txtDescrip_Enter(sender As Object, e As EventArgs) Handles txtDescrip.Enter
         txtDescrip.BackColor = Color.Moccasin
     End Sub
 
@@ -279,7 +279,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub txtDescrip_Leave(sender As Object, e As System.EventArgs) Handles txtDescrip.Leave
+    Private Sub txtDescrip_Leave(sender As Object, e As EventArgs) Handles txtDescrip.Leave
         txtDescrip.BackColor = Color.White
     End Sub
     Private Sub txtDescrip_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescrip.KeyPress

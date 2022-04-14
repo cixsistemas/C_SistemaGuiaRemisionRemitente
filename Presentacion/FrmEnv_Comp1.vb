@@ -140,7 +140,7 @@ Public Class FrmEnv_Comp1
         End If
     End Sub
 
-    Private Sub FrmEnv_Comp1_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmEnv_Comp1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Envio_Comp("", "", "", "")
@@ -200,14 +200,14 @@ Public Class FrmEnv_Comp1
     End Sub
 
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlistaDetalle.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlistaDetalle.VisibleChanged
         BtnModificar.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
         btnEliminar.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False))
         'Me.btnImprimir.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False)) ' : mesajeerror.Text = ""
     End Sub
 
 
-    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim f As New FrmEnv_Comp2
         'f.CbEstado.SelectedIndex = 0
         f.Nivel = "N"
@@ -220,7 +220,7 @@ Public Class FrmEnv_Comp1
         ' f.dgvlista.Refresh()
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione Registro por favor.", "Sistema de inventario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -289,7 +289,7 @@ Public Class FrmEnv_Comp1
         'Me.BtnModificar.Enabled = False
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvlistaDetalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -341,7 +341,7 @@ Public Class FrmEnv_Comp1
         listar_detalle_Envio_Comp(id_Envio_Comp)
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         listar_Envio_Comp(IIf(CbFechaIng.Checked = True, Year(dtpfinic.Value).ToString + "-" + Month(dtpfinic.Value).ToString + "-" + dtpfinic.Value.Day.ToString, ""), _
                   IIf(CbFechaIng.Checked = True, Year(dtpffin.Value).ToString + "-" + Month(dtpffin.Value).ToString + "-" + dtpffin.Value.Day.ToString, ""), _
             IIf(TxtComisionista.Text.Trim <> "", TxtComisionista.Text.Trim, ""), _
@@ -350,7 +350,7 @@ Public Class FrmEnv_Comp1
 
         dgvlistaDetalle.DataSource = Nothing
     End Sub
-    Private Sub CbFechaIng_CheckedChanged(sender As Object, e As System.EventArgs) Handles CbFechaIng.CheckedChanged
+    Private Sub CbFechaIng_CheckedChanged(sender As Object, e As EventArgs) Handles CbFechaIng.CheckedChanged
         dtpfinic.Enabled = CbFechaIng.Checked : dtpffin.Enabled = CbFechaIng.Checked
         dtpfinic.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
@@ -358,15 +358,15 @@ Public Class FrmEnv_Comp1
         dtpfinic.Focus()
     End Sub
 
-    Private Sub CboComis_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboComis.CheckedChanged
+    Private Sub CboComis_CheckedChanged(sender As Object, e As EventArgs) Handles CboComis.CheckedChanged
         TxtComisionista.Enabled = CboComis.Checked : TxtComisionista.Text = "" : TxtComisionista.Focus()
     End Sub
 
-    Private Sub CboZona_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboZona.CheckedChanged
+    Private Sub CboZona_CheckedChanged(sender As Object, e As EventArgs) Handles CboZona.CheckedChanged
         TxtZona.Enabled = CboZona.Checked : TxtZona.Text = "" : TxtZona.Focus()
     End Sub
 
-    Private Sub TxtComisionista_Enter(sender As Object, e As System.EventArgs) Handles TxtComisionista.Enter
+    Private Sub TxtComisionista_Enter(sender As Object, e As EventArgs) Handles TxtComisionista.Enter
         Try
             Dim f As New frmListarComisionistas
             f.ShowDialog()
@@ -379,7 +379,7 @@ Public Class FrmEnv_Comp1
       
     End Sub
 
-    Private Sub TxtZona_Enter(sender As Object, e As System.EventArgs) Handles TxtZona.Enter
+    Private Sub TxtZona_Enter(sender As Object, e As EventArgs) Handles TxtZona.Enter
         Try
             Dim f As New FrmListarZona
             f.ShowDialog()

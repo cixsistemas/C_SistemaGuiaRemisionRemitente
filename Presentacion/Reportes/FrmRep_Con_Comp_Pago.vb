@@ -96,7 +96,7 @@ Public Class FrmRep_Con_Comp_Pago
   
     End Sub
 
-    Private Sub FrmRep_Con_Comp_Pago_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmRep_Con_Comp_Pago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Control_Comp("", "", "", "", "")
         actualiza()
@@ -195,17 +195,17 @@ Public Class FrmRep_Con_Comp_Pago
 
         End Try
     End Sub
-    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
         dtpff.Value = DateTime.Now
         dtpfin.Focus()
     End Sub
-    Private Sub CboRemitente_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
+    Private Sub CboRemitente_CheckedChanged(sender As Object, e As EventArgs) Handles CboRemitente.CheckedChanged
         TxtRemitente.Enabled = CboRemitente.Checked : TxtRemitente.Text = "" : TxtRemitente.Focus()
     End Sub
-    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
+    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As EventArgs) Handles CboTipoCom.CheckedChanged
         TxtTipo_Comp.Enabled = CboTipoCom.Checked : TxtTipo_Comp.Text = "" : TxtTipo_Comp.Focus()
     End Sub
     Private Sub dtpfin_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dtpfin.KeyPress
@@ -216,10 +216,10 @@ Public Class FrmRep_Con_Comp_Pago
         saltar_ENTER(e)
         'Me.btnBuscar.Focus()
     End Sub
-    Private Sub CboComis_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboComis.CheckedChanged
+    Private Sub CboComis_CheckedChanged(sender As Object, e As EventArgs) Handles CboComis.CheckedChanged
         TxtComisionista.Enabled = CboComis.Checked : TxtComisionista.Text = "" : TxtComisionista.Focus()
     End Sub
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         listar_Control_Comp(IIf(cbFecha.Checked = True, Year(dtpfin.Value).ToString + "-" + Month(dtpfin.Value).ToString + "-" + dtpfin.Value.Day.ToString, ""), _
                     IIf(cbFecha.Checked = True, Year(dtpff.Value).ToString + "-" + Month(dtpff.Value).ToString + "-" + dtpff.Value.Day.ToString, ""), _
                        IIf(TxtRemitente.Text.Trim <> "", TxtRemitente.Text.Trim, ""), _
@@ -228,7 +228,7 @@ Public Class FrmRep_Con_Comp_Pago
 
 
     End Sub
-    Private Sub TxtRemitente_Enter(sender As Object, e As System.EventArgs) Handles TxtRemitente.Enter
+    Private Sub TxtRemitente_Enter(sender As Object, e As EventArgs) Handles TxtRemitente.Enter
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -241,11 +241,11 @@ Public Class FrmRep_Con_Comp_Pago
 
     End Sub
 
-    Private Sub TxtRemitente_Leave(sender As Object, e As System.EventArgs) Handles TxtRemitente.Leave
+    Private Sub TxtRemitente_Leave(sender As Object, e As EventArgs) Handles TxtRemitente.Leave
         TxtRemitente.BackColor = Color.White
     End Sub
 
-    Private Sub TxtTipo_Comp_Enter(sender As Object, e As System.EventArgs) Handles TxtTipo_Comp.Enter
+    Private Sub TxtTipo_Comp_Enter(sender As Object, e As EventArgs) Handles TxtTipo_Comp.Enter
         Try
             Dim f As New FrmListar_Tipo_Comp
             f.ShowDialog()
@@ -254,7 +254,7 @@ Public Class FrmRep_Con_Comp_Pago
             MessageBox.Show("Seleccione Tipo de Comprobante a Buscar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
     End Sub
-    Private Sub TxtComisionista_Enter(sender As Object, e As System.EventArgs) Handles TxtComisionista.Enter
+    Private Sub TxtComisionista_Enter(sender As Object, e As EventArgs) Handles TxtComisionista.Enter
         Try
             Dim f As New frmListarComisionistas
             f.ShowDialog()
@@ -267,7 +267,7 @@ Public Class FrmRep_Con_Comp_Pago
 
     End Sub
 
-    Private Sub btnImprimir_Click(sender As Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         'Me.Close()
         'Dim f As New frmImprimiR
         'f.Nivel = "FORMULARIO_LISTA_CONTROL_DE_COMPROBANTES_DE_PAGO"
@@ -294,7 +294,7 @@ Public Class FrmRep_Con_Comp_Pago
 
     End Sub
 
-    Private Sub TxtRemitente_TextChanged(sender As Object, e As System.EventArgs) Handles TxtRemitente.TextChanged
+    Private Sub TxtRemitente_TextChanged(sender As Object, e As EventArgs) Handles TxtRemitente.TextChanged
 
     End Sub
 End Class

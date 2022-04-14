@@ -89,7 +89,7 @@ Public Class FrmListarProducto
     End Sub
 
 
-    Private Sub FrmListarProductos_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarProductos_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         ' Me.cbobusca.SelectedIndex = 0
         'activa(False)
@@ -97,7 +97,7 @@ Public Class FrmListarProducto
         rbProducto.Checked = True
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
     Private Sub dgvlista_CellClick1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
@@ -118,41 +118,41 @@ Public Class FrmListarProducto
     'Private Sub txtbusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
     '    Me.txtbusca.BackColor = Color.Moccasin
     'End Sub
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
     End Sub
 
 
-    Private Sub rbProducto_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbProducto.CheckedChanged
+    Private Sub rbProducto_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbProducto.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
-    Private Sub RbNom_Com_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbNom_Com.CheckedChanged
+    Private Sub RbNom_Com_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbNom_Com.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
-    Private Sub rbcolor_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbcolor.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub rbcat_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbcat.CheckedChanged
+    Private Sub rbcolor_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbcolor.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub Rblogo_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rblogo.CheckedChanged
+    Private Sub rbcat_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbcat.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rbenvase.CheckedChanged
+    Private Sub Rblogo_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Rblogo.CheckedChanged
         txtbusca.Text = ""
         txtbusca.Focus()
     End Sub
 
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Rbenvase.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
 
         If rbProducto.Checked = True Then

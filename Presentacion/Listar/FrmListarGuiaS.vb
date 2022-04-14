@@ -85,7 +85,7 @@ Public Class FrmListarGuiaS
     End Sub
 
 
-    Private Sub FrmListarGuiaSs_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmListarGuiaSs_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         REM Obtenenemos la cadena de coneccion al servidor
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_guias(Nothing)
@@ -96,7 +96,7 @@ Public Class FrmListarGuiaS
         ' saltar(e)
         SoloNumeros(e, False, sender.Text)
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         listar_guias(txtbusca.Text)
     End Sub
     Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
@@ -105,7 +105,7 @@ Public Class FrmListarGuiaS
         'listar_detalle_guias(idguia)
     End Sub
 
-    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btn_Acep.Click
         Close()
     End Sub
 

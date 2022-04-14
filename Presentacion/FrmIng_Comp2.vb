@@ -9,7 +9,7 @@
     Dim Opc As String = "Nuevo"
     Dim T As Integer
     Dim i As Integer
-    Private Sub FrmIng_Comp2_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub FrmIng_Comp2_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
@@ -25,11 +25,11 @@
         ' saltar_Flechas()
     End Sub
 
-    Private Sub FrmIng_Comp2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmIng_Comp2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
     End Sub
 
-    Private Sub btnAgregar_Click(sender As Object, e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         Dim ok As Boolean
 
@@ -139,7 +139,7 @@
         '   ' dgvlista.Refresh()
         indice = -1
     End Sub
-    Private Sub btnEditar_Click(sender As Object, e As System.EventArgs) Handles btnEditar.Click
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         If indice = -1 Then
             MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -161,7 +161,7 @@
 
         Opc = "Editar"
     End Sub
-    Private Sub btnQuitar_Click(sender As Object, e As System.EventArgs) Handles btnQuitar.Click
+    Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         Try
             dgvlista.Rows.Remove(dgvlista.CurrentRow)
         Catch ex As Exception
@@ -180,7 +180,7 @@
         indice = e.RowIndex
     End Sub
 
-    Private Sub btnremitente_Click(sender As Object, e As System.EventArgs) Handles btnremitente.Click
+    Private Sub btnremitente_Click(sender As Object, e As EventArgs) Handles btnremitente.Click
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -197,7 +197,7 @@
         BtnOperacion.Focus()
     End Sub
 
-    Private Sub BtnOperacion_Click(sender As Object, e As System.EventArgs) Handles BtnOperacion.Click
+    Private Sub BtnOperacion_Click(sender As Object, e As EventArgs) Handles BtnOperacion.Click
         Try
             Dim f As New FrmListar_Operacion_Ent
             ' Dim f As New FrmProveedor_1
@@ -218,7 +218,7 @@
        
         BtnTipoComp.Focus()
     End Sub
-    Private Sub BtnTipoComp_Click(sender As Object, e As System.EventArgs) Handles BtnTipoComp.Click
+    Private Sub BtnTipoComp_Click(sender As Object, e As EventArgs) Handles BtnTipoComp.Click
         Try
             Dim f As New FrmListar_Tipo_Comp
             ' Dim f As New FrmProveedor_1
@@ -244,7 +244,7 @@
 
         TxtSerie.Focus()
     End Sub
-    Private Sub BtnOperacion_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnOperacion.Leave
+    Private Sub BtnOperacion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles BtnOperacion.Leave
         If TxtOpe.Text = "" And TxtOpe.Text = "" Then
             MessageBox.Show("Busque o Seleccione Operacion por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnOperacion.Focus()
@@ -252,7 +252,7 @@
 
     End Sub
 
-    Private Sub btnremitente_Leave(sender As Object, e As System.EventArgs) Handles btnremitente.Leave
+    Private Sub btnremitente_Leave(sender As Object, e As EventArgs) Handles btnremitente.Leave
         If NombreRemitente.Text = "" Then
             MessageBox.Show("Busque o Seleccione Remitente por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnremitente.Focus()
@@ -260,14 +260,14 @@
     End Sub
 
  
-    Private Sub BtnTipoComp_Leave(sender As Object, e As System.EventArgs) Handles BtnTipoComp.Leave
+    Private Sub BtnTipoComp_Leave(sender As Object, e As EventArgs) Handles BtnTipoComp.Leave
         If TxtTipoComp.Text = "" Then
             MessageBox.Show("Busque o Seleccione Tipo de Comprobante de Pago por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnTipoComp.Focus()
         End If
     End Sub
 
-    Private Sub btnaceptar_Click(sender As Object, e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(sender As Object, e As EventArgs) Handles btnaceptar.Click
         Dim ok As Boolean
 
         ok = dgvlista.Rows.Count > 0
@@ -360,7 +360,7 @@
     End Sub
 
 #Region "TextBox"
-    Private Sub TxtSerie_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtSerie.Enter
+    Private Sub TxtSerie_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtSerie.Enter
         TxtSerie.BackColor = Color.Moccasin
     End Sub
 
@@ -372,7 +372,7 @@
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub TxtSerie_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtSerie.Leave
+    Private Sub TxtSerie_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtSerie.Leave
         'If TxtSerie.Text = "" Then
         '    MessageBox.Show("Ingrese Número Serie por favor.", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         '    TxtSerie.Focus()
@@ -381,7 +381,7 @@
         'End If
         TxtSerie.BackColor = Color.White
     End Sub
-    Private Sub TxtNumero_Enter(sender As Object, e As System.EventArgs) Handles TxtNumero.Enter
+    Private Sub TxtNumero_Enter(sender As Object, e As EventArgs) Handles TxtNumero.Enter
         TxtNumero.BackColor = Color.Moccasin
     End Sub
 
@@ -394,11 +394,11 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub TxtNumero_Leave(sender As Object, e As System.EventArgs) Handles TxtNumero.Leave
+    Private Sub TxtNumero_Leave(sender As Object, e As EventArgs) Handles TxtNumero.Leave
         TxtNumero.BackColor = Color.White
     End Sub
 
-    Private Sub TxtNumero2_Enter(sender As Object, e As System.EventArgs) Handles TxtNumero2.Enter
+    Private Sub TxtNumero2_Enter(sender As Object, e As EventArgs) Handles TxtNumero2.Enter
         TxtNumero2.BackColor = Color.Moccasin
     End Sub
 
@@ -411,7 +411,7 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub TxtNumero2_Leave(sender As Object, e As System.EventArgs) Handles TxtNumero2.Leave
+    Private Sub TxtNumero2_Leave(sender As Object, e As EventArgs) Handles TxtNumero2.Leave
         TxtNumero2.BackColor = Color.White
     End Sub
 
@@ -423,7 +423,7 @@
         saltar_ENTER(e)
     End Sub
 
-    Private Sub txtDescrip_Enter(sender As Object, e As System.EventArgs) Handles txtDescrip.Enter
+    Private Sub txtDescrip_Enter(sender As Object, e As EventArgs) Handles txtDescrip.Enter
         txtDescrip.BackColor = Color.Moccasin
     End Sub
 
@@ -431,7 +431,7 @@
         saltar_Flechas(e)
     End Sub
 
-    Private Sub txtDescrip_Leave(sender As Object, e As System.EventArgs) Handles txtDescrip.Leave
+    Private Sub txtDescrip_Leave(sender As Object, e As EventArgs) Handles txtDescrip.Leave
         txtDescrip.BackColor = Color.White
     End Sub
     Private Sub txtDescrip_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescrip.KeyPress
@@ -440,13 +440,13 @@
 #End Region
 
   
-    Private Sub btncancelar_Click(sender As Object, e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(sender As Object, e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
 
    
-    Private Sub btneliminar_Click(sender As Object, e As System.EventArgs) Handles btneliminar.Click
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
 
         Try
             If check_fila_grilla(dgvlista) = False Then

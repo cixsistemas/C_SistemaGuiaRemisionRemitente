@@ -2,7 +2,8 @@ Public Class frmproductos
     Private formulario As New frmproducto
 
     Dim tabla_producto As DataTable = Nothing
-
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
     Public Sub lista(ByVal opcion As Integer, ByVal criterio As String)
         LBF2.ForeColor = Color.Red
         LBF3.ForeColor = Color.Red
@@ -31,6 +32,9 @@ Public Class frmproductos
                     mesajeerror.Text = "NO HAY PRODUCTOS PARA MOSTRAR"
                     mesajeerror.ForeColor = Color.Red
                 Else
+                    'AGREGADO EL DIA 13-04-2022
+                    Dv.Table = tabla_producto ' Enlazamos el dataview con la tabla devuelta
+                    ''=======================================================
                     dgvlista.Columns("ID").Visible = False
                     dgvlista.Columns("Productox").Visible = False
                     dgvlista.Columns("Categoria").Visible = False
@@ -87,9 +91,15 @@ Public Class frmproductos
             e.SuppressKeyPress = True
             RbTodos.Checked = True
         End If
+
+        If e.KeyCode = Keys.Insert Then
+            e.SuppressKeyPress = True
+            InsertarRegistro()
+        End If
+
     End Sub
 
-    Private Sub frmlproductoSs_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmlproductoSs_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(7, Nothing)
         rbProducto.Checked = True
@@ -108,7 +118,7 @@ Public Class frmproductos
     End Sub
 
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -125,36 +135,18 @@ Public Class frmproductos
         indice = e.RowIndex
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
 
-        'Dim f As New _FrmCuentaFin2
-        formulario.Nivel = "N"
-        formulario.prod_id = -1
-        formulario.prod_nom.Text = ""
-        formulario.prod_peso_uni.Text = ""
-        formulario.prod_color.Text = ""
-        formulario.Nombre_Com.Text = ""
-        formulario.cbocategoria.DataSource = Nothing
-        formulario.id_logo = -1
-        formulario.txtlogotipo.Text = ""
-        formulario.cboenvasado.DataSource = Nothing
-
-        lista(7, Nothing)
-
-        formulario.lista_categoria(8)
-        ' Me.formulario.lista_logotipo(9)
-        formulario.lista_envasado(10)
-
-        formulario.ShowDialog()
+        InsertarRegistro()
 
 
     End Sub
 
-    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnModificar.Click
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         UpdateRegistro()
     End Sub
 
-    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione producto", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -200,7 +192,7 @@ Public Class frmproductos
         lista(7, Nothing)
     End Sub
 
-    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
         Try
             Dim f As New frmImprimiR
             f.Nivel = "FORMULARIO_LISTA_PRODUCTOS"
@@ -213,7 +205,7 @@ Public Class frmproductos
 
     End Sub
 
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCerrar.Click
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
     'Private Sub txtbusca_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtbusca.KeyDown
@@ -221,63 +213,55 @@ Public Class frmproductos
     '        SendKeys.Send("{TAB}")
     '    End If
     'End Sub
-    Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
+    Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         txtbusca.BackColor = Color.White
     End Sub
-    'Private Sub txtbusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
-    '    Me.txtbusca.BackColor = Color.Moccasin
-    'End Sub
-    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbTodos.CheckedChanged
-        txtbusca.Text = ""
-        'Me.txtbusca.Focus()
-    End Sub
 
-
-
-    Private Sub rbProducto_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbProducto.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-    Private Sub RbNom_Com_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RbNom_Com.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-    Private Sub rbcolor_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbcolor.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub rbcat_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbcat.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub Rblogo_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rblogo.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Rbenvase.CheckedChanged
-        txtbusca.Text = ""
-        txtbusca.Focus()
-    End Sub
-
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         Dim criterio As String = txtbusca.Text.Trim
 
         If rbProducto.Checked = True Then
-            lista(1, txtbusca.Text)
+            CadenaBuscar = "producto like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(1, txtbusca.Text)
         ElseIf RbNom_Com.Checked = True Then
-            lista(2, txtbusca.Text)
+            CadenaBuscar = "Comercial like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            ' lista(2, txtbusca.Text)
         ElseIf rbcolor.Checked = True Then
-            lista(3, txtbusca.Text)
+            CadenaBuscar = "Color like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(3, txtbusca.Text)
         ElseIf rbcat.Checked = True Then
-            lista(4, txtbusca.Text)
+            CadenaBuscar = "categoria like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(4, txtbusca.Text)
         ElseIf Rblogo.Checked = True Then
-            lista(5, txtbusca.Text)
+            CadenaBuscar = "logotipo like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(5, txtbusca.Text)
         ElseIf Rbenvase.Checked = True Then
-            lista(6, txtbusca.Text)
+            CadenaBuscar = "envasado like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(6, txtbusca.Text)
         ElseIf RbTodos.Checked = True Then
+            txtbusca.Text = ""
+            ''CadenaBuscar = "producto like '%" + txtbusca.Text.Trim + "%'"
+            ''Dv.RowFilter = CadenaBuscar
+            ''dgvlista.DataSource = Dv
+            ''dgvlista.Update()
             lista(7, txtbusca.Text)
 
         End If
@@ -301,17 +285,20 @@ Public Class frmproductos
         End If
     End Sub
 
+    '================================================================
+#Region "TRANSACCIONES"
     Public Sub UpdateRegistro()
         If (indice = -1) Then
             MessageBox.Show("Seleccione producto", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-
+        MessageBox.Show(Convert.ToString(indice))
+        'formulario.prod_nom.Text = Convert.ToString(dgvlista.Rows(indice).Cells("Productox").Value.ToString())
         formulario.prod_id = CInt(dgvlista.Item("ID", indice).Value)
         formulario.prod_nom.Text = CStr(dgvlista.Item("Productox", indice).Value)
         formulario.prod_peso_uni.Text = CStr(dgvlista.Item("Peso", indice).Value)
         formulario.prod_color.Text = CStr(dgvlista.Item("Color", indice).Value)
-        formulario.Nombre_Com.Text = CStr(dgvlista.Item("Nombre Comercial", indice).Value.ToString.Trim)
+        formulario.Nombre_Com.Text = CStr(dgvlista.Item("Comercial", indice).Value.ToString.Trim)
         formulario.lista_categoria(8)
         formulario.cbocategoria.Text = CStr(dgvlista.Item("Categoria", indice).Value)
         'Me.formulario.lista_logotipo(9)
@@ -320,12 +307,109 @@ Public Class frmproductos
         formulario.txtlogotipo.Text = CStr(dgvlista.Item("Logotipo", indice).Value.ToString.Trim)
         formulario.lista_envasado(10)
         formulario.cboenvasado.Text = CStr(dgvlista.Item("Envasado", indice).Value)
+        formulario.cbProdSinDetalle.Checked = CBool(dgvlista.Item("productoSinDetalle", indice).Value)
+
         formulario.Nivel = "M"
+
+
+
         formulario.ShowDialog()
-
-
         indice = -1
+
+        formulario.prod_id = -1
+        formulario.prod_nom.Text = ""
+        formulario.prod_peso_uni.Text = ""
+        formulario.prod_color.Text = ""
+        formulario.Nombre_Com.Text = ""
+        formulario.cbocategoria.DataSource = Nothing
+        formulario.id_logo = -1
+        formulario.txtlogotipo.Text = ""
+        formulario.cboenvasado.DataSource = Nothing
+        formulario.lista_categoria(8)
+        ' Me.formulario.lista_logotipo(9)
+        formulario.lista_envasado(10)
+        'formulario.cbProdSinDetalle.Checked = True
+
         lista(7, Nothing)
     End Sub
+
+    Public Sub InsertarRegistro()
+        'Dim f As New _FrmCuentaFin2
+        formulario.cbProdSinDetalle.Checked = True
+        'BLOQUEAR CONTROLES CUANDO ESTA SELECCIONADO PRODUCTO SIN DETALLE
+        formulario.prod_peso_uni.Enabled = False
+        formulario.prod_peso_uni.Text = 0
+        formulario.btnlogotipo.Enabled = False
+        formulario.txtlogotipo.Enabled = False
+        formulario.txtlogotipo.Text = "."
+        formulario.id_logo = 84
+        formulario.cbocategoria.Enabled = False
+        formulario.cbocategoria.SelectedValue = 8
+        formulario.cboenvasado.Enabled = False
+        formulario.cboenvasado.SelectedValue = 6
+        formulario.prod_color.Enabled = False
+        formulario.prod_color.Text = "."
+        formulario.Nombre_Com.Enabled = False
+        formulario.Nombre_Com.Text = "."
+        '=============================================================
+
+        formulario.Nivel = "N"
+        formulario.prod_id = -1
+        formulario.prod_nom.Text = ""
+        formulario.prod_peso_uni.Text = ""
+        formulario.prod_color.Text = ""
+        formulario.Nombre_Com.Text = ""
+        'formulario.cbocategoria.DataSource = Nothing
+        'formulario.cbocategoria.SelectedValue = 0
+        formulario.id_logo = -1
+        formulario.txtlogotipo.Text = ""
+        'formulario.cboenvasado.DataSource = Nothing
+        'formulario.cboenvasado.SelectedValue = 0
+        lista(7, Nothing)
+
+        formulario.lista_categoria(8)
+        ' Me.formulario.lista_logotipo(9)
+        formulario.lista_envasado(10)
+
+        formulario.ShowDialog()
+    End Sub
+#End Region
+    '================================================================
+
+    '================================================================
+#Region "RADIOBUTTON"
+    Private Sub rbProducto_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbProducto.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+    Private Sub RbNom_Com_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbNom_Com.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+    Private Sub rbcolor_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbcolor.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+
+    Private Sub rbcat_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rbcat.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+
+    Private Sub Rblogo_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Rblogo.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+
+    Private Sub RbPlac_Sem_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Rbenvase.CheckedChanged
+        txtbusca.Text = ""
+        txtbusca.Focus()
+    End Sub
+    Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
+        txtbusca.Text = ""
+        'Me.txtbusca.Focus()
+    End Sub
+#End Region
+    '================================================================
 
 End Class

@@ -46,7 +46,7 @@
             txtbusca.Focus()
         End If
     End Sub
-    Private Sub frmmdestinario_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmmdestinario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         lista(Nothing)
         'Me.cbobusca.SelectedIndex = 0
@@ -70,7 +70,7 @@
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvlista.VisibleChanged
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
         BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -93,7 +93,7 @@
         indice = e.RowIndex
     End Sub
 
-    Private Sub btnNuevo_Click(sender As Object, e As System.EventArgs) Handles btnNuevo.Click
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         formulario.lista_tipodoc(11)
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
@@ -169,7 +169,7 @@
         lista(Nothing)
     End Sub
 
-    Private Sub btnmodificar_Click(sender As Object, e As System.EventArgs) Handles btnmodificar.Click
+    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Destinatario", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -269,7 +269,7 @@
         lista(Nothing)
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As System.EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
             MessageBox.Show("Seleccione Destinatario", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -319,7 +319,7 @@
         lista(Nothing)
     End Sub
 
-    Private Sub btnImprimir_Click(sender As Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_Destinatario"
         f.Tabla_Imprimir = tabla_cliente
@@ -327,10 +327,10 @@
         f.ShowDialog()
     End Sub
 
-    Private Sub btnCerrar_Click(sender As Object, e As System.EventArgs) Handles btnCerrar.Click
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Close()
     End Sub
-    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.TextChanged
+    Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
         lista(txtbusca.Text)
         ' Aplicar_Filtro()
     End Sub

@@ -7,13 +7,13 @@ Public Class Acercarde
         End If
     End Sub
 
-    Private Sub Acercarde_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub Acercarde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label3.ForeColor = Color.Red
         Panel2.ForeColor = Color.Blue
         Panel2.BackColor = Color.Blue
     End Sub
 
-    Private Sub btn_Acep_Click(sender As Object, e As System.EventArgs) Handles btn_Acep.Click
+    Private Sub btn_Acep_Click(sender As Object, e As EventArgs) Handles btn_Acep.Click
         Close()
 
     End Sub

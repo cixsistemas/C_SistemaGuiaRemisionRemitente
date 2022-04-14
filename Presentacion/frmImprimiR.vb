@@ -10,7 +10,7 @@ Public Class frmImprimiR
     Public Tabla_Imprimir As DataTable = Nothing
     Public DataSet_Imprimir As DataSet = Nothing
 
-    Private Sub crvImprimir_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles crvImprimir.Load
+    Private Sub crvImprimir_Load(ByVal sender As Object, ByVal e As EventArgs) Handles crvImprimir.Load
         Text = " ><))))°>... oO0 ... " & Titulo_Informe.Trim
 
 
@@ -706,7 +706,7 @@ Public Class frmImprimiR
         End If
     End Sub
 
-    Private Sub frmImprimir_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmImprimir_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

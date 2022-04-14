@@ -95,7 +95,7 @@ Public Class FrmRep_Ing_Comp
         End If
     End Sub
 
-    Private Sub FrmRep_Ing_Comp_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FrmRep_Ing_Comp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         listar_Ing_Comp("", "", "", "", "")
     End Sub
@@ -131,21 +131,21 @@ Public Class FrmRep_Ing_Comp
 
         End Try
     End Sub
-    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFecha.CheckedChanged
+    Private Sub cbFecha_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cbFecha.CheckedChanged
         dtpfin.Enabled = cbFecha.Checked : dtpff.Enabled = cbFecha.Checked
         dtpfin.Value = DateSerial(Now.Date.Year, Now.Month, 1)
         ' dtpfin.Value = DateTime.Now
         dtpff.Value = DateTime.Now
         dtpfin.Focus()
     End Sub
-    Private Sub CboRemitente_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboRemitente.CheckedChanged
+    Private Sub CboRemitente_CheckedChanged(sender As Object, e As EventArgs) Handles CboRemitente.CheckedChanged
         TxtRemitente.Enabled = CboRemitente.Checked : TxtRemitente.Text = "" : TxtRemitente.Focus()
     End Sub
-    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboTipoCom.CheckedChanged
+    Private Sub CboTipoCom_CheckedChanged(sender As Object, e As EventArgs) Handles CboTipoCom.CheckedChanged
         TxtTipo_Comp.Enabled = CboTipoCom.Checked : TxtTipo_Comp.Text = "" : TxtTipo_Comp.Focus()
     End Sub
 
-    Private Sub CboNumero_CheckedChanged(sender As Object, e As System.EventArgs) Handles CboNumero.CheckedChanged
+    Private Sub CboNumero_CheckedChanged(sender As Object, e As EventArgs) Handles CboNumero.CheckedChanged
         TxtNumero.Enabled = CboNumero.Checked : TxtNumero.Text = "" : TxtNumero.Focus()
     End Sub
     Private Sub dtpfin_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles dtpfin.KeyPress
@@ -156,7 +156,7 @@ Public Class FrmRep_Ing_Comp
         saltar_ENTER(e)
         'Me.btnBuscar.Focus()
     End Sub
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         listar_Ing_Comp(IIf(cbFecha.Checked = True, Year(dtpfin.Value).ToString + "-" + Month(dtpfin.Value).ToString + "-" + dtpfin.Value.Day.ToString, ""), _
                     IIf(cbFecha.Checked = True, Year(dtpff.Value).ToString + "-" + Month(dtpff.Value).ToString + "-" + dtpff.Value.Day.ToString, ""), _
             IIf(TxtRemitente.Text.Trim <> "", TxtRemitente.Text.Trim, ""), _
@@ -166,7 +166,7 @@ Public Class FrmRep_Ing_Comp
 
     End Sub
 
-    Private Sub TxtRemitente_Enter(sender As Object, e As System.EventArgs) Handles TxtRemitente.Enter
+    Private Sub TxtRemitente_Enter(sender As Object, e As EventArgs) Handles TxtRemitente.Enter
         Try
             Dim f As New frmListarRemitentes
             f.ShowDialog()
@@ -179,11 +179,11 @@ Public Class FrmRep_Ing_Comp
 
     End Sub
 
-    Private Sub TxtRemitente_Leave(sender As Object, e As System.EventArgs) Handles TxtRemitente.Leave
+    Private Sub TxtRemitente_Leave(sender As Object, e As EventArgs) Handles TxtRemitente.Leave
         TxtRemitente.BackColor = Color.White
     End Sub
 
-    Private Sub TxtTipo_Comp_Enter(sender As Object, e As System.EventArgs) Handles TxtTipo_Comp.Enter
+    Private Sub TxtTipo_Comp_Enter(sender As Object, e As EventArgs) Handles TxtTipo_Comp.Enter
         Try
             Dim f As New FrmListar_Tipo_Comp
             f.ShowDialog()
@@ -193,7 +193,7 @@ Public Class FrmRep_Ing_Comp
         End Try
     End Sub
 
-    Private Sub btnImprimir_Click(sender As Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         Dim f As New frmImprimiR
         f.Nivel = "FORMULARIO_LISTA_LISTA_INGRESOS_COMPROBANTES"
         f.Tabla_Imprimir = tabla_ListarIngComp

@@ -20,17 +20,17 @@ Public Class frmguia
     Private INDICE2 As Integer = -1
     
 
-    Private Sub frmguia_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub frmguia_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
         Hide()
     End Sub
 
-    Private Sub frmguia_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmguia_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         'lista(7)
     End Sub
 
-    Private Sub BtnMotivo_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnMotivo.Click
+    Private Sub BtnMotivo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMotivo.Click
         Try
             Dim f As New FrmListarMotivo
             f.ShowDialog()
@@ -53,7 +53,7 @@ Public Class frmguia
             TxtIGV.Enabled = True
         End If
     End Sub
-    Private Sub btnremitente_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnremitente.Click
+    Private Sub btnremitente_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnremitente.Click
 
         Try
             Dim f As New frmListarRemitentes
@@ -76,7 +76,7 @@ Public Class frmguia
         End Try
         fecha_emision_guia.Focus()
     End Sub
-    Private Sub btnChofer_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnChofer.Click
+    Private Sub btnChofer_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnChofer.Click
         Try
             Dim f As New FrmListarChofer
             f.ShowDialog()
@@ -95,7 +95,7 @@ Public Class frmguia
         Nro_constancia_deposito.Focus()
     End Sub
 
-    Private Sub btnProducto_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnProducto.Click
+    Private Sub btnProducto_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnProducto.Click
         Try
             Dim f As New FrmListarProducto
             f.ShowDialog()
@@ -118,7 +118,7 @@ Public Class frmguia
         cantidad_sacos.Focus()
     End Sub
 
-    Private Sub btnptopartida_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnptopartida.Click
+    Private Sub btnptopartida_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnptopartida.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -141,7 +141,7 @@ Public Class frmguia
         direccion_pto_llegadaa.Focus()
     End Sub
 
-    Private Sub btnptollegada_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnptollegada.Click
+    Private Sub btnptollegada_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnptollegada.Click
         Try
             Dim f As New frmListarUbigeo
             f.ShowDialog()
@@ -164,7 +164,7 @@ Public Class frmguia
         btnDestinatario.Focus()
     End Sub
 
-    Private Sub btnDestinatario_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDestinatario.Click
+    Private Sub btnDestinatario_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnDestinatario.Click
         Try
             Dim f As New frmListardestinatarios
             f.ShowDialog()
@@ -189,7 +189,7 @@ Public Class frmguia
         btnTransporte.Focus()
     End Sub
 
-    Private Sub btnTransporte_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnTransporte.Click
+    Private Sub btnTransporte_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnTransporte.Click
         Try
             Dim f As New FrmListarUnidTransp
             f.ShowDialog()
@@ -224,7 +224,7 @@ Public Class frmguia
         btnChofer.Focus()
     End Sub
 
-    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAgregar.Click
 
         If operacion = "" Then
             MessageBox.Show("Seleccione nuevo ó editar.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -319,7 +319,7 @@ Public Class frmguia
         TxtIGV.Text = "0"
     End Sub
 
-    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnnuevo_examen.Click
+    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnnuevo_examen.Click
         operacion = "N"
         indice = -1
         activar2(True)
@@ -327,7 +327,7 @@ Public Class frmguia
         btnProducto.Focus()
     End Sub
 
-    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btneditar_hpm.Click
+    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btneditar_hpm.Click
 
         If indice = -1 Then
             MessageBox.Show("Seleccione producto para editarlo", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -357,7 +357,7 @@ Public Class frmguia
 
     End Sub
 
-    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnquitar_hpm.Click
+    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnquitar_hpm.Click
         If check_fila_grilla(Detalle) = False Then
             MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
@@ -378,7 +378,7 @@ Public Class frmguia
         btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
     End Sub
 
-    Private Sub Detalle_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Detalle.VisibleChanged
+    Private Sub Detalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Detalle.VisibleChanged
         btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
         btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
     End Sub
@@ -389,7 +389,7 @@ Public Class frmguia
         btnAgregar.Enabled = activa
     End Sub
 
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnaceptar.Click
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
 
         Dim ok As Boolean
 
@@ -494,7 +494,7 @@ Public Class frmguia
         Hide()
     End Sub
 
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btncancelar.Click
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
         Aceptar = False
         Hide()
     End Sub
@@ -504,7 +504,7 @@ Public Class frmguia
     End Sub
 
 
-    Private Sub Monto_deposito_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Monto_deposito.Leave
+    Private Sub Monto_deposito_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito.Leave
         If Monto_deposito.Text = "" Then
             MessageBox.Show("Ingrese monto deposito mayor o igual a 0, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Monto_deposito.Focus()
@@ -514,10 +514,10 @@ Public Class frmguia
         End If
         Monto_deposito.BackColor = Color.White
     End Sub
-    Private Sub Monto_deposito_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Monto_deposito.Enter
+    Private Sub Monto_deposito_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito.Enter
         Monto_deposito.BackColor = Color.Moccasin
     End Sub
-    Private Sub Monto_deposito2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Monto_deposito2.Leave
+    Private Sub Monto_deposito2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito2.Leave
         If Monto_deposito2.Text = "" Then
             MessageBox.Show("Ingrese Monto deposito mayor o igual a 0, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Monto_deposito2.Focus()
@@ -533,7 +533,7 @@ Public Class frmguia
         '        Me.Close()
         '    End If
     End Sub
-    Private Sub serie_guia_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles serie_guia.Leave
+    Private Sub serie_guia_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles serie_guia.Leave
         If serie_guia.Text = "" Then
             MessageBox.Show("Ingrese Nro. serie por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             serie_guia.Focus()
@@ -542,13 +542,13 @@ Public Class frmguia
         End If
         serie_guia.BackColor = Color.White
     End Sub
-    Private Sub serie_guia_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles serie_guia.Enter
+    Private Sub serie_guia_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles serie_guia.Enter
         serie_guia.BackColor = Color.Moccasin
     End Sub
-    Private Sub nro_guia_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nro_guia.Enter
+    Private Sub nro_guia_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles nro_guia.Enter
         nro_guia.BackColor = Color.Moccasin
     End Sub
-    Private Sub nro_guia_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles nro_guia.Leave
+    Private Sub nro_guia_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nro_guia.Leave
         If nro_guia.Text = "" Then
             MessageBox.Show("Ingrese Número Guia por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nro_guia.Focus()
@@ -557,32 +557,32 @@ Public Class frmguia
         End If
         nro_guia.BackColor = Color.White
     End Sub
-    Private Sub direccion_pto_partida_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion_pto_partida.Enter
+    Private Sub direccion_pto_partida_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles direccion_pto_partida.Enter
         direccion_pto_partida.BackColor = Color.Moccasin
     End Sub
-    Private Sub direccion_pto_partida_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion_pto_partida.Leave
+    Private Sub direccion_pto_partida_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles direccion_pto_partida.Leave
         direccion_pto_partida.BackColor = Color.White
     End Sub
    
-    Private Sub Nro_constancia_deposito_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_constancia_deposito.Enter
+    Private Sub Nro_constancia_deposito_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_constancia_deposito.Enter
         Nro_constancia_deposito.BackColor = Color.Moccasin
     End Sub
-    Private Sub Nro_constancia_deposito_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_constancia_deposito.Leave
+    Private Sub Nro_constancia_deposito_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_constancia_deposito.Leave
         Nro_constancia_deposito.BackColor = Color.White
     End Sub
-    Private Sub Nro_constancia_deposito2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_constancia_deposito2.Enter
+    Private Sub Nro_constancia_deposito2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_constancia_deposito2.Enter
         Nro_constancia_deposito2.BackColor = Color.Moccasin
     End Sub
-    Private Sub Nro_constancia_deposito2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_constancia_deposito2.Leave
+    Private Sub Nro_constancia_deposito2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_constancia_deposito2.Leave
         Nro_constancia_deposito2.BackColor = Color.White
     End Sub
-    Private Sub Monto_deposito2_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Monto_deposito2.Enter
+    Private Sub Monto_deposito2_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito2.Enter
         Monto_deposito2.BackColor = Color.Moccasin
     End Sub
-    Private Sub Nro_licencia_conductor_Leave1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_licencia_conductor.Leave
+    Private Sub Nro_licencia_conductor_Leave1(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_licencia_conductor.Leave
         Nro_licencia_conductor.BackColor = Color.White
     End Sub
-    Private Sub Nro_licencia_conductor_Enter1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Nro_licencia_conductor.Enter
+    Private Sub Nro_licencia_conductor_Enter1(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_licencia_conductor.Enter
         Nro_licencia_conductor.BackColor = Color.Moccasin
     End Sub
     Private Sub serie_guia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles serie_guia.KeyPress
@@ -626,14 +626,14 @@ Public Class frmguia
         SoloNumeros(e, False, sender.Text)
         saltar_ENTER(e)
     End Sub
-    Private Sub cantidad_sacos_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles cantidad_sacos.Enter
+    Private Sub cantidad_sacos_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles cantidad_sacos.Enter
         cantidad_sacos.BackColor = Color.Moccasin
     End Sub
-    Private Sub cantidad_sacos_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles cantidad_sacos.Leave
+    Private Sub cantidad_sacos_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles cantidad_sacos.Leave
         cantidad_sacos.BackColor = Color.White
     End Sub
 
-    Private Sub direccion_pto_llegadaa_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion_pto_llegadaa.Enter
+    Private Sub direccion_pto_llegadaa_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles direccion_pto_llegadaa.Enter
         direccion_pto_llegadaa.BackColor = Color.Moccasin
     End Sub
 
@@ -646,11 +646,11 @@ Public Class frmguia
         e.KeyChar = UCase(e.KeyChar)
     End Sub
 
-    Private Sub direccion_pto_llegadaa_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles direccion_pto_llegadaa.Leave
+    Private Sub direccion_pto_llegadaa_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles direccion_pto_llegadaa.Leave
         direccion_pto_llegadaa.BackColor = Color.White
     End Sub
 
-    Private Sub TxtPrec_Venta_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtPrec_Venta.Enter
+    Private Sub TxtPrec_Venta_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtPrec_Venta.Enter
         TxtPrec_Venta.BackColor = Color.Moccasin
     End Sub
 
@@ -658,11 +658,11 @@ Public Class frmguia
         saltar_ENTER(e)
     End Sub
 
-    Private Sub TxtPrec_Venta_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtPrec_Venta.Leave
+    Private Sub TxtPrec_Venta_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtPrec_Venta.Leave
         TxtPrec_Venta.BackColor = Color.White
     End Sub
 
-    Private Sub TxtIGV_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtIGV.Enter
+    Private Sub TxtIGV_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles TxtIGV.Enter
         TxtIGV.BackColor = Color.Moccasin
     End Sub
 
@@ -670,12 +670,12 @@ Public Class frmguia
         saltar_ENTER(e)
     End Sub
 
-    Private Sub TxtIGV_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtIGV.Leave
+    Private Sub TxtIGV_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles TxtIGV.Leave
         TxtIGV.BackColor = Color.White
     End Sub
 
    
-    Private Sub TxtIGV_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtIGV.TextChanged
+    Private Sub TxtIGV_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtIGV.TextChanged
 
     End Sub
 End Class
