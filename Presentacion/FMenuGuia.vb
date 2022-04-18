@@ -27,192 +27,159 @@ Public Class FMenuGuia
 
     'Requerido por el Diseñador de Windows Forms
     Private components As System.ComponentModel.IContainer
-
-    'NOTA: el Diseñador de Windows Forms requiere el siguiente procedimiento
-    'Puede modificarse utilizando el Diseñador de Windows Forms. 
-    'No lo modifique con el editor de código.
-    Public WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents SistemaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MenuPrincipalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NotaDeEnvioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PesoMedidaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MantenimienttoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DestinatarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RemitenteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UnidadDeTransporteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UtilidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CalculadoraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SunatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PagoDeDetraccionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FacturaVentaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FleteTransportistaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ControlGuiasFacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SistemaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuPrincipalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NotaDeEnvioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PesoMedidaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MantenimienttoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DestinatarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RemitenteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UnidadDeTransporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UtilidadToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CalculadoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SunatToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PagoDeDetraccionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FacturaVentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FleteTransportistaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ControlGuiasFacturasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ContenidoDelSistemaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AcercaDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContenidoDelSistemaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents TrabajadorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ZonaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TrabajadorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ZonaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator10 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents FacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DNIRENIECToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UbigeoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TablasSunatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TipoDeComprobanteDePagoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FacturaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DNIRENIECToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UbigeoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TablasSunatToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoDeComprobanteDePagoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator12 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator11 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents TipoDeDctoDeIdentidadTabla2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TrabajadorToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TipoDeTrabajadorToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClienteToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TipoDeClienteToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TipoDeDctoDeIdentidadTabla2ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TrabajadorToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TipoDeTrabajadorToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ClienteToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TipoDeClienteToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator13 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents TipoDeOperacionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UnidadDeTransporteToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TransportistaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ChoferToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OperacionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EnvioDeComprobantesDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProductoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EnvaseToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EnvaseToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CategoriaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TipoDeOperacionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UnidadDeTransporteToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TransportistaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ChoferToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents OperacionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EnvioDeComprobantesDePagoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents EnvaseToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents EnvaseToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents CategoriaToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator14 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ComisionistaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DevoluciónDeComprobantesDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ComisionistaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DevoluciónDeComprobantesDePagoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator15 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator16 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents IngresoDeComprobantesDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EnvioDeComprobantesDePagoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DevoluciónDeComprobantesDePagoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ControlDeComprobantesDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents IngresoDeComprobantesDePagoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EnvioDeComprobantesDePagoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents DevoluciónDeComprobantesDePagoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ControlDeComprobantesDePagoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents toolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabelUsuario As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusFish As ToolStripStatusLabel
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
 
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FMenuGuia))
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PagoDeDetraccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SistemaToolStripMenuItem = New ToolStripMenuItem()
+        Me.PagoDeDetraccionToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MenuPrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PesoMedidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NotaDeEnvioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuPrincipalToolStripMenuItem = New ToolStripMenuItem()
+        Me.PesoMedidaToolStripMenuItem = New ToolStripMenuItem()
+        Me.NotaDeEnvioToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator()
-        Me.FacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FacturaToolStripMenuItem = New ToolStripMenuItem()
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MantenimienttoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProductoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EnvaseToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EnvaseToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CategoriaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimienttoToolStripMenuItem = New ToolStripMenuItem()
+        Me.ProductoToolStripMenuItem = New ToolStripMenuItem()
+        Me.ProductoToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.EnvaseToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.EnvaseToolStripMenuItem2 = New ToolStripMenuItem()
+        Me.CategoriaToolStripMenuItem1 = New ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UnidadDeTransporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TransportistaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UnidadDeTransporteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChoferToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UnidadDeTransporteToolStripMenuItem = New ToolStripMenuItem()
+        Me.TransportistaToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.UnidadDeTransporteToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.ChoferToolStripMenuItem1 = New ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DestinatarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RemitenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DestinatarioToolStripMenuItem = New ToolStripMenuItem()
+        Me.RemitenteToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TrabajadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TrabajadorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeTrabajadorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TrabajadorToolStripMenuItem = New ToolStripMenuItem()
+        Me.TrabajadorToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.TipoDeTrabajadorToolStripMenuItem1 = New ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClienteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeClienteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClienteToolStripMenuItem = New ToolStripMenuItem()
+        Me.ClienteToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.TipoDeClienteToolStripMenuItem1 = New ToolStripMenuItem()
         Me.ToolStripSeparator14 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ComisionistaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComisionistaToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ZonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UbigeoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeOperacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ZonaToolStripMenuItem = New ToolStripMenuItem()
+        Me.UbigeoToolStripMenuItem = New ToolStripMenuItem()
+        Me.TipoDeOperacionToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TablasSunatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoDeComprobanteDePagoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OperacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TablasSunatToolStripMenuItem = New ToolStripMenuItem()
+        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem = New ToolStripMenuItem()
+        Me.TipoDeComprobanteDePagoToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.OperacionToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FacturaVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FleteTransportistaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ControlGuiasFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New ToolStripMenuItem()
+        Me.FacturaVentaToolStripMenuItem = New ToolStripMenuItem()
+        Me.FleteTransportistaToolStripMenuItem = New ToolStripMenuItem()
+        Me.ControlGuiasFacturasToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator16 = New System.Windows.Forms.ToolStripSeparator()
-        Me.IngresoDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ControlDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IngresoDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.ControlDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UtilidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CalculadoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DNIRENIECToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SunatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtilidadToolStripMenuItem = New ToolStripMenuItem()
+        Me.CalculadoraToolStripMenuItem = New ToolStripMenuItem()
+        Me.DNIRENIECToolStripMenuItem = New ToolStripMenuItem()
+        Me.SunatToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContenidoDelSistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New ToolStripMenuItem()
+        Me.ContenidoDelSistemaToolStripMenuItem = New ToolStripMenuItem()
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
-        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusStrip1.SuspendLayout()
+        Me.AcercaDeToolStripMenuItem = New ToolStripMenuItem()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabelUsuario = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.toolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusFish = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.DarkSeaGreen
-        Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 448)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(921, 28)
-        Me.StatusStrip1.TabIndex = 35
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(0, 23)
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(155, 23)
-        Me.ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
-        '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(338, 23)
-        Me.ToolStripStatusLabel3.Text = "                        ><))))°> ... o0O ... <°))))><"
         '
         'Timer1
         '
@@ -653,6 +620,73 @@ Public Class FMenuGuia
         Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(258, 28)
         Me.AcercaDeToolStripMenuItem.Text = "&Acerca de"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel1, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabelUsuario, Me.ToolStripStatusFish})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 443)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(921, 33)
+        Me.StatusStrip1.TabIndex = 73
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabelUsuario
+        '
+        Me.ToolStripStatusLabelUsuario.AutoSize = False
+        Me.ToolStripStatusLabelUsuario.BackColor = System.Drawing.Color.Black
+        Me.ToolStripStatusLabelUsuario.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripStatusLabelUsuario.ForeColor = System.Drawing.Color.White
+        Me.ToolStripStatusLabelUsuario.Name = "ToolStripStatusLabelUsuario"
+        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(225, 28)
+        Me.ToolStripStatusLabelUsuario.Spring = True
+        Me.ToolStripStatusLabelUsuario.Text = "    "
+        '
+        'toolStripStatusLabel1
+        '
+        Me.toolStripStatusLabel1.AutoSize = False
+        Me.toolStripStatusLabel1.BackColor = System.Drawing.Color.Black
+        Me.toolStripStatusLabel1.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.toolStripStatusLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White
+        Me.toolStripStatusLabel1.Name = "toolStripStatusLabel1"
+        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(225, 28)
+        Me.toolStripStatusLabel1.Spring = True
+        Me.toolStripStatusLabel1.Text = "    "
+        '
+        'ToolStripStatusLabel3
+        '
+        Me.ToolStripStatusLabel3.AutoSize = False
+        Me.ToolStripStatusLabel3.BackColor = System.Drawing.Color.Black
+        Me.ToolStripStatusLabel3.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripStatusLabel3.ForeColor = System.Drawing.Color.White
+        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(225, 28)
+        Me.ToolStripStatusLabel3.Spring = True
+        Me.ToolStripStatusLabel3.Text = "    "
+        '
+        'ToolStripStatusFish
+        '
+        Me.ToolStripStatusFish.AutoSize = False
+        Me.ToolStripStatusFish.BackColor = System.Drawing.Color.Black
+        Me.ToolStripStatusFish.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusFish.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripStatusFish.ForeColor = System.Drawing.Color.White
+        Me.ToolStripStatusFish.Name = "ToolStripStatusFish"
+        Me.ToolStripStatusFish.Size = New System.Drawing.Size(225, 28)
+        Me.ToolStripStatusFish.Spring = True
+        '
         'FMenuGuia
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(7, 16)
@@ -660,8 +694,8 @@ Public Class FMenuGuia
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(921, 476)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -669,10 +703,10 @@ Public Class FMenuGuia
         Me.Name = "FMenuGuia"
         Me.Text = "SISTEMA DE IMPRESION DE DOCUMENTOS"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -685,22 +719,18 @@ Public Class FMenuGuia
 
 
     Private Sub FMenuBib_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-        '    Me.Text = "SISTEMA DE GUIA DE REMISON-REMITENTE << CONTADOR -- " + cLec.Mostrar_Lector_Usuario(Usuario) + " >>"
+        ''    Me.Text = "SISTEMA DE GUIA DE REMISON-REMITENTE << CONTADOR -- " + cLec.Mostrar_Lector_Usuario(Usuario) + " >>"
+        ''Me.StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "dd/MM/yyyy")
+        toolStripStatusLabel1.Text = Format(Now, "LONG DATE")
+        ToolStripStatusFish.Text = "><))))°> ... o0O ... <°((((><"
 
-        'Me.StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "dd/MM/yyyy")
-        StatusStrip1.Items(0).Text = "  Fecha: " & Format(Now, "LONG DATE")
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
-        ToolStripStatusLabel2.Text = "    Hora: " & TimeString
-
-
+        ToolStripStatusLabel3.Text = "    Hora: " & TimeString
     End Sub
 
     Private Sub FMenuBib_Closed(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Closed
-        'FechaIng = Format(Now, "dd/MM/yyyy hh:mm:ss")
-        ' cBita.Registrar_Salida_Bitacora(FechaIng)
-        'End
     End Sub
 
 
@@ -771,18 +801,6 @@ Public Class FMenuGuia
         FMantchofer.Show()
     End Sub
 
-    'Private Sub CompradoresToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompradoresToolStripMenuItem.Click
-    '    Dim mRegPro As New FrmComprador2
-    '    mRegPro.MdiParent = Me
-    '    mRegPro.Show()
-    'End Sub
-
-    'Private Sub CuentaDeDepositoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    Dim Fcuenta As New FrmCuenta_Dep2
-    '    Fcuenta.MdiParent = Me
-    '    Fcuenta.Show()
-    'End Sub
-
     Private Sub DestinatarioToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles DestinatarioToolStripMenuItem.Click
         Dim mRegPro As New frmmdestinario1
         mRegPro.MdiParent = Me
@@ -807,13 +825,6 @@ Public Class FMenuGuia
         FPago.Show()
     End Sub
     Private Sub CalculadoraToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CalculadoraToolStripMenuItem.Click
-        ''Dim FCalc As New FrmCalc
-        ''FCalc.MdiParent = Me
-        ''FCalc.Show()
-        'Dim Proceso As New Process()
-        'Proceso.StartInfo.FileName = "CALC.exe"
-        'Proceso.StartInfo.Arguments = ""
-        'Proceso.Start()
         Process.Start(Application.StartupPath + "\\CCalc.exe")
     End Sub
 
@@ -862,7 +873,7 @@ Public Class FMenuGuia
     End Sub
 
     Private Sub DNIRENIECToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DNIRENIECToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("https://cel.reniec.gob.pe/valreg/valreg.do?accion=ini")
+        Process.Start("https://cel.reniec.gob.pe/valreg/valreg.do?accion=ini")
     End Sub
 
 

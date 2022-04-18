@@ -550,7 +550,7 @@
     End Sub
 
     Private Sub BTN_PAGINA_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BTN_PAGINA.Click
-        System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2018")
+        Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2018")
     End Sub
 
     Private Sub Fecha_Emis_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Fecha_Emis.KeyPress

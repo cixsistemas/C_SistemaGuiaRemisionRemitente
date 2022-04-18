@@ -483,7 +483,7 @@ Public Class FrmPago_Detra2
     End Sub
 
     Private Sub BTN_PAGINA_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BTN_PAGINA.Click
-        System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
+        Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
     End Sub
 
     Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting

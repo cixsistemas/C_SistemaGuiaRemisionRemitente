@@ -458,11 +458,11 @@ Public Class FrmNota_ArroZ2
     End Sub
 
     Private Sub Pag_Minist_LinkClicked(ByVal sender As Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Pag_Minist.LinkClicked
-        System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
+        Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
     End Sub
 
     Private Sub Cons_Ruc_LinkClicked(ByVal sender As Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Cons_Ruc.LinkClicked
-        System.Diagnostics.Process.Start("http://www.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias")
+        Process.Start("http://www.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias")
     End Sub
 
     Private Sub dgvdetalle_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick

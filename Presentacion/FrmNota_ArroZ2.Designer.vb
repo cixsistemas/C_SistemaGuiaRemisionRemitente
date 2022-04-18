@@ -73,7 +73,7 @@ Partial Class FrmNota_ArroZ2
         Me.Highlighter1.SetHighlightOnFocus(Me.txtbusca, True)
         Me.txtbusca.Location = New System.Drawing.Point(334, 5)
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(145, 23)
+        Me.txtbusca.Size = New System.Drawing.Size(145, 27)
         Me.txtbusca.TabIndex = 120
         '
         'dgvlista
@@ -123,7 +123,7 @@ Partial Class FrmNota_ArroZ2
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(306, 16)
+        Me.Label1.Size = New System.Drawing.Size(373, 20)
         Me.Label1.TabIndex = 139
         Me.Label1.Text = "Ingrese Nro de Guía de Remisión a buscar:"
         '
@@ -173,7 +173,7 @@ Partial Class FrmNota_ArroZ2
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(12, 248)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(173, 16)
+        Me.Label2.Size = New System.Drawing.Size(210, 20)
         Me.Label2.TabIndex = 194
         Me.Label2.Text = "Items de Nota de Envio:"
         '
@@ -255,7 +255,7 @@ Partial Class FrmNota_ArroZ2
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(12, 34)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(448, 16)
+        Me.Label3.Size = New System.Drawing.Size(548, 20)
         Me.Label3.TabIndex = 200
         Me.Label3.Text = "Seleccione Nota de Envio para visualizar sus items o modificar:"
         '
@@ -270,7 +270,7 @@ Partial Class FrmNota_ArroZ2
         Me.Cons_Ruc.LinkColor = System.Drawing.Color.Red
         Me.Cons_Ruc.Location = New System.Drawing.Point(718, 26)
         Me.Cons_Ruc.Name = "Cons_Ruc"
-        Me.Cons_Ruc.Size = New System.Drawing.Size(84, 15)
+        Me.Cons_Ruc.Size = New System.Drawing.Size(108, 18)
         Me.Cons_Ruc.TabIndex = 202
         Me.Cons_Ruc.TabStop = True
         Me.Cons_Ruc.Text = "Consulta RUC"
@@ -286,7 +286,7 @@ Partial Class FrmNota_ArroZ2
         Me.Pag_Minist.LinkColor = System.Drawing.Color.Red
         Me.Pag_Minist.Location = New System.Drawing.Point(714, 4)
         Me.Pag_Minist.Name = "Pag_Minist"
-        Me.Pag_Minist.Size = New System.Drawing.Size(208, 15)
+        Me.Pag_Minist.Size = New System.Drawing.Size(259, 18)
         Me.Pag_Minist.TabIndex = 201
         Me.Pag_Minist.TabStop = True
         Me.Pag_Minist.Text = "Pagina del Ministerio de Agricultura"
@@ -307,7 +307,7 @@ Partial Class FrmNota_ArroZ2
         '
         'FrmNota_ArroZ2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 512)
         Me.Controls.Add(Me.txtLogotipo)
@@ -326,8 +326,10 @@ Partial Class FrmNota_ArroZ2
         Me.Controls.Add(Me.txtbusca)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
         Me.Name = "FrmNota_ArroZ2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nota de Envio"
