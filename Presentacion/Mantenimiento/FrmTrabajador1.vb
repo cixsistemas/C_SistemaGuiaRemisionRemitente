@@ -12,28 +12,28 @@
 
         ok = nombre.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Nombre favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nombre favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nombre.Focus()
             Exit Sub
         End If
 
         ok = apellido.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Apellido favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Apellido favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             apellido.Focus()
             Exit Sub
         End If
 
         ok = id_tipo_Dcto <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Tipo de Documento.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Tipo de Documento.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnTipo_Dcto.Focus()
             Exit Sub
         End If
 
         ok = nro_doc.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Nro. de Documento favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nro. de Documento favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nro_doc.Focus()
             Exit Sub
         End If
@@ -41,21 +41,21 @@
 
         ok = id_tipo_trabaj <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Tipo de Trabajador.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Tipo de Trabajador.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnTipo_Trab.Focus()
             Exit Sub
         End If
 
         'ok = txtDireccion.Text <> ""
         'If (ok = False) Then
-        '    MessageBox.Show("Ingrese Direccion favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    MessageBox.Show("Ingrese Direccion favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         '    txtDireccion.Focus()
         '    Exit Sub
         'End If
 
         ok = txtTelefono.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Telefono favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Telefono favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtTelefono.Focus()
             Exit Sub
         End If

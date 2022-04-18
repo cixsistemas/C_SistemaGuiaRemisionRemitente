@@ -13,7 +13,7 @@ Public Class FrmNota_ArroZ2
             If tabla_Nota_Arroz Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             Else
                 Dim NroFilas As Integer = tabla_Nota_Arroz.Rows.Count
@@ -41,17 +41,17 @@ Public Class FrmNota_ArroZ2
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        Try
-            'POSICIONA CURSOR EN ULTIMA FILA
-            dgvlista.ClearSelection()
-            dgvlista.CurrentCell = dgvlista.Rows(dgvlista.RowCount - 1).Cells(4)
-            'Me.dgvlista.Refresh()
-        Catch ex As Exception
-            MessageBox.Show("Guía de Remisión, No se encuentra registrada", "Guía de Remisión-Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        'Try
+        '    'POSICIONA CURSOR EN ULTIMA FILA
+        '    dgvlista.ClearSelection()
+        '    dgvlista.CurrentCell = dgvlista.Rows(dgvlista.RowCount - 1).Cells(4)
+        '    'Me.dgvlista.Refresh()
+        'Catch ex As Exception
+        '    MessageBox.Show("Guía de Remisión, No se encuentra registrada", "Guía de Remisión-Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End Try
     End Sub
     Public Sub listar_detalle_guias(ByVal idguia As Integer)
         'Me.mesajeerror.ForeColor = Color.Blue
@@ -62,7 +62,7 @@ Public Class FrmNota_ArroZ2
             If tabla_detalle_guias Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_detalle_guias.Rows.Count
                 If NroFilas = 0 Then
@@ -111,7 +111,7 @@ Public Class FrmNota_ArroZ2
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -139,7 +139,7 @@ Public Class FrmNota_ArroZ2
         End Try
 
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 6 Then
             e.CellStyle.BackColor = Color.LightYellow
         End If
@@ -150,7 +150,7 @@ Public Class FrmNota_ArroZ2
     '        e.CellStyle.BackColor = Color.PowderBlue
     '    End If
     'End Sub
-    Private Sub dgvdetalle_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
+    Private Sub dgvdetalle_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
         BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
@@ -173,7 +173,7 @@ Public Class FrmNota_ArroZ2
     Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea guardar Nota de Envio?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar Nota de Envio?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -202,16 +202,16 @@ Public Class FrmNota_ArroZ2
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -249,7 +249,7 @@ Public Class FrmNota_ArroZ2
 
     Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -293,7 +293,7 @@ Public Class FrmNota_ArroZ2
 
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea Guardar Nota de Envio - Venta de Arroz?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea Guardar Nota de Envio - Venta de Arroz?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -321,16 +321,16 @@ Public Class FrmNota_ArroZ2
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -368,12 +368,12 @@ Public Class FrmNota_ArroZ2
 
     Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Nota de Envio - Venta de Arroz", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
 
-        If MessageBox.Show("¿Desea eliminar Nota de Envio - Venta de Arroz?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿Desea eliminar Nota de Envio - Venta de Arroz?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then
@@ -402,17 +402,17 @@ Public Class FrmNota_ArroZ2
                 If rpta = 1 Then
                     servidor.cerrarconexiontrans()
                     __mesajeerror = mensaje
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     servidor.cancelarconexiontrans()
                     __mesajeerror = mensaje
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
 
             Else
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexiontrans()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
         indice = -1

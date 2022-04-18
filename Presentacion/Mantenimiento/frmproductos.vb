@@ -22,14 +22,14 @@ Public Class frmproductos
             End If
             If tabla_producto Is Nothing Then
                 servidor.cerrarconexion()
-                mesajeerror.Text = "NO HAY PRODUCTOS PARA MOSTRAR"
+                mesajeerror.Text = "NO HAY REGISTROS PARA MOSTRAR"
                 mesajeerror.ForeColor = Color.Red
             Else
                 dgvlista.DataSource = tabla_producto
                 Dim NroFilas As Integer = tabla_producto.Rows.Count
                 If NroFilas = 0 Then
                     dgvlista.DataSource = Nothing
-                    mesajeerror.Text = "NO HAY PRODUCTOS PARA MOSTRAR"
+                    mesajeerror.Text = "NO HAY REGISTROS PARA MOSTRAR"
                     mesajeerror.ForeColor = Color.Red
                 Else
                     'AGREGADO EL DIA 13-04-2022
@@ -39,7 +39,8 @@ Public Class frmproductos
                     dgvlista.Columns("Productox").Visible = False
                     dgvlista.Columns("Categoria").Visible = False
                     dgvlista.Columns("Id Logo").Visible = False
-                    mesajeerror.Text = "Sistema tiene " + NroFilas.ToString + " Producto(S)"
+                    dgvlista.Columns("productoSinDetalle").Visible = False
+                    mesajeerror.Text = "Sistema tiene " + NroFilas.ToString + " Registro(S)"
                 End If
                 servidor.cerrarconexion()
             End If
@@ -105,41 +106,8 @@ Public Class frmproductos
         rbProducto.Checked = True
     End Sub
 
-    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
-        BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-        btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-        btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub dgvlista_RowsRemoved(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsRemovedEventArgs) Handles dgvlista.RowsRemoved
-        BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-        btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-        btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-    End Sub
-
-
-    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
-        BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-        btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-        btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
-    End Sub
-
-    'Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
-    '    indice = e.RowIndex
-    'End Sub
-
-    Private Sub dgvlista_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
-        indice = e.RowIndex
-    End Sub
-    Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
-        indice = e.RowIndex
-    End Sub
-
     Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
-
         InsertarRegistro()
-
-
     End Sub
 
     Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
@@ -148,12 +116,12 @@ Public Class frmproductos
 
     Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione producto", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione producto", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
 
-        If MessageBox.Show("¿Desea eliminar producto?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿Desea eliminar producto?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then
@@ -208,11 +176,6 @@ Public Class frmproductos
     Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
         Close()
     End Sub
-    'Private Sub txtbusca_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtbusca.KeyDown
-    '    If e.KeyData = Keys.Right Then
-    '        SendKeys.Send("{TAB}")
-    '    End If
-    'End Sub
     Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         txtbusca.BackColor = Color.White
     End Sub
@@ -289,11 +252,13 @@ Public Class frmproductos
 #Region "TRANSACCIONES"
     Public Sub UpdateRegistro()
         If (indice = -1) Then
-            MessageBox.Show("Seleccione producto", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione producto", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-        MessageBox.Show(Convert.ToString(indice))
-        'formulario.prod_nom.Text = Convert.ToString(dgvlista.Rows(indice).Cells("Productox").Value.ToString())
+        'MessageBox.Show(Convert.ToString(indice))
+        ''formulario.prod_nom.Text = Convert.ToString(dgvlista.Rows(indice).Cells("Productox").Value.ToString())
+        formulario.cbProdSinDetalle.Enabled = False
+        formulario.prod_nom.Focus()
         formulario.prod_id = CInt(dgvlista.Item("ID", indice).Value)
         formulario.prod_nom.Text = CStr(dgvlista.Item("Productox", indice).Value)
         formulario.prod_peso_uni.Text = CStr(dgvlista.Item("Peso", indice).Value)
@@ -330,15 +295,16 @@ Public Class frmproductos
         formulario.lista_envasado(10)
         'formulario.cbProdSinDetalle.Checked = True
 
-        lista(7, Nothing)
+        lista(7, "")
     End Sub
 
     Public Sub InsertarRegistro()
+        formulario.prod_nom.Focus()
         'Dim f As New _FrmCuentaFin2
         formulario.cbProdSinDetalle.Checked = True
         'BLOQUEAR CONTROLES CUANDO ESTA SELECCIONADO PRODUCTO SIN DETALLE
-        formulario.prod_peso_uni.Enabled = False
-        formulario.prod_peso_uni.Text = 0
+        'formulario.prod_peso_uni.Enabled = False
+        'formulario.prod_peso_uni.Text = 0
         formulario.btnlogotipo.Enabled = False
         formulario.txtlogotipo.Enabled = False
         formulario.txtlogotipo.Text = "."
@@ -351,6 +317,12 @@ Public Class frmproductos
         formulario.prod_color.Text = "."
         formulario.Nombre_Com.Enabled = False
         formulario.Nombre_Com.Text = "."
+        'formulario.lblPeso.Visible = False
+        formulario.lblLogo.Visible = False
+        formulario.lblCategoria.Visible = False
+        formulario.lblEnvasado.Visible = False
+        formulario.lblColor.Visible = False
+        formulario.lblNombreComercial.Visible = False
         '=============================================================
 
         formulario.Nivel = "N"
@@ -365,13 +337,14 @@ Public Class frmproductos
         formulario.txtlogotipo.Text = ""
         'formulario.cboenvasado.DataSource = Nothing
         'formulario.cboenvasado.SelectedValue = 0
-        lista(7, Nothing)
+
 
         formulario.lista_categoria(8)
         ' Me.formulario.lista_logotipo(9)
         formulario.lista_envasado(10)
 
         formulario.ShowDialog()
+        lista(7, "")
     End Sub
 #End Region
     '================================================================
@@ -412,4 +385,37 @@ Public Class frmproductos
 #End Region
     '================================================================
 
+    '================================================================
+#Region "DATAGRIDVIEW"
+    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
+        BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+        btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+        btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+    End Sub
+
+    Private Sub dgvlista_RowsRemoved(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsRemovedEventArgs) Handles dgvlista.RowsRemoved
+        BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+        btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+        btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+    End Sub
+
+
+    Private Sub dgvlista_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvlista.VisibleChanged
+        BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+        btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+        btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
+    End Sub
+
+    'Private Sub dgvlista_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+    '    indice = e.RowIndex
+    'End Sub
+
+    Private Sub dgvlista_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
+        indice = e.RowIndex
+    End Sub
+    Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
+        indice = e.RowIndex
+    End Sub
+#End Region
+    '================================================================
 End Class

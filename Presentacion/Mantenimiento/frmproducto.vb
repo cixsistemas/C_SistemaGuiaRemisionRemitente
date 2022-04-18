@@ -13,6 +13,10 @@ Public Class frmproducto
         If cbProdSinDetalle.Checked = True Then
             Dim ok1 As Boolean
             ok1 = prod_nom.Text.Trim <> ""
+            ok1 = ok1 And prod_peso_uni.Text.Trim <> ""
+            If (ok1 = True) Then
+                ok1 = ok1 And IsNumeric(prod_peso_uni.Text.Trim)
+            End If
             btnaceptar.Enabled = ok1
         Else
             Dim ok As Boolean
@@ -48,37 +52,41 @@ Public Class frmproducto
 
 
     Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
-        Dim ok As Boolean
-
-        ok = id_logo <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione Logotipo por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnlogotipo.Focus()
-            Exit Sub
+        If cbProdSinDetalle.Checked = False Then
+            Dim ok As Boolean
+            ok = id_logo <> -1
+            If (ok = False) Then
+                MessageBox.Show("Seleccione Logotipo por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                btnlogotipo.Focus()
+                Exit Sub
+            End If
         End If
 
-        If MessageBox.Show("¿Desea " + IIf(Nivel = "N", "Guardar ", "Modificar ") + " Registro?", "Sistema de Control", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        'ACTIVAR DETALLE DE PRODUCTO
+        ActivarProductoDetalle()
+
+        If MessageBox.Show("¿Desea " + IIf(Nivel = "N", "Guardar ", "Modificar ") + " Registro?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
-
                 Dim RPTA_DOC As Integer = -1
                 Dim MSG_DOC As String = ""
                 servidor.ejecutar("[dbo].[pa_mantenimiento_producto]",
                 False,
                 RPTA_DOC,
                 MSG_DOC,
-                  prod_id,
-                  prod_nom.Text.Trim,
-                  prod_peso_uni.Text.Trim,
-                  prod_color.Text.Trim,
-                  Nombre_Com.Text.Trim,
-                  cbocategoria.SelectedValue,
-                  id_logo,
-                  cboenvasado.SelectedValue,
-                  cbProdSinDetalle.Checked,
-                  Nivel.Trim,
-                  0, "")
+                prod_id,
+                prod_nom.Text.Trim,
+                prod_peso_uni.Text.Trim,
+                prod_color.Text.Trim,
+                Nombre_Com.Text.Trim,
+                cbocategoria.SelectedValue,
+                id_logo,
+                cboenvasado.SelectedValue,
+                cbProdSinDetalle.Checked,
+                Nivel.Trim,
+                0,
+                "")
                 If RPTA_DOC > 0 Then
                     servidor.cerrarconexiontrans()
                     __mesajeerror = MSG_DOC
@@ -229,7 +237,7 @@ Public Class frmproducto
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -248,7 +256,7 @@ Public Class frmproducto
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
     Private Sub btnlogotipo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnlogotipo.Click
@@ -274,38 +282,56 @@ Public Class frmproducto
 #End Region
     '=====================================================================================
     Private Sub cbProdSinDetalle_CheckedChanged(sender As Object, e As EventArgs) Handles cbProdSinDetalle.CheckedChanged
+        ActivarProductoDetalle()
+
+    End Sub
+
+    Public Sub ActivarProductoDetalle()
         If cbProdSinDetalle.Checked = True Then
-            prod_peso_uni.Enabled = False
-            prod_peso_uni.Text = 0
-            btnlogotipo.Enabled = False
-            txtlogotipo.Enabled = False
+            prod_nom.Focus()
+            'prod_peso_uni.Visible = False
+            'prod_peso_uni.Text = 0
+            btnlogotipo.Visible = False
+            txtlogotipo.Visible = False
             txtlogotipo.Text = "."
             id_logo = 84
-            cbocategoria.Enabled = False
+            cbocategoria.Visible = False
             cbocategoria.SelectedValue = 8
-            cboenvasado.Enabled = False
+            cboenvasado.Visible = False
             cboenvasado.SelectedValue = 6
-            prod_color.Enabled = False
+            prod_color.Visible = False
             prod_color.Text = "."
-            Nombre_Com.Enabled = False
+            Nombre_Com.Visible = False
             Nombre_Com.Text = "."
+            'lblPeso.Visible = False
+            lblLogo.Visible = False
+            lblCategoria.Visible = False
+            lblEnvasado.Visible = False
+            lblColor.Visible = False
+            lblNombreComercial.Visible = False
         Else
-            prod_peso_uni.Enabled = True
-            prod_peso_uni.Text = 0
-            btnlogotipo.Enabled = True
-            txtlogotipo.Enabled = True
+            prod_nom.Focus()
+            'prod_peso_uni.Visible = True
+            'prod_peso_uni.Text = 0
+            btnlogotipo.Visible = True
+            txtlogotipo.Visible = True
             txtlogotipo.Text = ""
             id_logo = -1
-            cbocategoria.Enabled = True
+            cbocategoria.Visible = True
             cbocategoria.SelectedValue = 0
-            cboenvasado.Enabled = True
+            cboenvasado.Visible = True
             cboenvasado.SelectedValue = 0
-            prod_color.Enabled = True
+            prod_color.Visible = True
             prod_color.Text = ""
-            Nombre_Com.Enabled = True
+            Nombre_Com.Visible = True
             Nombre_Com.Text = ""
+            'lblPeso.Visible = True
+            lblLogo.Visible = True
+            lblCategoria.Visible = True
+            lblEnvasado.Visible = True
+            lblColor.Visible = True
+            lblNombreComercial.Visible = True
         End If
-
     End Sub
 
 End Class

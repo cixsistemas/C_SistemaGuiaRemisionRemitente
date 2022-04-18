@@ -27,7 +27,7 @@ Public Class FrmRep_Dev_Comp
             If tabla_ListarDevComp Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_ListarDevComp.Rows.Count
                 If NroFilas = 0 Then
@@ -72,7 +72,7 @@ Public Class FrmRep_Dev_Comp
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
 
@@ -104,7 +104,7 @@ Public Class FrmRep_Dev_Comp
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 2 Then
             e.CellStyle.BackColor = Color.LightYellow
         End If
@@ -177,7 +177,7 @@ Public Class FrmRep_Dev_Comp
             'Me.btnConsultar.Focus()
             'Me.TxtRemitente.BackColor = Color.Azure
         Catch ex As Exception
-            MessageBox.Show("Seleccione Empresa a Buscar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Empresa a Buscar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
 
     End Sub
@@ -192,7 +192,7 @@ Public Class FrmRep_Dev_Comp
             f.ShowDialog()
             TxtTipo_Comp.Text = CStr(f.dgvlista.Item("Tipo de Comprobante", indice).Value.ToString.Trim)
         Catch ex As Exception
-            MessageBox.Show("Seleccione Tipo de Comprobante a Buscar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Tipo de Comprobante a Buscar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
     End Sub
     Private Sub TxtComisionista_Enter(sender As Object, e As EventArgs) Handles TxtComisionista.Enter
@@ -203,7 +203,7 @@ Public Class FrmRep_Dev_Comp
             'Me.btnConsultar.Focus()
             'Me.TxtRemitente.BackColor = Color.Azure
         Catch ex As Exception
-            MessageBox.Show("Seleccione Comisionista a Buscar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Comisionista a Buscar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
 
     End Sub

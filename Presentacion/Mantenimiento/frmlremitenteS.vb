@@ -32,7 +32,7 @@ Public Class frmlremitenteS
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
 
@@ -62,12 +62,12 @@ Public Class frmlremitenteS
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightYellow
         End If
     End Sub
-    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
+    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
         btnmodificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -91,7 +91,7 @@ Public Class frmlremitenteS
     Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea guardar remitente?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -114,16 +114,16 @@ Public Class frmlremitenteS
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -149,7 +149,7 @@ Public Class frmlremitenteS
 
     Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione remitente", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione remitente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -168,7 +168,7 @@ Public Class frmlremitenteS
 
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea guardar remitente?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -190,16 +190,16 @@ Public Class frmlremitenteS
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -224,10 +224,10 @@ Public Class frmlremitenteS
 
     Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione remitente", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione remitente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-        If MessageBox.Show("¿Desea eliminar remitente?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿Desea eliminar remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then
@@ -249,16 +249,16 @@ Public Class frmlremitenteS
                 If rpta = 1 Then
                     servidor.cerrarconexiontrans()
                     __mesajeerror = mensaje
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     servidor.cancelarconexiontrans()
                     __mesajeerror = mensaje
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
             Else
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexiontrans()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
         indice = -1
@@ -295,7 +295,7 @@ Public Class frmlremitenteS
             e.SuppressKeyPress = True
 
             If (indice = -1) Then
-                MessageBox.Show("Seleccione remitente", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("Seleccione remitente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
 
@@ -314,7 +314,7 @@ Public Class frmlremitenteS
 
             formulario.ShowDialog()
             If formulario.Aceptar = True Then
-                If MessageBox.Show("¿Desea guardar remitente?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("¿Desea guardar remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                     Dim servidor As New clinicapacifico.clsaccesodatos
                     servidor.cadenaconexion = Ruta
                     If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -336,16 +336,16 @@ Public Class frmlremitenteS
                         If rpta > 0 Then
                             servidor.cerrarconexiontrans()
                             __mesajeerror = mensaje
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensaje
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         End If
                     Else
                         __mesajeerror = servidor.getMensageError
                         servidor.cerrarconexiontrans()
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 End If
             End If

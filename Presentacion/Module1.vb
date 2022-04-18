@@ -58,7 +58,7 @@ Module Module1
         Loop
 
         If ok = False Then
-            MessageBox.Show(msgerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show(msgerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
         ok = True
 

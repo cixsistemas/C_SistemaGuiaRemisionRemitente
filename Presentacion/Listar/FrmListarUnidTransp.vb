@@ -1,6 +1,8 @@
 Public Class FrmListarUnidTransp
     Private formulario As New frmunidadtransporte
     Dim tabla_unidadtransportes As DataTable = Nothing
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
     Public Sub lista(ByVal opcion As Integer, ByVal criterio As String)
         LBF2.ForeColor = Color.Red
         LBF3.ForeColor = Color.Red
@@ -18,21 +20,24 @@ Public Class FrmListarUnidTransp
             End If
             If tabla_unidadtransportes Is Nothing Then
                 servidor.cerrarconexion()
-                mesajeerror.Text = "NO HAY UNIDADES DE TRANSPORTES PARA MOSTRAR"
+                mesajeerror.Text = mensajeSinRegistros
                 mesajeerror.ForeColor = Color.Red
             Else
                 dgvlista.DataSource = tabla_unidadtransportes
                 Dim NroFilas As Integer = tabla_unidadtransportes.Rows.Count
                 If NroFilas = 0 Then
                     dgvlista.DataSource = Nothing
-                    mesajeerror.Text = "NO HAY UNIDADES DE TRANSPORTES PARA MOSTRAR"
+                    mesajeerror.Text = mensajeSinRegistros
                     mesajeerror.ForeColor = Color.Red
                 Else
+                    'AGREGADO EL DIA 13-04-2022
+                    Dv.Table = tabla_unidadtransportes ' Enlazamos el dataview con la tabla devuelta
+                    ''=======================================================
                     dgvlista.Columns("ID").Visible = False
                     dgvlista.Columns("Domicilio").Visible = False
-                    dgvlista.Columns("RUC Emp Transporte").Visible = False
-                    dgvlista.Columns("Descripcion").Visible = False
-                    dgvlista.Columns("Id Transportista").Visible = False
+                    dgvlista.Columns("RucEmpresa").Visible = False
+                    'dgvlista.Columns("Descripcion").Visible = False
+                    'dgvlista.Columns("Id Transportista").Visible = False
                     mesajeerror.Text = "Guía de Remisión – Remitente tiene " + NroFilas.ToString + " Unidad(es) de Tranporte(s)"
                     mesajeerror.ForeColor = Color.Black
                 End If
@@ -41,7 +46,7 @@ Public Class FrmListarUnidTransp
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
     End Sub
@@ -109,7 +114,7 @@ Public Class FrmListarUnidTransp
         indice = e.RowIndex
     End Sub
 
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If rbEmpresa.Checked = True And e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightCyan
         ElseIf rbmar_rem.Checked = True And e.ColumnIndex = 3 Then
@@ -145,7 +150,7 @@ Public Class FrmListarUnidTransp
         ' Me.formulario.lista_emptransporte(3)
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea guardar unidad de transporte?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar unidad de transporte?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -181,16 +186,16 @@ Public Class FrmListarUnidTransp
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -228,20 +233,39 @@ Public Class FrmListarUnidTransp
 #Region "TEXTBOX"
 
     Private Sub txtbusca_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
-        Dim criterio As String = txtbusca.Text.Trim
-
+        'Dim criterio As String = txtbusca.Text.Trim
         If rbEmpresa.Checked = True Then
-            lista(1, txtbusca.Text)
+            CadenaBuscar = "Empresa like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(1, txtbusca.Text)
         ElseIf rbmar_rem.Checked = True Then
-            lista(2, txtbusca.Text)
+            CadenaBuscar = "MarcaCamion like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(2, txtbusca.Text)
         ElseIf rbplac_Rem.Checked = True Then
-            lista(3, txtbusca.Text)
+            CadenaBuscar = "PlacaCamion like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(3, txtbusca.Text)
         ElseIf RbMar_Semi.Checked = True Then
-            lista(4, txtbusca.Text)
+            CadenaBuscar = "MarcaCarreta like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(4, txtbusca.Text)
         ElseIf RbPlac_Sem.Checked = True Then
-            lista(5, txtbusca.Text)
+            CadenaBuscar = "PlacaCarreta like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(5, txtbusca.Text)
         ElseIf RbTodos.Checked = True Then
-            lista(6, txtbusca.Text)
+            'lista(6, txtbusca.Text)
 
         End If
     End Sub

@@ -11,14 +11,14 @@
         ok = Id_guia <> -1
 
         If (ok = False) Then
-            MessageBox.Show("Seleccione Guia de Remision, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Guia de Remision, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnGuia.Focus()
             Exit Sub
         End If
 
         ok = id_precio <> -1
         If ok = False Then
-            MessageBox.Show("Seleccione Precio de Arroz, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Precio de Arroz, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btn_Precios.Focus()
             Exit Sub
         End If
@@ -26,7 +26,7 @@
 
         ok = ok And costo_flet.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Costo de Flete por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Costo de Flete por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             costo_flet.Focus()
             Exit Sub
         End If

@@ -52,7 +52,7 @@ Public Class FrmListarTipo_Dcto
     Private Sub dgvlista_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellClick
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightCyan
         End If
@@ -89,7 +89,7 @@ Public Class FrmListarTipo_Dcto
 
     Private Sub btn_Acep_Click(sender As Object, e As EventArgs) Handles btn_Acep.Click
         If indice = -1 Then
-            MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione fila por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtbusca.Focus()
         Else
             Close()

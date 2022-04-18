@@ -68,7 +68,7 @@ Public Class frmremitente
         Dim ok As Boolean
         ok = id_ubigeo <> -1
         If (ok = False) Then
-            MessageBox.Show("Seleccione Ubigeo por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Ubigeo por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnptollegada.Focus()
             Exit Sub
         End If

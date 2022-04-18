@@ -18,7 +18,7 @@ Public Class frmguia
 
     Dim tabla_motivotras As DataTable
     Private INDICE2 As Integer = -1
-    
+
 
     Private Sub frmguia_FormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs) Handles Me.FormClosed
         Aceptar = False
@@ -30,6 +30,268 @@ Public Class frmguia
         'lista(7)
     End Sub
 
+
+
+    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAgregar.Click
+
+        If operacion = "" Then
+            MessageBox.Show("Seleccione nuevo ó editar.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        Dim ok As Boolean
+        ok = prod_id <> -1
+        If ok = False Then
+            MessageBox.Show("Haga click en buscar producto.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        ok = prod_peso_uni.Text.Trim <> ""
+        If ok = False Then
+            MessageBox.Show("Haga click en buscar producto.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        ok = cantidad_sacos.Text.Trim <> "" And Val(cantidad_sacos.Text.Trim) > 0
+        If ok = False Then
+            MessageBox.Show("Ingrese cantidad sacos producto Mayor a 0.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            cantidad_sacos.Focus()
+            Exit Sub
+        End If
+
+        ok = TxtPrec_Venta.Text.Trim <> "" 'And Val(Me.cantidad_sacos.Text.Trim) > 0
+        If ok = False Then
+            MessageBox.Show("Ingrese Precio de Venta Igual o Mayor a 0.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            TxtPrec_Venta.Focus()
+            Exit Sub
+        End If
+
+        ok = TxtIGV.Text.Trim <> "" 'And Val(Me.cantidad_sacos.Text.Trim) > 0
+        If ok = False Then
+            MessageBox.Show("Ingrese IGV Igual o Mayor a 0.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            TxtIGV.Focus()
+            Exit Sub
+        End If
+
+
+        If operacion = "N" Then
+            Detalle.Rows.Add()
+            Detalle.Item("id_det_guia", Detalle.Rows.Count - 1).Value = "-1"
+            Detalle.Item("id_prod", Detalle.Rows.Count - 1).Value = prod_id
+            Detalle.Item("sacos_cantidad", Detalle.Rows.Count - 1).Value = Val(cantidad_sacos.Text.Trim)
+            Detalle.Item("unidad_medida", Detalle.Rows.Count - 1).Value = "Sacos"
+            Detalle.Item("Descripcion", Detalle.Rows.Count - 1).Value = NombreProducto.Text.Trim
+            Detalle.Item("Peso", Detalle.Rows.Count - 1).Value = Val(cantidad_sacos.Text.Trim) * Val(prod_peso_uni.Text.Trim)
+            Detalle.Item("x", Detalle.Rows.Count - 1).Value = Val(prod_peso_uni.Text.Trim)
+            Detalle.Item("Precio_Venta", Detalle.Rows.Count - 1).Value = Val(TxtPrec_Venta.Text.Trim)
+            Detalle.Item("IGV", Detalle.Rows.Count - 1).Value = Val(TxtIGV.Text.Trim)
+            'Me.LblTotal.Text = CDbl(Me.LblTotal.Text) + Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
+        ElseIf operacion = "M" Then
+
+            Detalle.Item("id_det_guia", INDICE2).Value = id_det_guia_
+            Detalle.Item("id_prod", INDICE2).Value = prod_id
+            Detalle.Item("sacos_cantidad", INDICE2).Value = CDbl(cantidad_sacos.Text.Trim)
+            Detalle.Item("unidad_medida", INDICE2).Value = "Sacos"
+            Detalle.Item("Descripcion", INDICE2).Value = NombreProducto.Text.Trim
+            Detalle.Item("Peso", INDICE2).Value = CDbl(cantidad_sacos.Text.Trim) * CDbl(prod_peso_uni.Text.Trim)
+            Detalle.Item("x", INDICE2).Value = CDbl(prod_peso_uni.Text.Trim)
+            Detalle.Item("Precio_Venta", INDICE2).Value = CDbl(TxtPrec_Venta.Text.Trim)
+            Detalle.Item("IGV", INDICE2).Value = CDbl(TxtIGV.Text.Trim)
+        End If
+
+        limpiaproducto()
+        activar2(False)
+        operacion = ""
+        indice = -1
+
+        btnnuevo_examen.Focus()
+    End Sub
+
+    Public Sub limpiaproducto()
+        id_det_guia_ = -1
+        NombreProducto.Text = ""
+        prod_id = -1
+        prod_peso_uni.Text = ""
+        cantidad_sacos.Text = ""
+        TxtPrec_Venta.Text = "0"
+        TxtIGV.Text = "0"
+    End Sub
+
+    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnnuevo_examen.Click
+        operacion = "N"
+        indice = -1
+        activar2(True)
+
+        btnProducto.Focus()
+    End Sub
+
+    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btneditar_hpm.Click
+
+        If indice = -1 Then
+            MessageBox.Show("Seleccione producto para editarlo", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+        id_det_guia_ = CInt(Detalle.Item("id_det_guia", INDICE2).Value)
+        prod_id = CStr(Detalle.Item("id_prod", INDICE2).Value)
+        NombreProducto.Text = CStr(Detalle.Item("Descripcion", INDICE2).Value)
+        prod_peso_uni.Text = CDbl(Detalle.Item("x", INDICE2).Value)
+        cantidad_sacos.Text = CStr(Detalle.Item("sacos_cantidad", INDICE2).Value)
+        TxtPrec_Venta.Text = CStr(Detalle.Item("Precio_Venta", INDICE2).Value)
+        TxtIGV.Text = CStr(Detalle.Item("IGV", INDICE2).Value)
+        'Me.LblTotal.Text = CDbl(Me.LblTotal.Text) - Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
+        activar2(True)
+        operacion = "M"
+
+        If TxtMotivo.Text = "VENTA" Then
+            TxtPrec_Venta.Enabled = True
+            TxtIGV.Enabled = True
+        End If
+
+    End Sub
+
+    Private Sub Detalle_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles Detalle.CellClick
+        INDICE2 = e.RowIndex
+
+    End Sub
+
+    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnquitar_hpm.Click
+        If check_fila_grilla(Detalle) = False Then
+            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            quitar_fila_grilla(Detalle, "Seleccionar", "Detalle de Guia no se puede quitar. Solo se pueden quitar elementos agregados recientemente.")
+        End If
+        ' Me.LblTotal.Text = CDbl(Me.LblTotal.Text) - Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
+        operacion = ""
+        indice = -1
+    End Sub
+
+    Private Sub Detalle_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles Detalle.RowsAdded
+        btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
+        btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
+    End Sub
+
+    Private Sub Detalle_RowsRemoved(ByVal sender As Object, ByVal e As DataGridViewRowsRemovedEventArgs) Handles Detalle.RowsRemoved
+        btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
+        btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
+    End Sub
+
+    Private Sub Detalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Detalle.VisibleChanged
+        btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
+        btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
+    End Sub
+
+    Private Sub activar2(ByVal activa As Boolean)
+        btnProducto.Enabled = activa
+        cantidad_sacos.Enabled = activa
+        btnAgregar.Enabled = activa
+    End Sub
+
+    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
+
+        Dim ok As Boolean
+        ok = id_remitente <> -1
+        If (ok = False) Then
+            MessageBox.Show("Seleccione remitente por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnremitente.Focus()
+            Exit Sub
+        End If
+
+        ok = ok And ubigeo_pto_partida <> -1
+        If (ok = False) Then
+            MessageBox.Show("Seleccione punto de partida por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnptopartida.Focus()
+            Exit Sub
+        End If
+
+
+        ok = ok And ubigeo_pto_llegada <> -1
+        If (ok = False) Then
+            MessageBox.Show("Seleccione punto de llegada por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnptollegada.Focus()
+            Exit Sub
+        End If
+
+        ok = ok And id_Destinatario <> -1
+        If (ok = False) Then
+            MessageBox.Show("Seleccione destinatario por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnDestinatario.Focus()
+            Exit Sub
+        End If
+
+        ok = ok And id_vehi <> -1
+        If (ok = False) Then
+            MessageBox.Show("Seleccione unidad de transporte por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnTransporte.Focus()
+            Exit Sub
+        End If
+
+        ok = id_chofer <> -1
+        If (ok = False) Then
+            MessageBox.Show("Seleccione Brevete por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnChofer.Focus()
+            Exit Sub
+        End If
+
+        ok = ok And Nro_constancia_deposito.Text.Trim <> ""
+        If (ok = False) Then
+            MessageBox.Show("Ingrese Número constancia deposito por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Nro_constancia_deposito.Focus()
+            Exit Sub
+        End If
+
+        ok = ok And Detalle.Rows.Count <> 0
+        If (ok = False) Then
+            MessageBox.Show("Seleccione productos por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            btnnuevo_examen.Focus()
+            Exit Sub
+        End If
+
+        Aceptar = True
+        Hide()
+    End Sub
+
+    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
+        Aceptar = False
+        Hide()
+    End Sub
+
+    Private Sub dgvmotivo_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvmotivo.CellContentClick
+        seleciona_solo_una_fila_grilla(sender)
+    End Sub
+
+
+    Private Sub Monto_deposito_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito.Leave
+        If Monto_deposito.Text = "" Then
+            MessageBox.Show("Ingrese monto deposito mayor o igual a 0, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Monto_deposito.Focus()
+        Else
+            'CONVIERTE EL NUMERO A FORMATO MONEDA
+            Monto_deposito.Text = Format(CType(Monto_deposito.Text, Decimal), "###0.00")
+        End If
+        Monto_deposito.BackColor = Color.White
+    End Sub
+    Private Sub Monto_deposito_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito.Enter
+        Monto_deposito.BackColor = Color.Moccasin
+    End Sub
+    Private Sub Monto_deposito2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito2.Leave
+        If Monto_deposito2.Text = "" Then
+            MessageBox.Show("Ingrese Monto deposito mayor o igual a 0, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Monto_deposito2.Focus()
+        Else
+            'CONVIERTE EL NUMERO A FORMATO MONEDA
+            Monto_deposito2.Text = Format(CType(Monto_deposito2.Text, Decimal), "###0.00")
+        End If
+        Monto_deposito2.BackColor = Color.White
+    End Sub
+    Private Sub frmguia_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
+        '    'cerrar formulario con tecla ESC
+        '    If (e.KeyCode = Keys.Escape) Then
+        '        Me.Close()
+        '    End If
+    End Sub
+    '==============================================================
+#Region "LISTAR"
     Private Sub BtnMotivo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnMotivo.Click
         Try
             Dim f As New FrmListarMotivo
@@ -195,15 +457,14 @@ Public Class frmguia
             f.ShowDialog()
             If indice <> -1 Then
                 id_vehi = CInt(f.dgvlista.Item("ID", indice).Value)
-                marca_camion.Text = CStr(f.dgvlista.Item("marca Camion", indice).Value.ToString.Trim)
-                nroplaca_camion.Text = CStr(f.dgvlista.Item("Nro. placa Camion", indice).Value.ToString.Trim)
-                nrocertificado_camion.Text = CStr(f.dgvlista.Item("Nro. certificado Camion", indice).Value.ToString.Trim)
-                marca_carreta.Text = CStr(f.dgvlista.Item("Marca Carreta", indice).Value.ToString.Trim)
-                nroplaca_carreta.Text = CStr(f.dgvlista.Item("Nro. Placa Carreta", indice).Value.ToString.Trim)
-                nrocertificado_carreta.Text = CStr(f.dgvlista.Item("Nro. Certificado Carreta", indice).Value.ToString.Trim)
-                NombreEmpTransporte.Text = CStr(f.dgvlista.Item("Empresa Transporte", indice).Value.ToString.Trim)
-                RucEmpTransporte.Text = CStr(f.dgvlista.Item("RUC Emp Transporte", indice).Value.ToString.Trim)
-
+                marca_camion.Text = CStr(f.dgvlista.Item("MarcaCamion", indice).Value.ToString.Trim)
+                nroplaca_camion.Text = CStr(f.dgvlista.Item("PlacaCamion", indice).Value.ToString.Trim)
+                nrocertificado_camion.Text = CStr(f.dgvlista.Item("CertificadoCamion", indice).Value.ToString.Trim)
+                marca_carreta.Text = CStr(f.dgvlista.Item("MarcaCarreta", indice).Value.ToString.Trim)
+                nroplaca_carreta.Text = CStr(f.dgvlista.Item("PlacaCarreta", indice).Value.ToString.Trim)
+                nrocertificado_carreta.Text = CStr(f.dgvlista.Item("CertificadoCarreta", indice).Value.ToString.Trim)
+                NombreEmpTransporte.Text = CStr(f.dgvlista.Item("Empresa", indice).Value.ToString.Trim)
+                RucEmpTransporte.Text = CStr(f.dgvlista.Item("RucEmpresa", indice).Value.ToString.Trim)
                 indice = -1
                 Nro_licencia_conductor.Focus()
             Else
@@ -223,319 +484,14 @@ Public Class frmguia
         End Try
         btnChofer.Focus()
     End Sub
+#End Region
+    '==============================================================
 
-    Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAgregar.Click
-
-        If operacion = "" Then
-            MessageBox.Show("Seleccione nuevo ó editar.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-        Dim ok As Boolean
-        ok = prod_id <> -1
-        If ok = False Then
-            MessageBox.Show("Haga click en buscar producto.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-        ok = prod_peso_uni.Text.Trim <> ""
-        If ok = False Then
-            MessageBox.Show("Haga click en buscar producto.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-        ok = cantidad_sacos.Text.Trim <> "" And Val(cantidad_sacos.Text.Trim) > 0
-        If ok = False Then
-            MessageBox.Show("Ingrese cantidad sacos producto Mayor a 0.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            cantidad_sacos.Focus()
-            Exit Sub
-        End If
-
-        ok = TxtPrec_Venta.Text.Trim <> "" 'And Val(Me.cantidad_sacos.Text.Trim) > 0
-        If ok = False Then
-            MessageBox.Show("Ingrese Precio de Venta Igual o Mayor a 0.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            TxtPrec_Venta.Focus()
-            Exit Sub
-        End If
-
-        ok = TxtIGV.Text.Trim <> "" 'And Val(Me.cantidad_sacos.Text.Trim) > 0
-        If ok = False Then
-            MessageBox.Show("Ingrese IGV Igual o Mayor a 0.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            TxtIGV.Focus()
-            Exit Sub
-        End If
-
-
-        If operacion = "N" Then
-            Detalle.Rows.Add()
-            Detalle.Item("id_det_guia", Detalle.Rows.Count - 1).Value = "-1"
-            Detalle.Item("id_prod", Detalle.Rows.Count - 1).Value = prod_id
-            Detalle.Item("sacos_cantidad", Detalle.Rows.Count - 1).Value = Val(cantidad_sacos.Text.Trim)
-            Detalle.Item("unidad_medida", Detalle.Rows.Count - 1).Value = "Sacos"
-            Detalle.Item("Descripcion", Detalle.Rows.Count - 1).Value = NombreProducto.Text.Trim
-            Detalle.Item("Peso", Detalle.Rows.Count - 1).Value = Val(cantidad_sacos.Text.Trim) * Val(prod_peso_uni.Text.Trim)
-            Detalle.Item("x", Detalle.Rows.Count - 1).Value = Val(prod_peso_uni.Text.Trim)
-            Detalle.Item("Precio_Venta", Detalle.Rows.Count - 1).Value = Val(TxtPrec_Venta.Text.Trim)
-            Detalle.Item("IGV", Detalle.Rows.Count - 1).Value = Val(TxtIGV.Text.Trim)
-            'Me.LblTotal.Text = CDbl(Me.LblTotal.Text) + Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
-        ElseIf operacion = "M" Then
-
-            Detalle.Item("id_det_guia", INDICE2).Value = id_det_guia_
-            Detalle.Item("id_prod", INDICE2).Value = prod_id
-            Detalle.Item("sacos_cantidad", INDICE2).Value = CDbl(cantidad_sacos.Text.Trim)
-            Detalle.Item("unidad_medida", INDICE2).Value = "Sacos"
-            Detalle.Item("Descripcion", INDICE2).Value = NombreProducto.Text.Trim
-            Detalle.Item("Peso", INDICE2).Value = CDbl(cantidad_sacos.Text.Trim) * CDbl(prod_peso_uni.Text.Trim)
-            Detalle.Item("x", INDICE2).Value = CDbl(prod_peso_uni.Text.Trim)
-            Detalle.Item("Precio_Venta", INDICE2).Value = CDbl(TxtPrec_Venta.Text.Trim)
-            Detalle.Item("IGV", INDICE2).Value = CDbl(TxtIGV.Text.Trim)
-            'Detalle.Item("id_det_guia", indice).Value = id_det_guia_
-            'Detalle.Item("id_prod", indice).Value = Me.prod_id
-            'Detalle.Item("sacos_cantidad", indice).Value = Val(cantidad_sacos.Text.Trim)
-            'Detalle.Item("unidad_medida", indice).Value = "Sacos"
-            'Detalle.Item("Descripcion", indice).Value = NombreProducto.Text.Trim
-            'Detalle.Item("Peso", indice).Value = Val(cantidad_sacos.Text.Trim) * Val(prod_peso_uni.Text.Trim)
-            'Detalle.Item("x", indice).Value = Val(prod_peso_uni.Text.Trim)
-
-            '' Me.LblTotal.Text = CDbl(Me.LblTotal.Text) + Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
-
-        End If
-
-        limpiaproducto()
-        activar2(False)
-        operacion = ""
-        indice = -1
-
-        btnnuevo_examen.Focus()
-    End Sub
-
-    Public Sub limpiaproducto()
-        id_det_guia_ = -1
-        NombreProducto.Text = ""
-        prod_id = -1
-        prod_peso_uni.Text = ""
-        cantidad_sacos.Text = ""
-        TxtPrec_Venta.Text = "0"
-        TxtIGV.Text = "0"
-    End Sub
-
-    Private Sub btnnuevo_examen_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnnuevo_examen.Click
-        operacion = "N"
-        indice = -1
-        activar2(True)
-
-        btnProducto.Focus()
-    End Sub
-
-    Private Sub btneditar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btneditar_hpm.Click
-
-        If indice = -1 Then
-            MessageBox.Show("Seleccione producto para editarlo", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-        id_det_guia_ = CInt(Detalle.Item("id_det_guia", INDICE2).Value)
-        prod_id = CStr(Detalle.Item("id_prod", INDICE2).Value)
-        NombreProducto.Text = CStr(Detalle.Item("Descripcion", INDICE2).Value)
-        prod_peso_uni.Text = CDbl(Detalle.Item("x", INDICE2).Value)
-        cantidad_sacos.Text = CStr(Detalle.Item("sacos_cantidad", INDICE2).Value)
-        TxtPrec_Venta.Text = CStr(Detalle.Item("Precio_Venta", INDICE2).Value)
-        TxtIGV.Text = CStr(Detalle.Item("IGV", INDICE2).Value)
-        'Me.LblTotal.Text = CDbl(Me.LblTotal.Text) - Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
-        activar2(True)
-        operacion = "M"
-
-        If TxtMotivo.Text = "VENTA" Then
-            TxtPrec_Venta.Enabled = True
-            TxtIGV.Enabled = True
-        End If
-
-    End Sub
-
-    Private Sub Detalle_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles Detalle.CellClick
-        INDICE2 = e.RowIndex
-
-    End Sub
-
-    Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnquitar_hpm.Click
-        If check_fila_grilla(Detalle) = False Then
-            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        Else
-            quitar_fila_grilla(Detalle, "Seleccionar", "Detalle de Guia no se puede quitar. Solo se pueden quitar elementos agregados recientemente.")
-        End If
-        ' Me.LblTotal.Text = CDbl(Me.LblTotal.Text) - Detalle.Item("Peso", Detalle.Rows.Count - 1).Value
-        operacion = ""
-        indice = -1
-    End Sub
-
-    Private Sub Detalle_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles Detalle.RowsAdded
-        btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
-        btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub Detalle_RowsRemoved(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsRemovedEventArgs) Handles Detalle.RowsRemoved
-        btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
-        btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub Detalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles Detalle.VisibleChanged
-        btnquitar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
-        btneditar_hpm.Enabled = CBool(IIf(Detalle.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub activar2(ByVal activa As Boolean)
-        btnProducto.Enabled = activa
-        cantidad_sacos.Enabled = activa
-        btnAgregar.Enabled = activa
-    End Sub
-
-    Private Sub btnaceptar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnaceptar.Click
-
-        Dim ok As Boolean
-
-        'ok = ok And serie_guia.Text.Trim <> ""
-        'If (ok = False) Then
-        '    MessageBox.Show("Ingrese nro. serie por favor.", "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    serie_guia.Focus()
-        '    Exit Sub
-        'End If
-
-        'ok = ok And nro_guia.Text.Trim <> ""
-        'If (ok = False) Then
-        '    MessageBox.Show("Ingrese número guia por favor.", "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    nro_guia.Focus()
-        '    Exit Sub
-        'End If
-
-        ok = id_remitente <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione remitente por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnremitente.Focus()
-            Exit Sub
-        End If
-
-        'ok = ok And ruc.Text.Trim <> ""
-        'If (ok = False) Then
-        '    MessageBox.Show("Seleccione remitente por favor.", "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    Exit Sub
-        'End If
-
-        ok = ok And ubigeo_pto_partida <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione punto de partida por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnptopartida.Focus()
-            Exit Sub
-        End If
-
-
-        ok = ok And ubigeo_pto_llegada <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione punto de llegada por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnptollegada.Focus()
-            Exit Sub
-        End If
-
-        ok = ok And id_Destinatario <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione destinatario por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnDestinatario.Focus()
-            Exit Sub
-        End If
-
-        ok = ok And id_vehi <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione unidad de transporte por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnTransporte.Focus()
-            Exit Sub
-        End If
-
-        ok = id_chofer <> -1
-        If (ok = False) Then
-            MessageBox.Show("Seleccione Brevete por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnChofer.Focus()
-            Exit Sub
-        End If
-
-        ok = ok And Nro_constancia_deposito.Text.Trim <> ""
-        If (ok = False) Then
-            MessageBox.Show("Ingrese Número constancia deposito por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Nro_constancia_deposito.Focus()
-            Exit Sub
-        End If
-
-        ok = ok And Detalle.Rows.Count <> 0
-        If (ok = False) Then
-            MessageBox.Show("Seleccione productos por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            btnnuevo_examen.Focus()
-            Exit Sub
-        End If
-
-        'ok = ok And Monto_deposito.Text <> ""
-        'If (ok = False) Then
-        '    MessageBox.Show("Ingrese monto deposito por favor.", "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    Monto_deposito.Focus()
-        '    Exit Sub
-        'End If
-
-        'ok = ok And Monto_deposito2.Text <> ""
-        'If (ok = False) Then
-        '    MessageBox.Show("Ingrese monto deposito por favor.", "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    Monto_deposito2.Focus()
-        '    Exit Sub
-        'End If
-
-        'ok = ok And check_fila_grilla(dgvmotivo) = True
-        'If (ok = False) Then
-        '    MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    Exit Sub
-        'End If
-
-        Aceptar = True
-        Hide()
-    End Sub
-
-    Private Sub btncancelar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btncancelar.Click
-        Aceptar = False
-        Hide()
-    End Sub
-
-    Private Sub dgvmotivo_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvmotivo.CellContentClick
-        seleciona_solo_una_fila_grilla(sender)
-    End Sub
-
-
-    Private Sub Monto_deposito_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito.Leave
-        If Monto_deposito.Text = "" Then
-            MessageBox.Show("Ingrese monto deposito mayor o igual a 0, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Monto_deposito.Focus()
-        Else
-            'CONVIERTE EL NUMERO A FORMATO MONEDA
-            Monto_deposito.Text = Format(CType(Monto_deposito.Text, Decimal), "###0.00")
-        End If
-        Monto_deposito.BackColor = Color.White
-    End Sub
-    Private Sub Monto_deposito_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito.Enter
-        Monto_deposito.BackColor = Color.Moccasin
-    End Sub
-    Private Sub Monto_deposito2_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles Monto_deposito2.Leave
-        If Monto_deposito2.Text = "" Then
-            MessageBox.Show("Ingrese Monto deposito mayor o igual a 0, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Monto_deposito2.Focus()
-        Else
-            'CONVIERTE EL NUMERO A FORMATO MONEDA
-            Monto_deposito2.Text = Format(CType(Monto_deposito2.Text, Decimal), "###0.00")
-        End If
-        Monto_deposito2.BackColor = Color.White
-    End Sub
-    Private Sub frmguia_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
-        '    'cerrar formulario con tecla ESC
-        '    If (e.KeyCode = Keys.Escape) Then
-        '        Me.Close()
-        '    End If
-    End Sub
+    '==============================================================
+#Region "TEXTBOX"
     Private Sub serie_guia_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles serie_guia.Leave
         If serie_guia.Text = "" Then
-            MessageBox.Show("Ingrese Nro. serie por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nro. serie por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             serie_guia.Focus()
         Else
             serie_guia.Text = Format(CType(serie_guia.Text, Decimal), "000")
@@ -550,7 +506,7 @@ Public Class frmguia
     End Sub
     Private Sub nro_guia_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nro_guia.Leave
         If nro_guia.Text = "" Then
-            MessageBox.Show("Ingrese Número Guia por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Número Guia por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nro_guia.Focus()
         Else
             nro_guia.Text = Format(CType(nro_guia.Text, Decimal), "000000")
@@ -563,7 +519,7 @@ Public Class frmguia
     Private Sub direccion_pto_partida_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles direccion_pto_partida.Leave
         direccion_pto_partida.BackColor = Color.White
     End Sub
-   
+
     Private Sub Nro_constancia_deposito_Enter(ByVal sender As Object, ByVal e As EventArgs) Handles Nro_constancia_deposito.Enter
         Nro_constancia_deposito.BackColor = Color.Moccasin
     End Sub
@@ -674,8 +630,10 @@ Public Class frmguia
         TxtIGV.BackColor = Color.White
     End Sub
 
-   
+
     Private Sub TxtIGV_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtIGV.TextChanged
 
     End Sub
+#End Region
+    '==============================================================
 End Class

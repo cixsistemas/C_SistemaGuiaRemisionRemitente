@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("Sistema")>
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Guía de Remisión – Remitente")>
+<Assembly: AssemblyProduct("Sistema")>
 <Assembly: AssemblyCopyright("©  2013")> 
 <Assembly: AssemblyTrademark("><))))°> ... o0O ... <°))))><")> 
 

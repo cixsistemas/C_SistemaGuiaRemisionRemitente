@@ -40,6 +40,6 @@
             'dgvlista.Text = dgvlista.Text & T & " * " & i & " = " & T * i & vbCrLf
             ' labeltabla.Text = T = T * i & vbCrLf
         Next i
-        MessageBox.Show("Busque o Seleccione Tipo de documento por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        MessageBox.Show("Busque o Seleccione Tipo de documento por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
     End Sub
 End Class

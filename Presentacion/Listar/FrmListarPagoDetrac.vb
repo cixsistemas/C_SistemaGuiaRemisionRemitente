@@ -13,7 +13,7 @@ Public Class FrmListarPagoDetrac
             If tabla_pago Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             Else
                 Dim NroFilas As Integer = tabla_pago.Rows.Count
@@ -37,7 +37,7 @@ Public Class FrmListarPagoDetrac
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         Try
@@ -61,7 +61,7 @@ Public Class FrmListarPagoDetrac
             If tabla_detalle_pago Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_detalle_pago.Rows.Count
                 If NroFilas = 0 Then
@@ -84,7 +84,7 @@ Public Class FrmListarPagoDetrac
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         'Me.dgvdetalle.Columns("cantidad")
@@ -111,7 +111,7 @@ Public Class FrmListarPagoDetrac
             formulario.ShowDialog() 'presentamos formulario.
             If formulario.Aceptar = True Then
                 'preguntamos si el usuario quiere o no guardar programación médica.
-                If MessageBox.Show("¿Desea guardar Pago de Detraccion?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("¿Desea guardar Pago de Detraccion?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                     Dim servidor As New clinicapacifico.clsaccesodatos
                     ' asignamos ruta coneccion con el servidor de la base de datos
                     servidor.cadenaconexion = Ruta
@@ -153,19 +153,19 @@ Public Class FrmListarPagoDetrac
                             If rptaham = 0 Then
                                 servidor.cancelarconexiontrans()
                                 __mesajeerror = mensajeham
-                                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                                 Exit Sub
                             End If
 
                             servidor.cerrarconexiontrans()
                             __mesajeerror = mensaje
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
 
                     Else
                         __mesajeerror = servidor.getMensageError
                         servidor.cerrarconexiontrans()
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 End If
             End If
@@ -228,7 +228,7 @@ Public Class FrmListarPagoDetrac
     '    'Me.Close()
     'End Sub
 
-    Private Sub dgvlista_CellFormatting1(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting1(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightCyan
         End If
@@ -251,7 +251,7 @@ Public Class FrmListarPagoDetrac
         formulario.ShowDialog() 'presentamos formulario.
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no guardar programación médica.
-            If MessageBox.Show("¿Desea guardar Pago de Detraccion?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar Pago de Detraccion?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 ' asignamos ruta coneccion con el servidor de la base de datos
                 servidor.cadenaconexion = Ruta
@@ -293,19 +293,19 @@ Public Class FrmListarPagoDetrac
                         If rptaham = 0 Then
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensajeham
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             Exit Sub
                         End If
 
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If

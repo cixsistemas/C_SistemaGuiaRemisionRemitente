@@ -2,6 +2,8 @@ Public Class FrmListarGuiaS
     Private formulario As New frmguia
     Dim idguia As Integer
     Dim tabla_guias As DataTable
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
 
     Public Sub listar_guias(ByVal Numero As String)
         LBF2.ForeColor = Color.Red
@@ -12,7 +14,7 @@ Public Class FrmListarGuiaS
             If tabla_guias Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_guias.Rows.Count
                 If NroFilas = 0 Then
@@ -24,18 +26,19 @@ Public Class FrmListarGuiaS
                 Else
                     dgvlista.DataSource = tabla_guias
                     servidor.cerrarconexion()
-                    mesajeerror.Text = "Guía de Remisión – Remitente tiene " + NroFilas.ToString + " Guia(s)"
+                    'mesajeerror.Text = "Guía de Remisión – Remitente tiene " + NroFilas.ToString + " Guia(s)"
+                    mesajeerror.Text = ""
                     mesajeerror.ForeColor = Color.Black
                 End If
+                'AGREGADO EL DIA 13-04-2022
+                Dv.Table = tabla_guias ' Enlazamos el dataview con la tabla devuelta
+                ''=======================================================
                 dgvlista.Columns("ID Guia").Visible = False
                 dgvlista.Columns("Domicilio").Visible = False
                 dgvlista.Columns("ruc").Visible = False
-                ' Me.dgvlista.Columns("Ruc Remitente").Visible = False
-                'Me.dgvlista.Columns("direccion").Visible = False
                 dgvlista.Columns("distrito").Visible = False
                 dgvlista.Columns("provincia").Visible = False
                 dgvlista.Columns("departamento").Visible = False
-                'Me.dgvlista.Columns("Descripcion").Visible = False
                 dgvlista.Columns("Nombre Chofer").Visible = False
                 dgvlista.Columns("Apellido Chofer").Visible = False
                 dgvlista.Columns("Telefono Chofer").Visible = False
@@ -51,22 +54,23 @@ Public Class FrmListarGuiaS
                 dgvlista.Columns("Peso bruto vehicular").Visible = False
                 dgvlista.Columns("Fecha Emision").DefaultCellStyle.Format = "dd/MM/yyyy"
                 dgvlista.Columns("Descripcion").Visible = False
+                dgvlista.Columns("GuiaRemision").Visible = False
             End If
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        Try
-            'POSICIONA CURSOR EN ULTIMA FILA
-            dgvlista.ClearSelection()
-            dgvlista.CurrentCell = dgvlista.Rows(dgvlista.RowCount - 2).Cells(1)
-            'Me.dgvlista.Refresh()
-        Catch ex As Exception
-            MessageBox.Show("Guía, no se encuentra registrada", "Guía de Remisión-Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'Me.Close()
-        End Try
+        'Try
+        '    'POSICIONA CURSOR EN ULTIMA FILA
+        '    dgvlista.ClearSelection()
+        '    dgvlista.CurrentCell = dgvlista.Rows(dgvlista.RowCount - 2).Cells(1)
+        '    'Me.dgvlista.Refresh()
+        'Catch ex As Exception
+        '    MessageBox.Show("Guía, no se encuentra registrada", "Guía de Remisión-Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    'Me.Close()
+        'End Try
 
     End Sub
 
@@ -97,7 +101,11 @@ Public Class FrmListarGuiaS
         SoloNumeros(e, False, sender.Text)
     End Sub
     Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
-        listar_guias(txtbusca.Text)
+        'listar_guias(txtbusca.Text)
+        CadenaBuscar = "GuiaRemision like '%" + txtbusca.Text.Trim + "%'"
+        Dv.RowFilter = CadenaBuscar
+        dgvlista.DataSource = Dv
+        dgvlista.Update()
     End Sub
     Private Sub dgvlista_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
         indice = e.RowIndex
@@ -123,7 +131,7 @@ Public Class FrmListarGuiaS
     Private Sub dgvlista_CellLeave(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellLeave
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 3 Then
             e.CellStyle.BackColor = Color.LightCyan
         End If
@@ -134,5 +142,9 @@ Public Class FrmListarGuiaS
             SendKeys.Send("{TAB}")
             dgvlista.Focus()
         End If
+    End Sub
+
+    Private Sub cbTodos_CheckedChanged(sender As Object, e As EventArgs) Handles cbTodos.CheckedChanged
+        listar_guias("")
     End Sub
 End Class

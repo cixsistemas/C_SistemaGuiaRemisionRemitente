@@ -13,42 +13,42 @@
 
         ok = nombre.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Nombre por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nombre por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nombre.Focus()
             Exit Sub
         End If
 
         ok = txtTelefono.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Telefono por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Telefono por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtTelefono.Focus()
             Exit Sub
         End If
 
         ok = txtDireccion.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Direccion por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Direccion por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtDireccion.Focus()
             Exit Sub
         End If
 
         ok = id_Zona <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Zona.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Zona.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnZona.Focus()
             Exit Sub
         End If
 
         ok = id_tipo_Dcto <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Tipo de Documento.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Tipo de Documento.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnTipo_Dcto.Focus()
             Exit Sub
         End If
 
         ok = nro_doc.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Nro. de Documento favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nro. de Documento favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nro_doc.Focus()
             Exit Sub
         End If
@@ -56,7 +56,7 @@
 
         ok = id_tipo_Cliente <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Tipo de Cliente.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Tipo de Cliente.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnTipo_Cliente.Focus()
             Exit Sub
         End If
@@ -229,7 +229,7 @@
 
     Private Sub txtLinea_Credito_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtLinea_Credito.Leave
         If txtLinea_Credito.Text = "" Then
-            MessageBox.Show("Ingrese Linea de Credito por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Linea de Credito por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtLinea_Credito.Focus()
         Else
             'CONVIERTE EL NUMERO A FORMATO MONEDA

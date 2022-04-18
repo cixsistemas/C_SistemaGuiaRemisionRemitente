@@ -40,7 +40,7 @@ Public Class frmunidadtransportes
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         Try
@@ -97,7 +97,7 @@ Public Class frmunidadtransportes
         'Me.cbobusca.SelectedIndex = 0
     End Sub
 
-    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
+    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
         btnmodificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
@@ -119,7 +119,7 @@ Public Class frmunidadtransportes
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If rbEmpresa.Checked = True And e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightYellow
         ElseIf rbmar_rem.Checked = True And e.ColumnIndex = 3 Then
@@ -136,7 +136,7 @@ Public Class frmunidadtransportes
         'Me.formulario.lista_emptransporte(3)
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea guardar unidad de transporte?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar unidad de transporte?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -172,16 +172,16 @@ Public Class frmunidadtransportes
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -215,7 +215,7 @@ Public Class frmunidadtransportes
 
     Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione unidad de transporte", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione unidad de transporte", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -260,7 +260,7 @@ Public Class frmunidadtransportes
 
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
-            If MessageBox.Show("¿Desea guardar unidad de transporte?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar unidad de transporte?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -296,16 +296,16 @@ Public Class frmunidadtransportes
                     If rpta > 0 Then
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -339,12 +339,12 @@ Public Class frmunidadtransportes
 
     Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione unidad de transporte", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione unidad de transporte", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
 
-        If MessageBox.Show("¿Desea eliminar unidad de transporte?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿Desea eliminar unidad de transporte?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then
@@ -473,7 +473,7 @@ Public Class frmunidadtransportes
             e.SuppressKeyPress = True
 
             If (indice = -1) Then
-                MessageBox.Show("Seleccione unidad de transporte", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("Seleccione unidad de transporte", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
 
@@ -517,7 +517,7 @@ Public Class frmunidadtransportes
 
             formulario.ShowDialog()
             If formulario.Aceptar = True Then
-                If MessageBox.Show("¿Desea guardar unidad de transporte?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("¿Desea guardar unidad de transporte?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                     Dim servidor As New clinicapacifico.clsaccesodatos
                     servidor.cadenaconexion = Ruta
                     If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -552,16 +552,16 @@ Public Class frmunidadtransportes
                         If rpta > 0 Then
                             servidor.cerrarconexiontrans()
                             __mesajeerror = mensaje
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensaje
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         End If
                     Else
                         __mesajeerror = servidor.getMensageError
                         servidor.cerrarconexiontrans()
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 End If
             End If

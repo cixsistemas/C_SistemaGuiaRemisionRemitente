@@ -100,35 +100,35 @@
 
         ok = TxtCodigo.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Codigo por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Codigo por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             TxtCodigo.Focus()
             Exit Sub
         End If
 
         ok = txtdistrito.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Distrito por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Distrito por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtdistrito.Focus()
             Exit Sub
         End If
 
         ok = txtprovincia.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Provincia por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Provincia por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtprovincia.Focus()
             Exit Sub
         End If
 
         ok = txtdepartamento.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Departamento por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Departamento por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtdepartamento.Focus()
             Exit Sub
         End If
         'Aceptar = True
         'Hide()
 
-        If MessageBox.Show("¿DESEA " + IIf(Nivel = "N", "GUARDAR ", "MODIFICAR ") + " Ubigeo?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿DESEA " + IIf(Nivel = "N", "GUARDAR ", "MODIFICAR ") + " Ubigeo?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -149,17 +149,17 @@
                 If RPTA_DOC > 0 Then
                     servidor.cerrarconexiontrans()
                     __mesajeerror = MSG_DOC
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Hide()
                 Else
                     servidor.cancelarconexiontrans()
                     __mesajeerror = MSG_DOC
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
             Else
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexiontrans()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub

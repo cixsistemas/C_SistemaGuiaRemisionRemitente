@@ -35,7 +35,7 @@
 
         ok = id_remitente <> -1
         If ok = False Then
-            MessageBox.Show("Seleccione Remitente, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Remitente, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnremitente.Focus()
             Exit Sub
         End If
@@ -43,41 +43,41 @@
 
         ok = id_ope <> -1
         If ok = False Then
-            MessageBox.Show("Seleccione en Operacion, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione en Operacion, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnOperacion.Focus()
             Exit Sub
         End If
 
         ok = id_tipo_Comp <> -1
         If ok = False Then
-            MessageBox.Show("Seleccione Tipo de Comprobante, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Tipo de Comprobante, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnTipoComp.Focus()
             Exit Sub
         End If
 
         ok = TxtSerie.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Serie de Comprobante, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Serie de Comprobante, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             TxtSerie.Focus()
             Exit Sub
         End If
 
         ok = TxtNumero.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Numero de Comprobante por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Numero de Comprobante por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             TxtNumero.Focus()
             Exit Sub
         End If
 
         ok = TxtNumero2.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Numero de Comprobante por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Numero de Comprobante por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             TxtNumero2.Focus()
             Exit Sub
         End If
 
         If TxtNumero2.Text < TxtNumero.Text Then
-            MessageBox.Show("Hasta debe ser Mayor a Desde.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Hasta debe ser Mayor a Desde.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             TxtNumero2.Focus()
         End If
 
@@ -134,14 +134,14 @@
         TxtSerie.Text = ""
         TxtNumero.Text = ""
         TxtNumero2.Text = ""
-        MessageBox.Show("Comprobantes se han cargado correctamente", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        MessageBox.Show("Comprobantes se han cargado correctamente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         ' ' dgvlista.DataSource = Nothing
         '   ' dgvlista.Refresh()
         indice = -1
     End Sub
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         If indice = -1 Then
-            MessageBox.Show("Seleccione fila por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione fila por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
 
             'Me.Txtid_bien.Text = dgvlista.Item("IDBIEN", indice).Value.ToString()
@@ -165,12 +165,12 @@
         Try
             dgvlista.Rows.Remove(dgvlista.CurrentRow)
         Catch ex As Exception
-            MessageBox.Show("No hay Registro para quitar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("No hay Registro para quitar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
 
 
         'If check_fila_grilla(dgvlista) = False Then
-        '    MessageBox.Show("Seleccione registro", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    MessageBox.Show("Seleccione registro", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         'Else
         '    ' Me.dgvlista.Rows.Remove(Me.dgvlista.CurrentRow)
         '    quitar_fila_grilla(dgvlista, "SELECCIONAR", "Solo se Puede quitar registros ingresados recientemente")
@@ -190,7 +190,7 @@
             End If
         Catch ex As Exception
             'If Me.NombreRemitente.Text <> "" Then
-            '    MessageBox.Show("Seleccione Remitente por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            '    MessageBox.Show("Seleccione Remitente por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             'End If
         End Try
         indice = -1
@@ -210,7 +210,7 @@
             End If
         Catch ex As Exception
             'If Me.TxtOpe.Text <> "" And TxtTipoOperac.Text <> "" Then
-            '    MessageBox.Show("Seleccione Operacion por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            '    MessageBox.Show("Seleccione Operacion por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             'End If
 
         End Try
@@ -246,7 +246,7 @@
     End Sub
     Private Sub BtnOperacion_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles BtnOperacion.Leave
         If TxtOpe.Text = "" And TxtOpe.Text = "" Then
-            MessageBox.Show("Busque o Seleccione Operacion por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Busque o Seleccione Operacion por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnOperacion.Focus()
         End If
 
@@ -254,7 +254,7 @@
 
     Private Sub btnremitente_Leave(sender As Object, e As EventArgs) Handles btnremitente.Leave
         If NombreRemitente.Text = "" Then
-            MessageBox.Show("Busque o Seleccione Remitente por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Busque o Seleccione Remitente por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnremitente.Focus()
         End If
     End Sub
@@ -262,7 +262,7 @@
  
     Private Sub BtnTipoComp_Leave(sender As Object, e As EventArgs) Handles BtnTipoComp.Leave
         If TxtTipoComp.Text = "" Then
-            MessageBox.Show("Busque o Seleccione Tipo de Comprobante de Pago por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Busque o Seleccione Tipo de Comprobante de Pago por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             BtnTipoComp.Focus()
         End If
     End Sub
@@ -272,7 +272,7 @@
 
         ok = dgvlista.Rows.Count > 0
         If ok = False Then
-            MessageBox.Show("Registre el Ingreso de Tipo de Comprobantes de Pago, por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Registre el Ingreso de Tipo de Comprobantes de Pago, por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -280,7 +280,7 @@
         'Hide()
 
 
-        If MessageBox.Show("¿DESEA " + IIf(Nivel = "N", "GUARDAR ", "MODIFICAR ") + " Ingreso de Comprobantes de Pago?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿DESEA " + IIf(Nivel = "N", "GUARDAR ", "MODIFICAR ") + " Ingreso de Comprobantes de Pago?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             ' If MessageBox.Show("¿Desea Guardar MAteria Prima?", "Sistema de Inventario", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
@@ -450,7 +450,7 @@
 
         Try
             If check_fila_grilla(dgvlista) = False Then
-                MessageBox.Show("Seleccione registro", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("Seleccione registro", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             Else
                 '    'Verificamos el stock de la materia prima
@@ -467,11 +467,11 @@
                     If CBool(dgvlista.Item(0, i).Value) = True Then
                         Dim id As Integer = CInt(dgvlista.Item("IDDETALLEINGCOMP", i).Value.ToString())
                         If id = -1 Then
-                            MessageBox.Show("Registro no se puede eliminar.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show("Registro no se puede eliminar.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             Exit Sub
                         Else
 
-                            If MessageBox.Show("¿DESEA ELIMINAR INGRESO DE DETALLE DE COMPROBANTTES DE PAGO?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                            If MessageBox.Show("¿DESEA ELIMINAR INGRESO DE DETALLE DE COMPROBANTTES DE PAGO?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
                                 Dim servidor As New clinicapacifico.clsaccesodatos
 
@@ -501,7 +501,7 @@
 
                                         __mesajeerror = MSG_RET
 
-                                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                                         quitar_fila_grilla2(dgvlista, "SELECCIONAR")
 
@@ -511,7 +511,7 @@
 
                                         __mesajeerror = MSG_RET
 
-                                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
                                     End If
 
@@ -521,7 +521,7 @@
 
                                     servidor.cerrarconexiontrans()
 
-                                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                                 End If
 
@@ -548,7 +548,7 @@
 
     End Sub
 
-    Private Sub dgvlista_CellFormatting(sender As Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         Try
             If e.ColumnIndex = 5 Then
                 Select Case e.Value

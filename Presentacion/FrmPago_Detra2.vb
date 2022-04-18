@@ -14,7 +14,7 @@ Public Class FrmPago_Detra2
             If tabla_pago Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             Else
                 Dim NroFilas As Integer = tabla_pago.Rows.Count
@@ -33,7 +33,7 @@ Public Class FrmPago_Detra2
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         Try
@@ -57,7 +57,7 @@ Public Class FrmPago_Detra2
             If tabla_detalle_pago Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_detalle_pago.Rows.Count
                 If NroFilas = 0 Then
@@ -77,7 +77,7 @@ Public Class FrmPago_Detra2
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         'Me.dgvdetalle.Columns("cantidad")
@@ -131,7 +131,7 @@ Public Class FrmPago_Detra2
     End Sub
 
 
-    Private Sub dgvdetalle_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
+    Private Sub dgvdetalle_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
         btnmodificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         '  Me.btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
@@ -155,7 +155,7 @@ Public Class FrmPago_Detra2
         formulario.ShowDialog() 'presentamos formulario.
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no guardar programación médica.
-            If MessageBox.Show("¿Desea guardar Pago de Detracción?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar Pago de Detracción?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 ' asignamos ruta coneccion con el servidor de la base de datos
                 servidor.cadenaconexion = Ruta
@@ -197,19 +197,19 @@ Public Class FrmPago_Detra2
                         If rptaham = 0 Then
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensajeham
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             Exit Sub
                         End If
 
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -256,7 +256,7 @@ Public Class FrmPago_Detra2
 
     Private Sub btnmodificar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione Pago de Detracción", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Pago de Detracción", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -285,7 +285,7 @@ Public Class FrmPago_Detra2
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no.
-            If MessageBox.Show("¿Desea Guardar Pago de Detracción?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea Guardar Pago de Detracción?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 ' asignamos ruta coneccion con el servidor de la base de datos
                 servidor.cadenaconexion = Ruta
@@ -327,19 +327,19 @@ Public Class FrmPago_Detra2
                         If rptaham = 0 Then
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensajeham
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             Exit Sub
                         End If
 
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -383,9 +383,9 @@ Public Class FrmPago_Detra2
     End Sub
     Private Sub btnEliminar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvdetalle) = False Then
-            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            If MessageBox.Show("¿Desea eliminar el Detalle de Pago de Detracción?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea eliminar el Detalle de Pago de Detracción?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then
@@ -412,19 +412,19 @@ Public Class FrmPago_Detra2
                         __mesajeerror = mensaje
                         'Me.__mensaje.Value = __mesajeerror
                         'Me.__pagina.Value = "listapersonas.aspx"
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
                         'Me.__pagina.Value = "listapersonas.aspx"
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     'Me.mesajeerror.Text = __mesajeerror
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
 
@@ -466,7 +466,7 @@ Public Class FrmPago_Detra2
 
     End Sub
 
-    Private Sub dgvdetalle_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvdetalle.CellFormatting
+    Private Sub dgvdetalle_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvdetalle.CellFormatting
         Try
             'If e.ColumnIndex = 5 Then
             '    e.CellStyle.BackColor = Color.PowderBlue
@@ -486,7 +486,7 @@ Public Class FrmPago_Detra2
         System.Diagnostics.Process.Start("http://www.minagri.gob.pe/portal/boletin-de-arroz/arroz-2016")
     End Sub
 
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         Try
             If e.ColumnIndex = 1 Then
                 e.CellStyle.BackColor = Color.LightYellow

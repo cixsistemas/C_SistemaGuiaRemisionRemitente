@@ -1,5 +1,7 @@
 Public Class frmListarUbigeo
     Dim tabla_ubigeo As DataTable
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
     Public Sub lista(ByVal opcion As Integer, ByVal criterio As String)
         mesajeerror.ForeColor = Color.Blue
         LBF2.ForeColor = Color.Red
@@ -19,9 +21,12 @@ Public Class frmListarUbigeo
                     servidor.cerrarconexion()
                     dgvlista.DataSource = tabla_ubigeo
                     'MessageBox.Show("No hay personas para mostrar", "Persona", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    mesajeerror.Text = "NO HAY UBIGEOS PARA MOSTRAR"
+                    mesajeerror.Text = mensajeSinRegistros
                     mesajeerror.ForeColor = Color.Red
                 Else
+                    'AGREGADO EL DIA 13-04-2022
+                    Dv.Table = tabla_ubigeo ' Enlazamos el dataview con la tabla devuelta
+                    ''=======================================================
                     dgvlista.DataSource = tabla_ubigeo
                     servidor.cerrarconexion()
                     mesajeerror.Text = "Guía de Remisión – Remitente tiene " + NroFilas.ToString + " UBIGEO(s)"
@@ -53,7 +58,7 @@ Public Class frmListarUbigeo
     Private Sub dgvlista_CellLeave1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellLeave
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If rbdepartamento.Checked = True And e.ColumnIndex = 4 Then
             e.CellStyle.BackColor = Color.LightCyan
         ElseIf rbprovincia.Checked = True And e.ColumnIndex = 3 Then
@@ -99,16 +104,29 @@ Public Class frmListarUbigeo
     End Sub
 
     Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
-        Dim criterio As String = txtbusca.Text.Trim
+        'Dim criterio As String = txtbusca.Text.Trim
         ' Dim indice As Integer = rbdepartamento.Checked = True
         If rbdepartamento.Checked = True Then
-            'Me.txtbusca.Focus()
-            lista(1, txtbusca.Text)
+            CadenaBuscar = "departamento like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            ''Me.txtbusca.Focus()
+            'lista(1, txtbusca.Text)
         ElseIf rbprovincia.Checked = True Then
-            ' Me.txtbusca.Focus()
-            lista(2, txtbusca.Text)
+            CadenaBuscar = "provincia like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            ''Me.txtbusca.Focus()
+            'lista(2, txtbusca.Text)
         ElseIf rbdistrito.Checked = True Then
-            lista(3, txtbusca.Text)
+            CadenaBuscar = "distrito like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            ''Me.txtbusca.Focus()
+            'lista(3, txtbusca.Text)
             'Me.txtbusca.Focus()
         End If
     End Sub

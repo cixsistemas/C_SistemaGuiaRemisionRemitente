@@ -166,42 +166,42 @@
 
         ok = nombre.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Nombre por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nombre por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nombre.Focus()
             Exit Sub
         End If
 
         ok = txtTelefono.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Telefono por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Telefono por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtTelefono.Focus()
             Exit Sub
         End If
 
         ok = txtDireccion.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Direccion por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Direccion por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtDireccion.Focus()
             Exit Sub
         End If
 
         ok = id_Zona <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Zona.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Zona.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnZona.Focus()
             Exit Sub
         End If
 
         ok = id_tipo_Dcto <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Tipo de Documento.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Tipo de Documento.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnTipo_Dcto.Focus()
             Exit Sub
         End If
 
         ok = nro_doc.Text <> ""
         If (ok = False) Then
-            MessageBox.Show("Ingrese Nro. de Documento favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Nro. de Documento favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             nro_doc.Focus()
             Exit Sub
         End If
@@ -211,7 +211,7 @@
 
         'Aceptar = True
         'Hide()
-        If MessageBox.Show("¿DESEA " + IIf(Nivel = "N", "GUARDAR ", "MODIFICAR ") + " Comisionista?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¿DESEA " + IIf(Nivel = "N", "GUARDAR ", "MODIFICAR ") + " Comisionista?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim servidor As New clinicapacifico.clsaccesodatos
             servidor.cadenaconexion = Ruta
             If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
@@ -235,17 +235,17 @@
                 If RPTA_DOC > 0 Then
                     servidor.cerrarconexiontrans()
                     __mesajeerror = MSG_DOC
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Hide()
                 Else
                     servidor.cancelarconexiontrans()
                     __mesajeerror = MSG_DOC
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
             Else
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexiontrans()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
@@ -253,7 +253,7 @@
 
     Private Sub btnZona_Leave(sender As Object, e As EventArgs) Handles btnZona.Leave
         If txtZona.Text = "" Then
-            MessageBox.Show("Busque o Seleccione Zona por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Busque o Seleccione Zona por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnZona.Focus()
         End If
     End Sub
@@ -261,7 +261,7 @@
 
     Private Sub btnTipo_Dcto_Leave(sender As Object, e As EventArgs) Handles btnTipo_Dcto.Leave
         If txtTipo_Dcto.Text = "" Then
-            MessageBox.Show("Busque o Seleccione Tipo de documento por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Busque o Seleccione Tipo de documento por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnTipo_Dcto.Focus()
         End If
     End Sub

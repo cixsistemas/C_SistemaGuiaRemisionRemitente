@@ -1,7 +1,8 @@
 Public Class FrmListarProducto
     Private formulario As New frmproducto
     Dim tabla_producto As DataTable = Nothing
-
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
     Public Sub lista(ByVal opcion As Integer, ByVal criterio As String)
         LBF2.ForeColor = Color.Red
         LBF3.ForeColor = Color.Red
@@ -20,27 +21,31 @@ Public Class FrmListarProducto
             End If
             If tabla_producto Is Nothing Then
                 servidor.cerrarconexion()
-                mesajeerror.Text = "NO HAY PRODUCTOS PARA MOSTRAR"
+                mesajeerror.Text = "NO HAY REGISTROS PARA MOSTRAR"
                 mesajeerror.ForeColor = Color.Red
             Else
                 dgvlista.DataSource = tabla_producto
                 Dim NroFilas As Integer = tabla_producto.Rows.Count
                 If NroFilas = 0 Then
                     dgvlista.DataSource = Nothing
-                    mesajeerror.Text = "NO HAY PRODUCTOS PARA MOSTRAR"
+                    mesajeerror.Text = "NO HAY REGISTROS PARA MOSTRAR"
                     mesajeerror.ForeColor = Color.Red
                 Else
+                    'AGREGADO EL DIA 13-04-2022
+                    Dv.Table = tabla_producto ' Enlazamos el dataview con la tabla devuelta
+                    ''=======================================================
                     dgvlista.Columns("ID").Visible = False
                     dgvlista.Columns("Productox").Visible = False
                     dgvlista.Columns("Id Logo").Visible = False
-                    mesajeerror.Text = "Guía de Remisión – Remitente tiene " + NroFilas.ToString + " Producto(S)"
+                    dgvlista.Columns("productoSinDetalle").Visible = False
+                    mesajeerror.Text = "Sistema tiene " + NroFilas.ToString + " registro(S)"
                 End If
                 servidor.cerrarconexion()
             End If
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
     Private Sub activa(ByVal estado As Boolean)
@@ -87,8 +92,6 @@ Public Class FrmListarProducto
             RbTodos.Checked = True
         End If
     End Sub
-
-
     Private Sub FrmListarProductos_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         ' Me.cbobusca.SelectedIndex = 0
@@ -112,12 +115,6 @@ Public Class FrmListarProducto
     Private Sub dgvlista_CellLeave1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellLeave
         indice = e.RowIndex
     End Sub
-    'Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Leave
-    '    Me.txtbusca.BackColor = Color.White
-    'End Sub
-    'Private Sub txtbusca_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtbusca.Enter
-    '    Me.txtbusca.BackColor = Color.Moccasin
-    'End Sub
     Private Sub RbTodos_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RbTodos.CheckedChanged
         txtbusca.Text = ""
         'Me.txtbusca.Focus()
@@ -156,18 +153,47 @@ Public Class FrmListarProducto
         Dim criterio As String = txtbusca.Text.Trim
 
         If rbProducto.Checked = True Then
-            lista(1, txtbusca.Text)
+            CadenaBuscar = "producto like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(1, txtbusca.Text)
         ElseIf RbNom_Com.Checked = True Then
-            lista(2, txtbusca.Text)
+            CadenaBuscar = "Comercial like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            ' lista(2, txtbusca.Text)
         ElseIf rbcolor.Checked = True Then
-            lista(3, txtbusca.Text)
+            CadenaBuscar = "Color like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(3, txtbusca.Text)
         ElseIf rbcat.Checked = True Then
-            lista(4, txtbusca.Text)
+            CadenaBuscar = "categoria like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(4, txtbusca.Text)
         ElseIf Rblogo.Checked = True Then
-            lista(5, txtbusca.Text)
+            CadenaBuscar = "logotipo like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(5, txtbusca.Text)
         ElseIf Rbenvase.Checked = True Then
-            lista(6, txtbusca.Text)
+            CadenaBuscar = "envasado like '%" + txtbusca.Text.Trim + "%'"
+            Dv.RowFilter = CadenaBuscar
+            dgvlista.DataSource = Dv
+            dgvlista.Update()
+            'lista(6, txtbusca.Text)
         ElseIf RbTodos.Checked = True Then
+            txtbusca.Text = ""
+            ''CadenaBuscar = "producto like '%" + txtbusca.Text.Trim + "%'"
+            ''Dv.RowFilter = CadenaBuscar
+            ''dgvlista.DataSource = Dv
+            ''dgvlista.Update()
             lista(7, txtbusca.Text)
 
         End If
@@ -199,7 +225,6 @@ Public Class FrmListarProducto
         formulario.lista_categoria(8)
         ' Me.formulario.lista_logotipo(9)
         formulario.lista_envasado(10)
-
         formulario.ShowDialog()
     End Sub
 End Class

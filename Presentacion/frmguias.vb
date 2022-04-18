@@ -13,7 +13,7 @@ Public Class frmguias
             If tabla_detalle_guias Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_detalle_guias.Rows.Count
                 If NroFilas = 0 Then
@@ -74,7 +74,7 @@ Public Class frmguias
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         'Me.dgvdetalle.Columns("cantidad")
@@ -139,7 +139,7 @@ Public Class frmguias
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
 
@@ -181,7 +181,7 @@ Public Class frmguias
         formulario.ShowDialog() 'presentamos formulario.
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no guardar programación médica.
-            If MessageBox.Show("¿Desea guardar Guía de Remisión-Remitente?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar Guía de Remisión-Remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 ' asignamos ruta coneccion con el servidor de la base de datos
                 servidor.cadenaconexion = Ruta
@@ -227,38 +227,38 @@ Public Class frmguias
                         Dim mensajeham As String = ""
                         For i As Integer = 0 To formulario.Detalle.Rows.Count - 1
                             servidor.ejecutar("[dbo].[pa_mantenimiento_detalle_guia]",
-                                                                                False,
-                                                                                rptaham,
-                                                                                mensajeham,
-                                                                                Nothing,
-                                                                                rpta,
-                                                                                CInt(formulario.Detalle.Item("id_prod", i).Value),
-                                                                                CInt(formulario.Detalle.Item("sacos_cantidad", i).Value),
-                                                                                CStr(formulario.Detalle.Item("unidad_medida", i).Value),
-                                                                                CDbl(formulario.Detalle.Item("x", i).Value),
-                                                                                CDbl(formulario.Detalle.Item("Precio_Venta", i).Value),
-                                                                                CDbl(formulario.Detalle.Item("IGV", i).Value),
-                                                                                "N",
-                                                                                0, "")
+                                            False,
+                                            rptaham,
+                                            mensajeham,
+                                            Nothing,
+                                            rpta,
+                                            CInt(formulario.Detalle.Item("id_prod", i).Value),
+                                            CInt(formulario.Detalle.Item("sacos_cantidad", i).Value),
+                                            CStr(formulario.Detalle.Item("unidad_medida", i).Value),
+                                            CDbl(formulario.Detalle.Item("x", i).Value),
+                                            CDbl(formulario.Detalle.Item("Precio_Venta", i).Value),
+                                            CDbl(formulario.Detalle.Item("IGV", i).Value),
+                                            "N",
+                                            0, "")
 
                         Next
 
                         If rptaham = 0 Then
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensajeham
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             Exit Sub
                         End If
 
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -322,7 +322,7 @@ Public Class frmguias
 
     Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
         If (indice = -1) Then
-            MessageBox.Show("Seleccione Guía de Remisión", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Guía de Remisión", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -456,7 +456,7 @@ Public Class frmguias
         formulario.ShowDialog()
         If formulario.Aceptar = True Then
             'preguntamos si el usuario quiere o no.
-            If MessageBox.Show("¿Desea guardar Guía de Remisión?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea guardar Guía de Remisión?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 ' asignamos ruta coneccion con el servidor de la base de datos
                 servidor.cadenaconexion = Ruta
@@ -521,19 +521,19 @@ Public Class frmguias
                         If rptaham = 0 Then
                             servidor.cancelarconexiontrans()
                             __mesajeerror = mensajeham
-                            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             Exit Sub
                         End If
 
                         servidor.cerrarconexiontrans()
                         __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End If
@@ -598,9 +598,9 @@ Public Class frmguias
 
     Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvdetalle) = False Then
-            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            If MessageBox.Show("¿Desea eliminar el detalle de los bienes?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea eliminar el detalle de los bienes?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then
@@ -629,19 +629,19 @@ Public Class frmguias
                         __mesajeerror = mensaje
                         'Me.__mensaje.Value = __mesajeerror
                         'Me.__pagina.Value = "listapersonas.aspx"
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
                         'Me.__pagina.Value = "listapersonas.aspx"
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     'Me.mesajeerror.Text = __mesajeerror
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
 
@@ -689,7 +689,7 @@ Public Class frmguias
 
     End Sub
 
-    Private Sub dgvdetalle_RowsAdded1(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
+    Private Sub dgvdetalle_RowsAdded1(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
         ' Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
@@ -721,7 +721,7 @@ Public Class frmguias
 
     End Sub
 
-    Private Sub dgvlista_CellFormatting1(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting1(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightYellow
         End If

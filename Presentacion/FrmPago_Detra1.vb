@@ -31,14 +31,14 @@
     Private Sub btnAgregar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAgregar.Click
 
         If operacion = "" Then
-            MessageBox.Show("Seleccione nuevo ó editar.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione nuevo ó editar.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
         Dim ok As Boolean
         ok = id_CATEGORIA <> -1
         If ok = False Then
-            MessageBox.Show("Haga click en buscar Categoria.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga click en buscar Categoria.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             ' btnnuevo_examen.Focus()
             btnCategoria.Focus()
             Exit Sub
@@ -46,14 +46,14 @@
 
         ok = txtprecio.Text.Trim <> "" And Val(txtprecio.Text.Trim) > 0
         If ok = False Then
-            MessageBox.Show("Ingrese Precio.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Precio.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtprecio.Focus()
             Exit Sub
         End If
 
         ok = cantidad_sacos.Text.Trim <> "" And Val(cantidad_sacos.Text.Trim) > 0
         If ok = False Then
-            MessageBox.Show("Ingrese Cantidad sacos Producto.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Cantidad sacos Producto.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             cantidad_sacos.Focus()
             Exit Sub
         End If
@@ -179,7 +179,7 @@
 
         ok = Detalle_Cat.Rows.Count <> 0
         If (ok = False) Then
-            MessageBox.Show("Seleccione Categorias por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Categorias por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnnuevo_examen.Focus()
             Exit Sub
         End If
@@ -192,7 +192,7 @@
         INDICE2 = e.RowIndex
     End Sub
 
-    Private Sub Detalle_Cat_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles Detalle_Cat.RowsAdded
+    Private Sub Detalle_Cat_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles Detalle_Cat.RowsAdded
         btnquitar_hpm.Enabled = CBool(IIf(Detalle_Cat.Rows.Count > 0, True, False))
         btneditar_hpm.Enabled = CBool(IIf(Detalle_Cat.Rows.Count > 0, True, False))
     End Sub
@@ -234,7 +234,7 @@
             operacion = "M"
         Catch ex As Exception
             If indice = -1 Then
-                MessageBox.Show("Seleccione Categoria para editarlo", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("Seleccione Categoria para editarlo", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
             End If
         End Try
@@ -243,7 +243,7 @@
     End Sub
     Private Sub btnquitar_hpm_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnquitar_hpm.Click
         If check_fila_grilla(Detalle_Cat) = False Then
-            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             quitar_fila_grilla(Detalle_Cat, "Seleccionar", "Detalle de Guia no se puede quitar. Solo se pueden quitar elementos agregados recientemente.")
         End If

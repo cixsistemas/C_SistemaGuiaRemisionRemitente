@@ -98,21 +98,21 @@ Public Class frmunidadtransporte
         Dim okk As Boolean
         okk = Peso_neto1.Text.Trim <> ""
         If (okk = False) Then
-            MessageBox.Show("Ingrese Peso Neto de Remolque, 0 mayor que 0 por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Peso Neto de Remolque, 0 mayor que 0 por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Peso_neto1.Focus()
             Exit Sub
         End If
 
         okk = peso_neto2.Text.Trim <> ""
         If (okk = False) Then
-            MessageBox.Show("Ingrese Peso Neto de Semi-Remolque, 0 mayor que 0 por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Peso Neto de Semi-Remolque, 0 mayor que 0 por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             peso_neto2.Focus()
             Exit Sub
         End If
 
         okk = Peso_Bonif.Text.Trim <> ""
         If (okk = False) Then
-            MessageBox.Show("Ingrese Peso Bonificacion, 0 mayor que 0 por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ingrese Peso Bonificacion, 0 mayor que 0 por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Peso_Bonif.Focus()
             Exit Sub
         End If

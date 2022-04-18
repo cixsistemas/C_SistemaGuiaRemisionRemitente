@@ -19,7 +19,7 @@
         Dim ok As Boolean
         ok = Id_guia <> -1
         If (ok = False) Then
-            MessageBox.Show("Seleccione Guia de Remision-Remitente por favor.", "Guía de remisión", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Guia de Remision-Remitente por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             btnGuia.Focus()
             Exit Sub
         End If

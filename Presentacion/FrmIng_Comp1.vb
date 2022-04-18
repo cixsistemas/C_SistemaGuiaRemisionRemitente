@@ -30,7 +30,7 @@ Public Class FrmIng_Comp1
             If tabla_Ing_Comp Is Nothing Then
                 __mesajeerror = servidor.getMensageError
                 servidor.cerrarconexion()
-                MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 Dim NroFilas As Integer = tabla_Ing_Comp.Rows.Count
                 If NroFilas = 0 Then
@@ -72,7 +72,7 @@ Public Class FrmIng_Comp1
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
 
@@ -126,7 +126,7 @@ Public Class FrmIng_Comp1
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         'Me.dgvdetalle.Columns("cantidad")
@@ -164,7 +164,7 @@ Public Class FrmIng_Comp1
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 1 Then
             e.CellStyle.BackColor = Color.LightYellow
         End If
@@ -173,7 +173,7 @@ Public Class FrmIng_Comp1
    
 
     
-    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvlistaDetalle.RowsAdded
+    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvlistaDetalle.RowsAdded
         BtnModificar.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
         btnEliminar.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False))
         ' Me.btnImprimir.Enabled = CBool(IIf(dgvlistaDetalle.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
@@ -209,7 +209,7 @@ Public Class FrmIng_Comp1
     End Sub
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If indice = -1 Then
-            MessageBox.Show("Seleccione Ingreso de Comprobantes de Pago por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Ingreso de Comprobantes de Pago por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
@@ -259,7 +259,7 @@ Public Class FrmIng_Comp1
             dgvlistaDetalle.DataSource = Nothing
             listar_Ing_Comp("", "", "", "")
         Catch ex As Exception
-            MessageBox.Show("Seleccione Ingreso de Comprobantes de Pago por favor.", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Ingreso de Comprobantes de Pago por favor.", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             dgvlistaDetalle.DataSource = Nothing
         End Try
 
@@ -275,9 +275,9 @@ Public Class FrmIng_Comp1
     End Sub
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If check_fila_grilla(dgvlistaDetalle) = False Then
-            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Haga check en la columna Seleccionar por favor", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            If MessageBox.Show("¿Desea eliminar el detalle de los bienes?", "Guía de Remisión – Remitente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("¿Desea eliminar el detalle de los bienes?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim servidor As New clinicapacifico.clsaccesodatos
                 servidor.cadenaconexion = Ruta
                 If servidor.abrirconexiontrans = True Then
@@ -303,19 +303,19 @@ Public Class FrmIng_Comp1
                         __mesajeerror = mensaje
                         'Me.__mensaje.Value = __mesajeerror
                         'Me.__pagina.Value = "listapersonas.aspx"
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         servidor.cancelarconexiontrans()
                         __mesajeerror = mensaje
                         'Me.__pagina.Value = "listapersonas.aspx"
-                        MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
 
                 Else
                     __mesajeerror = servidor.getMensageError
                     'Me.mesajeerror.Text = __mesajeerror
                     servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
 
@@ -364,7 +364,7 @@ Public Class FrmIng_Comp1
             'Me.btnConsultar.Focus()
             'Me.TxtRemitente.BackColor = Color.Azure
         Catch ex As Exception
-            MessageBox.Show("Seleccione Empresa a Buscar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Empresa a Buscar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
        
     End Sub
@@ -379,7 +379,7 @@ Public Class FrmIng_Comp1
             f.ShowDialog()
             TxtTipo_Comp.Text = CStr(f.dgvlista.Item("Tipo de Comprobante", indice).Value.ToString.Trim)
         Catch ex As Exception
-            MessageBox.Show("Seleccione Tipo de Comprobante a Buscar", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Tipo de Comprobante a Buscar", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
     End Sub
 
@@ -397,7 +397,7 @@ Public Class FrmIng_Comp1
         'End If
 
     End Sub
-    Private Sub dgvlistaDetalle_CellFormatting(sender As Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlistaDetalle.CellFormatting
+    Private Sub dgvlistaDetalle_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvlistaDetalle.CellFormatting
         Try
             If e.ColumnIndex = 4 Then
                 Select Case e.Value

@@ -33,7 +33,7 @@ Public Class FrmTipo_Comp_1
         Else
             __mesajeerror = servidor.getMensageError
             servidor.cerrarconexion()
-            MessageBox.Show(__mesajeerror, "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
     Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
@@ -63,12 +63,12 @@ Public Class FrmTipo_Comp_1
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
-    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+    Private Sub dgvlista_CellFormatting(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
         If e.ColumnIndex = 2 Then
             e.CellStyle.BackColor = Color.LightYellow
         End If
     End Sub
-    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
+    Private Sub dgvlista_RowsAdded(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvlista.RowsAdded
         BtnModificar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
         btnEliminar.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False))
         btnImprimir.Enabled = CBool(IIf(dgvlista.Rows.Count > 0, True, False)) ': mesajeerror.Text = ""
@@ -112,7 +112,7 @@ Public Class FrmTipo_Comp_1
 
 
         If (indice = -1) Then
-            MessageBox.Show("Seleccione Tipo de Comprobante de Pago", "Guía de Remisión – Remitente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Seleccione Tipo de Comprobante de Pago", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
 
