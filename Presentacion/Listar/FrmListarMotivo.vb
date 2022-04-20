@@ -1,7 +1,8 @@
 Public Class FrmListarMotivo
     Dim tabla_MotivoTras As DataTable
     'Private formulario As New frmdestinatario1
-
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el Filtrado
     Public Sub lista(ByVal criterio As String)
         LBF2.ForeColor = Color.Red
         mesajeerror.ForeColor = Color.Blue
@@ -16,6 +17,9 @@ Public Class FrmListarMotivo
                 mesajeerror.Text = "NO HAY MOTIVOS DE TRASLADO PARA MOSTRAR"
                 mesajeerror.ForeColor = Color.Red
             Else
+                'AGREGADO EL DIA 13-04-2022
+                Dv.Table = tabla_MotivoTras ' Enlazamos el dataview con la tabla devuelta
+                ''=======================================================
                 dgvlista.DataSource = tabla_MotivoTras
                 Dim NroFilas As Integer = tabla_MotivoTras.Rows.Count
                 If NroFilas = 0 Then
@@ -85,7 +89,11 @@ Public Class FrmListarMotivo
         lista(Nothing)
     End Sub
     Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
-        lista(txtbusca.Text)
+        CadenaBuscar = "nombre like '%" + txtbusca.Text.Trim + "%'"
+        Dv.RowFilter = CadenaBuscar
+        dgvlista.DataSource = Dv
+        dgvlista.Update()
+        'lista(txtbusca.Text)
     End Sub
 
     Private Sub txtbusca_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles txtbusca.KeyDown
