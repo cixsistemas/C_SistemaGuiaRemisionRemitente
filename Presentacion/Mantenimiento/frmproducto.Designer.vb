@@ -46,11 +46,11 @@ Partial Class frmproducto
         '
         'Label1
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(19, 11)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1231, 28)
+        Me.Label1.Size = New System.Drawing.Size(976, 28)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ingrese Datos del Producto"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -72,9 +72,9 @@ Partial Class frmproducto
         Me.prod_nom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.prod_nom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.prod_nom.Location = New System.Drawing.Point(19, 91)
-        Me.prod_nom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.prod_nom.Margin = New System.Windows.Forms.Padding(4)
         Me.prod_nom.Name = "prod_nom"
-        Me.prod_nom.Size = New System.Drawing.Size(1230, 24)
+        Me.prod_nom.Size = New System.Drawing.Size(976, 24)
         Me.prod_nom.TabIndex = 0
         '
         'lblPeso
@@ -93,7 +93,7 @@ Partial Class frmproducto
         Me.prod_peso_uni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.prod_peso_uni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.prod_peso_uni.Location = New System.Drawing.Point(23, 148)
-        Me.prod_peso_uni.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.prod_peso_uni.Margin = New System.Windows.Forms.Padding(4)
         Me.prod_peso_uni.Name = "prod_peso_uni"
         Me.prod_peso_uni.Size = New System.Drawing.Size(242, 24)
         Me.prod_peso_uni.TabIndex = 2
@@ -105,9 +105,9 @@ Partial Class frmproducto
         Me.prod_color.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.prod_color.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.prod_color.Location = New System.Drawing.Point(643, 214)
-        Me.prod_color.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.prod_color.Margin = New System.Windows.Forms.Padding(4)
         Me.prod_color.Name = "prod_color"
-        Me.prod_color.Size = New System.Drawing.Size(529, 24)
+        Me.prod_color.Size = New System.Drawing.Size(287, 24)
         Me.prod_color.TabIndex = 6
         '
         'lblColor
@@ -139,7 +139,7 @@ Partial Class frmproducto
         Me.cbocategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbocategoria.FormattingEnabled = True
         Me.cbocategoria.Location = New System.Drawing.Point(21, 214)
-        Me.cbocategoria.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbocategoria.Margin = New System.Windows.Forms.Padding(4)
         Me.cbocategoria.Name = "cbocategoria"
         Me.cbocategoria.Size = New System.Drawing.Size(243, 26)
         Me.cbocategoria.TabIndex = 4
@@ -162,7 +162,7 @@ Partial Class frmproducto
         Me.cboenvasado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboenvasado.FormattingEnabled = True
         Me.cboenvasado.Location = New System.Drawing.Point(301, 214)
-        Me.cboenvasado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboenvasado.Margin = New System.Windows.Forms.Padding(4)
         Me.cboenvasado.Name = "cboenvasado"
         Me.cboenvasado.Size = New System.Drawing.Size(331, 26)
         Me.cboenvasado.TabIndex = 5
@@ -186,8 +186,8 @@ Partial Class frmproducto
         Me.btnaceptar.ForeColor = System.Drawing.Color.Blue
         Me.btnaceptar.Image = CType(resources.GetObject("btnaceptar.Image"), System.Drawing.Image)
         Me.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnaceptar.Location = New System.Drawing.Point(931, 257)
-        Me.btnaceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnaceptar.Location = New System.Drawing.Point(676, 254)
+        Me.btnaceptar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnaceptar.Name = "btnaceptar"
         Me.btnaceptar.Size = New System.Drawing.Size(151, 62)
         Me.btnaceptar.TabIndex = 8
@@ -203,8 +203,8 @@ Partial Class frmproducto
         Me.btncancelar.ForeColor = System.Drawing.Color.Blue
         Me.btncancelar.Image = CType(resources.GetObject("btncancelar.Image"), System.Drawing.Image)
         Me.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btncancelar.Location = New System.Drawing.Point(1089, 257)
-        Me.btncancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btncancelar.Location = New System.Drawing.Point(834, 254)
+        Me.btncancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(161, 62)
         Me.btncancelar.TabIndex = 9
@@ -217,8 +217,8 @@ Partial Class frmproducto
         Me.btnlogotipo.BackColor = System.Drawing.Color.Gainsboro
         Me.btnlogotipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlogotipo.Image = CType(resources.GetObject("btnlogotipo.Image"), System.Drawing.Image)
-        Me.btnlogotipo.Location = New System.Drawing.Point(1192, 124)
-        Me.btnlogotipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnlogotipo.Location = New System.Drawing.Point(938, 124)
+        Me.btnlogotipo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnlogotipo.Name = "btnlogotipo"
         Me.btnlogotipo.Size = New System.Drawing.Size(57, 49)
         Me.btnlogotipo.TabIndex = 3
@@ -231,9 +231,9 @@ Partial Class frmproducto
         Me.txtlogotipo.Enabled = False
         Me.txtlogotipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtlogotipo.Location = New System.Drawing.Point(305, 148)
-        Me.txtlogotipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtlogotipo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtlogotipo.Name = "txtlogotipo"
-        Me.txtlogotipo.Size = New System.Drawing.Size(871, 24)
+        Me.txtlogotipo.Size = New System.Drawing.Size(625, 24)
         Me.txtlogotipo.TabIndex = 13
         Me.txtlogotipo.Text = "."
         '
@@ -243,7 +243,7 @@ Partial Class frmproducto
         Me.Nombre_Com.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Nombre_Com.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Nombre_Com.Location = New System.Drawing.Point(19, 282)
-        Me.Nombre_Com.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Nombre_Com.Margin = New System.Windows.Forms.Padding(4)
         Me.Nombre_Com.MaxLength = 150
         Me.Nombre_Com.Name = "Nombre_Com"
         Me.Nombre_Com.Size = New System.Drawing.Size(434, 24)
@@ -268,7 +268,7 @@ Partial Class frmproducto
         Me.cbProdSinDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProdSinDetalle.ForeColor = System.Drawing.Color.Red
         Me.cbProdSinDetalle.Location = New System.Drawing.Point(19, 36)
-        Me.cbProdSinDetalle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbProdSinDetalle.Margin = New System.Windows.Forms.Padding(4)
         Me.cbProdSinDetalle.Name = "cbProdSinDetalle"
         Me.cbProdSinDetalle.Size = New System.Drawing.Size(180, 22)
         Me.cbProdSinDetalle.TabIndex = 15
@@ -280,7 +280,7 @@ Partial Class frmproducto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
-        Me.ClientSize = New System.Drawing.Size(1267, 329)
+        Me.ClientSize = New System.Drawing.Size(1020, 329)
         Me.Controls.Add(Me.cbProdSinDetalle)
         Me.Controls.Add(Me.Nombre_Com)
         Me.Controls.Add(Me.lblNombreComercial)
@@ -303,7 +303,7 @@ Partial Class frmproducto
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmproducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
