@@ -137,6 +137,7 @@
     <Compile Include="Acercarde.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Clases\CsSunat.vb" />
     <Compile Include="Mantenimiento\frmmdestinario1.Designer.vb">
       <DependentUpon>frmmdestinario1.vb</DependentUpon>
