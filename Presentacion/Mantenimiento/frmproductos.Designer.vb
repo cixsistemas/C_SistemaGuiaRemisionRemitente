@@ -23,14 +23,15 @@ Partial Class frmproductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmproductos))
         Me.Highlighter1 = New DevComponents.DotNetBar.Validator.Highlighter()
         Me.txtbusca = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.StyleManager1 = New DevComponents.DotNetBar.StyleManager(Me.components)
         Me.gbob = New System.Windows.Forms.GroupBox()
+        Me.cbActivo = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.LbF8 = New DevComponents.DotNetBar.LabelX()
         Me.LBF7 = New DevComponents.DotNetBar.LabelX()
         Me.LBF6 = New DevComponents.DotNetBar.LabelX()
@@ -48,7 +49,6 @@ Partial Class frmproductos
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.mesajeerror = New DevComponents.DotNetBar.LabelX()
         Me.dgvlista = New DevComponents.DotNetBar.Controls.DataGridViewX()
-        Me.cbActivo = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.btnAnular = New DevComponents.DotNetBar.ButtonX()
         Me.BtnCerrar = New DevComponents.DotNetBar.ButtonX()
         Me.btnImprimir = New DevComponents.DotNetBar.ButtonX()
@@ -113,6 +113,24 @@ Partial Class frmproductos
         Me.gbob.TabIndex = 2
         Me.gbob.TabStop = False
         Me.gbob.Text = "Seleccione opciones de busqueda:"
+        '
+        'cbActivo
+        '
+        Me.cbActivo.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
+        '
+        '
+        '
+        Me.cbActivo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.cbActivo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbActivo.ForeColor = System.Drawing.Color.Black
+        Me.Highlighter1.SetHighlightOnFocus(Me.cbActivo, True)
+        Me.cbActivo.Location = New System.Drawing.Point(837, 52)
+        Me.cbActivo.Name = "cbActivo"
+        Me.cbActivo.Size = New System.Drawing.Size(100, 23)
+        Me.cbActivo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.cbActivo.TabIndex = 237
+        Me.cbActivo.Text = "Activo"
+        Me.cbActivo.TextColor = System.Drawing.Color.Red
         '
         'LbF8
         '
@@ -383,53 +401,37 @@ Partial Class frmproductos
         '
         Me.dgvlista.AllowUserToAddRows = False
         Me.dgvlista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvlista.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvlista.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvlista.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvlista.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlista.EnableHeadersVisualStyles = False
         Me.dgvlista.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dgvlista.Location = New System.Drawing.Point(12, 105)
         Me.dgvlista.Name = "dgvlista"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvlista.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvlista.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvlista.Size = New System.Drawing.Size(960, 317)
         Me.dgvlista.TabIndex = 178
-        '
-        'cbActivo
-        '
-        Me.cbActivo.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
-        '
-        '
-        '
-        Me.cbActivo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.cbActivo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbActivo.ForeColor = System.Drawing.Color.Black
-        Me.cbActivo.Location = New System.Drawing.Point(837, 52)
-        Me.cbActivo.Name = "cbActivo"
-        Me.cbActivo.Size = New System.Drawing.Size(100, 23)
-        Me.cbActivo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.cbActivo.TabIndex = 237
-        Me.cbActivo.Text = "Activo"
         '
         'btnAnular
         '
