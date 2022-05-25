@@ -1654,8 +1654,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitattributes" />
-    <Content Include=".gitignore" />
     <Content Include="Imagenes\aceptar.ico" />
     <Content Include="Imagenes\ACTUALIZAR.ico" />
     <Content Include="Imagenes\ayuda.jpg" />
