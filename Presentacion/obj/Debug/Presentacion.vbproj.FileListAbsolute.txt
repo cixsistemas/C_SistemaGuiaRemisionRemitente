@@ -837,3 +837,4 @@ E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_Sis
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Guia de Remision-Remitente.exe
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Guia de Remision-Remitente.xml
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Guia de Remision-Remitente.pdb
+E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Presentacion.vbprojResolveAssemblyReference.cache

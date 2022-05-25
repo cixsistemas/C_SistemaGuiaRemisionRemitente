@@ -51,37 +51,35 @@ Partial Class FrmRepCont_Gui_FT
         '
         'txtRemitente
         '
-        Me.txtRemitente.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.txtRemitente.Border.Class = "TextBoxBorder"
         Me.txtRemitente.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtRemitente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtRemitente.DisabledBackColor = System.Drawing.Color.White
         Me.txtRemitente.Enabled = False
-        Me.txtRemitente.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.txtRemitente, True)
         Me.txtRemitente.Location = New System.Drawing.Point(335, 52)
         Me.txtRemitente.MaxLength = 100
         Me.txtRemitente.Name = "txtRemitente"
-        Me.txtRemitente.Size = New System.Drawing.Size(199, 22)
+        Me.txtRemitente.Size = New System.Drawing.Size(199, 26)
         Me.txtRemitente.TabIndex = 188
         '
         'txtnro_Guia
         '
-        Me.txtnro_Guia.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.txtnro_Guia.Border.Class = "TextBoxBorder"
         Me.txtnro_Guia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtnro_Guia.DisabledBackColor = System.Drawing.Color.White
         Me.txtnro_Guia.Enabled = False
-        Me.txtnro_Guia.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.txtnro_Guia, True)
         Me.txtnro_Guia.Location = New System.Drawing.Point(233, 52)
         Me.txtnro_Guia.MaxLength = 7
         Me.txtnro_Guia.Name = "txtnro_Guia"
-        Me.txtnro_Guia.Size = New System.Drawing.Size(83, 22)
+        Me.txtnro_Guia.Size = New System.Drawing.Size(83, 26)
         Me.txtnro_Guia.TabIndex = 192
         '
         'cbNro_Guia
@@ -145,7 +143,7 @@ Partial Class FrmRepCont_Gui_FT
         Me.dtpff.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpff.Location = New System.Drawing.Point(118, 53)
         Me.dtpff.Name = "dtpff"
-        Me.dtpff.Size = New System.Drawing.Size(99, 21)
+        Me.dtpff.Size = New System.Drawing.Size(99, 24)
         Me.dtpff.TabIndex = 185
         '
         'Label2
@@ -156,7 +154,7 @@ Partial Class FrmRepCont_Gui_FT
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(115, 36)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 15)
+        Me.Label2.Size = New System.Drawing.Size(68, 18)
         Me.Label2.TabIndex = 191
         Me.Label2.Text = "Fecha fin"
         '
@@ -169,7 +167,7 @@ Partial Class FrmRepCont_Gui_FT
         Me.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfin.Location = New System.Drawing.Point(12, 53)
         Me.dtpfin.Name = "dtpfin"
-        Me.dtpfin.Size = New System.Drawing.Size(99, 21)
+        Me.dtpfin.Size = New System.Drawing.Size(99, 24)
         Me.dtpfin.TabIndex = 184
         Me.dtpfin.Value = New Date(2014, 12, 1, 0, 0, 0, 0)
         '
@@ -181,7 +179,7 @@ Partial Class FrmRepCont_Gui_FT
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(12, 36)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 15)
+        Me.Label1.Size = New System.Drawing.Size(87, 18)
         Me.Label1.TabIndex = 190
         Me.Label1.Text = "Fecha inicio"
         '
@@ -193,7 +191,7 @@ Partial Class FrmRepCont_Gui_FT
         Me.cbFecha.ForeColor = System.Drawing.Color.Black
         Me.cbFecha.Location = New System.Drawing.Point(12, 12)
         Me.cbFecha.Name = "cbFecha"
-        Me.cbFecha.Size = New System.Drawing.Size(125, 19)
+        Me.cbFecha.Size = New System.Drawing.Size(149, 22)
         Me.cbFecha.TabIndex = 183
         Me.cbFecha.Text = "Fecha de Emision"
         Me.cbFecha.UseVisualStyleBackColor = False
@@ -215,9 +213,9 @@ Partial Class FrmRepCont_Gui_FT
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvlista.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvlista.EnableHeadersVisualStyles = False
@@ -269,7 +267,7 @@ Partial Class FrmRepCont_Gui_FT
         '
         'FrmRepCont_Gui_FT
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 436)
         Me.Controls.Add(Me.btnImprimir)
@@ -287,6 +285,7 @@ Partial Class FrmRepCont_Gui_FT
         Me.Controls.Add(Me.cbFecha)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "FrmRepCont_Gui_FT"

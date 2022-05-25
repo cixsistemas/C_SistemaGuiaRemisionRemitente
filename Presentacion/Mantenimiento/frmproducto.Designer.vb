@@ -283,7 +283,7 @@ Partial Class frmproducto
         Me.cbActivoMant.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbActivoMant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbActivoMant.ForeColor = System.Drawing.Color.Red
-        Me.cbActivoMant.Location = New System.Drawing.Point(220, 36)
+        Me.cbActivoMant.Location = New System.Drawing.Point(248, 36)
         Me.cbActivoMant.Margin = New System.Windows.Forms.Padding(4)
         Me.cbActivoMant.Name = "cbActivoMant"
         Me.cbActivoMant.Size = New System.Drawing.Size(76, 22)

@@ -27,7 +27,17 @@ Guia de Remision-Remitente
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources.logo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.pdf">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.sunat">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

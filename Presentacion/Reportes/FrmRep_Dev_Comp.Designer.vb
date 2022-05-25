@@ -53,50 +53,47 @@ Partial Class FrmRep_Dev_Comp
         '
         'TxtTipo_Comp
         '
-        Me.TxtTipo_Comp.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.TxtTipo_Comp.Border.Class = "TextBoxBorder"
         Me.TxtTipo_Comp.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtTipo_Comp.DisabledBackColor = System.Drawing.Color.White
         Me.TxtTipo_Comp.Enabled = False
-        Me.TxtTipo_Comp.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.TxtTipo_Comp, True)
         Me.TxtTipo_Comp.Location = New System.Drawing.Point(635, 48)
         Me.TxtTipo_Comp.Name = "TxtTipo_Comp"
-        Me.TxtTipo_Comp.Size = New System.Drawing.Size(182, 22)
+        Me.TxtTipo_Comp.Size = New System.Drawing.Size(182, 26)
         Me.TxtTipo_Comp.TabIndex = 279
         '
         'TxtRemitente
         '
-        Me.TxtRemitente.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.TxtRemitente.Border.Class = "TextBoxBorder"
         Me.TxtRemitente.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtRemitente.DisabledBackColor = System.Drawing.Color.White
         Me.TxtRemitente.Enabled = False
-        Me.TxtRemitente.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.TxtRemitente, True)
         Me.TxtRemitente.Location = New System.Drawing.Point(416, 48)
         Me.TxtRemitente.Name = "TxtRemitente"
-        Me.TxtRemitente.Size = New System.Drawing.Size(203, 22)
+        Me.TxtRemitente.Size = New System.Drawing.Size(203, 26)
         Me.TxtRemitente.TabIndex = 277
         '
         'TxtComisionista
         '
-        Me.TxtComisionista.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.TxtComisionista.Border.Class = "TextBoxBorder"
         Me.TxtComisionista.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtComisionista.DisabledBackColor = System.Drawing.Color.White
         Me.TxtComisionista.Enabled = False
-        Me.TxtComisionista.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.TxtComisionista, True)
         Me.TxtComisionista.Location = New System.Drawing.Point(230, 48)
         Me.TxtComisionista.Name = "TxtComisionista"
-        Me.TxtComisionista.Size = New System.Drawing.Size(164, 22)
+        Me.TxtComisionista.Size = New System.Drawing.Size(164, 26)
         Me.TxtComisionista.TabIndex = 275
         '
         'StyleManager1
@@ -175,7 +172,7 @@ Partial Class FrmRep_Dev_Comp
         Me.dtpff.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpff.Location = New System.Drawing.Point(114, 49)
         Me.dtpff.Name = "dtpff"
-        Me.dtpff.Size = New System.Drawing.Size(99, 21)
+        Me.dtpff.Size = New System.Drawing.Size(99, 24)
         Me.dtpff.TabIndex = 271
         '
         'Label2
@@ -186,7 +183,7 @@ Partial Class FrmRep_Dev_Comp
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(111, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 15)
+        Me.Label2.Size = New System.Drawing.Size(68, 18)
         Me.Label2.TabIndex = 273
         Me.Label2.Text = "Fecha fin"
         '
@@ -199,7 +196,7 @@ Partial Class FrmRep_Dev_Comp
         Me.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfin.Location = New System.Drawing.Point(8, 49)
         Me.dtpfin.Name = "dtpfin"
-        Me.dtpfin.Size = New System.Drawing.Size(99, 21)
+        Me.dtpfin.Size = New System.Drawing.Size(99, 24)
         Me.dtpfin.TabIndex = 270
         Me.dtpfin.Value = New Date(2016, 12, 26, 0, 0, 0, 0)
         '
@@ -211,7 +208,7 @@ Partial Class FrmRep_Dev_Comp
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(8, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 15)
+        Me.Label1.Size = New System.Drawing.Size(87, 18)
         Me.Label1.TabIndex = 272
         Me.Label1.Text = "Fecha inicio"
         '
@@ -223,7 +220,7 @@ Partial Class FrmRep_Dev_Comp
         Me.cbFecha.ForeColor = System.Drawing.Color.Black
         Me.cbFecha.Location = New System.Drawing.Point(8, 8)
         Me.cbFecha.Name = "cbFecha"
-        Me.cbFecha.Size = New System.Drawing.Size(141, 19)
+        Me.cbFecha.Size = New System.Drawing.Size(169, 22)
         Me.cbFecha.TabIndex = 269
         Me.cbFecha.Text = "Fecha de Devolucion"
         Me.cbFecha.UseVisualStyleBackColor = False
@@ -299,7 +296,7 @@ Partial Class FrmRep_Dev_Comp
         '
         'FrmRep_Dev_Comp
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(974, 486)
         Me.Controls.Add(Me.btnImprimir)
@@ -319,6 +316,7 @@ Partial Class FrmRep_Dev_Comp
         Me.Controls.Add(Me.cbFecha)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "FrmRep_Dev_Comp"

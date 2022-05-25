@@ -137,6 +137,7 @@
     <Compile Include="Acercarde.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\CsSunat.vb" />
     <Compile Include="Mantenimiento\frmmdestinario1.Designer.vb">
       <DependentUpon>frmmdestinario1.vb</DependentUpon>
     </Compile>
@@ -225,40 +226,40 @@
     <Compile Include="Mantenimiento\FrmComisionista2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDev_Comp1.Designer.vb">
+    <Compile Include="Transacciones\FrmDev_Comp1.Designer.vb">
       <DependentUpon>FrmDev_Comp1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmDev_Comp1.vb">
+    <Compile Include="Transacciones\FrmDev_Comp1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDev_Comp2.Designer.vb">
+    <Compile Include="Transacciones\FrmDev_Comp2.Designer.vb">
       <DependentUpon>FrmDev_Comp2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmDev_Comp2.vb">
+    <Compile Include="Transacciones\FrmDev_Comp2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEnv_Comp1.Designer.vb">
+    <Compile Include="Transacciones\FrmEnv_Comp1.Designer.vb">
       <DependentUpon>FrmEnv_Comp1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmEnv_Comp1.vb">
+    <Compile Include="Transacciones\FrmEnv_Comp1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEnv_Comp2.Designer.vb">
+    <Compile Include="Transacciones\FrmEnv_Comp2.Designer.vb">
       <DependentUpon>FrmEnv_Comp2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmEnv_Comp2.vb">
+    <Compile Include="Transacciones\FrmEnv_Comp2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListarEnvioCompAct.Designer.vb">
+    <Compile Include="Listar\FrmListarEnvioCompAct.Designer.vb">
       <DependentUpon>FrmListarEnvioCompAct.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmListarEnvioCompAct.vb">
+    <Compile Include="Listar\FrmListarEnvioCompAct.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListarIngCompAct.Designer.vb">
+    <Compile Include="Listar\FrmListarIngCompAct.Designer.vb">
       <DependentUpon>FrmListarIngCompAct.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmListarIngCompAct.vb">
+    <Compile Include="Listar\FrmListarIngCompAct.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listar\FrmListar_Operacion_Sal.Designer.vb">
@@ -291,16 +292,16 @@
     <Compile Include="Listar\FrmListar_Tipo_Ope.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOperacion_1.Designer.vb">
+    <Compile Include="Mantenimiento\FrmOperacion_1.Designer.vb">
       <DependentUpon>FrmOperacion_1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmOperacion_1.vb">
+    <Compile Include="Mantenimiento\FrmOperacion_1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOperacion_2.designer.vb">
+    <Compile Include="Mantenimiento\FrmOperacion_2.designer.vb">
       <DependentUpon>FrmOperacion_2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmOperacion_2.vb">
+    <Compile Include="Mantenimiento\FrmOperacion_2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\FrmTipo_Dcto_1.Designer.vb">
@@ -339,16 +340,16 @@
     <Compile Include="FrmOpcImpPes_Med1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUbigeo1.Designer.vb">
+    <Compile Include="Mantenimiento\FrmUbigeo1.Designer.vb">
       <DependentUpon>FrmUbigeo1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmUbigeo1.vb">
+    <Compile Include="Mantenimiento\FrmUbigeo1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUbigeo2.designer.vb">
+    <Compile Include="Mantenimiento\FrmUbigeo2.designer.vb">
       <DependentUpon>FrmUbigeo2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmUbigeo2.vb">
+    <Compile Include="Mantenimiento\FrmUbigeo2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes %28Cr Report%29\CrPes_Med_Zelu.vb">
@@ -369,16 +370,16 @@
       <DependentUpon>crguiaremision_Molino.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FrmIng_Comp1.Designer.vb">
+    <Compile Include="Transacciones\FrmIng_Comp1.Designer.vb">
       <DependentUpon>FrmIng_Comp1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmIng_Comp1.vb">
+    <Compile Include="Transacciones\FrmIng_Comp1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIng_Comp2.Designer.vb">
+    <Compile Include="Transacciones\FrmIng_Comp2.Designer.vb">
       <DependentUpon>FrmIng_Comp2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmIng_Comp2.vb">
+    <Compile Include="Transacciones\FrmIng_Comp2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\FrmTipo_Comp_1.Designer.vb">
@@ -528,16 +529,16 @@
     <Compile Include="Mantenimiento\frmlemptransportes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNota_ArroZ2.Designer.vb">
+    <Compile Include="Transacciones\FrmNota_ArroZ2.Designer.vb">
       <DependentUpon>FrmNota_ArroZ2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmNota_ArroZ2.vb">
+    <Compile Include="Transacciones\FrmNota_ArroZ2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPago_Detra2.Designer.vb">
+    <Compile Include="Transacciones\FrmPago_Detra2.Designer.vb">
       <DependentUpon>FrmPago_Detra2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPago_Detra2.vb">
+    <Compile Include="Transacciones\FrmPago_Detra2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\frmunidadtransportes.Designer.vb">
@@ -564,10 +565,10 @@
     <Compile Include="Listar\FrmListarPagoDetrac.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPeso_Med2.Designer.vb">
+    <Compile Include="Transacciones\FrmPeso_Med2.Designer.vb">
       <DependentUpon>FrmPeso_Med2.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPeso_Med2.vb">
+    <Compile Include="Transacciones\FrmPeso_Med2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listar\FrmListarCat.Designer.vb">
@@ -699,10 +700,10 @@
     <Compile Include="Listar\frmListarUbigeo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPago_Detra1.Designer.vb">
+    <Compile Include="Transacciones\FrmPago_Detra1.Designer.vb">
       <DependentUpon>FrmPago_Detra1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPago_Detra1.vb">
+    <Compile Include="Transacciones\FrmPago_Detra1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes %28Cr Report%29\CrRemitente.vb">
@@ -725,10 +726,10 @@
       <DependentUpon>CrNota_Arroz.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FrmNota_ArroZ.Designer.vb">
+    <Compile Include="Transacciones\FrmNota_ArroZ.Designer.vb">
       <DependentUpon>FrmNota_ArroZ.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmNota_ArroZ.vb">
+    <Compile Include="Transacciones\FrmNota_ArroZ.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataSets\Nota_Arroz.Designer.vb">
@@ -737,10 +738,10 @@
       <DependentUpon>Nota_Arroz.xsd</DependentUpon>
     </Compile>
     <Compile Include="Imp_Ind.vb" />
-    <Compile Include="FrmSunat.Designer.vb">
+    <Compile Include="Utilitarios\FrmSunat.Designer.vb">
       <DependentUpon>FrmSunat.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmSunat.vb">
+    <Compile Include="Utilitarios\FrmSunat.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes %28Cr Report%29\CrLogotipo.vb">
@@ -837,10 +838,10 @@
     <Compile Include="Mantenimiento\FrmChofer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPeso_Med.Designer.vb">
+    <Compile Include="Transacciones\FrmPeso_Med.Designer.vb">
       <DependentUpon>FrmPeso_Med.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPeso_Med.vb">
+    <Compile Include="Transacciones\FrmPeso_Med.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\FrmCaTegoria1.Designer.vb">
@@ -1025,22 +1026,22 @@
     <EmbeddedResource Include="Mantenimiento\FrmComisionista2.resx">
       <DependentUpon>FrmComisionista2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDev_Comp1.resx">
+    <EmbeddedResource Include="Transacciones\FrmDev_Comp1.resx">
       <DependentUpon>FrmDev_Comp1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDev_Comp2.resx">
+    <EmbeddedResource Include="Transacciones\FrmDev_Comp2.resx">
       <DependentUpon>FrmDev_Comp2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEnv_Comp1.resx">
+    <EmbeddedResource Include="Transacciones\FrmEnv_Comp1.resx">
       <DependentUpon>FrmEnv_Comp1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEnv_Comp2.resx">
+    <EmbeddedResource Include="Transacciones\FrmEnv_Comp2.resx">
       <DependentUpon>FrmEnv_Comp2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListarEnvioCompAct.resx">
+    <EmbeddedResource Include="Listar\FrmListarEnvioCompAct.resx">
       <DependentUpon>FrmListarEnvioCompAct.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListarIngCompAct.resx">
+    <EmbeddedResource Include="Listar\FrmListarIngCompAct.resx">
       <DependentUpon>FrmListarIngCompAct.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listar\FrmListar_Operacion_Sal.resx">
@@ -1058,10 +1059,10 @@
     <EmbeddedResource Include="Listar\FrmListar_Tipo_Ope.resx">
       <DependentUpon>FrmListar_Tipo_Ope.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOperacion_1.resx">
+    <EmbeddedResource Include="Mantenimiento\FrmOperacion_1.resx">
       <DependentUpon>FrmOperacion_1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOperacion_2.resx">
+    <EmbeddedResource Include="Mantenimiento\FrmOperacion_2.resx">
       <DependentUpon>FrmOperacion_2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\FrmTipo_Dcto_1.resx">
@@ -1083,10 +1084,10 @@
     <EmbeddedResource Include="FrmOpcImpPes_Med1.resx">
       <DependentUpon>FrmOpcImpPes_Med1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUbigeo1.resx">
+    <EmbeddedResource Include="Mantenimiento\FrmUbigeo1.resx">
       <DependentUpon>FrmUbigeo1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUbigeo2.resx">
+    <EmbeddedResource Include="Mantenimiento\FrmUbigeo2.resx">
       <DependentUpon>FrmUbigeo2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes %28Cr Report%29\CrPes_Med_Zelu.rpt">
@@ -1101,10 +1102,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crguiaremision_Molino.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIng_Comp1.resx">
+    <EmbeddedResource Include="Transacciones\FrmIng_Comp1.resx">
       <DependentUpon>FrmIng_Comp1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIng_Comp2.resx">
+    <EmbeddedResource Include="Transacciones\FrmIng_Comp2.resx">
       <DependentUpon>FrmIng_Comp2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\FrmTipo_Comp_1.resx">
@@ -1182,10 +1183,10 @@
     <EmbeddedResource Include="Mantenimiento\frmlemptransportes.resx">
       <DependentUpon>frmlemptransportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNota_ArroZ2.resx">
+    <EmbeddedResource Include="Transacciones\FrmNota_ArroZ2.resx">
       <DependentUpon>FrmNota_ArroZ2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPago_Detra2.resx">
+    <EmbeddedResource Include="Transacciones\FrmPago_Detra2.resx">
       <DependentUpon>FrmPago_Detra2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmunidadtransportes.resx">
@@ -1200,7 +1201,7 @@
     <EmbeddedResource Include="Listar\FrmListarPagoDetrac.resx">
       <DependentUpon>FrmListarPagoDetrac.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPeso_Med2.resx">
+    <EmbeddedResource Include="Transacciones\FrmPeso_Med2.resx">
       <DependentUpon>FrmPeso_Med2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listar\FrmListarCat.resx">
@@ -1269,7 +1270,7 @@
     <EmbeddedResource Include="Listar\frmListarUbigeo.resx">
       <DependentUpon>frmListarUbigeo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPago_Detra1.resx">
+    <EmbeddedResource Include="Transacciones\FrmPago_Detra1.resx">
       <DependentUpon>FrmPago_Detra1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes %28Cr Report%29\CrRemitente.rpt">
@@ -1280,10 +1281,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrNota_Arroz.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNota_ArroZ.resx">
+    <EmbeddedResource Include="Transacciones\FrmNota_ArroZ.resx">
       <DependentUpon>FrmNota_ArroZ.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSunat.resx">
+    <EmbeddedResource Include="Utilitarios\FrmSunat.resx">
       <DependentUpon>FrmSunat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes %28Cr Report%29\CrLogotipo.rpt">
@@ -1357,7 +1358,7 @@
       <DependentUpon>frmImprimiR.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPeso_Med.resx">
+    <EmbeddedResource Include="Transacciones\FrmPeso_Med.resx">
       <DependentUpon>FrmPeso_Med.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmproducto.resx">
@@ -1726,13 +1727,13 @@
     <Content Include="Imagenes\SUNAT.png" />
     <Content Include="favicon.ico" />
     <Content Include="Info.txt" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\sunat.png" />
     <None Include="Resources\pdf.png" />
     <None Include="Resources\word.png" />
     <None Include="Resources\desactivar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transacciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

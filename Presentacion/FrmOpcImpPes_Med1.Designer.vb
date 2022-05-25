@@ -46,13 +46,14 @@ Partial Class FrmOpcImpPes_Med1
         '
         'GroupPanel1
         '
-        Me.GroupPanel1.BackColor = System.Drawing.Color.White
+        Me.GroupPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.GroupPanel1.CanvasColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.GroupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Windows7
         Me.GroupPanel1.Controls.Add(Me.RbZelu)
         Me.GroupPanel1.Controls.Add(Me.RbBantemar)
         Me.GroupPanel1.Controls.Add(Me.RbMolinos)
         Me.GroupPanel1.Controls.Add(Me.RBConsorcio)
+        Me.GroupPanel1.DisabledBackColor = System.Drawing.Color.Empty
         Me.GroupPanel1.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel1.Location = New System.Drawing.Point(12, 22)
         Me.GroupPanel1.Name = "GroupPanel1"
@@ -96,7 +97,7 @@ Partial Class FrmOpcImpPes_Med1
         Me.RbZelu.ForeColor = System.Drawing.Color.Black
         Me.RbZelu.Location = New System.Drawing.Point(7, 83)
         Me.RbZelu.Name = "RbZelu"
-        Me.RbZelu.Size = New System.Drawing.Size(60, 24)
+        Me.RbZelu.Size = New System.Drawing.Size(74, 29)
         Me.RbZelu.TabIndex = 163
         Me.RbZelu.TabStop = True
         Me.RbZelu.Text = "Zelu"
@@ -110,7 +111,7 @@ Partial Class FrmOpcImpPes_Med1
         Me.RbBantemar.ForeColor = System.Drawing.Color.Black
         Me.RbBantemar.Location = New System.Drawing.Point(243, 40)
         Me.RbBantemar.Name = "RbBantemar"
-        Me.RbBantemar.Size = New System.Drawing.Size(99, 24)
+        Me.RbBantemar.Size = New System.Drawing.Size(122, 29)
         Me.RbBantemar.TabIndex = 162
         Me.RbBantemar.TabStop = True
         Me.RbBantemar.Text = "Bantemar"
@@ -124,7 +125,7 @@ Partial Class FrmOpcImpPes_Med1
         Me.RbMolinos.ForeColor = System.Drawing.Color.Black
         Me.RbMolinos.Location = New System.Drawing.Point(134, 40)
         Me.RbMolinos.Name = "RbMolinos"
-        Me.RbMolinos.Size = New System.Drawing.Size(87, 24)
+        Me.RbMolinos.Size = New System.Drawing.Size(108, 29)
         Me.RbMolinos.TabIndex = 159
         Me.RbMolinos.TabStop = True
         Me.RbMolinos.Text = "Molinos"
@@ -138,7 +139,7 @@ Partial Class FrmOpcImpPes_Med1
         Me.RBConsorcio.ForeColor = System.Drawing.Color.Black
         Me.RBConsorcio.Location = New System.Drawing.Point(7, 38)
         Me.RBConsorcio.Name = "RBConsorcio"
-        Me.RBConsorcio.Size = New System.Drawing.Size(102, 24)
+        Me.RBConsorcio.Size = New System.Drawing.Size(127, 29)
         Me.RBConsorcio.TabIndex = 146
         Me.RBConsorcio.TabStop = True
         Me.RBConsorcio.Text = "Consorcio"
@@ -160,13 +161,14 @@ Partial Class FrmOpcImpPes_Med1
         '
         'FrmOpcImpPes_Med1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(376, 287)
         Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.GroupPanel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "FrmOpcImpPes_Med1"

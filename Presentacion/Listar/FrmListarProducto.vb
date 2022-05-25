@@ -35,9 +35,16 @@ Public Class FrmListarProducto
                     Dv.Table = tabla_producto ' Enlazamos el dataview con la tabla devuelta
                     ''=======================================================
                     dgvlista.Columns("ID").Visible = False
+                    dgvlista.Columns("Comercial").Visible = False
+                    dgvlista.Columns("Peso").Visible = False
+                    dgvlista.Columns("Color").Visible = False
+                    dgvlista.Columns("Categoria").Visible = False
+                    dgvlista.Columns("Logotipo").Visible = False
+                    dgvlista.Columns("Envasado").Visible = False
                     dgvlista.Columns("Productox").Visible = False
                     dgvlista.Columns("Id Logo").Visible = False
                     dgvlista.Columns("productoSinDetalle").Visible = False
+                    dgvlista.Columns("Activo").Visible = False
                     mesajeerror.Text = "Sistema tiene " + NroFilas.ToString + " registro(S)"
                 End If
                 servidor.cerrarconexion()
