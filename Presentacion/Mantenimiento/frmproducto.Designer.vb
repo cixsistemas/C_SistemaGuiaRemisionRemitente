@@ -42,6 +42,7 @@ Partial Class frmproducto
         Me.Nombre_Com = New System.Windows.Forms.TextBox()
         Me.lblNombreComercial = New System.Windows.Forms.Label()
         Me.cbProdSinDetalle = New System.Windows.Forms.CheckBox()
+        Me.cbActivoMant = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -275,12 +276,28 @@ Partial Class frmproducto
         Me.cbProdSinDetalle.Text = "Producto sin detalle"
         Me.cbProdSinDetalle.UseVisualStyleBackColor = True
         '
+        'cbActivoMant
+        '
+        Me.cbActivoMant.AutoSize = True
+        Me.cbActivoMant.Checked = True
+        Me.cbActivoMant.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbActivoMant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbActivoMant.ForeColor = System.Drawing.Color.Red
+        Me.cbActivoMant.Location = New System.Drawing.Point(248, 36)
+        Me.cbActivoMant.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbActivoMant.Name = "cbActivoMant"
+        Me.cbActivoMant.Size = New System.Drawing.Size(76, 22)
+        Me.cbActivoMant.TabIndex = 16
+        Me.cbActivoMant.Text = "Activo"
+        Me.cbActivoMant.UseVisualStyleBackColor = True
+        '
         'frmproducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Beige
         Me.ClientSize = New System.Drawing.Size(1020, 329)
+        Me.Controls.Add(Me.cbActivoMant)
         Me.Controls.Add(Me.cbProdSinDetalle)
         Me.Controls.Add(Me.Nombre_Com)
         Me.Controls.Add(Me.lblNombreComercial)
@@ -331,4 +348,5 @@ Partial Class frmproducto
     Friend WithEvents Nombre_Com As System.Windows.Forms.TextBox
     Friend WithEvents lblNombreComercial As System.Windows.Forms.Label
     Friend WithEvents cbProdSinDetalle As CheckBox
+    Friend WithEvents cbActivoMant As CheckBox
 End Class

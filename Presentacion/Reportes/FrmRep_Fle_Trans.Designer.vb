@@ -56,37 +56,35 @@ Partial Class FrmRep_Fle_Trans
         '
         'txtTransportista
         '
-        Me.txtTransportista.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.txtTransportista.Border.Class = "TextBoxBorder"
         Me.txtTransportista.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtTransportista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTransportista.DisabledBackColor = System.Drawing.Color.White
         Me.txtTransportista.Enabled = False
-        Me.txtTransportista.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.txtTransportista, True)
         Me.txtTransportista.Location = New System.Drawing.Point(332, 52)
         Me.txtTransportista.MaxLength = 100
         Me.txtTransportista.Name = "txtTransportista"
-        Me.txtTransportista.Size = New System.Drawing.Size(240, 22)
+        Me.txtTransportista.Size = New System.Drawing.Size(240, 26)
         Me.txtTransportista.TabIndex = 188
         '
         'txtnro_Guia
         '
-        Me.txtnro_Guia.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.txtnro_Guia.Border.Class = "TextBoxBorder"
         Me.txtnro_Guia.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtnro_Guia.DisabledBackColor = System.Drawing.Color.White
         Me.txtnro_Guia.Enabled = False
-        Me.txtnro_Guia.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.txtnro_Guia, True)
         Me.txtnro_Guia.Location = New System.Drawing.Point(222, 52)
         Me.txtnro_Guia.MaxLength = 7
         Me.txtnro_Guia.Name = "txtnro_Guia"
-        Me.txtnro_Guia.Size = New System.Drawing.Size(96, 22)
+        Me.txtnro_Guia.Size = New System.Drawing.Size(96, 26)
         Me.txtnro_Guia.TabIndex = 192
         '
         'cbNro_Guia
@@ -160,7 +158,7 @@ Partial Class FrmRep_Fle_Trans
         Me.dtpff.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpff.Location = New System.Drawing.Point(107, 53)
         Me.dtpff.Name = "dtpff"
-        Me.dtpff.Size = New System.Drawing.Size(99, 21)
+        Me.dtpff.Size = New System.Drawing.Size(99, 24)
         Me.dtpff.TabIndex = 185
         '
         'Label2
@@ -171,7 +169,7 @@ Partial Class FrmRep_Fle_Trans
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(104, 36)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 15)
+        Me.Label2.Size = New System.Drawing.Size(68, 18)
         Me.Label2.TabIndex = 191
         Me.Label2.Text = "Fecha fin"
         '
@@ -184,7 +182,7 @@ Partial Class FrmRep_Fle_Trans
         Me.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfin.Location = New System.Drawing.Point(1, 53)
         Me.dtpfin.Name = "dtpfin"
-        Me.dtpfin.Size = New System.Drawing.Size(99, 21)
+        Me.dtpfin.Size = New System.Drawing.Size(99, 24)
         Me.dtpfin.TabIndex = 184
         Me.dtpfin.Value = New Date(2014, 12, 1, 0, 0, 0, 0)
         '
@@ -196,7 +194,7 @@ Partial Class FrmRep_Fle_Trans
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(1, 36)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 15)
+        Me.Label1.Size = New System.Drawing.Size(87, 18)
         Me.Label1.TabIndex = 190
         Me.Label1.Text = "Fecha inicio"
         '
@@ -208,7 +206,7 @@ Partial Class FrmRep_Fle_Trans
         Me.cbFecha.ForeColor = System.Drawing.Color.Black
         Me.cbFecha.Location = New System.Drawing.Point(1, 12)
         Me.cbFecha.Name = "cbFecha"
-        Me.cbFecha.Size = New System.Drawing.Size(125, 19)
+        Me.cbFecha.Size = New System.Drawing.Size(149, 22)
         Me.cbFecha.TabIndex = 183
         Me.cbFecha.Text = "Fecha de Emision"
         Me.cbFecha.UseVisualStyleBackColor = False
@@ -270,7 +268,7 @@ Partial Class FrmRep_Fle_Trans
         '
         'FrmRep_Fle_Trans
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 436)
         Me.Controls.Add(Me.btnImprimir)
@@ -288,6 +286,7 @@ Partial Class FrmRep_Fle_Trans
         Me.Controls.Add(Me.cbFecha)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "FrmRep_Fle_Trans"

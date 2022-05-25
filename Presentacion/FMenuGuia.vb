@@ -106,76 +106,76 @@ Public Class FMenuGuia
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FMenuGuia))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SistemaToolStripMenuItem = New ToolStripMenuItem()
-        Me.PagoDeDetraccionToolStripMenuItem = New ToolStripMenuItem()
+        Me.SistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PagoDeDetraccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MenuPrincipalToolStripMenuItem = New ToolStripMenuItem()
-        Me.PesoMedidaToolStripMenuItem = New ToolStripMenuItem()
-        Me.NotaDeEnvioToolStripMenuItem = New ToolStripMenuItem()
+        Me.MenuPrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesoMedidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NotaDeEnvioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator()
-        Me.FacturaToolStripMenuItem = New ToolStripMenuItem()
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
+        Me.FacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.SalirToolStripMenuItem = New ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MantenimienttoToolStripMenuItem = New ToolStripMenuItem()
-        Me.ProductoToolStripMenuItem = New ToolStripMenuItem()
-        Me.ProductoToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.EnvaseToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.EnvaseToolStripMenuItem2 = New ToolStripMenuItem()
-        Me.CategoriaToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.MantenimienttoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnvaseToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnvaseToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoriaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UnidadDeTransporteToolStripMenuItem = New ToolStripMenuItem()
-        Me.TransportistaToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.UnidadDeTransporteToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.ChoferToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.UnidadDeTransporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransportistaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UnidadDeTransporteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChoferToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DestinatarioToolStripMenuItem = New ToolStripMenuItem()
-        Me.RemitenteToolStripMenuItem = New ToolStripMenuItem()
+        Me.DestinatarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemitenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TrabajadorToolStripMenuItem = New ToolStripMenuItem()
-        Me.TrabajadorToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.TipoDeTrabajadorToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.TrabajadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TrabajadorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeTrabajadorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ClienteToolStripMenuItem = New ToolStripMenuItem()
-        Me.ClienteToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.TipoDeClienteToolStripMenuItem1 = New ToolStripMenuItem()
+        Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClienteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeClienteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator14 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ComisionistaToolStripMenuItem = New ToolStripMenuItem()
+        Me.ComisionistaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ZonaToolStripMenuItem = New ToolStripMenuItem()
-        Me.UbigeoToolStripMenuItem = New ToolStripMenuItem()
-        Me.TipoDeOperacionToolStripMenuItem = New ToolStripMenuItem()
+        Me.ZonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UbigeoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeOperacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TablasSunatToolStripMenuItem = New ToolStripMenuItem()
-        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem = New ToolStripMenuItem()
-        Me.TipoDeComprobanteDePagoToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.OperacionToolStripMenuItem = New ToolStripMenuItem()
+        Me.TablasSunatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDeComprobanteDePagoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OperacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ReportesToolStripMenuItem = New ToolStripMenuItem()
-        Me.FacturaVentaToolStripMenuItem = New ToolStripMenuItem()
-        Me.FleteTransportistaToolStripMenuItem = New ToolStripMenuItem()
-        Me.ControlGuiasFacturasToolStripMenuItem = New ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FacturaVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FleteTransportistaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControlGuiasFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator16 = New System.Windows.Forms.ToolStripSeparator()
-        Me.IngresoDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1 = New ToolStripMenuItem()
-        Me.ControlDeComprobantesDePagoToolStripMenuItem = New ToolStripMenuItem()
+        Me.IngresoDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControlDeComprobantesDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UtilidadToolStripMenuItem = New ToolStripMenuItem()
-        Me.CalculadoraToolStripMenuItem = New ToolStripMenuItem()
-        Me.DNIRENIECToolStripMenuItem = New ToolStripMenuItem()
-        Me.SunatToolStripMenuItem = New ToolStripMenuItem()
+        Me.UtilidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CalculadoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DNIRENIECToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SunatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.AyudaToolStripMenuItem = New ToolStripMenuItem()
-        Me.ContenidoDelSistemaToolStripMenuItem = New ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContenidoDelSistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
-        Me.AcercaDeToolStripMenuItem = New ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabelUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.toolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabelUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusFish = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -194,7 +194,7 @@ Public Class FMenuGuia
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ToolStripSeparator2, Me.MantenimienttoToolStripMenuItem, Me.ToolStripSeparator1, Me.ReportesToolStripMenuItem, Me.ToolStripSeparator3, Me.UtilidadToolStripMenuItem, Me.ToolStripSeparator6, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(921, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1027, 31)
         Me.MenuStrip1.TabIndex = 60
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -571,21 +571,21 @@ Public Class FMenuGuia
         '
         Me.CalculadoraToolStripMenuItem.Image = CType(resources.GetObject("CalculadoraToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CalculadoraToolStripMenuItem.Name = "CalculadoraToolStripMenuItem"
-        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(180, 28)
+        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
         Me.CalculadoraToolStripMenuItem.Text = "&Calculadora"
         '
         'DNIRENIECToolStripMenuItem
         '
         Me.DNIRENIECToolStripMenuItem.Image = CType(resources.GetObject("DNIRENIECToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DNIRENIECToolStripMenuItem.Name = "DNIRENIECToolStripMenuItem"
-        Me.DNIRENIECToolStripMenuItem.Size = New System.Drawing.Size(180, 28)
+        Me.DNIRENIECToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
         Me.DNIRENIECToolStripMenuItem.Text = "DNI-RENIEC"
         '
         'SunatToolStripMenuItem
         '
         Me.SunatToolStripMenuItem.Image = CType(resources.GetObject("SunatToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SunatToolStripMenuItem.Name = "SunatToolStripMenuItem"
-        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(180, 28)
+        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
         Me.SunatToolStripMenuItem.Text = "&Sunat"
         '
         'ToolStripSeparator6
@@ -625,26 +625,12 @@ Public Class FMenuGuia
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel1, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabelUsuario, Me.ToolStripStatusFish})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 443)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 494)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(921, 33)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1027, 33)
         Me.StatusStrip1.TabIndex = 73
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabelUsuario
-        '
-        Me.ToolStripStatusLabelUsuario.AutoSize = False
-        Me.ToolStripStatusLabelUsuario.BackColor = System.Drawing.Color.Black
-        Me.ToolStripStatusLabelUsuario.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.ToolStripStatusLabelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripStatusLabelUsuario.ForeColor = System.Drawing.Color.White
-        Me.ToolStripStatusLabelUsuario.Name = "ToolStripStatusLabelUsuario"
-        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(225, 28)
-        Me.ToolStripStatusLabelUsuario.Spring = True
-        Me.ToolStripStatusLabelUsuario.Text = "    "
         '
         'toolStripStatusLabel1
         '
@@ -656,7 +642,7 @@ Public Class FMenuGuia
         Me.toolStripStatusLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White
         Me.toolStripStatusLabel1.Name = "toolStripStatusLabel1"
-        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(225, 28)
+        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(251, 28)
         Me.toolStripStatusLabel1.Spring = True
         Me.toolStripStatusLabel1.Text = "    "
         '
@@ -670,9 +656,23 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel3.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(225, 28)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(251, 28)
         Me.ToolStripStatusLabel3.Spring = True
         Me.ToolStripStatusLabel3.Text = "    "
+        '
+        'ToolStripStatusLabelUsuario
+        '
+        Me.ToolStripStatusLabelUsuario.AutoSize = False
+        Me.ToolStripStatusLabelUsuario.BackColor = System.Drawing.Color.Black
+        Me.ToolStripStatusLabelUsuario.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
+            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripStatusLabelUsuario.ForeColor = System.Drawing.Color.White
+        Me.ToolStripStatusLabelUsuario.Name = "ToolStripStatusLabelUsuario"
+        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(251, 28)
+        Me.ToolStripStatusLabelUsuario.Spring = True
+        Me.ToolStripStatusLabelUsuario.Text = "    "
         '
         'ToolStripStatusFish
         '
@@ -684,7 +684,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusFish.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusFish.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusFish.Name = "ToolStripStatusFish"
-        Me.ToolStripStatusFish.Size = New System.Drawing.Size(225, 28)
+        Me.ToolStripStatusFish.Size = New System.Drawing.Size(251, 28)
         Me.ToolStripStatusFish.Spring = True
         '
         'FMenuGuia
@@ -693,7 +693,7 @@ Public Class FMenuGuia
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(921, 476)
+        Me.ClientSize = New System.Drawing.Size(1027, 527)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow

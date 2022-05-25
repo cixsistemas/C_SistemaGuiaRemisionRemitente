@@ -4,7 +4,7 @@ Public Class frmproductos
     Dim tabla_producto As DataTable = Nothing
     Dim Dv As New DataView
     Dim CadenaBuscar As String 'Cadena para el Filtrado
-    Public Sub lista(ByVal opcion As Integer, ByVal criterio As String)
+    Public Sub lista(ByVal opcion As Integer, ByVal criterio As String, ByVal Activo As String)
         LBF2.ForeColor = Color.Red
         LBF3.ForeColor = Color.Red
         LBF4.ForeColor = Color.Red
@@ -17,8 +17,8 @@ Public Class frmproductos
         Dim servidor As New clinicapacifico.clsaccesodatos
         servidor.cadenaconexion = Ruta
         If servidor.abrirconexion = True Then
-            If servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio).Tables.Count > 0 Then
-                tabla_producto = servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio).Tables(0)
+            If servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio, Activo).Tables.Count > 0 Then
+                tabla_producto = servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio, Activo).Tables(0)
             End If
             If tabla_producto Is Nothing Then
                 servidor.cerrarconexion()
@@ -102,80 +102,13 @@ Public Class frmproductos
 
     Private Sub frmlproductoSs_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
-        lista(7, Nothing)
+        lista(7, Nothing, cbActivo.Checked)
         rbProducto.Checked = True
-    End Sub
-
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
-        InsertarRegistro()
-    End Sub
-
-    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
-        UpdateRegistro()
-    End Sub
-
-    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
-        If (indice = -1) Then
-            MessageBox.Show("Seleccione producto", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Exit Sub
-        End If
-
-
-        If MessageBox.Show("¿Desea eliminar producto?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            Dim servidor As New clinicapacifico.clsaccesodatos
-            servidor.cadenaconexion = Ruta
-            If servidor.abrirconexiontrans = True Then
-                Dim rpta As Integer = -1
-                Dim mensaje As String = ""
-                servidor.ejecutar("[dbo].[pa_mantenimiento_producto]",
-                  False,
-                  rpta,
-                  mensaje,
-                  CInt(dgvlista.Item("ID", indice).Value),
-                  Nothing,
-                  Nothing,
-                  Nothing,
-                  Nothing,
-                  Nothing,
-                  Nothing,
-                  Nothing,
-                  "E",
-                  0, "")
-                If rpta = 1 Then
-                    servidor.cerrarconexiontrans()
-                    __mesajeerror = mensaje
-                    MessageBox.Show(__mesajeerror, "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    servidor.cancelarconexiontrans()
-                    __mesajeerror = mensaje
-                    MessageBox.Show(__mesajeerror, "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                End If
-            Else
-                __mesajeerror = servidor.getMensageError
-                servidor.cerrarconexiontrans()
-                MessageBox.Show(__mesajeerror, "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        End If
-        indice = -1
-        lista(7, Nothing)
-    End Sub
-
-    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
-        Try
-            Dim f As New frmImprimiR
-            f.Nivel = "FORMULARIO_LISTA_PRODUCTOS"
-            f.Tabla_Imprimir = tabla_producto
-            f.Titulo_Informe = "REPORTE DE PRODUCTOS"
-            f.ShowDialog()
-        Catch ex As Exception
-
-        End Try
+        cbActivo.Checked = True
 
     End Sub
 
-    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
-        Close()
-    End Sub
+
     Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave
         txtbusca.BackColor = Color.White
     End Sub
@@ -225,7 +158,7 @@ Public Class frmproductos
             ''Dv.RowFilter = CadenaBuscar
             ''dgvlista.DataSource = Dv
             ''dgvlista.Update()
-            lista(7, txtbusca.Text)
+            lista(7, txtbusca.Text, cbActivo.Checked)
 
         End If
     End Sub
@@ -250,6 +183,125 @@ Public Class frmproductos
 
     '================================================================
 #Region "TRANSACCIONES"
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
+        InsertarRegistro()
+    End Sub
+
+    Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
+        UpdateRegistro()
+    End Sub
+
+    Private Sub btnEliminar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnEliminar.Click
+        If (indice = -1) Then
+            MessageBox.Show("Seleccione producto", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+
+        If MessageBox.Show("¿Desea eliminar producto?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            Dim servidor As New clinicapacifico.clsaccesodatos
+            servidor.cadenaconexion = Ruta
+            If servidor.abrirconexiontrans = True Then
+                Dim rpta As Integer = -1
+                Dim mensaje As String = ""
+                servidor.ejecutar("[dbo].[pa_mantenimiento_producto]",
+                  False,
+                  rpta,
+                  mensaje,
+                  CInt(dgvlista.Item("ID", indice).Value),
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  "E",
+                  0, "")
+                If rpta = 1 Then
+                    servidor.cerrarconexiontrans()
+                    __mesajeerror = mensaje
+                    MessageBox.Show(__mesajeerror, "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    servidor.cancelarconexiontrans()
+                    __mesajeerror = mensaje
+                    MessageBox.Show(__mesajeerror, "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End If
+            Else
+                __mesajeerror = servidor.getMensageError
+                servidor.cerrarconexiontrans()
+                MessageBox.Show(__mesajeerror, "Molino los Angeles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+        indice = -1
+        lista(7, Nothing, cbActivo.Checked)
+    End Sub
+    Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
+        If (indice = -1) Then
+            MessageBox.Show("Seleccione producto", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Exit Sub
+        End If
+
+
+        If MessageBox.Show("¿Desea desactivar producto?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            Dim servidor As New clinicapacifico.clsaccesodatos
+            servidor.cadenaconexion = Ruta
+            If servidor.abrirconexiontrans = True Then
+                Dim rpta As Integer = -1
+                Dim mensaje As String = ""
+                servidor.ejecutar("[dbo].[pa_mantenimiento_producto]",
+                  False,
+                  rpta,
+                  mensaje,
+                  CInt(dgvlista.Item("ID", indice).Value),
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  Nothing,
+                  False,
+                  "A",
+                  0, "")
+                If rpta = 1 Then
+                    servidor.cerrarconexiontrans()
+                    __mesajeerror = mensaje
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    servidor.cancelarconexiontrans()
+                    __mesajeerror = mensaje
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End If
+            Else
+                __mesajeerror = servidor.getMensageError
+                servidor.cerrarconexiontrans()
+                MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+        indice = -1
+        lista(7, Nothing, cbActivo.Checked)
+    End Sub
+    Private Sub btnImprimir_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles btnImprimir.Click
+        Try
+            Dim f As New frmImprimiR
+            f.Nivel = "FORMULARIO_LISTA_PRODUCTOS"
+            f.Tabla_Imprimir = tabla_producto
+            f.Titulo_Informe = "REPORTE DE PRODUCTOS"
+            f.ShowDialog()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnCerrar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
+        Close()
+    End Sub
+
     Public Sub UpdateRegistro()
         If (indice = -1) Then
             MessageBox.Show("Seleccione producto", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -273,6 +325,7 @@ Public Class frmproductos
         formulario.lista_envasado(10)
         formulario.cboenvasado.Text = CStr(dgvlista.Item("Envasado", indice).Value)
         formulario.cbProdSinDetalle.Checked = CBool(dgvlista.Item("productoSinDetalle", indice).Value)
+        formulario.cbActivoMant.Checked = CBool(dgvlista.Item("Activo", indice).Value)
 
         formulario.Nivel = "M"
 
@@ -295,7 +348,7 @@ Public Class frmproductos
         formulario.lista_envasado(10)
         'formulario.cbProdSinDetalle.Checked = True
 
-        lista(7, "")
+        lista(7, "", cbActivo.Checked)
     End Sub
 
     Public Sub InsertarRegistro()
@@ -344,7 +397,7 @@ Public Class frmproductos
         formulario.lista_envasado(10)
 
         formulario.ShowDialog()
-        lista(7, "")
+        lista(7, "", cbActivo.Checked)
     End Sub
 #End Region
     '================================================================
@@ -416,6 +469,16 @@ Public Class frmproductos
     Private Sub dgvlista_CellEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellEnter
         indice = e.RowIndex
     End Sub
+
+
 #End Region
     '================================================================
+
+
+
+    Private Sub cbActivo_CheckedChanged(sender As Object, e As EventArgs) Handles cbActivo.CheckedChanged
+        'If cbActivo.Checked = True Then
+        lista(7, "", cbActivo.Checked)
+        'End If
+    End Sub
 End Class
