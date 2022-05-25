@@ -1,3 +1,5 @@
+Imports CrystalDecisions.Shared
+
 Public Class frmImprimiR
 
     Public Nivel As String = ""
@@ -9,6 +11,7 @@ Public Class frmImprimiR
     Public Tipo_Nro_Doc_Identidad As String = ""
     Public Tabla_Imprimir As DataTable = Nothing
     Public DataSet_Imprimir As DataSet = Nothing
+    Dim crp As Object
 
     Private Sub crvImprimir_Load(ByVal sender As Object, ByVal e As EventArgs) Handles crvImprimir.Load
         Text = " ><))))°>... oO0 ... " & Titulo_Informe.Trim
@@ -20,7 +23,7 @@ Public Class frmImprimiR
 
         Try
 
-            Dim crp As Object
+
 
             Select Case Nivel
                 Case "FORMULARIO_LISTA_GUIAS"
@@ -709,4 +712,46 @@ Public Class frmImprimiR
     Private Sub frmImprimir_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
     End Sub
+    '========================================================================
+#Region "EXPORTAR"
+    Private Sub btnExportarWord_Click(sender As Object, e As EventArgs) Handles btnExportarWord.Click
+        Dim Fecha As String = DateTime.Now.ToString("dd-MM-yyyy")
+        Dim Hora As String = DateTime.Now.ToString("hhmmss")
+        Try
+            Dim sfd As SaveFileDialog = New SaveFileDialog()
+            sfd.FileName = Convert.ToString(Fecha) + Hora + "Export" + ".doc"
+
+            If (sfd.ShowDialog() = DialogResult.OK) Then
+                crp.ExportToDisk(ExportFormatType.WordForWindows, sfd.FileName)
+                MessageBox.Show("Exportacion realizada correctamente.")
+                If MessageBox.Show("¿Desea descargar archivo?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    Process.Start(sfd.FileName)
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message.ToString())
+        End Try
+
+    End Sub
+
+    Private Sub btnExportarPdf_Click(sender As Object, e As EventArgs) Handles btnExportarPdf.Click
+        Dim Fecha As String = DateTime.Now.ToString("dd-MM-yyyy")
+        Dim Hora As String = DateTime.Now.ToString("hhmmss")
+        Try
+            Dim sfd As SaveFileDialog = New SaveFileDialog()
+            sfd.Filter = "PDF (*.pdf)|*.pdf"
+            sfd.FileName = Convert.ToString(Fecha) + Hora + "Export" + ".pdf"
+            If (sfd.ShowDialog() = DialogResult.OK) Then
+                crp.ExportToDisk(ExportFormatType.PortableDocFormat, sfd.FileName)
+                MessageBox.Show("Exportacion realizada correctamente.")
+                If MessageBox.Show("¿Desea descargar archivo?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    Process.Start(sfd.FileName)
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message.ToString())
+        End Try
+    End Sub
+#End Region
+    '========================================================================
 End Class

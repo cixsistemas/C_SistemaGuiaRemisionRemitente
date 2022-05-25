@@ -1726,6 +1726,8 @@
     <Content Include="Imagenes\SUNAT.png" />
     <Content Include="favicon.ico" />
     <Content Include="Info.txt" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\word.png" />
     <None Include="Resources\desactivar.png" />
   </ItemGroup>
   <ItemGroup>
