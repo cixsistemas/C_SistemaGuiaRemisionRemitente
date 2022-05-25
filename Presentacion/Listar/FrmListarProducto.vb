@@ -3,7 +3,7 @@ Public Class FrmListarProducto
     Dim tabla_producto As DataTable = Nothing
     Dim Dv As New DataView
     Dim CadenaBuscar As String 'Cadena para el Filtrado
-    Public Sub lista(ByVal opcion As Integer, ByVal criterio As String)
+    Public Sub lista(ByVal opcion As Integer, ByVal criterio As String, ByVal Activo As String)
         LBF2.ForeColor = Color.Red
         LBF3.ForeColor = Color.Red
         LBF4.ForeColor = Color.Red
@@ -16,8 +16,8 @@ Public Class FrmListarProducto
         Dim servidor As New clinicapacifico.clsaccesodatos
         servidor.cadenaconexion = Ruta
         If servidor.abrirconexion = True Then
-            If servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio).Tables.Count > 0 Then
-                tabla_producto = servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio).Tables(0)
+            If servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio, Activo).Tables.Count > 0 Then
+                tabla_producto = servidor.consultar("[dbo].[pa_listar_productos]", opcion, criterio, Activo).Tables(0)
             End If
             If tabla_producto Is Nothing Then
                 servidor.cerrarconexion()
@@ -96,7 +96,7 @@ Public Class FrmListarProducto
         Ruta = ConfigurationManager.AppSettings("CadenaConeccion").ToString()
         ' Me.cbobusca.SelectedIndex = 0
         'activa(False)
-        lista(7, Nothing)
+        lista(7, Nothing, True)
         rbProducto.Checked = True
     End Sub
 
@@ -194,7 +194,7 @@ Public Class FrmListarProducto
             ''Dv.RowFilter = CadenaBuscar
             ''dgvlista.DataSource = Dv
             ''dgvlista.Update()
-            lista(7, txtbusca.Text)
+            lista(7, txtbusca.Text, True)
 
         End If
     End Sub
@@ -220,11 +220,13 @@ Public Class FrmListarProducto
         formulario.txtlogotipo.Text = ""
         formulario.cboenvasado.DataSource = Nothing
 
-        lista(7, Nothing)
+
 
         formulario.lista_categoria(8)
         ' Me.formulario.lista_logotipo(9)
         formulario.lista_envasado(10)
         formulario.ShowDialog()
+
+        lista(7, Nothing, True)
     End Sub
 End Class

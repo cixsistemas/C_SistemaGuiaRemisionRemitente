@@ -1726,6 +1726,7 @@
     <Content Include="Imagenes\SUNAT.png" />
     <Content Include="favicon.ico" />
     <Content Include="Info.txt" />
+    <None Include="Resources\desactivar.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Transacciones\" />

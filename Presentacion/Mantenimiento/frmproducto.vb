@@ -84,6 +84,7 @@ Public Class frmproducto
                 id_logo,
                 cboenvasado.SelectedValue,
                 cbProdSinDetalle.Checked,
+                cbActivoMant.Checked,
                 Nivel.Trim,
                 0,
                 "")
