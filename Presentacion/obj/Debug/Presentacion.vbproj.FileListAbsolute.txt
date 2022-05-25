@@ -737,7 +737,6 @@ E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_Sis
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\bin\Debug\ShockwaveFlashObjects.dll
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\bin\Debug\stdole.dll
-E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Presentacion.vbprojResolveAssemblyReference.cache
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Interop.MSXML2.dll
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Presentacion.vbproj.ResolveComReference.cache
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Presentacion.Acercarde.resources
