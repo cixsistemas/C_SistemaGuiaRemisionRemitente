@@ -739,6 +739,12 @@
       <DependentUpon>Nota_Arroz.xsd</DependentUpon>
     </Compile>
     <Compile Include="Imp_Ind.vb" />
+    <Compile Include="Utilitarios\FrmDni.Designer.vb">
+      <DependentUpon>FrmDni.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios\FrmDni.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utilitarios\FrmSunat.Designer.vb">
       <DependentUpon>FrmSunat.vb</DependentUpon>
     </Compile>
@@ -1284,6 +1290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\FrmNota_ArroZ.resx">
       <DependentUpon>FrmNota_ArroZ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilitarios\FrmDni.resx">
+      <DependentUpon>FrmDni.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilitarios\FrmSunat.resx">
       <DependentUpon>FrmSunat.vb</DependentUpon>

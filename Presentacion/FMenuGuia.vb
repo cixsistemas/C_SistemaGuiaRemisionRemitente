@@ -99,6 +99,7 @@ Public Class FMenuGuia
     Friend WithEvents ToolStripStatusLabelUsuario As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusFish As ToolStripStatusLabel
+    Friend WithEvents DNIToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
 
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -177,6 +178,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabelUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusFish = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.DNIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -561,7 +563,7 @@ Public Class FMenuGuia
         '
         'UtilidadToolStripMenuItem
         '
-        Me.UtilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculadoraToolStripMenuItem, Me.DNIRENIECToolStripMenuItem, Me.SunatToolStripMenuItem})
+        Me.UtilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculadoraToolStripMenuItem, Me.DNIRENIECToolStripMenuItem, Me.SunatToolStripMenuItem, Me.DNIToolStripMenuItem})
         Me.UtilidadToolStripMenuItem.Image = CType(resources.GetObject("UtilidadToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UtilidadToolStripMenuItem.Name = "UtilidadToolStripMenuItem"
         Me.UtilidadToolStripMenuItem.Size = New System.Drawing.Size(114, 27)
@@ -686,6 +688,12 @@ Public Class FMenuGuia
         Me.ToolStripStatusFish.Name = "ToolStripStatusFish"
         Me.ToolStripStatusFish.Size = New System.Drawing.Size(251, 28)
         Me.ToolStripStatusFish.Spring = True
+        '
+        'DNIToolStripMenuItem
+        '
+        Me.DNIToolStripMenuItem.Name = "DNIToolStripMenuItem"
+        Me.DNIToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
+        Me.DNIToolStripMenuItem.Text = "DNI"
         '
         'FMenuGuia
         '
