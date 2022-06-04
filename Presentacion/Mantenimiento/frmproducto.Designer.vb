@@ -74,6 +74,7 @@ Partial Class frmproducto
         Me.prod_nom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.prod_nom.Location = New System.Drawing.Point(19, 91)
         Me.prod_nom.Margin = New System.Windows.Forms.Padding(4)
+        Me.prod_nom.MaxLength = 300
         Me.prod_nom.Name = "prod_nom"
         Me.prod_nom.Size = New System.Drawing.Size(976, 24)
         Me.prod_nom.TabIndex = 0
