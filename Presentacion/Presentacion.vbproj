@@ -518,10 +518,10 @@
     <Compile Include="Mantenimiento\FrmChofer2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmguias.Designer.vb">
+    <Compile Include="Transacciones\frmguias.Designer.vb">
       <DependentUpon>frmguias.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmguias.vb">
+    <Compile Include="Transacciones\frmguias.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\frmlemptransportes.Designer.vb">
@@ -881,10 +881,10 @@
     <Compile Include="Mantenimiento\frmemptransporte.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmguia.Designer.vb">
+    <Compile Include="Transacciones\frmguia.Designer.vb">
       <DependentUpon>frmguia.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmguia.vb">
+    <Compile Include="Transacciones\frmguia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmImprimiR.designer.vb">
@@ -1184,7 +1184,7 @@
     <EmbeddedResource Include="Mantenimiento\FrmChofer2.resx">
       <DependentUpon>FrmChofer2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmguias.resx">
+    <EmbeddedResource Include="Transacciones\frmguias.resx">
       <DependentUpon>frmguias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmlemptransportes.resx">
@@ -1360,7 +1360,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmemptransporte.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmguia.resx">
+    <EmbeddedResource Include="Transacciones\frmguia.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmguia.vb</DependentUpon>
     </EmbeddedResource>

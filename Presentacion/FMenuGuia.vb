@@ -62,7 +62,6 @@ Public Class FMenuGuia
     Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator10 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents FacturaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DNIRENIECToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UbigeoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TablasSunatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TipoDeComprobanteDePagoToolStripMenuItem1 As ToolStripMenuItem
@@ -166,8 +165,8 @@ Public Class FMenuGuia
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.UtilidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalculadoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DNIRENIECToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SunatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DNIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContenidoDelSistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -178,7 +177,6 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabelUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusFish = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.DNIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -196,7 +194,7 @@ Public Class FMenuGuia
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ToolStripSeparator2, Me.MantenimienttoToolStripMenuItem, Me.ToolStripSeparator1, Me.ReportesToolStripMenuItem, Me.ToolStripSeparator3, Me.UtilidadToolStripMenuItem, Me.ToolStripSeparator6, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1027, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1027, 28)
         Me.MenuStrip1.TabIndex = 60
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -205,92 +203,92 @@ Public Class FMenuGuia
         Me.SistemaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagoDeDetraccionToolStripMenuItem, Me.ToolStripSeparator10, Me.MenuPrincipalToolStripMenuItem, Me.PesoMedidaToolStripMenuItem, Me.NotaDeEnvioToolStripMenuItem, Me.ToolStripSeparator15, Me.FacturaToolStripMenuItem, Me.EnvioDeComprobantesDePagoToolStripMenuItem, Me.DevoluciónDeComprobantesDePagoToolStripMenuItem, Me.ToolStripSeparator7, Me.SalirToolStripMenuItem})
         Me.SistemaToolStripMenuItem.Image = CType(resources.GetObject("SistemaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SistemaToolStripMenuItem.Name = "SistemaToolStripMenuItem"
-        Me.SistemaToolStripMenuItem.Size = New System.Drawing.Size(148, 27)
+        Me.SistemaToolStripMenuItem.Size = New System.Drawing.Size(122, 24)
         Me.SistemaToolStripMenuItem.Text = "&Transacciones"
         '
         'PagoDeDetraccionToolStripMenuItem
         '
         Me.PagoDeDetraccionToolStripMenuItem.Image = CType(resources.GetObject("PagoDeDetraccionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PagoDeDetraccionToolStripMenuItem.Name = "PagoDeDetraccionToolStripMenuItem"
-        Me.PagoDeDetraccionToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.PagoDeDetraccionToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.PagoDeDetraccionToolStripMenuItem.Text = "&Pago de Detracción"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-        Me.ToolStripSeparator10.Size = New System.Drawing.Size(378, 6)
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(304, 6)
         '
         'MenuPrincipalToolStripMenuItem
         '
         Me.MenuPrincipalToolStripMenuItem.Image = CType(resources.GetObject("MenuPrincipalToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MenuPrincipalToolStripMenuItem.Name = "MenuPrincipalToolStripMenuItem"
-        Me.MenuPrincipalToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.MenuPrincipalToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.MenuPrincipalToolStripMenuItem.Text = "&Guia de Remisión-Remitente"
         '
         'PesoMedidaToolStripMenuItem
         '
         Me.PesoMedidaToolStripMenuItem.Image = CType(resources.GetObject("PesoMedidaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PesoMedidaToolStripMenuItem.Name = "PesoMedidaToolStripMenuItem"
-        Me.PesoMedidaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.PesoMedidaToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.PesoMedidaToolStripMenuItem.Text = "&Pesos y Medidas"
         '
         'NotaDeEnvioToolStripMenuItem
         '
         Me.NotaDeEnvioToolStripMenuItem.Image = CType(resources.GetObject("NotaDeEnvioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NotaDeEnvioToolStripMenuItem.Name = "NotaDeEnvioToolStripMenuItem"
-        Me.NotaDeEnvioToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.NotaDeEnvioToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.NotaDeEnvioToolStripMenuItem.Text = "&Nota de envio"
         '
         'ToolStripSeparator15
         '
         Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
-        Me.ToolStripSeparator15.Size = New System.Drawing.Size(378, 6)
+        Me.ToolStripSeparator15.Size = New System.Drawing.Size(304, 6)
         '
         'FacturaToolStripMenuItem
         '
         Me.FacturaToolStripMenuItem.Image = CType(resources.GetObject("FacturaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FacturaToolStripMenuItem.Name = "FacturaToolStripMenuItem"
-        Me.FacturaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.FacturaToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.FacturaToolStripMenuItem.Text = "&Ingreso de Comprobantes de Pago"
         '
         'EnvioDeComprobantesDePagoToolStripMenuItem
         '
         Me.EnvioDeComprobantesDePagoToolStripMenuItem.Image = CType(resources.GetObject("EnvioDeComprobantesDePagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EnvioDeComprobantesDePagoToolStripMenuItem.Name = "EnvioDeComprobantesDePagoToolStripMenuItem"
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.EnvioDeComprobantesDePagoToolStripMenuItem.Text = "&Envio de Comprobantes de Pago"
         '
         'DevoluciónDeComprobantesDePagoToolStripMenuItem
         '
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Image = CType(resources.GetObject("DevoluciónDeComprobantesDePagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Name = "DevoluciónDeComprobantesDePagoToolStripMenuItem"
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem.Text = "&Devolución de Comprobantes de Pago"
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(378, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(304, 6)
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(307, 26)
         Me.SalirToolStripMenuItem.Text = "&Salir"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 27)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 24)
         '
         'MantenimienttoToolStripMenuItem
         '
         Me.MantenimienttoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductoToolStripMenuItem, Me.ToolStripSeparator4, Me.UnidadDeTransporteToolStripMenuItem, Me.ToolStripSeparator8, Me.DestinatarioToolStripMenuItem, Me.RemitenteToolStripMenuItem, Me.ToolStripSeparator9, Me.TrabajadorToolStripMenuItem, Me.ToolStripSeparator5, Me.ClienteToolStripMenuItem, Me.ToolStripSeparator14, Me.ComisionistaToolStripMenuItem, Me.ToolStripSeparator13, Me.ZonaToolStripMenuItem, Me.UbigeoToolStripMenuItem, Me.TipoDeOperacionToolStripMenuItem, Me.ToolStripSeparator12, Me.TablasSunatToolStripMenuItem})
         Me.MantenimienttoToolStripMenuItem.Image = CType(resources.GetObject("MantenimienttoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MantenimienttoToolStripMenuItem.Name = "MantenimienttoToolStripMenuItem"
-        Me.MantenimienttoToolStripMenuItem.Size = New System.Drawing.Size(159, 27)
+        Me.MantenimienttoToolStripMenuItem.Size = New System.Drawing.Size(127, 24)
         Me.MantenimienttoToolStripMenuItem.Text = "&Mantenimiento"
         '
         'ProductoToolStripMenuItem
@@ -298,328 +296,327 @@ Public Class FMenuGuia
         Me.ProductoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductoToolStripMenuItem1, Me.EnvaseToolStripMenuItem1, Me.EnvaseToolStripMenuItem2, Me.CategoriaToolStripMenuItem1})
         Me.ProductoToolStripMenuItem.Image = CType(resources.GetObject("ProductoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
-        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.ProductoToolStripMenuItem.Text = "&Producto"
         '
         'ProductoToolStripMenuItem1
         '
         Me.ProductoToolStripMenuItem1.Name = "ProductoToolStripMenuItem1"
-        Me.ProductoToolStripMenuItem1.Size = New System.Drawing.Size(160, 28)
+        Me.ProductoToolStripMenuItem1.Size = New System.Drawing.Size(133, 22)
         Me.ProductoToolStripMenuItem1.Text = "&Producto"
         '
         'EnvaseToolStripMenuItem1
         '
         Me.EnvaseToolStripMenuItem1.Name = "EnvaseToolStripMenuItem1"
-        Me.EnvaseToolStripMenuItem1.Size = New System.Drawing.Size(160, 28)
+        Me.EnvaseToolStripMenuItem1.Size = New System.Drawing.Size(133, 22)
         Me.EnvaseToolStripMenuItem1.Text = "&Logotipo"
         '
         'EnvaseToolStripMenuItem2
         '
         Me.EnvaseToolStripMenuItem2.Name = "EnvaseToolStripMenuItem2"
-        Me.EnvaseToolStripMenuItem2.Size = New System.Drawing.Size(160, 28)
+        Me.EnvaseToolStripMenuItem2.Size = New System.Drawing.Size(133, 22)
         Me.EnvaseToolStripMenuItem2.Text = "&Envase"
         '
         'CategoriaToolStripMenuItem1
         '
         Me.CategoriaToolStripMenuItem1.Name = "CategoriaToolStripMenuItem1"
-        Me.CategoriaToolStripMenuItem1.Size = New System.Drawing.Size(160, 28)
+        Me.CategoriaToolStripMenuItem1.Size = New System.Drawing.Size(133, 22)
         Me.CategoriaToolStripMenuItem1.Text = "&Categoria"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(187, 6)
         '
         'UnidadDeTransporteToolStripMenuItem
         '
         Me.UnidadDeTransporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransportistaToolStripMenuItem1, Me.UnidadDeTransporteToolStripMenuItem1, Me.ChoferToolStripMenuItem1})
         Me.UnidadDeTransporteToolStripMenuItem.Image = CType(resources.GetObject("UnidadDeTransporteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UnidadDeTransporteToolStripMenuItem.Name = "UnidadDeTransporteToolStripMenuItem"
-        Me.UnidadDeTransporteToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.UnidadDeTransporteToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.UnidadDeTransporteToolStripMenuItem.Text = "Transporte"
         '
         'TransportistaToolStripMenuItem1
         '
         Me.TransportistaToolStripMenuItem1.Name = "TransportistaToolStripMenuItem1"
-        Me.TransportistaToolStripMenuItem1.Size = New System.Drawing.Size(252, 28)
+        Me.TransportistaToolStripMenuItem1.Size = New System.Drawing.Size(205, 22)
         Me.TransportistaToolStripMenuItem1.Text = "&Transportista"
         '
         'UnidadDeTransporteToolStripMenuItem1
         '
         Me.UnidadDeTransporteToolStripMenuItem1.Name = "UnidadDeTransporteToolStripMenuItem1"
-        Me.UnidadDeTransporteToolStripMenuItem1.Size = New System.Drawing.Size(252, 28)
+        Me.UnidadDeTransporteToolStripMenuItem1.Size = New System.Drawing.Size(205, 22)
         Me.UnidadDeTransporteToolStripMenuItem1.Text = "&Unidad de Transporte"
         '
         'ChoferToolStripMenuItem1
         '
         Me.ChoferToolStripMenuItem1.Name = "ChoferToolStripMenuItem1"
-        Me.ChoferToolStripMenuItem1.Size = New System.Drawing.Size(252, 28)
+        Me.ChoferToolStripMenuItem1.Size = New System.Drawing.Size(205, 22)
         Me.ChoferToolStripMenuItem1.Text = "&Chofer"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(187, 6)
         '
         'DestinatarioToolStripMenuItem
         '
         Me.DestinatarioToolStripMenuItem.Image = CType(resources.GetObject("DestinatarioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DestinatarioToolStripMenuItem.Name = "DestinatarioToolStripMenuItem"
-        Me.DestinatarioToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.DestinatarioToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.DestinatarioToolStripMenuItem.Text = "&Destinatario"
         '
         'RemitenteToolStripMenuItem
         '
         Me.RemitenteToolStripMenuItem.Image = CType(resources.GetObject("RemitenteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RemitenteToolStripMenuItem.Name = "RemitenteToolStripMenuItem"
-        Me.RemitenteToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.RemitenteToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.RemitenteToolStripMenuItem.Text = "&Remitente"
         '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(187, 6)
         '
         'TrabajadorToolStripMenuItem
         '
         Me.TrabajadorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrabajadorToolStripMenuItem1, Me.TipoDeTrabajadorToolStripMenuItem1})
         Me.TrabajadorToolStripMenuItem.Image = CType(resources.GetObject("TrabajadorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TrabajadorToolStripMenuItem.Name = "TrabajadorToolStripMenuItem"
-        Me.TrabajadorToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.TrabajadorToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.TrabajadorToolStripMenuItem.Text = "&Trabajador"
         '
         'TrabajadorToolStripMenuItem1
         '
         Me.TrabajadorToolStripMenuItem1.Name = "TrabajadorToolStripMenuItem1"
-        Me.TrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(230, 28)
+        Me.TrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(190, 22)
         Me.TrabajadorToolStripMenuItem1.Text = "&Trabajador"
         '
         'TipoDeTrabajadorToolStripMenuItem1
         '
         Me.TipoDeTrabajadorToolStripMenuItem1.Name = "TipoDeTrabajadorToolStripMenuItem1"
-        Me.TipoDeTrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(230, 28)
+        Me.TipoDeTrabajadorToolStripMenuItem1.Size = New System.Drawing.Size(190, 22)
         Me.TipoDeTrabajadorToolStripMenuItem1.Text = "&Tipo de Trabajador"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(187, 6)
         '
         'ClienteToolStripMenuItem
         '
         Me.ClienteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem1, Me.TipoDeClienteToolStripMenuItem1})
         Me.ClienteToolStripMenuItem.Image = CType(resources.GetObject("ClienteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
-        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.ClienteToolStripMenuItem.Text = "&Cliente"
         '
         'ClienteToolStripMenuItem1
         '
         Me.ClienteToolStripMenuItem1.Name = "ClienteToolStripMenuItem1"
-        Me.ClienteToolStripMenuItem1.Size = New System.Drawing.Size(201, 28)
+        Me.ClienteToolStripMenuItem1.Size = New System.Drawing.Size(164, 22)
         Me.ClienteToolStripMenuItem1.Text = "&Cliente"
         '
         'TipoDeClienteToolStripMenuItem1
         '
         Me.TipoDeClienteToolStripMenuItem1.Name = "TipoDeClienteToolStripMenuItem1"
-        Me.TipoDeClienteToolStripMenuItem1.Size = New System.Drawing.Size(201, 28)
+        Me.TipoDeClienteToolStripMenuItem1.Size = New System.Drawing.Size(164, 22)
         Me.TipoDeClienteToolStripMenuItem1.Text = "&Tipo de Cliente"
         '
         'ToolStripSeparator14
         '
         Me.ToolStripSeparator14.Name = "ToolStripSeparator14"
-        Me.ToolStripSeparator14.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator14.Size = New System.Drawing.Size(187, 6)
         '
         'ComisionistaToolStripMenuItem
         '
         Me.ComisionistaToolStripMenuItem.Image = CType(resources.GetObject("ComisionistaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ComisionistaToolStripMenuItem.Name = "ComisionistaToolStripMenuItem"
-        Me.ComisionistaToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.ComisionistaToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.ComisionistaToolStripMenuItem.Text = "&Comisionista"
         '
         'ToolStripSeparator13
         '
         Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
-        Me.ToolStripSeparator13.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator13.Size = New System.Drawing.Size(187, 6)
         '
         'ZonaToolStripMenuItem
         '
         Me.ZonaToolStripMenuItem.Image = CType(resources.GetObject("ZonaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ZonaToolStripMenuItem.Name = "ZonaToolStripMenuItem"
-        Me.ZonaToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.ZonaToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.ZonaToolStripMenuItem.Text = "&Zona"
         '
         'UbigeoToolStripMenuItem
         '
         Me.UbigeoToolStripMenuItem.Image = CType(resources.GetObject("UbigeoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UbigeoToolStripMenuItem.Name = "UbigeoToolStripMenuItem"
-        Me.UbigeoToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.UbigeoToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.UbigeoToolStripMenuItem.Text = "&Ubigeo"
         '
         'TipoDeOperacionToolStripMenuItem
         '
         Me.TipoDeOperacionToolStripMenuItem.Image = CType(resources.GetObject("TipoDeOperacionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TipoDeOperacionToolStripMenuItem.Name = "TipoDeOperacionToolStripMenuItem"
-        Me.TipoDeOperacionToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.TipoDeOperacionToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.TipoDeOperacionToolStripMenuItem.Text = "&Tipo de Operacion"
         '
         'ToolStripSeparator12
         '
         Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
-        Me.ToolStripSeparator12.Size = New System.Drawing.Size(224, 6)
+        Me.ToolStripSeparator12.Size = New System.Drawing.Size(187, 6)
         '
         'TablasSunatToolStripMenuItem
         '
         Me.TablasSunatToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem, Me.TipoDeComprobanteDePagoToolStripMenuItem1, Me.OperacionToolStripMenuItem})
         Me.TablasSunatToolStripMenuItem.Image = CType(resources.GetObject("TablasSunatToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TablasSunatToolStripMenuItem.Name = "TablasSunatToolStripMenuItem"
-        Me.TablasSunatToolStripMenuItem.Size = New System.Drawing.Size(227, 28)
+        Me.TablasSunatToolStripMenuItem.Size = New System.Drawing.Size(190, 26)
         Me.TablasSunatToolStripMenuItem.Text = "&Tablas Sunat"
         '
         'TipoDeDctoDeIdentidadTabla2ToolStripMenuItem
         '
         Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Name = "TipoDeDctoDeIdentidadTabla2ToolStripMenuItem"
-        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
+        Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Size = New System.Drawing.Size(321, 22)
         Me.TipoDeDctoDeIdentidadTabla2ToolStripMenuItem.Text = "&Tipo de Dcto. de Identidad (Tabla 2)"
         '
         'TipoDeComprobanteDePagoToolStripMenuItem1
         '
         Me.TipoDeComprobanteDePagoToolStripMenuItem1.Name = "TipoDeComprobanteDePagoToolStripMenuItem1"
-        Me.TipoDeComprobanteDePagoToolStripMenuItem1.Size = New System.Drawing.Size(401, 28)
+        Me.TipoDeComprobanteDePagoToolStripMenuItem1.Size = New System.Drawing.Size(321, 22)
         Me.TipoDeComprobanteDePagoToolStripMenuItem1.Text = "&Tipo de Comprobante de Pago (Tabla 10)"
         '
         'OperacionToolStripMenuItem
         '
         Me.OperacionToolStripMenuItem.Name = "OperacionToolStripMenuItem"
-        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
+        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(321, 22)
         Me.OperacionToolStripMenuItem.Text = "&Operacion (Tabla 12)"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 27)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 24)
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturaVentaToolStripMenuItem, Me.FleteTransportistaToolStripMenuItem, Me.ControlGuiasFacturasToolStripMenuItem, Me.ToolStripSeparator16, Me.IngresoDeComprobantesDePagoToolStripMenuItem, Me.EnvioDeComprobantesDePagoToolStripMenuItem1, Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1, Me.ControlDeComprobantesDePagoToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Image = CType(resources.GetObject("ReportesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(109, 27)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(93, 24)
         Me.ReportesToolStripMenuItem.Text = "&Reportes"
         '
         'FacturaVentaToolStripMenuItem
         '
         Me.FacturaVentaToolStripMenuItem.Name = "FacturaVentaToolStripMenuItem"
-        Me.FacturaVentaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.FacturaVentaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.FacturaVentaToolStripMenuItem.Text = "&Envios x Remitente"
         '
         'FleteTransportistaToolStripMenuItem
         '
         Me.FleteTransportistaToolStripMenuItem.Name = "FleteTransportistaToolStripMenuItem"
-        Me.FleteTransportistaToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.FleteTransportistaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.FleteTransportistaToolStripMenuItem.Text = "&Flete-Transportista"
         '
         'ControlGuiasFacturasToolStripMenuItem
         '
         Me.ControlGuiasFacturasToolStripMenuItem.Name = "ControlGuiasFacturasToolStripMenuItem"
-        Me.ControlGuiasFacturasToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.ControlGuiasFacturasToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.ControlGuiasFacturasToolStripMenuItem.Text = "&Facturas Enviadas "
         '
         'ToolStripSeparator16
         '
         Me.ToolStripSeparator16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ToolStripSeparator16.Name = "ToolStripSeparator16"
-        Me.ToolStripSeparator16.Size = New System.Drawing.Size(378, 6)
+        Me.ToolStripSeparator16.Size = New System.Drawing.Size(300, 6)
         '
         'IngresoDeComprobantesDePagoToolStripMenuItem
         '
         Me.IngresoDeComprobantesDePagoToolStripMenuItem.Name = "IngresoDeComprobantesDePagoToolStripMenuItem"
-        Me.IngresoDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.IngresoDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.IngresoDeComprobantesDePagoToolStripMenuItem.Text = "&Ingreso de Comprobantes de Pago"
         '
         'EnvioDeComprobantesDePagoToolStripMenuItem1
         '
         Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Name = "EnvioDeComprobantesDePagoToolStripMenuItem1"
-        Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(381, 28)
+        Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(303, 22)
         Me.EnvioDeComprobantesDePagoToolStripMenuItem1.Text = "&Envio de Comprobantes de Pago"
         '
         'DevoluciónDeComprobantesDePagoToolStripMenuItem1
         '
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Name = "DevoluciónDeComprobantesDePagoToolStripMenuItem1"
-        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(381, 28)
+        Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Size = New System.Drawing.Size(303, 22)
         Me.DevoluciónDeComprobantesDePagoToolStripMenuItem1.Text = "&Devolución de Comprobantes de Pago"
         '
         'ControlDeComprobantesDePagoToolStripMenuItem
         '
         Me.ControlDeComprobantesDePagoToolStripMenuItem.ForeColor = System.Drawing.Color.Blue
         Me.ControlDeComprobantesDePagoToolStripMenuItem.Name = "ControlDeComprobantesDePagoToolStripMenuItem"
-        Me.ControlDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(381, 28)
+        Me.ControlDeComprobantesDePagoToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
         Me.ControlDeComprobantesDePagoToolStripMenuItem.Text = "&Control de Comprobantes de Pago"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 24)
         '
         'UtilidadToolStripMenuItem
         '
-        Me.UtilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculadoraToolStripMenuItem, Me.DNIRENIECToolStripMenuItem, Me.SunatToolStripMenuItem, Me.DNIToolStripMenuItem})
+        Me.UtilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalculadoraToolStripMenuItem, Me.SunatToolStripMenuItem, Me.DNIToolStripMenuItem})
         Me.UtilidadToolStripMenuItem.Image = CType(resources.GetObject("UtilidadToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UtilidadToolStripMenuItem.Name = "UtilidadToolStripMenuItem"
-        Me.UtilidadToolStripMenuItem.Size = New System.Drawing.Size(114, 27)
+        Me.UtilidadToolStripMenuItem.Size = New System.Drawing.Size(95, 24)
         Me.UtilidadToolStripMenuItem.Text = "&Utilitarios"
         '
         'CalculadoraToolStripMenuItem
         '
         Me.CalculadoraToolStripMenuItem.Image = CType(resources.GetObject("CalculadoraToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CalculadoraToolStripMenuItem.Name = "CalculadoraToolStripMenuItem"
-        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
+        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(156, 26)
         Me.CalculadoraToolStripMenuItem.Text = "&Calculadora"
-        '
-        'DNIRENIECToolStripMenuItem
-        '
-        Me.DNIRENIECToolStripMenuItem.Image = CType(resources.GetObject("DNIRENIECToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.DNIRENIECToolStripMenuItem.Name = "DNIRENIECToolStripMenuItem"
-        Me.DNIRENIECToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
-        Me.DNIRENIECToolStripMenuItem.Text = "DNI-RENIEC"
         '
         'SunatToolStripMenuItem
         '
         Me.SunatToolStripMenuItem.Image = CType(resources.GetObject("SunatToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SunatToolStripMenuItem.Name = "SunatToolStripMenuItem"
-        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
+        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(156, 26)
         Me.SunatToolStripMenuItem.Text = "&Sunat"
+        '
+        'DNIToolStripMenuItem
+        '
+        Me.DNIToolStripMenuItem.Name = "DNIToolStripMenuItem"
+        Me.DNIToolStripMenuItem.Size = New System.Drawing.Size(156, 26)
+        Me.DNIToolStripMenuItem.Text = "DNI"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 27)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 24)
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContenidoDelSistemaToolStripMenuItem, Me.ToolStripSeparator11, Me.AcercaDeToolStripMenuItem})
         Me.AyudaToolStripMenuItem.Image = CType(resources.GetObject("AyudaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(90, 27)
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(76, 24)
         Me.AyudaToolStripMenuItem.Text = "&Ayuda"
         '
         'ContenidoDelSistemaToolStripMenuItem
         '
         Me.ContenidoDelSistemaToolStripMenuItem.Image = CType(resources.GetObject("ContenidoDelSistemaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ContenidoDelSistemaToolStripMenuItem.Name = "ContenidoDelSistemaToolStripMenuItem"
-        Me.ContenidoDelSistemaToolStripMenuItem.Size = New System.Drawing.Size(258, 28)
+        Me.ContenidoDelSistemaToolStripMenuItem.Size = New System.Drawing.Size(211, 26)
         Me.ContenidoDelSistemaToolStripMenuItem.Text = "&Contenido del Sistema"
         '
         'ToolStripSeparator11
         '
         Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
-        Me.ToolStripSeparator11.Size = New System.Drawing.Size(255, 6)
+        Me.ToolStripSeparator11.Size = New System.Drawing.Size(208, 6)
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(258, 28)
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(211, 26)
         Me.AcercaDeToolStripMenuItem.Text = "&Acerca de"
         '
         'StatusStrip1
@@ -627,10 +624,10 @@ Public Class FMenuGuia
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel1, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabelUsuario, Me.ToolStripStatusFish})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 494)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 500)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1027, 33)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1027, 27)
         Me.StatusStrip1.TabIndex = 73
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -644,7 +641,7 @@ Public Class FMenuGuia
         Me.toolStripStatusLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White
         Me.toolStripStatusLabel1.Name = "toolStripStatusLabel1"
-        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(251, 28)
+        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(251, 22)
         Me.toolStripStatusLabel1.Spring = True
         Me.toolStripStatusLabel1.Text = "    "
         '
@@ -658,7 +655,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel3.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(251, 28)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(251, 22)
         Me.ToolStripStatusLabel3.Spring = True
         Me.ToolStripStatusLabel3.Text = "    "
         '
@@ -672,7 +669,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabelUsuario.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusLabelUsuario.Name = "ToolStripStatusLabelUsuario"
-        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(251, 28)
+        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(251, 22)
         Me.ToolStripStatusLabelUsuario.Spring = True
         Me.ToolStripStatusLabelUsuario.Text = "    "
         '
@@ -686,18 +683,12 @@ Public Class FMenuGuia
         Me.ToolStripStatusFish.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusFish.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusFish.Name = "ToolStripStatusFish"
-        Me.ToolStripStatusFish.Size = New System.Drawing.Size(251, 28)
+        Me.ToolStripStatusFish.Size = New System.Drawing.Size(251, 22)
         Me.ToolStripStatusFish.Spring = True
-        '
-        'DNIToolStripMenuItem
-        '
-        Me.DNIToolStripMenuItem.Name = "DNIToolStripMenuItem"
-        Me.DNIToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
-        Me.DNIToolStripMenuItem.Text = "DNI"
         '
         'FMenuGuia
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(7, 16)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -880,7 +871,7 @@ Public Class FMenuGuia
 
     End Sub
 
-    Private Sub DNIRENIECToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DNIRENIECToolStripMenuItem.Click
+    Private Sub DNIRENIECToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Process.Start("https://cel.reniec.gob.pe/valreg/valreg.do?accion=ini")
     End Sub
 

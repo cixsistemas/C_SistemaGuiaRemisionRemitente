@@ -46,11 +46,6 @@ Partial Class FrmDev_Comp2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtDescrip = New System.Windows.Forms.TextBox()
         Me.dgvlista = New System.Windows.Forms.DataGridView()
-        Me.btneliminar = New System.Windows.Forms.Button()
-        Me.btnQuitar = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnaceptar = New System.Windows.Forms.Button()
-        Me.btncancelar = New System.Windows.Forms.Button()
         Me.SELECCIONAR = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.B = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +56,11 @@ Partial Class FrmDev_Comp2
         Me.G = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.H = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.I = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.btneliminar = New System.Windows.Forms.Button()
+        Me.btnQuitar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnaceptar = New System.Windows.Forms.Button()
+        Me.btncancelar = New System.Windows.Forms.Button()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -301,6 +301,80 @@ Partial Class FrmDev_Comp2
         Me.dgvlista.Size = New System.Drawing.Size(769, 206)
         Me.dgvlista.TabIndex = 231
         '
+        'SELECCIONAR
+        '
+        Me.SELECCIONAR.HeaderText = "Seleccionar"
+        Me.SELECCIONAR.Name = "SELECCIONAR"
+        Me.SELECCIONAR.Visible = False
+        Me.SELECCIONAR.Width = 69
+        '
+        'A
+        '
+        Me.A.HeaderText = "Id Det Dev Comp"
+        Me.A.Name = "A"
+        Me.A.ReadOnly = True
+        Me.A.Visible = False
+        Me.A.Width = 114
+        '
+        'B
+        '
+        Me.B.HeaderText = "Id Env Comp"
+        Me.B.Name = "B"
+        Me.B.ReadOnly = True
+        Me.B.Visible = False
+        Me.B.Width = 93
+        '
+        'C
+        '
+        Me.C.HeaderText = "Id Det Env Comp"
+        Me.C.Name = "C"
+        Me.C.ReadOnly = True
+        Me.C.Visible = False
+        Me.C.Width = 113
+        '
+        'D
+        '
+        Me.D.HeaderText = "Comisionista"
+        Me.D.Name = "D"
+        Me.D.Width = 90
+        '
+        'E
+        '
+        Me.E.HeaderText = "Remitente"
+        Me.E.Name = "E"
+        Me.E.ReadOnly = True
+        Me.E.Width = 80
+        '
+        'F
+        '
+        Me.F.HeaderText = "Comprobante de Pago"
+        Me.F.Name = "F"
+        Me.F.ReadOnly = True
+        Me.F.Width = 104
+        '
+        'G
+        '
+        Me.G.HeaderText = "Serie"
+        Me.G.Name = "G"
+        Me.G.ReadOnly = True
+        Me.G.Width = 56
+        '
+        'H
+        '
+        Me.H.HeaderText = "Numero"
+        Me.H.Name = "H"
+        Me.H.ReadOnly = True
+        Me.H.Width = 69
+        '
+        'I
+        '
+        Me.I.HeaderText = "Estado"
+        Me.I.Items.AddRange(New Object() {"EMITIDO", "ANULADO", "EN BLANCO", "PERDIDO"})
+        Me.I.Name = "I"
+        Me.I.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.I.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.I.Width = 65
+        '
         'btneliminar
         '
         Me.btneliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -376,80 +450,6 @@ Partial Class FrmDev_Comp2
         Me.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btncancelar.UseVisualStyleBackColor = False
         '
-        'SELECCIONAR
-        '
-        Me.SELECCIONAR.HeaderText = "Seleccionar"
-        Me.SELECCIONAR.Name = "SELECCIONAR"
-        Me.SELECCIONAR.Visible = False
-        Me.SELECCIONAR.Width = 69
-        '
-        'A
-        '
-        Me.A.HeaderText = "Id Det Dev Comp"
-        Me.A.Name = "A"
-        Me.A.ReadOnly = True
-        Me.A.Visible = False
-        Me.A.Width = 114
-        '
-        'B
-        '
-        Me.B.HeaderText = "Id Env Comp"
-        Me.B.Name = "B"
-        Me.B.ReadOnly = True
-        Me.B.Visible = False
-        Me.B.Width = 93
-        '
-        'C
-        '
-        Me.C.HeaderText = "Id Det Env Comp"
-        Me.C.Name = "C"
-        Me.C.ReadOnly = True
-        Me.C.Visible = False
-        Me.C.Width = 113
-        '
-        'D
-        '
-        Me.D.HeaderText = "Comisionista"
-        Me.D.Name = "D"
-        Me.D.Width = 90
-        '
-        'E
-        '
-        Me.E.HeaderText = "Remitente"
-        Me.E.Name = "E"
-        Me.E.ReadOnly = True
-        Me.E.Width = 80
-        '
-        'F
-        '
-        Me.F.HeaderText = "Comprobante de Pago"
-        Me.F.Name = "F"
-        Me.F.ReadOnly = True
-        Me.F.Width = 104
-        '
-        'G
-        '
-        Me.G.HeaderText = "Serie"
-        Me.G.Name = "G"
-        Me.G.ReadOnly = True
-        Me.G.Width = 56
-        '
-        'H
-        '
-        Me.H.HeaderText = "Numero"
-        Me.H.Name = "H"
-        Me.H.ReadOnly = True
-        Me.H.Width = 69
-        '
-        'I
-        '
-        Me.I.HeaderText = "Estado"
-        Me.I.Items.AddRange(New Object() {"EMITIDO", "ANULADO", "EN BLANCO", "PERDIDO"})
-        Me.I.Name = "I"
-        Me.I.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.I.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.I.Width = 65
-        '
         'FrmDev_Comp2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -482,6 +482,8 @@ Partial Class FrmDev_Comp2
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmDev_Comp2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro de Devolución de Comprobantes de Pago"

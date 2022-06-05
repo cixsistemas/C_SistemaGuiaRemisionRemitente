@@ -46,6 +46,14 @@ Partial Class FrmPago_Detra1
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Detalle_Cat = New System.Windows.Forms.DataGridView()
+        Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.id_det_pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sacos_cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ivap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
@@ -100,14 +108,6 @@ Partial Class FrmPago_Detra1
         Me.Fecha_Emis = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtIdCat = New System.Windows.Forms.Label()
-        Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.id_det_pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sacos_cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ivap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Detalle_Cat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupPanel1.SuspendLayout()
         Me.GroupPanel2.SuspendLayout()
@@ -366,6 +366,60 @@ Partial Class FrmPago_Detra1
         Me.Detalle_Cat.Size = New System.Drawing.Size(468, 128)
         Me.Detalle_Cat.TabIndex = 89
         '
+        'Seleccionar
+        '
+        Me.Seleccionar.HeaderText = "Selecciona"
+        Me.Seleccionar.Name = "Seleccionar"
+        Me.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Seleccionar.Width = 85
+        '
+        'id_det_pago
+        '
+        Me.id_det_pago.HeaderText = "ID"
+        Me.id_det_pago.Name = "id_det_pago"
+        Me.id_det_pago.Visible = False
+        Me.id_det_pago.Width = 43
+        '
+        'id_cat
+        '
+        Me.id_cat.HeaderText = "Codigo"
+        Me.id_cat.Name = "id_cat"
+        Me.id_cat.Visible = False
+        Me.id_cat.Width = 65
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        Me.Descripcion.Width = 88
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.Name = "Precio"
+        Me.Precio.Width = 62
+        '
+        'sacos_cantidad
+        '
+        Me.sacos_cantidad.HeaderText = "Cantidad"
+        Me.sacos_cantidad.Name = "sacos_cantidad"
+        Me.sacos_cantidad.Width = 74
+        '
+        'Ivap
+        '
+        Me.Ivap.HeaderText = "Ivap"
+        Me.Ivap.Name = "Ivap"
+        Me.Ivap.Width = 53
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.Name = "Total"
+        Me.Total.ReadOnly = True
+        Me.Total.Width = 56
+        '
         'LabelX1
         '
         '
@@ -453,6 +507,7 @@ Partial Class FrmPago_Detra1
         Me.GroupPanel1.Controls.Add(Me.LabelX2)
         Me.GroupPanel1.Controls.Add(Me.LabelX4)
         Me.GroupPanel1.Controls.Add(Me.LabelX3)
+        Me.GroupPanel1.DisabledBackColor = System.Drawing.Color.Empty
         Me.GroupPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel1.Location = New System.Drawing.Point(570, 2)
         Me.GroupPanel1.Name = "GroupPanel1"
@@ -617,6 +672,7 @@ Partial Class FrmPago_Detra1
         Me.GroupPanel2.Controls.Add(Me.LabelX8)
         Me.GroupPanel2.Controls.Add(Me.LabelX9)
         Me.GroupPanel2.Controls.Add(Me.LabelX10)
+        Me.GroupPanel2.DisabledBackColor = System.Drawing.Color.Empty
         Me.GroupPanel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel2.Location = New System.Drawing.Point(571, 178)
         Me.GroupPanel2.Name = "GroupPanel2"
@@ -848,6 +904,7 @@ Partial Class FrmPago_Detra1
         Me.GroupPanel3.Controls.Add(Me.LabelX17)
         Me.GroupPanel3.Controls.Add(Me.LabelX18)
         Me.GroupPanel3.Controls.Add(Me.LabelX19)
+        Me.GroupPanel3.DisabledBackColor = System.Drawing.Color.Empty
         Me.GroupPanel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel3.Location = New System.Drawing.Point(573, 356)
         Me.GroupPanel3.Name = "GroupPanel3"
@@ -1222,60 +1279,6 @@ Partial Class FrmPago_Detra1
         Me.txtIdCat.TabIndex = 120
         Me.txtIdCat.Text = "             "
         '
-        'Seleccionar
-        '
-        Me.Seleccionar.HeaderText = "Selecciona"
-        Me.Seleccionar.Name = "Seleccionar"
-        Me.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Seleccionar.Width = 85
-        '
-        'id_det_pago
-        '
-        Me.id_det_pago.HeaderText = "ID"
-        Me.id_det_pago.Name = "id_det_pago"
-        Me.id_det_pago.Visible = False
-        Me.id_det_pago.Width = 43
-        '
-        'id_cat
-        '
-        Me.id_cat.HeaderText = "Codigo"
-        Me.id_cat.Name = "id_cat"
-        Me.id_cat.Visible = False
-        Me.id_cat.Width = 65
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        Me.Descripcion.Width = 88
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        Me.Precio.Width = 62
-        '
-        'sacos_cantidad
-        '
-        Me.sacos_cantidad.HeaderText = "Cantidad"
-        Me.sacos_cantidad.Name = "sacos_cantidad"
-        Me.sacos_cantidad.Width = 74
-        '
-        'Ivap
-        '
-        Me.Ivap.HeaderText = "Ivap"
-        Me.Ivap.Name = "Ivap"
-        Me.Ivap.Width = 53
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Total"
-        Me.Total.Name = "Total"
-        Me.Total.ReadOnly = True
-        Me.Total.Width = 56
-        '
         'FrmPago_Detra1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1323,6 +1326,8 @@ Partial Class FrmPago_Detra1
         Me.Controls.Add(Me.fecha)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmPago_Detra1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Pago-Detraccion"

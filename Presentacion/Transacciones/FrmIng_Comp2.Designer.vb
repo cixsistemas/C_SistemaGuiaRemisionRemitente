@@ -40,6 +40,12 @@ Partial Class FrmIng_Comp2
         Me.Fecha_Ingreso = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvlista = New System.Windows.Forms.DataGridView()
+        Me.SELECCIONAR = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.IDDETALLEINGCOMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDINGCOMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.C = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.D = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.G = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnQuitar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -57,12 +63,6 @@ Partial Class FrmIng_Comp2
         Me.Label23 = New System.Windows.Forms.Label()
         Me.TxtTipoOperac = New System.Windows.Forms.Label()
         Me.BtnOperacion = New System.Windows.Forms.Button()
-        Me.SELECCIONAR = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.IDDETALLEINGCOMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDINGCOMP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.C = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.D = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.G = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvlista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -235,6 +235,44 @@ Partial Class FrmIng_Comp2
         Me.dgvlista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvlista.Size = New System.Drawing.Size(529, 208)
         Me.dgvlista.TabIndex = 209
+        '
+        'SELECCIONAR
+        '
+        Me.SELECCIONAR.HeaderText = "Seleccionar"
+        Me.SELECCIONAR.Name = "SELECCIONAR"
+        Me.SELECCIONAR.Width = 69
+        '
+        'IDDETALLEINGCOMP
+        '
+        Me.IDDETALLEINGCOMP.HeaderText = "ID DET ING COMP"
+        Me.IDDETALLEINGCOMP.Name = "IDDETALLEINGCOMP"
+        Me.IDDETALLEINGCOMP.Visible = False
+        Me.IDDETALLEINGCOMP.Width = 124
+        '
+        'IDINGCOMP
+        '
+        Me.IDINGCOMP.HeaderText = "ID ING COMP"
+        Me.IDINGCOMP.Name = "IDINGCOMP"
+        Me.IDINGCOMP.Visible = False
+        Me.IDINGCOMP.Width = 99
+        '
+        'C
+        '
+        Me.C.HeaderText = "Serie"
+        Me.C.Name = "C"
+        Me.C.Width = 56
+        '
+        'D
+        '
+        Me.D.HeaderText = "Numero"
+        Me.D.Name = "D"
+        Me.D.Width = 69
+        '
+        'G
+        '
+        Me.G.HeaderText = "Estado"
+        Me.G.Name = "G"
+        Me.G.Width = 65
         '
         'btneliminar
         '
@@ -441,44 +479,6 @@ Partial Class FrmIng_Comp2
         Me.BtnOperacion.TabIndex = 2
         Me.BtnOperacion.UseVisualStyleBackColor = False
         '
-        'SELECCIONAR
-        '
-        Me.SELECCIONAR.HeaderText = "Seleccionar"
-        Me.SELECCIONAR.Name = "SELECCIONAR"
-        Me.SELECCIONAR.Width = 69
-        '
-        'IDDETALLEINGCOMP
-        '
-        Me.IDDETALLEINGCOMP.HeaderText = "ID DET ING COMP"
-        Me.IDDETALLEINGCOMP.Name = "IDDETALLEINGCOMP"
-        Me.IDDETALLEINGCOMP.Visible = False
-        Me.IDDETALLEINGCOMP.Width = 124
-        '
-        'IDINGCOMP
-        '
-        Me.IDINGCOMP.HeaderText = "ID ING COMP"
-        Me.IDINGCOMP.Name = "IDINGCOMP"
-        Me.IDINGCOMP.Visible = False
-        Me.IDINGCOMP.Width = 99
-        '
-        'C
-        '
-        Me.C.HeaderText = "Serie"
-        Me.C.Name = "C"
-        Me.C.Width = 56
-        '
-        'D
-        '
-        Me.D.HeaderText = "Numero"
-        Me.D.Name = "D"
-        Me.D.Width = 69
-        '
-        'G
-        '
-        Me.G.HeaderText = "Estado"
-        Me.G.Name = "G"
-        Me.G.Width = 65
-        '
         'FrmIng_Comp2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -516,6 +516,8 @@ Partial Class FrmIng_Comp2
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmIng_Comp2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Ingreso de Comprobantes de Pago"

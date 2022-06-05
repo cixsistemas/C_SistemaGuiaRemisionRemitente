@@ -825,6 +825,8 @@ Partial Class FrmNota_ArroZ
         Me.Controls.Add(Me.GroupBox4)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmNota_ArroZ"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Nota de Envio - Venta de Arroz"

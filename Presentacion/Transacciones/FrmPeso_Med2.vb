@@ -1,8 +1,9 @@
 Public Class FrmPeso_Med2
     Private formulario As New FrmPeso_Med
     Dim Id_peso_med2 As Integer
-
     Dim tabla_peso_med As DataTable = Nothing
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el FiltradO
 
     Public Sub lista(ByVal criterio As String)
         mesajeerror.ForeColor = Color.Blue
@@ -24,6 +25,10 @@ Public Class FrmPeso_Med2
                     mesajeerror.Text = mensajeSinRegistros
                     mesajeerror.ForeColor = Color.Red
                 Else
+                    'AGREGADO EL DIA 04-06-2022
+                    Dv.Table = tabla_peso_med ' Enlazamos el dataview con la tabla devuelta
+                    ''=======================================================
+                    ''dgvlista.Columns("ID").Visible = False
                     dgvlista.Columns("ID Guia").Visible = False
                     dgvlista.Columns("Id Peso Medida").Visible = False
                     dgvlista.Columns("RUC Destinatario").Visible = False
@@ -242,8 +247,12 @@ Public Class FrmPeso_Med2
     End Sub
 
     Private Sub txtbusca_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.TextChanged
-        lista(txtbusca.Text)
+        'lista(txtbusca.Text)
         'SoloNumeros(e, False, sender.Text)
+        CadenaBuscar = "Nro. Guia de Remision like '%" + txtbusca.Text.Trim + "%'"
+        Dv.RowFilter = CadenaBuscar
+        dgvlista.DataSource = Dv
+        dgvlista.Update()
     End Sub
 
     Private Sub txtbusca_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtbusca.Leave

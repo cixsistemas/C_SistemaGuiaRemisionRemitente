@@ -3,6 +3,8 @@ Public Class frmguias
     Dim idguia As Integer
     Dim tabla_guias As DataTable
     Dim tabla_detalle_guias As DataTable
+    Dim Dv As New DataView
+    Dim CadenaBuscar As String 'Cadena para el FiltradO
 
     Public Sub listar_detalle_guias(ByVal idguia As Integer)
         'Me.mesajeerror.ForeColor = Color.Blue
@@ -112,6 +114,9 @@ Public Class frmguias
                     ''Me.dgvlista.Refresh()
 
                 End If
+                'AGREGADO EL DIA 13-04-2022
+                Dv.Table = tabla_guias ' Enlazamos el dataview con la tabla devuelta
+                ''=======================================================
                 dgvlista.Columns("ID").Visible = False
                 dgvlista.Columns("ID Partida").Visible = False
                 dgvlista.Columns("ID Destinatario").Visible = False
@@ -154,6 +159,11 @@ Public Class frmguias
         If (e.KeyCode = Keys.Escape) Then
             Close()
         End If
+
+        If e.KeyCode = Keys.Insert Then
+            e.SuppressKeyPress = True
+            Nuevo()
+        End If
     End Sub
 
 
@@ -163,161 +173,116 @@ Public Class frmguias
         listar_guias("1", "", "")
     End Sub
 
-    'Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-    '    Dim valor As String = Me.nroguia.Text.Trim
-    '    listar_guias(valor)
-    'End Sub
-
-
     Private Sub btnactualizar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnactualizar.Click
         'ACTUALIZAR DATA GRID
         listar_guias("1", "", "")
         listar_detalle_guias(idguia)
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
-        '   Me.formulario.lista(7)
-        'Me.formulario.direccion_pto_llegadaa.SelectedIndex = 0
-        formulario.ShowDialog() 'presentamos formulario.
-        If formulario.Aceptar = True Then
-            'preguntamos si el usuario quiere o no guardar programación médica.
-            If MessageBox.Show("¿Desea guardar Guía de Remisión-Remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                Dim servidor As New clinicapacifico.clsaccesodatos
-                ' asignamos ruta coneccion con el servidor de la base de datos
-                servidor.cadenaconexion = Ruta
-                If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
 
-                    'Dim id_mot_traslado As Integer
-                    'For i As Integer = 0 To formulario.dgvmotivo.Rows.Count - 1
+    Private Sub nroguia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nroguia.KeyPress
+        SoloNumeros(e, False, sender.Text)
+    End Sub
+    'Private Sub nroguia_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroguia.Enter
+    '    Me.nroguia.BackColor = Color.Moccasin
+    'End Sub
+    Private Sub nroguia_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nroguia.Leave
+        nroguia.BackColor = Color.White
+    End Sub
+    Private Sub nroguia_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nroguia.KeyDown
+        saltar_Flechas(e)
+    End Sub
+    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
+        Close()
+    End Sub
 
-                    '    If CBool(formulario.dgvmotivo.Item(0, i).Value) = True Then
-                    '        id_mot_traslado = CInt(formulario.dgvmotivo.Item(1, i).Value)
-                    '        Exit For
-                    '    End If
-                    'Next
+    Private Sub nroguia_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles nroguia.TextChanged
+        'Dim valor As String = nroguia.Text.Trim
+        'listar_guias("1", valor, "")
+        'dgvdetalle.DataSource = Nothing
+        CadenaBuscar = "Numero like '%" + nroguia.Text.Trim + "%'"
+        Dv.RowFilter = CadenaBuscar
+        dgvlista.DataSource = Dv
+        dgvlista.Update()
+        'listar_guias(Me.nroguia.Text, Nothing)
+    End Sub
 
-                    Dim rpta As Integer = -1
-                    Dim mensaje As String = ""
-                    servidor.ejecutar("[dbo].[pa_mantenimiento_cabecera_guia]",
-                    False,
-                    rpta,
-                    mensaje,
-                    formulario.id_guia,
-                    formulario.serie_guia.Text.Trim,
-                    formulario.nro_guia.Text.Trim,
-                    formulario.fecha_emision_guia.Value.Date,
-                    formulario.fecha_inicio_traslado.Value.Date,
-                    formulario.direccion_pto_partida.Text.Trim,
-                    formulario.ubigeo_pto_partida,
-                    formulario.id_Destinatario,
-                    formulario.direccion_pto_llegadaa.Text.Trim,
-                    IIf(formulario.ubigeo_pto_llegada = -1, Nothing, formulario.ubigeo_pto_llegada),
-                    formulario.id_vehi,
-                    formulario.id_chofer,
-                    formulario.Nro_constancia_deposito.Text.Trim,
-                    formulario.Monto_deposito.Text,
-                    formulario.Nro_constancia_deposito2.Text.Trim,
-                    formulario.Monto_deposito2.Text,
-                  formulario.id_MotivoTras,
-                    formulario.id_remitente,
-                    "N",
-                    0, "")
-                    If rpta > 0 Then
-                        Dim rptaham As Integer = -1
-                        Dim mensajeham As String = ""
-                        For i As Integer = 0 To formulario.Detalle.Rows.Count - 1
-                            servidor.ejecutar("[dbo].[pa_mantenimiento_detalle_guia]",
-                                            False,
-                                            rptaham,
-                                            mensajeham,
-                                            Nothing,
-                                            rpta,
-                                            CInt(formulario.Detalle.Item("id_prod", i).Value),
-                                            CInt(formulario.Detalle.Item("sacos_cantidad", i).Value),
-                                            CStr(formulario.Detalle.Item("unidad_medida", i).Value),
-                                            CDbl(formulario.Detalle.Item("x", i).Value),
-                                            CDbl(formulario.Detalle.Item("Precio_Venta", i).Value),
-                                            CDbl(formulario.Detalle.Item("IGV", i).Value),
-                                            "N",
-                                            0, "")
+    Private Sub txtdest_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtdest.Leave
+        txtdest.BackColor = Color.White
+    End Sub
 
-                        Next
+    Private Sub txtdest_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles txtdest.TextChanged
+        'Dim valor As String = Me.txtdest.Text
+        'listar_guias(Nothing, valor)
+        'dgvdetalle.DataSource = Nothing
+        CadenaBuscar = "Remitente like '%" + nroguia.Text.Trim + "%'"
+        Dv.RowFilter = CadenaBuscar
+        dgvlista.DataSource = Dv
+        dgvlista.Update()
 
-                        If rptaham = 0 Then
-                            servidor.cancelarconexiontrans()
-                            __mesajeerror = mensajeham
-                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                            Exit Sub
-                        End If
+        'listar_guias("1", "", txtdest.Text)
+    End Sub
 
-                        servidor.cerrarconexiontrans()
-                        __mesajeerror = mensaje
-                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-
-                Else
-                    __mesajeerror = servidor.getMensageError
-                    servidor.cerrarconexiontrans()
-                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-            End If
+    Private Sub cbTodos_CheckedChanged(sender As Object, e As EventArgs) Handles cbTodos.CheckedChanged
+        If cbTodos.Checked = True Then
+            listar_guias("2", "", "")
+        Else
+            listar_guias("1", "", "")
         End If
 
-        formulario.id_guia = -1
-        formulario.id_remitente = -1
-        formulario.NombreRemitente.Text = ""
-        formulario.ruc.Text = ""
-        'Me.formulario.serie_guia.Text = ""
-        ' Me.formulario.nro_guia.Text = ""
-        formulario.fecha_emision_guia.Value = Now
-        formulario.fecha_inicio_traslado.Value = Now
-        formulario.ubigeo_pto_partida = -1
-        'Me.formulario.direccion_pto_partida.Text = ""
-        formulario.distritoptop.Text = ""
-        formulario.provinciaptop.Text = ""
-        formulario.departamentoptop.Text = ""
-        formulario.ubigeo_pto_llegada = -1
-        'Me.formulario.direccion_pto_llegada.Text = ""
-        formulario.distritoptoll.Text = ""
-        formulario.provinciaptoll.Text = ""
-        formulario.departamentoptoll.Text = ""
-        formulario.id_Destinatario = -1
-        formulario.destinatario.Text = ""
-        formulario.rucdes.Text = ""
-        formulario.nombre_tip_doc.Text = ""
-        formulario.nro_doc.Text = ""
-        formulario.id_vehi = -1
-        formulario.marca_camion.Text = ""
-        formulario.nroplaca_camion.Text = ""
-        formulario.nrocertificado_camion.Text = ""
-        formulario.marca_carreta.Text = ""
-        formulario.nroplaca_carreta.Text = ""
-        formulario.nrocertificado_carreta.Text = ""
-        formulario.id_chofer = -1
-        formulario.Nro_licencia_conductor.Text = ""
-        formulario.Nro_constancia_deposito.Text = "."
-        ' Me.formulario.Monto_deposito.Text = ""
-        formulario.Nro_constancia_deposito2.Text = ""
-        'Me.formulario.Monto_deposito2.Text = ""
-        ' Me.formulario.id_emp_trans = -1
-        formulario.NombreEmpTransporte.Text = ""
-        formulario.RucEmpTransporte.Text = ""
-        ' Me.formulario.LblTotal.Text = ""
+    End Sub
+    REM ============================================================================
+#Region "DATAGRIDVIEW"
+    Private Sub dgvdetalle_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick
 
-        formulario.id_MotivoTras = -1
-        formulario.TxtMotivo.Text = ""
-        formulario.NombreProducto.Text = ""
-        formulario.prod_peso_uni.Text = ""
-        formulario.cantidad_sacos.Text = ""
-        formulario.TxtPrec_Venta.Text = "0"
-        formulario.TxtIGV.Text = "0"
+    End Sub
 
-        formulario.Detalle.Rows.Clear()
-        indice = -1
-        '        ''formulario = Nothing
-        '        lista(0, Nothing)
+    Private Sub dgvdetalle_RowsAdded1(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
+        ' Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+    End Sub
 
-        listar_guias("1", "", "")
+    Private Sub dgvdetalle_RowsRemoved1(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsRemovedEventArgs) Handles dgvdetalle.RowsRemoved
+        ' Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+    End Sub
+
+    Private Sub dgvdetalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvdetalle.VisibleChanged
+        '  Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+        'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
+    End Sub
+
+    Private Sub dgvlista_CellContentClick_1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
+        Try
+            indice = e.RowIndex
+            idguia = dgvlista.Item("ID", indice).Value
+            listar_detalle_guias(idguia)
+        Catch ex As Exception
+        End Try
+
+
+    End Sub
+
+    Private Sub dgvlista_CellFormatting1(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
+        If e.ColumnIndex = 1 Then
+            e.CellStyle.BackColor = Color.LightYellow
+        End If
+    End Sub
+
+
+#End Region
+    REM ============================================================================
+
+    REM ============================================================================
+#Region "TRANSACCIONES"
+    Private Sub btnNuevo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNuevo.Click
+        Nuevo()
     End Sub
 
     Private Sub btnmodificar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnModificar.Click
@@ -649,94 +614,155 @@ Public Class frmguias
         End If
         listar_detalle_guias(idguia)
     End Sub
-    Private Sub nroguia_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles nroguia.KeyPress
-        SoloNumeros(e, False, sender.Text)
-    End Sub
-    'Private Sub nroguia_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles nroguia.Enter
-    '    Me.nroguia.BackColor = Color.Moccasin
-    'End Sub
-    Private Sub nroguia_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles nroguia.Leave
-        nroguia.BackColor = Color.White
-    End Sub
-    Private Sub nroguia_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nroguia.KeyDown
-        saltar_Flechas(e)
-    End Sub
-    Private Sub btnCerrar_Click_1(ByVal sender As Object, ByVal e As EventArgs) Handles BtnCerrar.Click
-        Close()
-    End Sub
 
-    Private Sub nroguia_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles nroguia.TextChanged
-        Dim valor As String = nroguia.Text.Trim
-        listar_guias("1", valor, "")
-        dgvdetalle.DataSource = Nothing
+    Private Sub Nuevo()
+        '   Me.formulario.lista(7)
+        'Me.formulario.direccion_pto_llegadaa.SelectedIndex = 0
+        formulario.ShowDialog() 'presentamos formulario.
+        If formulario.Aceptar = True Then
+            'preguntamos si el usuario quiere o no guardar programación médica.
+            If MessageBox.Show("¿Desea guardar Guía de Remisión-Remitente?", "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Dim servidor As New clinicapacifico.clsaccesodatos
+                ' asignamos ruta coneccion con el servidor de la base de datos
+                servidor.cadenaconexion = Ruta
+                If servidor.abrirconexiontrans = True Then 'abrimos conección y iniciamos transacción.
 
-        'listar_guias(Me.nroguia.Text, Nothing)
-    End Sub
+                    'Dim id_mot_traslado As Integer
+                    'For i As Integer = 0 To formulario.dgvmotivo.Rows.Count - 1
 
-    Private Sub txtdest_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txtdest.Leave
-        txtdest.BackColor = Color.White
-    End Sub
+                    '    If CBool(formulario.dgvmotivo.Item(0, i).Value) = True Then
+                    '        id_mot_traslado = CInt(formulario.dgvmotivo.Item(1, i).Value)
+                    '        Exit For
+                    '    End If
+                    'Next
 
-    Private Sub txtdest_TextChanged_1(ByVal sender As Object, ByVal e As EventArgs) Handles txtdest.TextChanged
-        'Dim valor As String = Me.txtdest.Text
-        'listar_guias(Nothing, valor)
-        'dgvdetalle.DataSource = Nothing
+                    Dim rpta As Integer = -1
+                    Dim mensaje As String = ""
+                    servidor.ejecutar("[dbo].[pa_mantenimiento_cabecera_guia]",
+                    False,
+                    rpta,
+                    mensaje,
+                    formulario.id_guia,
+                    formulario.serie_guia.Text.Trim,
+                    formulario.nro_guia.Text.Trim,
+                    formulario.fecha_emision_guia.Value.Date,
+                    formulario.fecha_inicio_traslado.Value.Date,
+                    formulario.direccion_pto_partida.Text.Trim,
+                    formulario.ubigeo_pto_partida,
+                    formulario.id_Destinatario,
+                    formulario.direccion_pto_llegadaa.Text.Trim,
+                    IIf(formulario.ubigeo_pto_llegada = -1, Nothing, formulario.ubigeo_pto_llegada),
+                    formulario.id_vehi,
+                    formulario.id_chofer,
+                    formulario.Nro_constancia_deposito.Text.Trim,
+                    formulario.Monto_deposito.Text,
+                    formulario.Nro_constancia_deposito2.Text.Trim,
+                    formulario.Monto_deposito2.Text,
+                  formulario.id_MotivoTras,
+                    formulario.id_remitente,
+                    "N",
+                    0, "")
+                    If rpta > 0 Then
+                        Dim rptaham As Integer = -1
+                        Dim mensajeham As String = ""
+                        For i As Integer = 0 To formulario.Detalle.Rows.Count - 1
+                            servidor.ejecutar("[dbo].[pa_mantenimiento_detalle_guia]",
+                                            False,
+                                            rptaham,
+                                            mensajeham,
+                                            Nothing,
+                                            rpta,
+                                            CInt(formulario.Detalle.Item("id_prod", i).Value),
+                                            CInt(formulario.Detalle.Item("sacos_cantidad", i).Value),
+                                            CStr(formulario.Detalle.Item("unidad_medida", i).Value),
+                                            CDbl(formulario.Detalle.Item("x", i).Value),
+                                            CDbl(formulario.Detalle.Item("Precio_Venta", i).Value),
+                                            CDbl(formulario.Detalle.Item("IGV", i).Value),
+                                            "N",
+                                            0, "")
 
-        listar_guias("1", "", txtdest.Text)
-    End Sub
+                        Next
 
-    Private Sub dgvdetalle_CellContentClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvdetalle.CellContentClick
+                        If rptaham = 0 Then
+                            servidor.cancelarconexiontrans()
+                            __mesajeerror = mensajeham
+                            MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            Exit Sub
+                        End If
 
-    End Sub
+                        servidor.cerrarconexiontrans()
+                        __mesajeerror = mensaje
+                        MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
 
-    Private Sub dgvdetalle_RowsAdded1(ByVal sender As Object, ByVal e As DataGridViewRowsAddedEventArgs) Handles dgvdetalle.RowsAdded
-        ' Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub dgvdetalle_RowsRemoved1(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsRemovedEventArgs) Handles dgvdetalle.RowsRemoved
-        ' Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub dgvdetalle_VisibleChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dgvdetalle.VisibleChanged
-        '  Me.BtnModificar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        btnEliminar.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        btnImprimir.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-        'Me.btnImprimir2.Enabled = CBool(IIf(dgvdetalle.Rows.Count > 0, True, False))
-    End Sub
-
-    Private Sub dgvlista_CellContentClick_1(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles dgvlista.CellContentClick
-        Try
-            indice = e.RowIndex
-            idguia = dgvlista.Item("ID", indice).Value
-            listar_detalle_guias(idguia)
-        Catch ex As Exception
-        End Try
-
-
-    End Sub
-
-    Private Sub dgvlista_CellFormatting1(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dgvlista.CellFormatting
-        If e.ColumnIndex = 1 Then
-            e.CellStyle.BackColor = Color.LightYellow
+                Else
+                    __mesajeerror = servidor.getMensageError
+                    servidor.cerrarconexiontrans()
+                    MessageBox.Show(__mesajeerror, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End If
         End If
+
+        formulario.id_guia = -1
+        formulario.id_remitente = -1
+        formulario.NombreRemitente.Text = ""
+        formulario.ruc.Text = ""
+        'Me.formulario.serie_guia.Text = ""
+        ' Me.formulario.nro_guia.Text = ""
+        formulario.fecha_emision_guia.Value = Now
+        formulario.fecha_inicio_traslado.Value = Now
+        formulario.ubigeo_pto_partida = -1
+        'Me.formulario.direccion_pto_partida.Text = ""
+        formulario.distritoptop.Text = ""
+        formulario.provinciaptop.Text = ""
+        formulario.departamentoptop.Text = ""
+        formulario.ubigeo_pto_llegada = -1
+        'Me.formulario.direccion_pto_llegada.Text = ""
+        formulario.distritoptoll.Text = ""
+        formulario.provinciaptoll.Text = ""
+        formulario.departamentoptoll.Text = ""
+        formulario.id_Destinatario = -1
+        formulario.destinatario.Text = ""
+        formulario.rucdes.Text = ""
+        formulario.nombre_tip_doc.Text = ""
+        formulario.nro_doc.Text = ""
+        formulario.id_vehi = -1
+        formulario.marca_camion.Text = ""
+        formulario.nroplaca_camion.Text = ""
+        formulario.nrocertificado_camion.Text = ""
+        formulario.marca_carreta.Text = ""
+        formulario.nroplaca_carreta.Text = ""
+        formulario.nrocertificado_carreta.Text = ""
+        formulario.id_chofer = -1
+        formulario.Nro_licencia_conductor.Text = ""
+        formulario.Nro_constancia_deposito.Text = "."
+        ' Me.formulario.Monto_deposito.Text = ""
+        formulario.Nro_constancia_deposito2.Text = ""
+        'Me.formulario.Monto_deposito2.Text = ""
+        ' Me.formulario.id_emp_trans = -1
+        formulario.NombreEmpTransporte.Text = ""
+        formulario.RucEmpTransporte.Text = ""
+        ' Me.formulario.LblTotal.Text = ""
+
+        formulario.id_MotivoTras = -1
+        formulario.TxtMotivo.Text = ""
+        formulario.NombreProducto.Text = ""
+        formulario.prod_peso_uni.Text = ""
+        formulario.cantidad_sacos.Text = ""
+        formulario.TxtPrec_Venta.Text = "0"
+        formulario.TxtIGV.Text = "0"
+
+        formulario.Detalle.Rows.Clear()
+        indice = -1
+        '        ''formulario = Nothing
+        '        lista(0, Nothing)
+
+        listar_guias("1", "", "")
     End Sub
 
 
-
-    Private Sub cbTodos_CheckedChanged(sender As Object, e As EventArgs) Handles cbTodos.CheckedChanged
-        If cbTodos.Checked = True Then
-            listar_guias("2", "", "")
-        Else
-            listar_guias("1", "", "")
-        End If
-
-    End Sub
+#End Region
+    REM ============================================================================
 
     REM ============================================================================
 #Region "IMPRIMIR"

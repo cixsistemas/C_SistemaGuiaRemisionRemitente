@@ -43,6 +43,8 @@ Partial Class FrmPeso_Med
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.observacion = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.TxtBonificacion = New System.Windows.Forms.Label()
         Me.peso_neto2 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.peso_neto1 = New System.Windows.Forms.Label()
@@ -78,8 +80,6 @@ Partial Class FrmPeso_Med
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Total = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.TxtBonificacion = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -336,6 +336,28 @@ Partial Class FrmPeso_Med
         Me.GroupBox2.TabIndex = 140
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Unidad de Transporte"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(10, 254)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(162, 16)
+        Me.Label25.TabIndex = 153
+        Me.Label25.Text = "Bonificacion Vehicular"
+        '
+        'TxtBonificacion
+        '
+        Me.TxtBonificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBonificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBonificacion.ForeColor = System.Drawing.Color.DarkSlateGray
+        Me.TxtBonificacion.Location = New System.Drawing.Point(178, 251)
+        Me.TxtBonificacion.Name = "TxtBonificacion"
+        Me.TxtBonificacion.Size = New System.Drawing.Size(416, 23)
+        Me.TxtBonificacion.TabIndex = 152
+        Me.TxtBonificacion.Text = "         "
+        Me.TxtBonificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'peso_neto2
         '
@@ -653,7 +675,7 @@ Partial Class FrmPeso_Med
         'nro_guia
         '
         Me.nro_guia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.nro_guia.Font = New System.Drawing.Font("Futura Md BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nro_guia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nro_guia.ForeColor = System.Drawing.Color.Firebrick
         Me.nro_guia.Location = New System.Drawing.Point(74, 39)
         Me.nro_guia.Name = "nro_guia"
@@ -663,7 +685,7 @@ Partial Class FrmPeso_Med
         'serie_guia
         '
         Me.serie_guia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.serie_guia.Font = New System.Drawing.Font("Futura Md BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.serie_guia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.serie_guia.ForeColor = System.Drawing.Color.Firebrick
         Me.serie_guia.Location = New System.Drawing.Point(17, 39)
         Me.serie_guia.Name = "serie_guia"
@@ -709,28 +731,6 @@ Partial Class FrmPeso_Med
         Me.Label26.TabIndex = 152
         Me.Label26.Text = "Toneladas:"
         '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(10, 254)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(162, 16)
-        Me.Label25.TabIndex = 153
-        Me.Label25.Text = "Bonificacion Vehicular"
-        '
-        'TxtBonificacion
-        '
-        Me.TxtBonificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtBonificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBonificacion.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.TxtBonificacion.Location = New System.Drawing.Point(178, 251)
-        Me.TxtBonificacion.Name = "TxtBonificacion"
-        Me.TxtBonificacion.Size = New System.Drawing.Size(416, 23)
-        Me.TxtBonificacion.TabIndex = 152
-        Me.TxtBonificacion.Text = "         "
-        Me.TxtBonificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'FrmPeso_Med
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -751,6 +751,8 @@ Partial Class FrmPeso_Med
         Me.Controls.Add(Me.Label8)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmPeso_Med"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Constancia de Verificacion de Pesos y Medidas"

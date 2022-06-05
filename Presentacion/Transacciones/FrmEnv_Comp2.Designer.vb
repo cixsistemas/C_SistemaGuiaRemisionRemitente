@@ -461,6 +461,8 @@ Partial Class FrmEnv_Comp2
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmEnv_Comp2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Envio de Comprobantes de Pago"
