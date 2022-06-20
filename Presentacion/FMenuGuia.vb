@@ -194,7 +194,7 @@ Public Class FMenuGuia
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SistemaToolStripMenuItem, Me.ToolStripSeparator2, Me.MantenimienttoToolStripMenuItem, Me.ToolStripSeparator1, Me.ReportesToolStripMenuItem, Me.ToolStripSeparator3, Me.UtilidadToolStripMenuItem, Me.ToolStripSeparator6, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1027, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(915, 28)
         Me.MenuStrip1.TabIndex = 60
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -571,20 +571,20 @@ Public Class FMenuGuia
         '
         Me.CalculadoraToolStripMenuItem.Image = CType(resources.GetObject("CalculadoraToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CalculadoraToolStripMenuItem.Name = "CalculadoraToolStripMenuItem"
-        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(156, 26)
+        Me.CalculadoraToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
         Me.CalculadoraToolStripMenuItem.Text = "&Calculadora"
         '
         'SunatToolStripMenuItem
         '
         Me.SunatToolStripMenuItem.Image = CType(resources.GetObject("SunatToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SunatToolStripMenuItem.Name = "SunatToolStripMenuItem"
-        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(156, 26)
+        Me.SunatToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
         Me.SunatToolStripMenuItem.Text = "&Sunat"
         '
         'DNIToolStripMenuItem
         '
         Me.DNIToolStripMenuItem.Name = "DNIToolStripMenuItem"
-        Me.DNIToolStripMenuItem.Size = New System.Drawing.Size(156, 26)
+        Me.DNIToolStripMenuItem.Size = New System.Drawing.Size(149, 26)
         Me.DNIToolStripMenuItem.Text = "DNI"
         '
         'ToolStripSeparator6
@@ -624,10 +624,10 @@ Public Class FMenuGuia
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel1, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabelUsuario, Me.ToolStripStatusFish})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 500)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 384)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1027, 27)
+        Me.StatusStrip1.Size = New System.Drawing.Size(915, 27)
         Me.StatusStrip1.TabIndex = 73
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -641,7 +641,7 @@ Public Class FMenuGuia
         Me.toolStripStatusLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White
         Me.toolStripStatusLabel1.Name = "toolStripStatusLabel1"
-        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(251, 22)
+        Me.toolStripStatusLabel1.Size = New System.Drawing.Size(223, 22)
         Me.toolStripStatusLabel1.Spring = True
         Me.toolStripStatusLabel1.Text = "    "
         '
@@ -655,7 +655,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel3.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(251, 22)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(223, 22)
         Me.ToolStripStatusLabel3.Spring = True
         Me.ToolStripStatusLabel3.Text = "    "
         '
@@ -669,7 +669,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusLabelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabelUsuario.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusLabelUsuario.Name = "ToolStripStatusLabelUsuario"
-        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(251, 22)
+        Me.ToolStripStatusLabelUsuario.Size = New System.Drawing.Size(223, 22)
         Me.ToolStripStatusLabelUsuario.Spring = True
         Me.ToolStripStatusLabelUsuario.Text = "    "
         '
@@ -683,7 +683,7 @@ Public Class FMenuGuia
         Me.ToolStripStatusFish.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusFish.ForeColor = System.Drawing.Color.White
         Me.ToolStripStatusFish.Name = "ToolStripStatusFish"
-        Me.ToolStripStatusFish.Size = New System.Drawing.Size(251, 22)
+        Me.ToolStripStatusFish.Size = New System.Drawing.Size(223, 22)
         Me.ToolStripStatusFish.Spring = True
         '
         'FMenuGuia
@@ -692,7 +692,7 @@ Public Class FMenuGuia
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1027, 527)
+        Me.ClientSize = New System.Drawing.Size(915, 411)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow

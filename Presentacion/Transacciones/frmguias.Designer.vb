@@ -351,6 +351,7 @@ Partial Class frmguias
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmguias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guia de Remisión-Remitente"

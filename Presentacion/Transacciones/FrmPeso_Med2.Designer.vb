@@ -58,7 +58,7 @@ Partial Class FrmPeso_Med2
         Me.Highlighter1.SetHighlightOnFocus(Me.txtbusca, True)
         Me.txtbusca.Location = New System.Drawing.Point(325, 12)
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(498, 27)
+        Me.txtbusca.Size = New System.Drawing.Size(498, 23)
         Me.txtbusca.TabIndex = 139
         '
         'StyleManager1
@@ -128,7 +128,7 @@ Partial Class FrmPeso_Med2
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(13, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(373, 20)
+        Me.Label1.Size = New System.Drawing.Size(306, 16)
         Me.Label1.TabIndex = 138
         Me.Label1.Text = "Ingrese Nro de Guía de Remisión a buscar:"
         '
@@ -204,7 +204,7 @@ Partial Class FrmPeso_Med2
         '
         'FrmPeso_Med2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(844, 472)
         Me.Controls.Add(Me.BtnCerrar)
@@ -223,6 +223,7 @@ Partial Class FrmPeso_Med2
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmPeso_Med2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Constancia de Verificación de Pesos y Medidas"

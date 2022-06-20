@@ -76,7 +76,7 @@ Partial Class FrmPago_Detra2
         Me.dtpff.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpff.Location = New System.Drawing.Point(138, 43)
         Me.dtpff.Name = "dtpff"
-        Me.dtpff.Size = New System.Drawing.Size(99, 24)
+        Me.dtpff.Size = New System.Drawing.Size(99, 21)
         Me.dtpff.TabIndex = 169
         '
         'Label2
@@ -87,7 +87,7 @@ Partial Class FrmPago_Detra2
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(135, 26)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 18)
+        Me.Label2.Size = New System.Drawing.Size(57, 15)
         Me.Label2.TabIndex = 171
         Me.Label2.Text = "Fecha fin"
         '
@@ -100,7 +100,7 @@ Partial Class FrmPago_Detra2
         Me.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfin.Location = New System.Drawing.Point(12, 43)
         Me.dtpfin.Name = "dtpfin"
-        Me.dtpfin.Size = New System.Drawing.Size(99, 24)
+        Me.dtpfin.Size = New System.Drawing.Size(99, 21)
         Me.dtpfin.TabIndex = 168
         '
         'Label3
@@ -111,7 +111,7 @@ Partial Class FrmPago_Detra2
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(12, 26)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 18)
+        Me.Label3.Size = New System.Drawing.Size(73, 15)
         Me.Label3.TabIndex = 170
         Me.Label3.Text = "Fecha inicio"
         '
@@ -123,7 +123,7 @@ Partial Class FrmPago_Detra2
         Me.cbFecha.ForeColor = System.Drawing.Color.Black
         Me.cbFecha.Location = New System.Drawing.Point(12, 6)
         Me.cbFecha.Name = "cbFecha"
-        Me.cbFecha.Size = New System.Drawing.Size(150, 22)
+        Me.cbFecha.Size = New System.Drawing.Size(124, 19)
         Me.cbFecha.TabIndex = 167
         Me.cbFecha.Text = "Fecha de Precios:"
         Me.cbFecha.UseVisualStyleBackColor = False
@@ -136,7 +136,7 @@ Partial Class FrmPago_Detra2
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(9, 69)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(578, 20)
+        Me.Label1.Size = New System.Drawing.Size(472, 16)
         Me.Label1.TabIndex = 202
         Me.Label1.Text = "Seleccione Fecha de Precios para visualizar sus items o modificar:"
         '
@@ -187,7 +187,7 @@ Partial Class FrmPago_Detra2
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(12, 238)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(404, 20)
+        Me.Label4.Size = New System.Drawing.Size(332, 16)
         Me.Label4.TabIndex = 204
         Me.Label4.Text = "Items de Pago, seleccione items para eliminar:"
         '
@@ -235,7 +235,7 @@ Partial Class FrmPago_Detra2
         Me.Seleccionar.Name = "Seleccionar"
         Me.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Seleccionar.Width = 105
+        Me.Seleccionar.Width = 90
         '
         'BtnCerrar
         '
@@ -415,7 +415,7 @@ Partial Class FrmPago_Detra2
         '
         'FrmPago_Detra2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(734, 492)
         Me.Controls.Add(Me.LabelX3)
@@ -445,6 +445,8 @@ Partial Class FrmPago_Detra2
         Me.Highlighter1.SetHighlightOnFocus(Me, True)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmPago_Detra2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pago de Detracción"

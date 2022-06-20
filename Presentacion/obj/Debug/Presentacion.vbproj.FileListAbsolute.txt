@@ -944,7 +944,6 @@ F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Re
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.FMenuGuia.resources
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.FrmCaTegoria1.resources
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.FrmChofer.resources
-F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.frmdestinatario.resources
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.FRMEnvase1.resources
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.FrmLoGO1.resources
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.frmemptransporte.resources
@@ -958,3 +957,4 @@ F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Re
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.Cache
 E:\Info Anc\Proyectos_Sistemas\Sistemas Escritorio\Guia Remision-Remitente\C_SistemaGuiaRemisionRemitente\Presentacion\obj\Debug\Presentacion.FrmDni.resources
 F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.FrmDni.resources
+F:\SISTEMAS-DATA\SISTEMAS - MOLINO\Guia Remision-Remitente\Sistema de Guia de Remision\Los Angeles\Presentacion\obj\Debug\Presentacion.frmmdestinario2.resources

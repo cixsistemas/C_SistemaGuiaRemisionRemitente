@@ -857,10 +857,10 @@
     <Compile Include="Mantenimiento\FrmCaTegoria1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimiento\frmdestinatario.Designer.vb">
-      <DependentUpon>frmdestinatario.vb</DependentUpon>
+    <Compile Include="Mantenimiento\frmmdestinario2.Designer.vb">
+      <DependentUpon>frmmdestinario2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimiento\frmdestinatario.vb">
+    <Compile Include="Mantenimiento\frmmdestinario2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\FRMEnvase1.Designer.vb">
@@ -1344,9 +1344,9 @@
     <EmbeddedResource Include="Mantenimiento\FrmChofer.resx">
       <DependentUpon>FrmChofer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimiento\frmdestinatario.resx">
+    <EmbeddedResource Include="Mantenimiento\frmmdestinario2.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>frmdestinatario.vb</DependentUpon>
+      <DependentUpon>frmmdestinario2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\FRMEnvase1.resx">
       <DependentUpon>FRMEnvase1.vb</DependentUpon>
@@ -1665,6 +1665,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
     <Content Include="Imagenes\aceptar.ico" />
     <Content Include="Imagenes\ACTUALIZAR.ico" />
     <Content Include="Imagenes\ayuda.jpg" />

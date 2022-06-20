@@ -1,5 +1,5 @@
 ﻿Public Class frmmdestinario1
-    Private formulario As New frmdestinatario
+    Private formulario As New frmmdestinario2
     Dim tabla_cliente As DataTable = Nothing
     Dim Dv As New DataView
     Dim CadenaBuscar As String 'Cadena para el Filtrado

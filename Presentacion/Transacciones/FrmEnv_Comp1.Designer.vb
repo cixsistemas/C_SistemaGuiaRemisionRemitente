@@ -64,14 +64,13 @@ Partial Class FrmEnv_Comp1
         '
         'TxtComisionista
         '
-        Me.TxtComisionista.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.TxtComisionista.Border.Class = "TextBoxBorder"
         Me.TxtComisionista.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtComisionista.DisabledBackColor = System.Drawing.Color.White
         Me.TxtComisionista.Enabled = False
-        Me.TxtComisionista.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.TxtComisionista, True)
         Me.TxtComisionista.Location = New System.Drawing.Point(276, 56)
         Me.TxtComisionista.Name = "TxtComisionista"
@@ -80,14 +79,13 @@ Partial Class FrmEnv_Comp1
         '
         'TxtZona
         '
-        Me.TxtZona.BackColor = System.Drawing.SystemColors.Control
         '
         '
         '
         Me.TxtZona.Border.Class = "TextBoxBorder"
         Me.TxtZona.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtZona.DisabledBackColor = System.Drawing.Color.White
         Me.TxtZona.Enabled = False
-        Me.TxtZona.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Highlighter1.SetHighlightOnFocus(Me.TxtZona, True)
         Me.TxtZona.Location = New System.Drawing.Point(459, 56)
         Me.TxtZona.Name = "TxtZona"
@@ -113,7 +111,6 @@ Partial Class FrmEnv_Comp1
         '
         '
         '
-        Me.dtpffin.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
         '
         '
         '
@@ -131,8 +128,6 @@ Partial Class FrmEnv_Comp1
         Me.dtpffin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
         Me.dtpffin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.dtpffin.MonthCalendar.DisplayMonth = New Date(2016, 12, 1, 0, 0, 0, 0)
-        Me.dtpffin.MonthCalendar.MarkedDates = New Date(-1) {}
-        Me.dtpffin.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
         '
         '
         '
@@ -141,7 +136,6 @@ Partial Class FrmEnv_Comp1
         Me.dtpffin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.dtpffin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.dtpffin.MonthCalendar.TodayButtonVisible = True
-        Me.dtpffin.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
         Me.dtpffin.Name = "dtpffin"
         Me.dtpffin.Size = New System.Drawing.Size(119, 23)
         Me.dtpffin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -166,7 +160,6 @@ Partial Class FrmEnv_Comp1
         '
         '
         '
-        Me.dtpfinic.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
         '
         '
         '
@@ -184,8 +177,6 @@ Partial Class FrmEnv_Comp1
         Me.dtpfinic.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
         Me.dtpfinic.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.dtpfinic.MonthCalendar.DisplayMonth = New Date(2016, 12, 1, 0, 0, 0, 0)
-        Me.dtpfinic.MonthCalendar.MarkedDates = New Date(-1) {}
-        Me.dtpfinic.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
         '
         '
         '
@@ -194,7 +185,6 @@ Partial Class FrmEnv_Comp1
         Me.dtpfinic.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.dtpfinic.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.dtpfinic.MonthCalendar.TodayButtonVisible = True
-        Me.dtpfinic.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
         Me.dtpfinic.Name = "dtpfinic"
         Me.dtpfinic.Size = New System.Drawing.Size(119, 23)
         Me.dtpfinic.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -508,8 +498,11 @@ Partial Class FrmEnv_Comp1
         Me.Controls.Add(Me.CbFechaIng)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmEnv_Comp1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Envio de Comprobantes de Pago"
